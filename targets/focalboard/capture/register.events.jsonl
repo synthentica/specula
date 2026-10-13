@@ -1,0 +1,14 @@
+{"t":1791794822324,"type":"capture-start","url":"http://localhost:8000/login"}
+{"t":1791794823164,"type":"navigation","url":"http://localhost:8000/register","sameDocument":false}
+{"t":1791794823860,"type":"ws-open","requestId":"15882.47","url":"ws://localhost:8000/ws"}
+{"t":1791794824645,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#main > div > form > button","role":"button","name":"Register","type":"submit"},"url":"http://localhost:8000/register"}
+{"t":1791794824649,"type":"action","id":"a2","kind":"submit","target":{"tag":"form","selector":"#main > div > form","role":"form","name":"Sign up for your account Register"},"url":"http://localhost:8000/register"}
+{"t":1791794824858,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794824864,"type":"ws-frame","requestId":"15882.47","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794824869,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794824893,"type":"ws-frame","requestId":"15882.47","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794824951,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#login-email","role":"textbox","name":"Enter email","id":"login-email","type":"text"},"url":"http://localhost:8000/","valueInfo":{"type":"text","length":17}}
+{"t":1791794824968,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#login-username","role":"textbox","name":"Enter username","id":"login-username","type":"text"},"url":"http://localhost:8000/","valueInfo":{"type":"text","length":5}}
+{"t":1791794824987,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"#login-password","role":"textbox","name":"Enter password","id":"login-password","type":"password"},"url":"http://localhost:8000/","valueInfo":{"type":"password","length":15}}
+{"t":1791794825011,"type":"ws-frame","requestId":"15882.47","direction":"received","opcode":1,"payload":"{\"action\":\"UPDATE_CATEGORY\",\"teamId\":\"0\",\"category\":{\"id\":\"7qtpadj7iffn83dct8et57gtr9h\",\"name\":\"Boards\",\"userID\":\"uwty61fpiapg3ima7unztj6ri8a\",\"teamID\":\"0\",\"createAt\":1791794825000,\"updateAt\":1791794825000,\"deleteAt\":0,\"collapsed\":false,\"sortOrder\":10,\"sorting\":\"\",\"type\":\"system\"}}"}
+{"t":1791794828174,"type":"capture-stop","url":"http://localhost:8000/login"}

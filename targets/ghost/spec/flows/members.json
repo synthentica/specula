@@ -1,0 +1,1047 @@
+{
+  "name": "members",
+  "order": 5,
+  "description": "",
+  "steps": [
+    {
+      "action": null,
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "labels": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[2]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "query": [
+          [
+            "filter",
+            "type:paid+active:true"
+          ],
+          [
+            "include",
+            "monthly_price,yearly_price"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 1,
+                "total": 1,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[3]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "filter",
+            "status:active"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 15,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[4]",
+        "bind": {
+          "newsletter462": "$.newsletters[0].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postMembers",
+        "method": "POST",
+        "path": "/members/",
+        "query": [
+          [
+            "include",
+            "newsletters,labels"
+          ]
+        ],
+        "body": {
+          "members": [
+            {
+              "name": "Robin Reader",
+              "email": "<redacted:email>",
+              "note": "Met at the trail cleanup day.",
+              "subscriptions": [],
+              "subscribed": true,
+              "email_count": 0,
+              "email_opened_count": 0,
+              "email_open_rate": null,
+              "avatar_image": null,
+              "tiers": [],
+              "newsletters": [
+                {
+                  "id": {
+                    "$var": "newsletter462"
+                  },
+                  "name": "Field notes",
+                  "slug": "default-newsletter",
+                  "description": null,
+                  "sender_name": null,
+                  "sender_email": null,
+                  "sender_reply_to": "newsletter",
+                  "status": "active",
+                  "subscribe_on_signup": true,
+                  "visibility": "members",
+                  "sort_order": 0,
+                  "feedback_enabled": false,
+                  "header_image": null,
+                  "show_header_icon": true,
+                  "show_header_title": true,
+                  "show_header_name": false,
+                  "show_post_title_section": true,
+                  "show_excerpt": false,
+                  "show_comment_cta": true,
+                  "show_subscription_details": false,
+                  "show_latest_posts": false,
+                  "title_font_category": "sans_serif",
+                  "title_alignment": "center",
+                  "show_feature_image": true,
+                  "body_font_category": "sans_serif",
+                  "background_color": "light",
+                  "post_title_color": null,
+                  "footer_content": null,
+                  "show_badge": true,
+                  "count": {
+                    "active_members": 0
+                  }
+                }
+              ],
+              "labels": []
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Member",
+          "envelope": "members",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "attribution": {
+                  "id": null,
+                  "type": null,
+                  "url": null,
+                  "title": null,
+                  "referrer_source": "Created manually",
+                  "referrer_medium": "App Admin",
+                  "referrer_url": null
+                },
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "tiers": [],
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "source": "capture/members.har#entries[5]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getMembersStatsCount",
+        "method": "GET",
+        "path": "/members/stats/count/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Count",
+          "envelope": "data",
+          "body": {
+            "resource": "members",
+            "total": 1,
+            "data": [
+              {
+                "date": "2026-10-11",
+                "paid": 0,
+                "free": 1,
+                "comped": 0
+              }
+            ]
+          }
+        },
+        "source": "capture/members.har#entries[6]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getStatsMemberCount",
+        "method": "GET",
+        "path": "/stats/member_count/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "stats": [
+              {
+                "date": "2026-10-10",
+                "paid": 0,
+                "free": 0,
+                "comped": 0,
+                "paid_subscribed": 0,
+                "paid_canceled": 0
+              },
+              {
+                "date": "2026-10-11",
+                "paid": 0,
+                "free": 1,
+                "comped": 0,
+                "paid_subscribed": 0,
+                "paid_canceled": 0
+              }
+            ],
+            "meta": {
+              "totals": {
+                "paid": 0,
+                "free": 1,
+                "comped": 0
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[7]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getMembers",
+        "method": "GET",
+        "path": "/members/",
+        "query": [
+          [
+            "include",
+            "newsletters,labels,tiers"
+          ],
+          [
+            "order",
+            "created_at desc"
+          ],
+          [
+            "limit",
+            "50"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "filter",
+            {
+              "$template": "created_at:<='{{now:0:sql}}'"
+            }
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "tiers": [],
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 50,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[8]",
+        "bind": {
+          "member471": "$.members[0].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "labels": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[9]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getMembers2",
+        "method": "GET",
+        "path": "/members/{memberId}/",
+        "pathParams": {
+          "memberId": {
+            "var": "member471"
+          }
+        },
+        "query": [
+          [
+            "include",
+            "tiers"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Member",
+          "envelope": "members",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "attribution": {
+                  "id": null,
+                  "type": null,
+                  "url": null,
+                  "title": null,
+                  "referrer_source": "Created manually",
+                  "referrer_medium": "App Admin",
+                  "referrer_url": null
+                },
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "tiers": [],
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "source": "capture/members.har#entries[10]",
+        "bind": {
+          "member476": "$.members[0].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getMembersEvents",
+        "method": "GET",
+        "path": "/members/events/",
+        "query": [
+          [
+            "filter",
+            {
+              "$template": "data.created_at:<'{{now:0:sql}}'+type:-[comment_event,aggregated_click_event]+data.member_id:'{{var:member476}}'"
+            }
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "events": [],
+            "meta": {
+              "pagination": {
+                "limit": "5",
+                "total": 0,
+                "pages": 0,
+                "page": null,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[11]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "section > div:nth-of-type(1) > header > section > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember240",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "filter",
+            "status:active"
+          ],
+          [
+            "include",
+            "none"
+          ],
+          [
+            "limit",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[13]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "labels": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[14]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getMembers",
+        "method": "GET",
+        "path": "/members/",
+        "query": [
+          [
+            "order",
+            "id"
+          ],
+          [
+            "limit",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "include",
+            "newsletters,labels"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[15]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "query": [
+          [
+            "filter",
+            "type:paid"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 1,
+                "total": 1,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[16]",
+        "bind": {
+          "tier490": "$.tiers[0].id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "filter",
+            "status:active"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 15,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/members.har#entries[20]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getOffers",
+        "method": "GET",
+        "path": "/offers/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "offers": []
+          }
+        },
+        "source": "capture/members.har#entries[21]"
+      }
+    }
+  ]
+}

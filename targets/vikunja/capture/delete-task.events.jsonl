@@ -1,0 +1,12 @@
+{"t":1791740011136,"type":"capture-start","url":"http://localhost:3456/labels"}
+{"t":1791740013229,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a","role":"link","name":"Home renovation","href":"/projects/2"},"url":"http://localhost:3456/labels"}
+{"t":1791740013238,"type":"navigation","url":"http://localhost:3456/labels","sameDocument":true}
+{"t":1791740013250,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740017544,"type":"action","id":"a2","kind":"click","target":{"tag":"a","selector":"div > div > span:nth-of-type(1) > span > a","role":"link","name":"Call the electrician","href":"/tasks/3"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740017551,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740017561,"type":"navigation","url":"http://localhost:3456/tasks/3","sameDocument":true}
+{"t":1791740022332,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"div > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(18)","role":"button","name":"DELETE","type":"button"},"url":"http://localhost:3456/tasks/3"}
+{"t":1791740026225,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"dialog > div:nth-of-type(1) > div > div:nth-of-type(3) > button:nth-of-type(2)","role":"button","name":"DO IT!","type":"button"},"url":"http://localhost:3456/tasks/3"}
+{"t":1791740026263,"type":"navigation","url":"http://localhost:3456/tasks/3","sameDocument":true}
+{"t":1791740026268,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740030371,"type":"capture-stop","url":"http://localhost:3456/labels"}

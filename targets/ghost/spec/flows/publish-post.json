@@ -1,0 +1,1994 @@
+{
+  "name": "publish-post",
+  "order": 3,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember48 > div > div > div:nth-of-type(3) > button",
+          "role": "button",
+          "name": "Continue, final review →",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "limit",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "uuid": "7397c164-6f46-44f1-82b8-0aaca26840a1",
+                "title": "Coming soon",
+                "slug": "coming-soon",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "comment_id": "6acbc96bb2f88b00015b2f7d",
+                "feature_image": "https://example.invalid/v4.0.0/images/feature-image.jpg",
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f04",
+                    "name": "News",
+                    "slug": "news",
+                    "description": null,
+                    "feature_image": null,
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "url": "http://localhost:2368/tag/news/"
+                  }
+                ],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": {
+                  "id": "6acbc96ab2f88b00015b2f04",
+                  "name": "News",
+                  "slug": "news",
+                  "description": null,
+                  "feature_image": null,
+                  "visibility": "public",
+                  "og_image": null,
+                  "og_title": null,
+                  "og_description": null,
+                  "twitter_image": null,
+                  "twitter_title": null,
+                  "twitter_description": null,
+                  "meta_title": null,
+                  "meta_description": null,
+                  "codeinjection_head": null,
+                  "codeinjection_foot": null,
+                  "canonical_url": null,
+                  "accent_color": null,
+                  "created_at": "2026-10-11T17:37:46.000Z",
+                  "updated_at": "2026-10-11T17:37:46.000Z",
+                  "url": "http://localhost:2368/tag/news/"
+                },
+                "email_segment": "all",
+                "url": "http://localhost:2368/coming-soon/",
+                "excerpt": "This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can subscribe in the meantime if you'd like to stay up to date and receive emails when new content is published!",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[0]",
+        "bind": {
+          "post97": "$.posts[0].id",
+          "author106": "$.posts[0].authors[0].id",
+          "authorLastSeen107": "$.posts[0].authors[0].last_seen",
+          "authorCreatedAt108": "$.posts[0].authors[0].created_at",
+          "authorUpdatedAt109": "$.posts[0].authors[0].updated_at",
+          "tier110": "$.posts[0].tiers[?name=\"Free\"].id",
+          "tierCreatedAt111": "$.posts[0].tiers[?name=\"Free\"].created_at",
+          "tierUpdatedAt112": "$.posts[0].tiers[?name=\"Free\"].updated_at",
+          "role120": "$.posts[0].primary_author.roles[0].id",
+          "roleCreatedAt121": "$.posts[0].primary_author.roles[0].created_at",
+          "roleUpdatedAt122": "$.posts[0].primary_author.roles[0].updated_at"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "putPosts",
+        "method": "PUT",
+        "path": "/posts/{postId}/",
+        "pathParams": {
+          "postId": {
+            "var": "post68"
+          }
+        },
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "include",
+            "tags,authors,authors.roles,email,tiers,newsletter,count.clicks,post_revisions,post_revisions.author"
+          ]
+        ],
+        "body": {
+          "posts": [
+            {
+              "id": {
+                "$var": "post68"
+              },
+              "count": {
+                "clicks": 0,
+                "positive_feedback": 0,
+                "negative_feedback": 0
+              },
+              "created_at": {
+                "$var": "postCreatedAt71"
+              },
+              "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+              "custom_excerpt": null,
+              "featured": false,
+              "canonical_url": null,
+              "codeinjection_foot": null,
+              "codeinjection_head": null,
+              "custom_template": null,
+              "og_image": null,
+              "og_title": null,
+              "og_description": null,
+              "twitter_image": null,
+              "twitter_title": null,
+              "twitter_description": null,
+              "email_subject": null,
+              "html": null,
+              "visibility": "public",
+              "meta_description": null,
+              "meta_title": null,
+              "mobiledoc": null,
+              "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+              "plaintext": null,
+              "published_at": null,
+              "slug": "weekend-hike-in-the-hills",
+              "status": "published",
+              "title": "Weekend hike in the hills",
+              "updated_at": {
+                "$var": "postUpdatedAt72"
+              },
+              "email_segment": "all",
+              "email_only": false,
+              "feature_image": null,
+              "feature_image_alt": null,
+              "feature_image_caption": null,
+              "tiers": [
+                {
+                  "id": {
+                    "$var": "tier110"
+                  },
+                  "name": "Free",
+                  "slug": "free",
+                  "active": true,
+                  "welcome_page_url": null,
+                  "visibility": "public",
+                  "trial_days": 0,
+                  "description": null,
+                  "type": "free",
+                  "currency": null,
+                  "monthly_price": null,
+                  "yearly_price": null,
+                  "created_at": {
+                    "$var": "tierCreatedAt111"
+                  },
+                  "updated_at": {
+                    "$var": "tierUpdatedAt112"
+                  },
+                  "monthly_price_id": null,
+                  "yearly_price_id": null
+                },
+                {
+                  "id": {
+                    "$var": "tier11"
+                  },
+                  "name": "Field notes",
+                  "slug": "default-product",
+                  "active": true,
+                  "welcome_page_url": null,
+                  "visibility": "public",
+                  "trial_days": 0,
+                  "description": null,
+                  "type": "paid",
+                  "currency": "usd",
+                  "monthly_price": 500,
+                  "yearly_price": 5000,
+                  "created_at": {
+                    "$var": "tierCreatedAt111"
+                  },
+                  "updated_at": {
+                    "$var": "tierUpdatedAt112"
+                  },
+                  "monthly_price_id": null,
+                  "yearly_price_id": null
+                }
+              ],
+              "authors": [
+                {
+                  "id": {
+                    "$var": "author106"
+                  },
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "last_seen": {
+                    "$var": "authorLastSeen107"
+                  },
+                  "created_at": {
+                    "$var": "authorCreatedAt108"
+                  },
+                  "updated_at": {
+                    "$var": "authorUpdatedAt109"
+                  },
+                  "facebook": null,
+                  "twitter": null,
+                  "tour": null,
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "roles": [
+                    {
+                      "id": {
+                        "$var": "role120"
+                      },
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": {
+                        "$var": "roleCreatedAt121"
+                      },
+                      "updated_at": {
+                        "$var": "roleUpdatedAt122"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "published_by": null,
+              "tags": []
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Post",
+          "envelope": "posts",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "post_revisions": [
+                  {
+                    "id": "6acbc9a4b2f88b00015b31be",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740324865,
+                    "created_at": "2026-10-11T17:38:44.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "draft",
+                    "reason": "initial_revision",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  },
+                  {
+                    "id": "6acbc9bbb2f88b00015b31c2",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740347823,
+                    "created_at": "2026-10-11T17:39:07.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "published",
+                    "reason": "published",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ]
+          }
+        },
+        "source": "capture/publish-post.har#entries[1]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "filter",
+            "status:scheduled"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[2]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "updated_at desc"
+          ],
+          [
+            "filter",
+            "status:draft"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[3]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "filter",
+            "status:[published,sent]"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "uuid": "7397c164-6f46-44f1-82b8-0aaca26840a1",
+                "title": "Coming soon",
+                "slug": "coming-soon",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "comment_id": "6acbc96bb2f88b00015b2f7d",
+                "feature_image": "https://example.invalid/v4.0.0/images/feature-image.jpg",
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f04",
+                    "name": "News",
+                    "slug": "news",
+                    "description": null,
+                    "feature_image": null,
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "url": "http://localhost:2368/tag/news/"
+                  }
+                ],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": {
+                  "id": "6acbc96ab2f88b00015b2f04",
+                  "name": "News",
+                  "slug": "news",
+                  "description": null,
+                  "feature_image": null,
+                  "visibility": "public",
+                  "og_image": null,
+                  "og_title": null,
+                  "og_description": null,
+                  "twitter_image": null,
+                  "twitter_title": null,
+                  "twitter_description": null,
+                  "meta_title": null,
+                  "meta_description": null,
+                  "codeinjection_head": null,
+                  "codeinjection_foot": null,
+                  "canonical_url": null,
+                  "accent_color": null,
+                  "created_at": "2026-10-11T17:37:46.000Z",
+                  "updated_at": "2026-10-11T17:37:46.000Z",
+                  "url": "http://localhost:2368/tag/news/"
+                },
+                "email_segment": "all",
+                "url": "http://localhost:2368/coming-soon/",
+                "excerpt": "This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can subscribe in the meantime if you'd like to stay up to date and receive emails when new content is published!",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[4]",
+        "bind": {
+          "post163": "$.posts[?title=\"Weekend hike in the hills\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "postStatsPostsMemberCounts",
+        "method": "POST",
+        "path": "/stats/posts-member-counts/",
+        "body": {
+          "postIds": [
+            {
+              "$var": "post163"
+            },
+            {
+              "$var": "post97"
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "stats": [
+              {
+                "6acbc9a4b2f88b00015b31bc": {
+                  "free_members": 0,
+                  "paid_members": 0
+                },
+                "6acbc96bb2f88b00015b2f7d": {
+                  "free_members": 0,
+                  "paid_members": 0
+                }
+              }
+            ]
+          }
+        },
+        "source": "capture/publish-post.har#entries[6]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getUsers",
+        "method": "GET",
+        "path": "/users/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "name": "<redacted:pii>",
+                "slug": "wp",
+                "email": "<redacted:email>",
+                "profile_image": null,
+                "cover_image": null,
+                "bio": null,
+                "website": null,
+                "location": null,
+                "facebook": null,
+                "twitter": null,
+                "threads": null,
+                "bluesky": null,
+                "mastodon": null,
+                "tiktok": null,
+                "youtube": null,
+                "instagram": null,
+                "linkedin": null,
+                "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                "status": "active",
+                "meta_title": null,
+                "meta_description": null,
+                "tour": null,
+                "last_seen": "2026-10-11T17:38:25.000Z",
+                "comment_notifications": true,
+                "free_member_signup_notification": true,
+                "paid_subscription_started_notification": true,
+                "paid_subscription_canceled_notification": false,
+                "mention_notifications": true,
+                "recommendation_notifications": true,
+                "milestone_notifications": true,
+                "donation_notifications": true,
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:38:26.000Z",
+                "roles": [
+                  {
+                    "id": "6acbc966b2f88b00015b2ef7",
+                    "name": "Owner",
+                    "description": "Blog Owner",
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:37:42.000Z"
+                  }
+                ],
+                "url": "http://localhost:2368/author/wp/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[7]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            {
+              "$template": "id:{{var:post163}}"
+            }
+          ],
+          [
+            "limit",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[8]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember58",
+          "role": "button",
+          "name": "Publish post, right now",
+          "id": "ember58",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "limit",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 2,
+                "total": 2,
+                "next": 2,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/publish-post.har#entries[9]"
+      }
+    }
+  ]
+}

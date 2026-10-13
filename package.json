@@ -1,0 +1,39 @@
+{
+  "name": "specula",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Understand how a web feature works by observing it in the browser, then rebuild it and prove parity.",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "chrome-devtools-mcp",
+    "api-spec",
+    "parity-testing",
+    "har",
+    "spec",
+    "web"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "capture": "node src/capture.ts",
+    "correlate": "node src/correlate.ts",
+    "fingerprint": "node src/fingerprint.ts",
+    "infer-api": "node src/infer-api.ts",
+    "infer-ui": "node src/infer-ui.ts",
+    "parity": "node src/parity.ts",
+    "visual": "node src/visual.ts",
+    "demo": "node src/demo.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@jridgewell/trace-mapping": "^0.3.31"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "^5.9.3"
+  }
+}

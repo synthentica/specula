@@ -1,0 +1,8 @@
+{"t":1791791831127,"type":"capture-start","url":"http://localhost:3000/home"}
+{"t":1791791832071,"type":"navigation","url":"http://localhost:3000/t","sameDocument":false}
+{"t":1791791834549,"type":"action","id":"a1","kind":"click","target":{"tag":"div","selector":"div > div > div > div:nth-of-type(1) > div:nth-of-type(4)","name":"notes"},"url":"http://localhost:3000/t"}
+{"t":1791791834558,"type":"navigation","url":"http://localhost:3000/t/notes?sort=title","sameDocument":true}
+{"t":1791791836172,"type":"action","id":"a2","kind":"click","target":{"tag":"div","selector":"div > div > div > div:nth-of-type(1) > div:nth-of-type(2)","name":"guide"},"url":"http://localhost:3000/t/notes?sort=title"}
+{"t":1791791836181,"type":"navigation","url":"http://localhost:3000/t/notes/guide?sort=title","sameDocument":true}
+{"t":1791791837895,"type":"navigation","url":"http://localhost:3000/a/pages","sameDocument":false}
+{"t":1791791842326,"type":"capture-stop","url":"http://localhost:3000/home"}

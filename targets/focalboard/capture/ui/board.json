@@ -1,0 +1,1231 @@
+{
+ "name": "board",
+ "route": "/team/0/{boardId}",
+ "seedFlow": "move-card",
+ "snapshot": {
+  "url": "/team/0/{boardId}",
+  "viewport": {
+   "width": 1280,
+   "height": 800
+  },
+  "documentHeight": 800,
+  "page": {
+   "background": "#ffffff",
+   "color": "#3f4350",
+   "fontFamily": "Open Sans",
+   "fontSize": 14,
+   "lineHeight": 24
+  },
+  "regions": [
+   {
+    "role": "topbar",
+    "rect": [
+     240,
+     0,
+     1040,
+     137
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#3f4350",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      8,
+      32
+     ]
+    },
+    "fixed": true
+   },
+   {
+    "role": "sidebar",
+    "rect": [
+     0,
+     0,
+     240,
+     800
+    ],
+    "style": {
+     "background": "#1e325c",
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      24,
+      0
+     ]
+    }
+   },
+   {
+    "role": "main",
+    "rect": [
+     240,
+     137,
+     1040,
+     663
+    ],
+    "style": {
+     "background": "#ffffff"
+    }
+   }
+  ],
+  "components": [
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     16,
+     32,
+     169,
+     32
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600
+    }
+   },
+   {
+    "kind": "icon",
+    "rect": [
+     16,
+     34,
+     22,
+     24
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Metropolis",
+     "fontSize": 16,
+     "fontWeight": 600
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     200,
+     36,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#ffffff8f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "icon",
+    "rect": [
+     200,
+     36,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#ffffff8f",
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     0,
+     132,
+     216,
+     24
+    ],
+    "style": {
+     "color": "#ffffffb8",
+     "fontFamily": "Open Sans",
+     "fontSize": 12,
+     "fontWeight": 600,
+     "textTransform": "uppercase"
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     0,
+     160,
+     236,
+     36
+    ],
+    "style": {
+     "background": "#ffffff1a",
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "padding": [
+      0,
+      20
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     0,
+     196,
+     236,
+     36
+    ],
+    "style": {
+     "background": "#ffffff1a",
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      42
+     ]
+    }
+   },
+   {
+    "kind": "icon",
+    "rect": [
+     42,
+     205,
+     18,
+     18
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     0,
+     752,
+     240,
+     36
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     1119,
+     8,
+     97,
+     28
+    ],
+    "style": {
+     "color": "#3e4350b8",
+     "fontFamily": "Open Sans",
+     "fontSize": 12,
+     "fontWeight": 400,
+     "padding": [
+      2,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     1216,
+     8,
+     32,
+     28
+    ],
+    "style": {
+     "color": "#5d89ea",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      2,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     272,
+     35,
+     855,
+     34
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Metropolis",
+     "fontSize": 25,
+     "fontWeight": 600,
+     "padding": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     1143,
+     32,
+     105,
+     40
+    ],
+    "style": {
+     "background": "#1c58d9",
+     "color": "#ffffff",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      20
+     ]
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     272,
+     100,
+     187,
+     24
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     459,
+     100,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     459,
+     100,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     518,
+     96,
+     89,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     518,
+     96,
+     89,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     620,
+     96,
+     138,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     620,
+     96,
+     138,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     769,
+     96,
+     54,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     836,
+     96,
+     48,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     836,
+     96,
+     48,
+     32
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     896,
+     96,
+     227,
+     32
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#3f4350",
+     "border": {
+      "color": "#3e445129",
+      "width": 1,
+      "sides": "all"
+     },
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      32
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1135,
+     100,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1135,
+     100,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "badge",
+    "rect": [
+     1171,
+     97,
+     48,
+     30
+    ],
+    "style": {
+     "background": "#1c58d9",
+     "color": "#ffffff",
+     "radius": 5,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      3,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1219,
+     97,
+     29,
+     30
+    ],
+    "style": {
+     "color": "#3f4350a3",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     344,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      6
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     485,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     485,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     509,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     556,
+     157,
+     181,
+     24
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 13,
+     "fontWeight": 600,
+     "padding": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     721,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      6
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     760,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     760,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     784,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     831,
+     157,
+     181,
+     24
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 13,
+     "fontWeight": 600,
+     "padding": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     996,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      6
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1035,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1035,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1059,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#3e44508f",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 14,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     1106,
+     157,
+     181,
+     24
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Arial",
+     "fontSize": 13,
+     "fontWeight": 600,
+     "padding": [
+      1,
+      2
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1271,
+     157,
+     24,
+     24
+    ],
+    "style": {
+     "color": "#909090",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      6
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     273,
+     203,
+     260,
+     52
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "shadow": "#3b454e1a 0px 0px 0px 1px, #3b454e1a 0px 2px 4px 0px",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      12,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     273,
+     271,
+     260,
+     32
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     548,
+     203,
+     260,
+     32
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     823,
+     203,
+     260,
+     52
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "shadow": "#3b454e1a 0px 0px 0px 1px, #3b454e1a 0px 2px 4px 0px",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      12,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     823,
+     271,
+     260,
+     32
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     1098,
+     203,
+     260,
+     52
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "shadow": "#3b454e1a 0px 0px 0px 1px, #3b454e1a 0px 2px 4px 0px",
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      12,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1098,
+     271,
+     260,
+     32
+    ],
+    "style": {
+     "color": "#3f4350",
+     "radius": 4,
+     "fontFamily": "Open Sans",
+     "fontSize": 14,
+     "fontWeight": 600,
+     "padding": [
+      0,
+      10
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "text": [
+    [
+     "#3f4350",
+     73
+    ],
+    [
+     "#ffffff",
+     37
+    ],
+    [
+     "#3f4350a3",
+     28
+    ],
+    [
+     "#ffffffa3",
+     17
+    ],
+    [
+     "#3e4350b8",
+     12
+    ],
+    [
+     "#ffffff8f",
+     10
+    ],
+    [
+     "#ffffffcc",
+     6
+    ],
+    [
+     "#ffffffb8",
+     6
+    ],
+    [
+     "#909090",
+     4
+    ]
+   ],
+   "background": [
+    [
+     "#ffffff",
+     33336.1
+    ],
+    [
+     "#1e325c",
+     1920
+    ],
+    [
+     "#ffffff1a",
+     169.9
+    ],
+    [
+     "#1c58d9",
+     65.2
+    ],
+    [
+     "#ffffff14",
+     58.2
+    ]
+   ],
+   "border": [
+    [
+     "#3e445129",
+     5
+    ],
+    [
+     "#ffffff33",
+     1
+    ]
+   ],
+   "fontFamily": [
+    [
+     "Open Sans",
+     171
+    ],
+    [
+     "Metropolis",
+     16
+    ],
+    [
+     "Apple Color Emoji",
+     6
+    ]
+   ],
+   "fontSize": [
+    [
+     "14",
+     135
+    ],
+    [
+     "12",
+     28
+    ],
+    [
+     "16",
+     16
+    ],
+    [
+     "13",
+     8
+    ],
+    [
+     "11",
+     6
+    ]
+   ],
+   "fontWeight": [
+    [
+     "600",
+     120
+    ],
+    [
+     "400",
+     57
+    ],
+    [
+     "500",
+     16
+    ]
+   ],
+   "radius": [
+    [
+     "4",
+     11
+    ],
+    [
+     "3",
+     3
+    ],
+    [
+     "5",
+     1
+    ]
+   ],
+   "shadow": [
+    [
+     "#3b454e1a 0px 0px 0px 1px, #3b454e1a 0px 2px 4px 0px",
+     3
+    ]
+   ],
+   "spacing": [
+    [
+     "2",
+     11
+    ],
+    [
+     "10",
+     10
+    ],
+    [
+     "8",
+     7
+    ],
+    [
+     "16",
+     6
+    ],
+    [
+     "6",
+     5
+    ],
+    [
+     "20",
+     4
+    ],
+    [
+     "3",
+     3
+    ],
+    [
+     "4",
+     3
+    ],
+    [
+     "12",
+     3
+    ],
+    [
+     "32",
+     2
+    ],
+    [
+     "24",
+     1
+    ],
+    [
+     "42",
+     1
+    ]
+   ]
+  }
+ }
+}

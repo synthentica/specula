@@ -1,0 +1,51 @@
+{
+  "label": "rebuild",
+  "baseUrl": "http://localhost:4712",
+  "generated": "2026-10-12T17:43:12.666Z",
+  "score": 91,
+  "views": [
+    {
+      "view": "editor",
+      "score": 88,
+      "layout": 87,
+      "components": 87,
+      "style": 91,
+      "notes": [
+        "button: background none, spec #ffffff",
+        "most used font size 18px, spec 14px",
+        "link: 1 on the view, spec 3"
+      ]
+    },
+    {
+      "view": "members",
+      "score": 90,
+      "layout": 83,
+      "components": 89,
+      "style": 100,
+      "notes": [
+        "button: background #ffffff, spec none",
+        "input: 4 on the view, spec 1"
+      ]
+    },
+    {
+      "view": "posts",
+      "score": 94,
+      "layout": 90,
+      "components": 94,
+      "style": 99,
+      "notes": []
+    },
+    {
+      "view": "tags",
+      "score": 90,
+      "layout": 85,
+      "components": 88,
+      "style": 100,
+      "notes": [
+        "tabs: border b #ebeef0, spec none",
+        "button: corner radius 6px, spec 999px",
+        "link: corner radius 0px, spec 6px"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1252 @@
+{
+  "label": "baseline",
+  "baseUrl": "http://localhost:3456",
+  "generated": "2026-10-12T09:09:06.357Z",
+  "passed": 121,
+  "total": 121,
+  "checks": {
+    "keys": 3858,
+    "values": 225,
+    "lists": 71,
+    "flags": 240
+  },
+  "flows": [
+    {
+      "name": "register",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "name": "create-project",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "name": "add-tasks",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "name": "edit-task",
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "name": "labels",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "name": "search",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "delete-task",
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "name": "upcoming-overview",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "logout-login",
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "name": "errors",
+      "passed": 31,
+      "total": 31
+    },
+    {
+      "name": "kanban",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "token-refresh",
+      "passed": 19,
+      "total": 19
+    }
+  ],
+  "steps": [
+    {
+      "flow": "register",
+      "step": 1,
+      "operation": "GET /info",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 2,
+      "operation": "POST /register",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[62]",
+      "status": 201
+    },
+    {
+      "flow": "register",
+      "step": 3,
+      "operation": "POST /login",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[63]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 4,
+      "operation": "GET /user",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[64]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 5,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[73]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 6,
+      "operation": "GET /projects",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[74]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 7,
+      "operation": "GET /labels",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[75]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 8,
+      "operation": "GET /notifications",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[76]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 9,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.events.jsonl:13"
+    },
+    {
+      "flow": "register",
+      "step": 14,
+      "operation": "GET /tasks",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[77]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 15,
+      "operation": "POST /user/token/refresh",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[78]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 16,
+      "operation": "GET /tasks",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[79]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 17,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.events.jsonl:19"
+    },
+    {
+      "flow": "create-project",
+      "step": 1,
+      "operation": "POST /projects",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-project.har#entries[9]",
+      "status": 201
+    },
+    {
+      "flow": "create-project",
+      "step": 2,
+      "operation": "GET /projects/{projectId}",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-project.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "create-project",
+      "step": 3,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-project.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "add-tasks",
+      "step": 1,
+      "operation": "POST /projects/{projectId}/tasks/bulk",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[0]",
+      "status": 201
+    },
+    {
+      "flow": "add-tasks",
+      "step": 2,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "add-tasks",
+      "step": 3,
+      "operation": "POST /projects/{projectId}/tasks/bulk",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[2]",
+      "status": 201
+    },
+    {
+      "flow": "add-tasks",
+      "step": 4,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "add-tasks",
+      "step": 5,
+      "operation": "POST /projects/{projectId}/tasks/bulk",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[4]",
+      "status": 201
+    },
+    {
+      "flow": "add-tasks",
+      "step": 6,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "input \"Add a task…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-tasks.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 1,
+      "operation": "GET /tasks/{taskId}",
+      "action": "click \"Buy paint\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 2,
+      "operation": "GET /projects/{projectId}/views/{viewId}/buckets",
+      "action": "click \"Buy paint\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 3,
+      "operation": "GET /tasks/{taskId}/comments",
+      "action": "click \"Buy paint\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 4,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"Buy paint\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 5,
+      "operation": "PATCH /tasks/{taskId}",
+      "action": "change \"Priority\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 6,
+      "operation": "POST /tasks/{taskId}/comments",
+      "action": "click \"COMMENT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[24]",
+      "status": 201
+    },
+    {
+      "flow": "edit-task",
+      "step": 7,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"COMMENT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "edit-task",
+      "step": 8,
+      "operation": "PATCH /tasks/{taskId}",
+      "action": "click \"MARK TASK DONE!\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-task.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 1,
+      "operation": "GET /user",
+      "action": "click \"Back to project\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 2,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"Back to project\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 3,
+      "operation": "GET /tasks/{taskId}",
+      "action": "click \"Fix the leaking tap\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 4,
+      "operation": "GET /tasks/{taskId}/comments",
+      "action": "click \"Fix the leaking tap\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 5,
+      "operation": "POST /labels",
+      "action": "input \"Type to add a label…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[4]",
+      "status": 201
+    },
+    {
+      "flow": "labels",
+      "step": 6,
+      "operation": "GET /labels",
+      "action": "input \"Type to add a label…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "labels",
+      "step": 7,
+      "operation": "POST /tasks/{taskId}/labels",
+      "action": "input \"Type to add a label…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/labels.har#entries[6]",
+      "status": 201
+    },
+    {
+      "flow": "search",
+      "step": 1,
+      "operation": "GET /tasks",
+      "action": "input \"Type a command or search…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/search.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "search",
+      "step": 2,
+      "operation": "GET /tasks",
+      "action": "key \"Type a command or search…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/search.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 1,
+      "operation": "GET /projects/{projectId}",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 2,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 3,
+      "operation": "GET /tasks/{taskId}",
+      "action": "click \"Call the electrician\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 4,
+      "operation": "GET /projects/{projectId}/views/{viewId}/buckets",
+      "action": "click \"Call the electrician\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 5,
+      "operation": "GET /tasks/{taskId}/comments",
+      "action": "click \"Call the electrician\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 6,
+      "operation": "DELETE /tasks/{taskId}",
+      "action": "click \"DO IT!\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[5]",
+      "status": 204
+    },
+    {
+      "flow": "delete-task",
+      "step": 7,
+      "operation": "GET /tasks",
+      "action": "click \"DO IT!\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "delete-task",
+      "step": 8,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"DO IT!\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-task.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "upcoming-overview",
+      "step": 1,
+      "operation": "GET /tasks",
+      "action": "click \"Upcoming\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/upcoming-overview.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "upcoming-overview",
+      "step": 2,
+      "operation": "GET /tasks",
+      "action": "click \"Overview\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/upcoming-overview.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 1,
+      "operation": "POST /logout",
+      "action": "click \"Logout\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 2,
+      "operation": "POST /login",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 3,
+      "operation": "GET /user",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 4,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 5,
+      "operation": "GET /projects",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 6,
+      "operation": "GET /labels",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 7,
+      "operation": "POST /user/token/refresh",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 9,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 10,
+      "operation": "GET /notifications",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 10,
+      "operation": "receive auth.success on /api/v2/ws (after GET /notifications)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.events.jsonl:14"
+    },
+    {
+      "flow": "logout-login",
+      "step": 15,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.events.jsonl:20"
+    },
+    {
+      "flow": "logout-login",
+      "step": 16,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 1,
+      "operation": "GET /info",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 2,
+      "operation": "GET /user",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 3,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[89]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 4,
+      "operation": "GET /projects",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[90]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 5,
+      "operation": "GET /labels",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[91]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 6,
+      "operation": "GET /tasks/{taskId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[92]",
+      "status": 404
+    },
+    {
+      "flow": "errors",
+      "step": 7,
+      "operation": "POST /user/token/refresh",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[93]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 8,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.events.jsonl:7"
+    },
+    {
+      "flow": "errors",
+      "step": 9,
+      "operation": "GET /notifications",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[94]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 14,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.events.jsonl:13"
+    },
+    {
+      "flow": "errors",
+      "step": 15,
+      "operation": "GET /tasks/{taskId}",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[95]",
+      "status": 404
+    },
+    {
+      "flow": "errors",
+      "step": 16,
+      "operation": "GET /projects/{projectId}",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[111]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 17,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[112]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 18,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"SHOW RESULTS\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[113]",
+      "status": 400
+    },
+    {
+      "flow": "errors",
+      "step": 19,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"SHOW RESULTS\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[114]",
+      "status": 400
+    },
+    {
+      "flow": "errors",
+      "step": 20,
+      "operation": "POST /logout",
+      "action": "click \"Logout\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[116]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 21,
+      "operation": "POST /login",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[119]",
+      "status": 403
+    },
+    {
+      "flow": "errors",
+      "step": 22,
+      "operation": "GET /info",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[175]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 23,
+      "operation": "POST /register",
+      "action": "click \"CREATE ACCOUNT\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[182]",
+      "status": 400
+    },
+    {
+      "flow": "errors",
+      "step": 24,
+      "operation": "GET /info",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[238]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 25,
+      "operation": "POST /login",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[245]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 26,
+      "operation": "GET /user",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[246]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 27,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[255]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 28,
+      "operation": "GET /projects",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[256]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 29,
+      "operation": "GET /labels",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[257]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 31,
+      "operation": "GET /notifications",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[258]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 31,
+      "operation": "receive auth.success on /api/v2/ws (after GET /notifications)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.events.jsonl:50"
+    },
+    {
+      "flow": "errors",
+      "step": 36,
+      "operation": "POST /user/token/refresh",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[259]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 37,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[260]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 38,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.events.jsonl:56"
+    },
+    {
+      "flow": "errors",
+      "step": 39,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[261]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 1,
+      "operation": "GET /projects/{projectId}",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 2,
+      "operation": "GET /projects/{projectId}/views/{viewId}/tasks",
+      "action": "click \"Home renovation\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 3,
+      "operation": "GET /projects/{projectId}/views/{viewId}/buckets/tasks",
+      "action": "click \"Kanban\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 4,
+      "operation": "POST /projects/{projectId}/views/{viewId}/buckets",
+      "action": "input \"Enter the new bucket title…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[20]",
+      "status": 201
+    },
+    {
+      "flow": "kanban",
+      "step": 5,
+      "operation": "PUT /projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 6,
+      "operation": "PUT /tasks/{taskId}/position",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 7,
+      "operation": "PUT /projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 8,
+      "operation": "PUT /tasks/{taskId}/position",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 9,
+      "operation": "PUT /projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "kanban",
+      "step": 10,
+      "operation": "PUT /tasks/{taskId}/position",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/kanban.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 1,
+      "operation": "POST /logout",
+      "action": "click \"Logout\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 2,
+      "operation": "POST /login",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 3,
+      "operation": "GET /user",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 4,
+      "operation": "GET /avatar/{avatarId}",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 5,
+      "operation": "GET /projects",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 6,
+      "operation": "GET /labels",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 7,
+      "operation": "POST /user/token/refresh",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 8,
+      "operation": "GET /notifications",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 9,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.events.jsonl:14"
+    },
+    {
+      "flow": "token-refresh",
+      "step": 15,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 15,
+      "operation": "receive auth.success on /api/v2/ws (after GET /tasks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.events.jsonl:20"
+    },
+    {
+      "flow": "token-refresh",
+      "step": 16,
+      "operation": "GET /tasks",
+      "action": "click \"LOGIN\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 17,
+      "operation": "POST /user/token/refresh",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 18,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.events.jsonl:24"
+    },
+    {
+      "flow": "token-refresh",
+      "step": 19,
+      "operation": "GET /notifications",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 24,
+      "operation": "POST /user/token/refresh",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 25,
+      "operation": "receive auth.success on /api/v2/ws (after sending auth)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.events.jsonl:32"
+    },
+    {
+      "flow": "token-refresh",
+      "step": 26,
+      "operation": "GET /notifications",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "token-refresh",
+      "step": 31,
+      "operation": "GET /tasks",
+      "action": "click \"Upcoming\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/token-refresh.har#entries[14]",
+      "status": 200
+    }
+  ]
+}

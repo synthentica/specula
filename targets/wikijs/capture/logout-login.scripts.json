@@ -1,0 +1,72 @@
+[
+  {
+    "url": "http://localhost:3000/_assets/js/admin.js?1790911300",
+    "sha256": "ba41270be26001ab646b0a84d1b04e821f6f065d40c4082a959964130256a5ab",
+    "file": "admin.ba41270b.js",
+    "length": 1640454,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/ui-extra.js?1790911300",
+    "sha256": "15f48f1cad28feb5d2dc9df577169fd7c3b1c673ee99f6c0c21dfa05a483dda3",
+    "file": "ui-extra.15f48f1c.js",
+    "length": 58381,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/comments.js?1790911300",
+    "sha256": "ac971437cc8e8b860695e0bd51023aa33067e40ca6b4a026658cc3c61e843865",
+    "file": "comments.ac971437.js",
+    "length": 24551,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/mdi.js?1790911300",
+    "sha256": "6c136b4eee5a8a8aace06f624f7d4b557fd3186c59131a5813106e1e8a65d7fd",
+    "file": "mdi.6c136b4e.js",
+    "length": 794,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/theme0.js?1790911300",
+    "sha256": "720598fb1d83e6d3c4a049761f9687cfc97fd4c971abb088b08ebeff211e8b53",
+    "file": "theme0.720598fb.js",
+    "length": 58196,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/vendor.js?1790911300",
+    "sha256": "98c18c45cb7d3d6f12b0b89c62f07819a9de356eb20bb97ecff288846725f823",
+    "file": "vendor.98c18c45.js",
+    "length": 2613356,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/tags.js?1790911300",
+    "sha256": "ba8cf2703ed8394bed9069f988b98b2b937e1b59dd0c520156c86d7c1b7e3b3d",
+    "file": "tags.ba8cf270.js",
+    "length": 39524,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/app.js?1790911300",
+    "sha256": "1eb183a0a06dd6c4b4eb3103d743c74613e46035ee8a0ec3ad2fdcba3046dd61",
+    "file": "app.1eb183a0.js",
+    "length": 2228594,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/_assets/js/runtime.js?1790911300",
+    "sha256": "c0a3fcef8dc71889bbd5d190b4a67daaf3c89fd4cb887ebb90b8aabc4d74de47",
+    "file": "runtime.c0a3fcef.js",
+    "length": 5116,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3000/",
+    "sha256": "13d1df64eef14f604cdace336359aa7fee9efab5112bb29c63c56aea06c98178",
+    "file": "script.13d1df64.js",
+    "length": 254,
+    "firstParty": true
+  }
+]

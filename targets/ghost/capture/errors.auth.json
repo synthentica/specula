@@ -1,0 +1,9 @@
+{
+  "authorization": [],
+  "cookiesSent": [
+    "ghost-admin-api-session"
+  ],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": []
+}

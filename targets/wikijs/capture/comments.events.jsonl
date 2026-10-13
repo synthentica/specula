@@ -1,0 +1,6 @@
+{"t":1791791820322,"type":"capture-start","url":"http://localhost:3000/en/home"}
+{"t":1791791821337,"type":"navigation","url":"http://localhost:3000/home","sameDocument":false}
+{"t":1791791823919,"type":"action","id":"a1","kind":"click","target":{"tag":"textarea","selector":"#discussion-new","role":"textbox","name":"Comment Content","id":"discussion-new","type":"textarea"},"url":"http://localhost:3000/home"}
+{"t":1791791825235,"type":"action","id":"a2","kind":"input","target":{"tag":"textarea","selector":"#discussion-new","role":"textbox","name":"Comment Content","id":"discussion-new","type":"textarea"},"url":"http://localhost:3000/home","valueInfo":{"type":"textarea","length":33}}
+{"t":1791791825312,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(2) > div > div > div:nth-of-type(2) > button","role":"button","name":"Post Comment","type":"button"},"url":"http://localhost:3000/home"}
+{"t":1791791829331,"type":"capture-stop","url":"http://localhost:3000/en/home"}

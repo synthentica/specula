@@ -1,0 +1,10 @@
+{"t":1791791745203,"type":"capture-start","url":"http://localhost:3000/login"}
+{"t":1791791747223,"type":"action","id":"a1","kind":"key","target":{"tag":"input","selector":"#input-22","role":"textbox","name":"Password","id":"input-22","type":"password"},"url":"http://localhost:3000/login","key":"Enter"}
+{"t":1791791747272,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#input-20","role":"textbox","name":"Email Address","id":"input-20","type":"email"},"url":"http://localhost:3000/login","valueInfo":{"type":"email","length":17}}
+{"t":1791791747298,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#input-22","role":"textbox","name":"Password","id":"input-22","type":"password"},"url":"http://localhost:3000/login","valueInfo":{"type":"password","length":12}}
+{"t":1791791749261,"type":"action","id":"a4","kind":"key","target":{"tag":"input","selector":"#input-22","role":"textbox","name":"Password","id":"input-22","type":"password"},"url":"http://localhost:3000/login","key":"Delete"}
+{"t":1791791749666,"type":"action","id":"a5","kind":"key","target":{"tag":"input","selector":"#input-22","role":"textbox","name":"Password","id":"input-22","type":"password"},"url":"http://localhost:3000/login","key":"Enter"}
+{"t":1791791749708,"type":"action","id":"a6","kind":"input","target":{"tag":"input","selector":"#input-20","role":"textbox","name":"Email Address","id":"input-20","type":"email"},"url":"http://localhost:3000/login","valueInfo":{"type":"email","length":17}}
+{"t":1791791749775,"type":"action","id":"a7","kind":"input","target":{"tag":"input","selector":"#input-22","role":"textbox","name":"Password","id":"input-22","type":"password"},"url":"http://localhost:3000/login","valueInfo":{"type":"password","length":16}}
+{"t":1791791751232,"type":"navigation","url":"http://localhost:3000/","sameDocument":false}
+{"t":1791791753989,"type":"capture-stop","url":"http://localhost:3000/login"}

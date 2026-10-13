@@ -1,0 +1,8 @@
+{"t":1791740031126,"type":"capture-start","url":"http://localhost:3456/projects/2/9"}
+{"t":1791740033209,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"aside > nav:nth-of-type(1) > menu > li:nth-of-type(2) > a","role":"link","name":"Upcoming","href":"/tasks/by/upcoming"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740033219,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740033226,"type":"navigation","url":"http://localhost:3456/tasks/by/upcoming","sameDocument":true}
+{"t":1791740037858,"type":"action","id":"a2","kind":"click","target":{"tag":"a","selector":"aside > nav:nth-of-type(1) > menu > li:nth-of-type(1) > a","role":"link","name":"Overview","href":"/"},"url":"http://localhost:3456/tasks/by/upcoming"}
+{"t":1791740037866,"type":"navigation","url":"http://localhost:3456/tasks/by/upcoming","sameDocument":true}
+{"t":1791740037870,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740042043,"type":"capture-stop","url":"http://localhost:3456/projects/2/9"}

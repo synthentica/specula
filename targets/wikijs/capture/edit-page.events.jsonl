@@ -1,0 +1,9 @@
+{"t":1791791806886,"type":"capture-start","url":"http://localhost:3000/en/notes/ideas"}
+{"t":1791791807847,"type":"navigation","url":"http://localhost:3000/e/en/home","sameDocument":false}
+{"t":1791791810292,"type":"action","id":"a1","kind":"click","target":{"tag":"div","selector":"div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(5)","name":"1 # Team handbook 2 This wiki collects how we work. 3 - Onbo…"},"url":"http://localhost:3000/e/en/home"}
+{"t":1791791810308,"type":"action","id":"a2","kind":"key","target":{"tag":"div","selector":"div:nth-of-type(1) > div > div > div > div:nth-of-type(5)","role":"presentation","name":"1 # Team handbook 2 This wiki collects how we work. 3 - Onbo…"},"url":"http://localhost:3000/e/en/home","key":"Control+Control"}
+{"t":1791791810311,"type":"action","id":"a3","kind":"key","target":{"tag":"div","selector":"div:nth-of-type(1) > div > div > div > div:nth-of-type(5)","role":"presentation","name":"1 # Team handbook 2 This wiki collects how we work. 3 - Onbo…"},"url":"http://localhost:3000/e/en/home","key":"Control+End"}
+{"t":1791791812294,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)","role":"button","name":"SAVE","type":"button"},"url":"http://localhost:3000/e/en/home"}
+{"t":1791791814974,"type":"action","id":"a5","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(3)","role":"button","name":"CLOSE","type":"button"},"url":"http://localhost:3000/e/en/home"}
+{"t":1791791815635,"type":"navigation","url":"http://localhost:3000/en/home","sameDocument":false}
+{"t":1791791818588,"type":"capture-stop","url":"http://localhost:3000/en/notes/ideas"}

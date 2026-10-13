@@ -1,0 +1,338 @@
+{
+  "name": "create-project",
+  "order": 2,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postProjects",
+        "method": "POST",
+        "path": "/projects",
+        "body": {
+          "title": "Home renovation",
+          "description": "",
+          "hex_color": "",
+          "identifier": "",
+          "is_archived": false,
+          "is_favorite": false,
+          "parent_project_id": 0,
+          "position": 0
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/Project.json",
+            "id": 2,
+            "title": "Home renovation",
+            "description": "",
+            "identifier": "",
+            "hex_color": "",
+            "parent_project_id": 0,
+            "owner": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "0001-01-01T00:00:00Z",
+              "updated": "0001-01-01T00:00:00Z"
+            },
+            "is_archived": false,
+            "background_information": null,
+            "background_blur_hash": "",
+            "is_favorite": false,
+            "position": 131072,
+            "views": [
+              {
+                "id": 9,
+                "title": "List",
+                "project_id": 2,
+                "view_kind": "list",
+                "filter": {
+                  "s": "",
+                  "sort_by": null,
+                  "order_by": null,
+                  "filter": "done = false",
+                  "filter_include_nulls": false
+                },
+                "position": 100,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10.612295715Z",
+                "created": "2026-10-11T17:32:10.612171277Z"
+              },
+              {
+                "id": 10,
+                "title": "Gantt",
+                "project_id": 2,
+                "view_kind": "gantt",
+                "filter": null,
+                "position": 200,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10.61347676Z",
+                "created": "2026-10-11T17:32:10.613414865Z"
+              },
+              {
+                "id": 11,
+                "title": "Table",
+                "project_id": 2,
+                "view_kind": "table",
+                "filter": null,
+                "position": 300,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10.614108556Z",
+                "created": "2026-10-11T17:32:10.61404922Z"
+              },
+              {
+                "id": 12,
+                "title": "Kanban",
+                "project_id": 2,
+                "view_kind": "kanban",
+                "filter": null,
+                "position": 400,
+                "bucket_configuration_mode": "manual",
+                "bucket_configuration": null,
+                "default_bucket_id": 7,
+                "done_bucket_id": 9,
+                "updated": "2026-10-11T17:32:10.615712393Z",
+                "created": "2026-10-11T17:32:10.61467797Z"
+              }
+            ],
+            "max_permission": null,
+            "created": "2026-10-11T17:32:10.611605322Z",
+            "updated": "2026-10-11T17:32:10.612007279Z"
+          }
+        },
+        "source": "capture/create-project.har#entries[9]",
+        "bind": {
+          "project51": "$.id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsById",
+        "method": "GET",
+        "path": "/projects/{projectId}",
+        "pathParams": {
+          "projectId": {
+            "var": "project51"
+          }
+        },
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/ProjectReadBody.json",
+            "id": 2,
+            "title": "Home renovation",
+            "description": "",
+            "identifier": "",
+            "hex_color": "",
+            "parent_project_id": 0,
+            "owner": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "is_archived": false,
+            "background_information": null,
+            "background_blur_hash": "",
+            "is_favorite": false,
+            "position": 131072,
+            "views": [
+              {
+                "id": 9,
+                "title": "List",
+                "project_id": 2,
+                "view_kind": "list",
+                "filter": {
+                  "s": "",
+                  "sort_by": null,
+                  "order_by": null,
+                  "filter": "done = false",
+                  "filter_include_nulls": false
+                },
+                "position": 100,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 10,
+                "title": "Gantt",
+                "project_id": 2,
+                "view_kind": "gantt",
+                "filter": null,
+                "position": 200,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 11,
+                "title": "Table",
+                "project_id": 2,
+                "view_kind": "table",
+                "filter": null,
+                "position": 300,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 12,
+                "title": "Kanban",
+                "project_id": 2,
+                "view_kind": "kanban",
+                "filter": null,
+                "position": 400,
+                "bucket_configuration_mode": "manual",
+                "bucket_configuration": null,
+                "default_bucket_id": 7,
+                "done_bucket_id": 9,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              }
+            ],
+            "max_permission": 2,
+            "created": "2026-10-11T17:32:10Z",
+            "updated": "2026-10-11T17:32:10Z"
+          }
+        },
+        "source": "capture/create-project.har#entries[27]",
+        "bind": {
+          "project75": "$.id",
+          "view79": "$.views[?view_kind=\"list\"].id",
+          "view91": "$.views[?view_kind=\"kanban\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project75"
+          },
+          "viewId": {
+            "var": "view79"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/create-project.har#entries[28]"
+      }
+    }
+  ]
+}

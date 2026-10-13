@@ -1,0 +1,9 @@
+{"t":1791740410742,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740411825,"type":"navigation","url":"http://localhost:2368/ghost/#/members/new","sameDocument":true}
+{"t":1791740418222,"type":"action","id":"a1","kind":"input","target":{"tag":"input","selector":"#member-name","role":"textbox","name":"Name","id":"member-name","type":"text"},"url":"http://localhost:2368/ghost/#/members/new","valueInfo":{"type":"text","length":12}}
+{"t":1791740421224,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#member-email","role":"textbox","name":"Email","id":"member-email","type":"text"},"url":"http://localhost:2368/ghost/#/members/new","valueInfo":{"type":"text","length":25}}
+{"t":1791740424141,"type":"action","id":"a3","kind":"input","target":{"tag":"textarea","selector":"#member-note","role":"textbox","name":"Note (not visible to member)","id":"member-note","type":"textarea"},"url":"http://localhost:2368/ghost/#/members/new","valueInfo":{"type":"textarea","length":29}}
+{"t":1791740426310,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"section > div:nth-of-type(1) > header > section > button","role":"button","name":"Save","id":"ember240","type":"button"},"url":"http://localhost:2368/ghost/#/members/new"}
+{"t":1791740426485,"type":"navigation","url":"http://localhost:2368/ghost/#/members/6acbca0ab2f88b00015b31ca","sameDocument":true}
+{"t":1791740431416,"type":"navigation","url":"http://localhost:2368/ghost/#/members/","sameDocument":true}
+{"t":1791740437401,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

@@ -1,0 +1,7 @@
+{"t":1791791852581,"type":"capture-start","url":"http://localhost:3000/a/pages"}
+{"t":1791791853583,"type":"navigation","url":"http://localhost:3000/home","sameDocument":false}
+{"t":1791791855859,"type":"action","id":"a1","kind":"click","target":{"tag":"input","selector":"#input-72","role":"textbox","name":"Search...","id":"input-72","type":"text"},"url":"http://localhost:3000/home"}
+{"t":1791791856810,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#input-72","role":"textbox","id":"input-72","type":"text"},"url":"http://localhost:3000/home","valueInfo":{"type":"text","length":7}}
+{"t":1791791859005,"type":"action","id":"a3","kind":"key","target":{"tag":"input","selector":"#input-72","role":"textbox","id":"input-72","type":"text"},"url":"http://localhost:3000/home","key":"Delete"}
+{"t":1791791860336,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#input-72","role":"textbox","id":"input-72","type":"text"},"url":"http://localhost:3000/home","valueInfo":{"type":"text","length":17}}
+{"t":1791791863994,"type":"capture-stop","url":"http://localhost:3000/a/pages"}

@@ -1,0 +1,13 @@
+{"t":1791739919200,"type":"capture-start","url":"http://localhost:3456/"}
+{"t":1791739921172,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"aside > nav:nth-of-type(1) > menu > li:nth-of-type(3) > a","role":"link","name":"Projects","href":"/projects"},"url":"http://localhost:3456/"}
+{"t":1791739921204,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791739921211,"type":"navigation","url":"http://localhost:3456/projects","sameDocument":true}
+{"t":1791739924534,"type":"action","id":"a2","kind":"click","target":{"tag":"a","selector":"#main-content > div > header > div:nth-of-type(2) > a:nth-of-type(2)","role":"link","name":"NEW PROJECT","href":"/projects/new"},"url":"http://localhost:3456/projects"}
+{"t":1791739924585,"type":"navigation","url":"http://localhost:3456/projects","sameDocument":true}
+{"t":1791739924589,"type":"navigation","url":"http://localhost:3456/projects/new","sameDocument":true}
+{"t":1791739928222,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#v-6","role":"textbox","name":"Title","id":"v-6","type":"text"},"url":"http://localhost:3456/projects/new","valueInfo":{"type":"text","length":15}}
+{"t":1791739930596,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)","role":"button","name":"CREATE","type":"button"},"url":"http://localhost:3456/projects/new"}
+{"t":1791739930765,"type":"navigation","url":"http://localhost:3456/projects/new","sameDocument":true}
+{"t":1791739930779,"type":"navigation","url":"http://localhost:3456/projects/2/0","sameDocument":true}
+{"t":1791739930824,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791739935494,"type":"capture-stop","url":"http://localhost:3456/"}

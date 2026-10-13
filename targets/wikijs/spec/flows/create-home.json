@@ -1,0 +1,945 @@
+{
+  "name": "create-home",
+  "order": 3,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query localization.translations"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "namespace": "editor"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $namespace: String!) {\n  localization {\n    translations(locale: $locale, namespace: $namespace) {\n      key\n      value\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "localization": {
+                  "translations": [
+                    {
+                      "key": "assets.deleteAsset",
+                      "value": "Delete Asset",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.deleteAssetConfirm",
+                      "value": "Are you sure you want to delete asset",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.deleteAssetWarn",
+                      "value": "This action cannot be undone!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.deleteSuccess",
+                      "value": "Asset deleted successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.fetchImage",
+                      "value": "Fetch Remote Image",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.fileCount",
+                      "value": "{{count}} files",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.folderCreateSuccess",
+                      "value": "Asset folder created successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.folderEmpty",
+                      "value": "This asset folder is empty.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.folderName",
+                      "value": "Folder Name",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.folderNameNamingRules",
+                      "value": "Must follow the asset folder {{namingRules}}.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.folderNameNamingRulesLink",
+                      "value": "naming rules",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerActions",
+                      "value": "Actions",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerAdded",
+                      "value": "Added",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerFileSize",
+                      "value": "File Size",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerFilename",
+                      "value": "Filename",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerId",
+                      "value": "ID",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.headerType",
+                      "value": "Type",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.imageAlign",
+                      "value": "Image Alignment",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.newFolder",
+                      "value": "New Folder",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.noUploadError",
+                      "value": "You must choose a file to upload first!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.refreshSuccess",
+                      "value": "List of assets refreshed successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.renameAsset",
+                      "value": "Rename Asset",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.renameAssetSubtitle",
+                      "value": "Enter the new name for this asset:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.renameSuccess",
+                      "value": "Asset renamed successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.title",
+                      "value": "Assets",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.uploadAssets",
+                      "value": "Upload Assets",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.uploadAssetsDropZone",
+                      "value": "Browse or Drop files here...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "assets.uploadFailed",
+                      "value": "File upload failed.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "backToEditor",
+                      "value": "Back to Editor",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "ckeditor.stats",
+                      "value": "{{chars}} chars, {{words}} words",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.editable",
+                      "value": "(editable)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.infoGeneric",
+                      "value": "A more recent version of this page was saved by {{authorName}}, {{date}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.leftPanelInfo",
+                      "value": "Your current edit, based on page version from {{date}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.localVersion",
+                      "value": "Local Version {{refEditable}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.overwrite.description",
+                      "value": "Are you sure you want to replace your current version with the latest remote content? {{refEditsLost}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.overwrite.editsLost",
+                      "value": "Your current edits will be lost.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.overwrite.title",
+                      "value": "Overwrite with Remote Version?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.pageDescription",
+                      "value": "Description:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.pageTitle",
+                      "value": "Title:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.readonly",
+                      "value": "(read-only)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.remoteVersion",
+                      "value": "Remote Version {{refReadOnly}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.rightPanelInfo",
+                      "value": "Last edited by {{authorName}}, {{date}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.title",
+                      "value": "Resolve Save Conflict",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.useLocal",
+                      "value": "Use Local",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.useLocalHint",
+                      "value": "Use content in the left panel",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.useRemote",
+                      "value": "Use Remote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.useRemoteHint",
+                      "value": "Discard local changes and use latest version",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.viewLatestVersion",
+                      "value": "View Latest Version",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.warning",
+                      "value": "Save conflict! Another user has already modified this page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.whatToDo",
+                      "value": "What do you want to do?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.whatToDoLocal",
+                      "value": "Use your current local version and ignore the latest changes.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "conflict.whatToDoRemote",
+                      "value": "Use the remote version (latest) and discard your changes.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.blockquote",
+                      "value": "Blockquote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.blockquoteError",
+                      "value": "Error Blockquote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.blockquoteInfo",
+                      "value": "Info Blockquote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.blockquoteSuccess",
+                      "value": "Success Blockquote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.blockquoteWarning",
+                      "value": "Warning Blockquote",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.bold",
+                      "value": "Bold",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.distractionFreeMode",
+                      "value": "Distraction Free Mode",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.heading",
+                      "value": "Heading {{level}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.horizontalBar",
+                      "value": "Horizontal Bar",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.inlineCode",
+                      "value": "Inline Code",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertAssets",
+                      "value": "Insert Assets",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertBlock",
+                      "value": "Insert Block",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertCodeBlock",
+                      "value": "Insert Code Block",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertDiagram",
+                      "value": "Insert Diagram",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertLink",
+                      "value": "Insert Link",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertMathExpression",
+                      "value": "Insert Math Expression",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.insertVideoAudio",
+                      "value": "Insert Video / Audio",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.italic",
+                      "value": "Italic",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.keyboardKey",
+                      "value": "Keyboard Key",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.markdownFormattingHelp",
+                      "value": "Markdown Formatting Help",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.noSelectionError",
+                      "value": "Text must be selected first!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.orderedList",
+                      "value": "Ordered List",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.strikethrough",
+                      "value": "Strikethrough",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.subscript",
+                      "value": "Subscript",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.superscript",
+                      "value": "Superscript",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.tableHelper",
+                      "value": "Table Helper",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.togglePreviewPane",
+                      "value": "Hide / Show Preview Pane",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.toggleSpellcheck",
+                      "value": "Toggle Spellcheck",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "markup.unorderedList",
+                      "value": "Unordered List",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page",
+                      "value": "Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.allowComments",
+                      "value": "Allow Comments",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.allowCommentsHint",
+                      "value": "Enable commenting abilities on this page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.allowRatings",
+                      "value": "Allow Ratings",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.allowRatingsHint",
+                      "value": "Enable rating capabilities on this page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.categorization",
+                      "value": "Categorization",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.css",
+                      "value": "CSS",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.cssHint",
+                      "value": "CSS will automatically be minified upon saving. Do not include surrounding style tags, only the actual CSS code.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.displayAuthor",
+                      "value": "Display Author Info",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.displayAuthorHint",
+                      "value": "Show the page author along with the last edition time.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.displaySharingBar",
+                      "value": "Display Sharing Toolbar",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.displaySharingBarHint",
+                      "value": "Show a toolbar with buttons to share and print this page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.html",
+                      "value": "HTML",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.htmlHint",
+                      "value": "You must surround your javascript code with HTML script tags.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.info",
+                      "value": "Info",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.locale",
+                      "value": "Locale",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.pageInfo",
+                      "value": "Page Info",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.pageProperties",
+                      "value": "Page Properties",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.path",
+                      "value": "Path",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.pathCategorization",
+                      "value": "Path & Categorization",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.pathHint",
+                      "value": "Do not include any leading or trailing slashes.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishEnd",
+                      "value": "Publish ending on...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishEndHint",
+                      "value": "Leave empty for no end date",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishStart",
+                      "value": "Publish starting on...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishStartHint",
+                      "value": "Leave empty for no start date",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishState",
+                      "value": "Publishing State",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishToggle",
+                      "value": "Published",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.publishToggleHint",
+                      "value": "Unpublished pages are still visible to users with write permissions on this page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.scheduling",
+                      "value": "Scheduling",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.scripts",
+                      "value": "Scripts",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.shortDescription",
+                      "value": "Short Description",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.shortDescriptionHint",
+                      "value": "Shown below the title",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.social",
+                      "value": "Social",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.socialFeatures",
+                      "value": "Social Features",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.styles",
+                      "value": "Styles",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tags",
+                      "value": "Tags",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tagsHint",
+                      "value": "Use tags to categorize your pages and make them easier to find.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.title",
+                      "value": "Title",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.toc",
+                      "value": "TOC",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tocHeadingLevels",
+                      "value": "TOC Heading Levels",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tocHeadingLevelsHint",
+                      "value": "The table of contents will show headings from and up to the selected levels.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tocTitle",
+                      "value": "Table of Contents",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "props.tocUseDefault",
+                      "value": "Use Site Defaults",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.createSuccess",
+                      "value": "Page created successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.error",
+                      "value": "An error occurred while creating the page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.pleaseWait",
+                      "value": "Please wait...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.processing",
+                      "value": "Rendering",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.saved",
+                      "value": "Saved",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.updateSuccess",
+                      "value": "Page updated successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "select.cannotChange",
+                      "value": "This cannot be changed once the page is created.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "select.customView",
+                      "value": "or create a custom view?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "select.title",
+                      "value": "Which editor do you want to use for this page?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unsaved.body",
+                      "value": "You have unsaved changes. Are you sure you want to leave the editor and discard any modifications you made since the last save?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unsaved.title",
+                      "value": "Discard Unsaved Changes?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unsavedWarning",
+                      "value": "You have unsaved edits. Are you sure you want to leave the editor?",
+                      "__typename": "Translation"
+                    }
+                  ],
+                  "__typename": "LocalizationQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-home.har#entries[25]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div > input",
+          "role": "textbox",
+          "name": "Short Description",
+          "id": "input-151",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "g"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-home.har#entries[39]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)",
+          "role": "textbox",
+          "name": "Tags",
+          "id": "input-163",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "guide"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-home.har#entries[40]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "content": "# Team handbook\nThis wiki collects how we work.\n- Onboarding\n- Release checklist\n",
+              "description": "Where everything starts",
+              "editor": "markdown",
+              "locale": "en",
+              "isPrivate": false,
+              "isPublished": true,
+              "path": "home",
+              "publishEndDate": "",
+              "publishStartDate": "",
+              "scriptCss": "",
+              "scriptJs": "",
+              "tags": [
+                "guide"
+              ],
+              "title": "Team handbook"
+            },
+            "extensions": {},
+            "query": "mutation ($content: String!, $description: String!, $editor: String!, $isPrivate: Boolean!, $isPublished: Boolean!, $locale: String!, $path: String!, $publishEndDate: Date, $publishStartDate: Date, $scriptCss: String, $scriptJs: String, $tags: [String]!, $title: String!) {\n  pages {\n    create(content: $content, description: $description, editor: $editor, isPrivate: $isPrivate, isPublished: $isPublished, locale: $locale, path: $path, publishEndDate: $publishEndDate, publishStartDate: $publishStartDate, scriptCss: $scriptCss, scriptJs: $scriptJs, tags: $tags, title: $title) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      page {\n        id\n        updatedAt\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Page created successfully.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "page": {
+                      "id": 1,
+                      "updatedAt": "2026-10-12T07:56:08.914Z",
+                      "__typename": "Page"
+                    },
+                    "__typename": "PageResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-home.har#entries[41]",
+        "bind": {
+          "page1": "$[0].data.pages.create.page.id",
+          "pageUpdatedAt2": "$[0].data.pages.create.page.updatedAt"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-home.har#entries[70]"
+      }
+    }
+  ]
+}

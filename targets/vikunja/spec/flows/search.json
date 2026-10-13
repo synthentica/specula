@@ -1,0 +1,300 @@
+{
+  "name": "search",
+  "order": 6,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(1) > div > div > div:nth-of-type(1) > input",
+          "role": "textbox",
+          "name": "Type a command or search…",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "q",
+            "leaking"
+          ],
+          [
+            "sort_by",
+            "done"
+          ],
+          [
+            "sort_by",
+            "relevance"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": [
+                  {
+                    "id": 1,
+                    "title": "plumbing",
+                    "description": "",
+                    "hex_color": "ffbe0b",
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    },
+                    "created": "2026-10-11T17:33:10Z",
+                    "updated": "2026-10-11T17:33:10Z"
+                  }
+                ],
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:33:10Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/search.har#entries[0]"
+      }
+    },
+    {
+      "action": {
+        "kind": "key",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(1) > div > div > div:nth-of-type(1) > input",
+          "role": "textbox",
+          "name": "Type a command or search…",
+          "type": "text"
+        },
+        "key": "Escape"
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "q",
+            ""
+          ],
+          [
+            "sort_by",
+            "done"
+          ],
+          [
+            "sort_by",
+            "relevance"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": [
+                  {
+                    "id": 1,
+                    "title": "plumbing",
+                    "description": "",
+                    "hex_color": "ffbe0b",
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    },
+                    "created": "2026-10-11T17:33:10Z",
+                    "updated": "2026-10-11T17:33:10Z"
+                  }
+                ],
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:33:10Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 3,
+                "title": "Call the electrician",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#3",
+                "index": 3,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:25Z",
+                "updated": "2026-10-11T17:32:25Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 1,
+                "title": "Buy paint",
+                "description": "",
+                "project_id": 2,
+                "done": true,
+                "done_at": "2026-10-11T17:32:53Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 3,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#1",
+                "index": 1,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:19Z",
+                "updated": "2026-10-11T17:32:53Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 3,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/search.har#entries[1]"
+      }
+    }
+  ]
+}

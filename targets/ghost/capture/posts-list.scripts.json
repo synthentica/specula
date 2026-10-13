@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://localhost:2368/ghost/assets/vendor-aed0068cf9b67d042dd23a6343545b7b.js",
+    "sha256": "a8da4fb9c5ff912bdb83d7a9a62e43fa5f18d40ce23928204ce43b6e14d0a35d",
+    "file": "vendor-aed0068cf9b67d042dd23a6343545b7b.a8da4fb9.js",
+    "length": 1687299,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/vendor-326b46cbc2845d47f1e0af43ba21caec.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/chunk.728.985c45ad584b4b91ca60.js",
+    "sha256": "2b223ee077db1215b07d9d294c4f152f4e04d990cad64763c992ec4e85c6f4f2",
+    "file": "chunk.728.985c45ad584b4b91ca60.2b223ee0.js",
+    "length": 2801928,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/chunk.728.985c45ad584b4b91ca60.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/chunk.524.9c2366b9ec011d61ea88.js",
+    "sha256": "aec4b7dfa88b59e101eded5a322748462985fc0d2b3e9b48174e228e20fb9e8e",
+    "file": "chunk.524.9c2366b9ec011d61ea88.aec4b7df.js",
+    "length": 10749,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/chunk.524.9c2366b9ec011d61ea88.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/ghost-060c0f303364be7ed22510336af44764.js",
+    "sha256": "a84bbba522c322bd5741758e0b461d29915c905a1e986296125b7ff2a1fb56d9",
+    "file": "ghost-060c0f303364be7ed22510336af44764.a84bbba5.js",
+    "length": 2200185,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/ghost-fc1d10004373f7b3183d998c2d308da5.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/admin-x-settings/admin-x-settings.js?v=3291c981c1",
+    "sha256": "3291c981c10947dce313159ffd259a295a6deb137920201e580a27be02a127f9",
+    "file": "admin-x-settings.3291c981.js",
+    "length": 123528,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/admin-x-settings/admin-x-settings.js.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/admin-x-settings/index-BVxh86CD.mjs",
+    "sha256": "2874af013e5c8e6a36558039f15d4037e585624bb53df5f64ae222d4ed21a161",
+    "file": "index-BVxh86CD.2874af01.js",
+    "length": 2552675,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/admin-x-settings/index-BVxh86CD.mjs.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/admin-x-settings/index-DUhmXSBR.mjs",
+    "sha256": "2b64ed865d561c230ae970dae5565be55f2230a502f9f0c8715ba92954142474",
+    "file": "index-DUhmXSBR.2b64ed86.js",
+    "length": 406763,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/admin-x-settings/index-DUhmXSBR.mjs.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/koenig-lexical/koenig-lexical.umd.js?v=37bd1e3e4d",
+    "sha256": "37bd1e3e4d567dfc13a30e986cb715c77f1891d374d4034be36be228aed896c3",
+    "file": "koenig-lexical.umd.37bd1e3e.js",
+    "length": 2879786,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/koenig-lexical/koenig-lexical.umd.js.map"
+  },
+  {
+    "url": "http://localhost:2368/ghost/assets/admin-x-settings/modals-B5dtfzsB.mjs",
+    "sha256": "0cbdc6ccf57e8d7384f3cf4bd4775faf8b0542ae75695de51eacea8f0e14fa2d",
+    "file": "modals-B5dtfzsB.0cbdc6cc.js",
+    "length": 1312160,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/ghost/assets/admin-x-settings/modals-B5dtfzsB.mjs.map"
+  }
+]

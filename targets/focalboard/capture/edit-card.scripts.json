@@ -1,0 +1,16 @@
+[
+  {
+    "url": "http://localhost:8000/static/main.js?ccf8d6c26f31398c2ea5",
+    "sha256": "e2497d9203b22a78f3b747d4a788c734dbb1d6d23c5ab67cc0a178fe62616b97",
+    "file": "main.e2497d92.js",
+    "length": 4911741,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:8000/",
+    "sha256": "c7cfbc534ed8ce9a2ff8f720cd1c66a532dd49b367e6778e673352717f17d3c5",
+    "file": "script.c7cfbc53.js",
+    "length": 19,
+    "firstParty": true
+  }
+]

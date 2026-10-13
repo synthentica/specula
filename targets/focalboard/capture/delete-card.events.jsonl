@@ -1,0 +1,12 @@
+{"t":1791794895582,"type":"capture-start","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794896443,"type":"navigation","url":"http://localhost:8000/","sameDocument":false}
+{"t":1791794896718,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","sameDocument":true}
+{"t":1791794896733,"type":"ws-open","requestId":"15882.420","url":"ws://localhost:8000/ws"}
+{"t":1791794896759,"type":"ws-frame","requestId":"15882.420","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794896761,"type":"ws-frame","requestId":"15882.420","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794897010,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","sameDocument":true}
+{"t":1791794899357,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#mainBoardBody > div:nth-of-type(1) > div > div:nth-of-type(1) > button","role":"button","type":"button"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794899919,"type":"action","id":"a2","kind":"click","target":{"tag":"div","selector":"div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)","role":"button","name":"Delete"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794900784,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)","role":"button","name":"Delete","type":"submit"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794900796,"type":"ws-frame","requestId":"15882.420","direction":"received","opcode":1,"payload":"{\"action\":\"UPDATE_BLOCK\",\"teamId\":\"0\",\"block\":{\"id\":\"cz4kdzjr3xirm5xe1h67sks359h\",\"parentId\":\"\",\"createdBy\":\"\",\"modifiedBy\":\"\",\"schema\":0,\"type\":\"\",\"title\":\"\",\"fields\":null,\"createAt\":0,\"updateAt\":1791794900790,\"deleteAt\":1791794900790,\"boardId\":\"b1dooum4safgcuf5za47ebg3gaa\"}}"}
+{"t":1791794904003,"type":"capture-stop","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}

@@ -1,0 +1,9 @@
+{
+  "login": { "path": "/#/signin", "user": "email" },
+  "views": {
+    "home": "/#/view/home",
+    "page": "/#/view/notes/first-steps",
+    "history": "/#/history/1",
+    "tags": "/#/tags"
+  }
+}

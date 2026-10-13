@@ -1,0 +1,5 @@
+{"t":1791739999969,"type":"capture-start","url":"http://localhost:3456/labels"}
+{"t":1791740001943,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#app > header > div > button","role":"button","name":"Open the search/quick action bar","type":"button"},"url":"http://localhost:3456/labels"}
+{"t":1791740004481,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"div:nth-of-type(1) > div > div > div:nth-of-type(1) > input","role":"textbox","name":"Type a command or search…","type":"text"},"url":"http://localhost:3456/labels","valueInfo":{"type":"text","length":7}}
+{"t":1791740007957,"type":"action","id":"a3","kind":"key","target":{"tag":"input","selector":"div:nth-of-type(1) > div > div > div:nth-of-type(1) > input","role":"textbox","name":"Type a command or search…","type":"text"},"url":"http://localhost:3456/labels","key":"Escape"}
+{"t":1791740010455,"type":"capture-stop","url":"http://localhost:3456/labels"}

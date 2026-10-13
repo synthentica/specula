@@ -1,0 +1,511 @@
+{
+  "generatedBy": "specula fingerprint",
+  "target": "wikijs",
+  "flows": [
+    "browse",
+    "comments",
+    "create-home",
+    "create-pages",
+    "delete-page",
+    "edit-page",
+    "errors",
+    "history",
+    "login",
+    "logout-login",
+    "search",
+    "setup",
+    "users"
+  ],
+  "frontend": [],
+  "libraries": [
+    {
+      "claim": "Library: vue-router",
+      "value": "vue-router",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/admin.ba41270b.js:2",
+          "detail": "\",d=n.n(l),u=n(\\\"./node_modules/vue-router/dist/vue-router.common.js\\\"),c\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: vue-i18n",
+      "value": "vue-i18n",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/app.1eb183a0.js:19",
+          "detail": "\"),h=n(\\\"./node_modules/@panter/vue-i18next/dist/vue-i18next.common.js\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: i18next",
+      "value": "i18next",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/admin.ba41270b.js:2",
+          "detail": "\"ext\\\",{staticClass:\\\"pa-4\\\"},[n(\\\"i18next\\\",{attrs:{tag:\\\"span\\\",path:\\\"adm\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: dompurify",
+      "value": "dompurify",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/vendor.98c18c45.js:33",
+          "detail": "\"function(e,t,n){\\n/*! @license DOMPurify 3.3.1 | (c) Cure53 and other \""
+        }
+      ]
+    }
+  ],
+  "backend": [
+    {
+      "claim": "Server identification headers",
+      "value": [
+        "x-powered-by: Express"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/browse.har#entries[2]",
+          "detail": "x-powered-by: Express"
+        }
+      ]
+    },
+    {
+      "claim": "Custom response headers (e.g. pagination metadata)",
+      "value": [
+        "x-content-type-options",
+        "x-frame-options",
+        "x-powered-by",
+        "x-ua-compatible",
+        "x-xss-protection"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/browse.har#entries[0]",
+          "detail": "X-Content-Type-Options: nosniff"
+        },
+        {
+          "ref": "capture/browse.har#entries[0]",
+          "detail": "X-Frame-Options: deny"
+        },
+        {
+          "ref": "capture/browse.har#entries[0]",
+          "detail": "X-UA-Compatible: IE=edge"
+        },
+        {
+          "ref": "capture/browse.har#entries[0]",
+          "detail": "X-XSS-Protection: 1; mode=block"
+        },
+        {
+          "ref": "capture/browse.har#entries[2]",
+          "detail": "X-Powered-By: Express"
+        }
+      ]
+    }
+  ],
+  "thirdParties": [
+    {
+      "claim": "Third-party host: static.requarks.io",
+      "value": {
+        "host": "static.requarks.io",
+        "category": "unclassified"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/browse.har#entries[23]",
+          "detail": "GET static.requarks.io/logo/wikijs-butterfly.svg"
+        },
+        {
+          "ref": "capture/browse.har#entries[58]",
+          "detail": "GET static.requarks.io/logo/wikijs-butterfly.svg"
+        }
+      ]
+    }
+  ],
+  "auth": [
+    {
+      "claim": "API requests authenticate with an Authorization: Bearer header carrying a JWT",
+      "value": {
+        "scheme": "Bearer",
+        "jwt": {
+          "alg": "RS256",
+          "typ": "JWT",
+          "claimNames": [
+            "ap",
+            "aud",
+            "av",
+            "df",
+            "email",
+            "exp",
+            "groups",
+            "iat",
+            "id",
+            "iss",
+            "lc",
+            "name",
+            "permissions",
+            "tz"
+          ],
+          "lifetimeSec": 1800
+        }
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/browse.auth.json",
+          "detail": "4 requests, first capture/browse.har#entries[24], alg RS256, claims ap/aud/av/df/email/exp/groups/iat/id/iss/lc/name/permissions/tz, lifetime 1800s"
+        },
+        {
+          "ref": "capture/comments.auth.json",
+          "detail": "3 requests, first capture/comments.har#entries[28], alg RS256, claims ap/aud/av/df/email/exp/groups/iat/id/iss/lc/name/permissions/tz, lifetime 1800s"
+        }
+      ]
+    },
+    {
+      "claim": "Cookie \"jwt\" is set by GET /logout",
+      "value": {
+        "name": "jwt",
+        "setBy": {
+          "GET /logout": [
+            "Path",
+            "Expires"
+          ]
+        }
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[31]",
+          "detail": "Set-Cookie jwt; Path; Expires"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /graphql (mutation authentication.login)",
+      "value": {
+        "endpoint": "POST /graphql (mutation authentication.login)",
+        "status": 200,
+        "responseKeys": [
+          "responseResult",
+          "jwt",
+          "mustChangePwd",
+          "mustProvideTFA",
+          "mustSetupTFA",
+          "continuationToken",
+          "redirect",
+          "tfaQRImage",
+          "__typename"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/login.har#entries[0]",
+          "detail": "request body keys: username, password, strategy; response keys: responseResult, jwt, mustChangePwd, mustProvideTFA, mustSetupTFA, continuationToken, redirect, tfaQRImage, __typename"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: GET /login",
+      "value": {
+        "endpoint": "GET /login",
+        "status": 200,
+        "responseKeys": []
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[63]",
+          "detail": "request body keys: ; response keys: "
+        }
+      ]
+    },
+    {
+      "claim": "Logout endpoint: GET /logout",
+      "value": "GET /logout",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[31]",
+          "detail": "302"
+        }
+      ]
+    },
+    {
+      "claim": "No 401 responses observed (the answer to an expired token was not seen)",
+      "value": 0,
+      "confidence": "medium",
+      "evidence": []
+    },
+    {
+      "claim": "Client keeps auth state in localStorage keys: i18next_res_en-auth",
+      "value": [
+        "i18next_res_en-auth"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/browse.runtime.json",
+          "detail": "storageKeys.local"
+        }
+      ]
+    }
+  ],
+  "realtime": [
+    {
+      "claim": "No realtime channel observed",
+      "value": null,
+      "confidence": "medium",
+      "evidence": []
+    }
+  ],
+  "flags": [
+    {
+      "claim": "Feature flag SDK in bundle: Unleash",
+      "value": "Unleash",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/vendor.98c18c45.js:446",
+          "detail": "\"lasmas,synesthesia,yellowhead,unleashes,choiseul,quanzhong,brookvil\""
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "route": "/",
+      "visited": true,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/dashboard",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/general",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/locale",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/navigation",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/pages",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/pages/:id(\\\\d+)",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/pages/visualize",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/tags",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/theme",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/groups",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/groups/:id(\\\\d+)",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/users",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/users/:id(\\\\d+)",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/analytics",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/auth",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/comments",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/rendering",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/editor",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/extensions",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/logging",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/search",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/storage",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/api",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/mail",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/security",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/ssl",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/system",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/utilities",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/webhooks",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/dev-flags",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    },
+    {
+      "route": "/contribute",
+      "visited": false,
+      "ref": "capture/sources/admin.ba41270b.js:2"
+    }
+  ],
+  "apiPathsInCode": {
+    "note": "String literals in first-party bundles shaped like API paths. \"observed\" = also seen in recorded traffic (after removing apiPrefix). Unobserved ones are candidates, not facts.",
+    "paths": [
+      {
+        "path": "/components/nav-footer.vue",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/components/page.vue",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/e/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/geography/countries",
+        "observed": false,
+        "ref": "capture/sources/admin.ba41270b.js:2"
+      },
+      {
+        "path": "/graphql",
+        "observed": true,
+        "ref": "capture/sources/admin.ba41270b.js:2"
+      },
+      {
+        "path": "/h/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/home",
+        "observed": true,
+        "ref": "capture/sources/source.ec6decef.js:2"
+      },
+      {
+        "path": "/login",
+        "observed": true,
+        "ref": "capture/sources/admin.ba41270b.js:2"
+      },
+      {
+        "path": "/logout",
+        "observed": true,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/s/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/scss/app.scss",
+        "observed": false,
+        "ref": "capture/sources/app.1eb183a0.js:19"
+      },
+      {
+        "path": "/wiki-v1/repo",
+        "observed": false,
+        "ref": "capture/sources/admin.ba41270b.js:2"
+      }
+    ]
+  }
+}

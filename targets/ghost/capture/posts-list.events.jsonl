@@ -1,0 +1,7 @@
+{"t":1791740463727,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740464638,"type":"navigation","url":"http://localhost:2368/ghost/#/posts/","sameDocument":true}
+{"t":1791740471193,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"div > div > ul > li:nth-of-type(3) > a","role":"link","name":"Published","id":"ember274","href":"#/posts/?type=published"},"url":"http://localhost:2368/ghost/#/posts/"}
+{"t":1791740471387,"type":"navigation","url":"http://localhost:2368/ghost/#/posts?type=published","sameDocument":true}
+{"t":1791740477106,"type":"action","id":"a2","kind":"click","target":{"tag":"a","selector":"div > div > ul > li:nth-of-type(1) > a","role":"link","name":"Drafts","id":"ember272","href":"#/posts/?type=draft"},"url":"http://localhost:2368/ghost/#/posts?type=published"}
+{"t":1791740477206,"type":"navigation","url":"http://localhost:2368/ghost/#/posts?type=draft","sameDocument":true}
+{"t":1791740482289,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

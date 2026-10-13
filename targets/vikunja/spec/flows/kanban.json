@@ -1,0 +1,976 @@
+{
+  "name": "kanban",
+  "order": 11,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a",
+          "role": "link",
+          "name": "Home renovation",
+          "href": "/projects/2"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsById",
+        "method": "GET",
+        "path": "/projects/{projectId}",
+        "pathParams": {
+          "projectId": {
+            "var": "project675"
+          }
+        },
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/ProjectReadBody.json",
+            "id": 2,
+            "title": "Home renovation",
+            "description": "",
+            "identifier": "",
+            "hex_color": "",
+            "parent_project_id": 0,
+            "owner": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "is_archived": false,
+            "background_information": null,
+            "background_blur_hash": "",
+            "is_favorite": false,
+            "position": 131072,
+            "views": [
+              {
+                "id": 9,
+                "title": "List",
+                "project_id": 2,
+                "view_kind": "list",
+                "filter": {
+                  "s": "",
+                  "sort_by": null,
+                  "order_by": null,
+                  "filter": "done = false",
+                  "filter_include_nulls": false
+                },
+                "position": 100,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 10,
+                "title": "Gantt",
+                "project_id": 2,
+                "view_kind": "gantt",
+                "filter": null,
+                "position": 200,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 11,
+                "title": "Table",
+                "project_id": 2,
+                "view_kind": "table",
+                "filter": null,
+                "position": 300,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 12,
+                "title": "Kanban",
+                "project_id": 2,
+                "view_kind": "kanban",
+                "filter": null,
+                "position": 400,
+                "bucket_configuration_mode": "manual",
+                "bucket_configuration": null,
+                "default_bucket_id": 7,
+                "done_bucket_id": 9,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              }
+            ],
+            "max_permission": 2,
+            "created": "2026-10-11T17:32:10Z",
+            "updated": "2026-10-11T17:33:46Z"
+          }
+        },
+        "source": "capture/kanban.har#entries[17]",
+        "bind": {
+          "project818": "$.id",
+          "view822": "$.views[?view_kind=\"list\"].id",
+          "view834": "$.views[?view_kind=\"kanban\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a",
+          "role": "link",
+          "name": "Home renovation",
+          "href": "/projects/2"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project818"
+          },
+          "viewId": {
+            "var": "view822"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": [
+                  {
+                    "id": 1,
+                    "title": "plumbing",
+                    "description": "",
+                    "hex_color": "ffbe0b",
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    },
+                    "created": "2026-10-11T17:33:10Z",
+                    "updated": "2026-10-11T17:33:10Z"
+                  }
+                ],
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:33:10Z",
+                "bucket_id": 0,
+                "comment_count": 0,
+                "position": 32768,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/kanban.har#entries[18]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "#main-content > div > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+          "role": "link",
+          "name": "Kanban",
+          "href": "/projects/2/12"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsBucketsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/buckets/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project818"
+          },
+          "viewId": {
+            "var": "view834"
+          }
+        },
+        "query": [
+          [
+            "filter",
+            ""
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "per_page",
+            "25"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Bucket",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/BucketsWithTasksBodyBody.json",
+            "items": [
+              {
+                "id": 7,
+                "title": "To-Do",
+                "project_view_id": 12,
+                "tasks": [
+                  {
+                    "id": 2,
+                    "title": "Fix the leaking tap",
+                    "description": "",
+                    "project_id": 2,
+                    "done": false,
+                    "done_at": "0001-01-01T00:00:00Z",
+                    "due_date": "0001-01-01T00:00:00Z",
+                    "reminders": null,
+                    "repeat_after": 0,
+                    "repeat_mode": 0,
+                    "priority": 0,
+                    "start_date": "0001-01-01T00:00:00Z",
+                    "end_date": "0001-01-01T00:00:00Z",
+                    "assignees": null,
+                    "labels": [
+                      {
+                        "id": 1,
+                        "title": "plumbing",
+                        "description": "",
+                        "hex_color": "ffbe0b",
+                        "created_by": {
+                          "id": 1,
+                          "name": "",
+                          "username": "<redacted:pii>",
+                          "created": "2026-10-11T17:31:53Z",
+                          "updated": "2026-10-11T17:31:53Z"
+                        },
+                        "created": "2026-10-11T17:33:10Z",
+                        "updated": "2026-10-11T17:33:10Z"
+                      }
+                    ],
+                    "hex_color": "",
+                    "percent_done": 0,
+                    "identifier": "#2",
+                    "index": 2,
+                    "related_tasks": {},
+                    "attachments": null,
+                    "cover_image_attachment_id": 0,
+                    "is_favorite": false,
+                    "created": "2026-10-11T17:32:22Z",
+                    "updated": "2026-10-11T17:33:10Z",
+                    "bucket_id": 7,
+                    "comment_count": 0,
+                    "position": 32768,
+                    "reactions": null,
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    }
+                  }
+                ],
+                "limit": 0,
+                "count": 1,
+                "position": 100,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 8,
+                "title": "Doing",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 200,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 9,
+                "title": "Done",
+                "project_view_id": 12,
+                "tasks": [
+                  {
+                    "id": 1,
+                    "title": "Buy paint",
+                    "description": "",
+                    "project_id": 2,
+                    "done": true,
+                    "done_at": "2026-10-11T17:32:53Z",
+                    "due_date": "0001-01-01T00:00:00Z",
+                    "reminders": null,
+                    "repeat_after": 0,
+                    "repeat_mode": 0,
+                    "priority": 3,
+                    "start_date": "0001-01-01T00:00:00Z",
+                    "end_date": "0001-01-01T00:00:00Z",
+                    "assignees": null,
+                    "labels": null,
+                    "hex_color": "",
+                    "percent_done": 0,
+                    "identifier": "#1",
+                    "index": 1,
+                    "related_tasks": {},
+                    "attachments": null,
+                    "cover_image_attachment_id": 0,
+                    "is_favorite": false,
+                    "created": "2026-10-11T17:32:19Z",
+                    "updated": "2026-10-11T17:32:53Z",
+                    "bucket_id": 9,
+                    "comment_count": 1,
+                    "position": 65536,
+                    "reactions": null,
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    }
+                  }
+                ],
+                "limit": 0,
+                "count": 1,
+                "position": 300,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 3
+          }
+        },
+        "source": "capture/kanban.har#entries[19]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div > div:nth-of-type(2) > div > div > input",
+          "role": "textbox",
+          "name": "Enter the new bucket title…",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postProjectsViewsBuckets",
+        "method": "POST",
+        "path": "/projects/{projectId}/views/{viewId}/buckets",
+        "pathParams": {
+          "projectId": {
+            "var": "project818"
+          },
+          "viewId": {
+            "var": "view834"
+          }
+        },
+        "body": {
+          "title": "Waiting on parts"
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Bucket",
+          "body": {
+            "id": 10,
+            "title": "Waiting on parts",
+            "project_view_id": 12,
+            "limit": 0,
+            "count": 0,
+            "position": 655360,
+            "created": "2026-10-11T17:35:56.126197022Z",
+            "updated": "2026-10-11T17:35:56.126389986Z",
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            }
+          }
+        },
+        "source": "capture/kanban.har#entries[20]",
+        "bind": {
+          "bucket899": "$.id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putProjectsViewsBucketsTasks",
+        "method": "PUT",
+        "path": "/projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project818"
+          },
+          "viewId": {
+            "var": "view834"
+          },
+          "bucketId": {
+            "var": "bucket423"
+          }
+        },
+        "body": {
+          "task_id": {
+            "$var": "task269"
+          }
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task2",
+          "body": {
+            "bucket_id": 8,
+            "bucket": {
+              "id": 8,
+              "title": "Doing",
+              "project_view_id": 12,
+              "limit": 0,
+              "count": 1,
+              "position": 200,
+              "created": "2026-10-11T17:32:10Z",
+              "updated": "2026-10-11T17:32:10Z",
+              "created_by": null
+            },
+            "task_id": 2,
+            "project_view_id": 12,
+            "task": {
+              "id": 2,
+              "title": "Fix the leaking tap",
+              "description": "",
+              "project_id": 2,
+              "done": false,
+              "done_at": "0001-01-01T00:00:00Z",
+              "due_date": "0001-01-01T00:00:00Z",
+              "reminders": null,
+              "repeat_after": 0,
+              "repeat_mode": 0,
+              "priority": 0,
+              "start_date": "0001-01-01T00:00:00Z",
+              "end_date": "0001-01-01T00:00:00Z",
+              "assignees": null,
+              "labels": [
+                {
+                  "id": 1,
+                  "title": "plumbing",
+                  "description": "",
+                  "hex_color": "ffbe0b",
+                  "created_by": {
+                    "id": 1,
+                    "name": "",
+                    "username": "<redacted:pii>",
+                    "created": "2026-10-11T17:31:53Z",
+                    "updated": "2026-10-11T17:31:53Z"
+                  },
+                  "created": "2026-10-11T17:33:10Z",
+                  "updated": "2026-10-11T17:33:10Z"
+                }
+              ],
+              "hex_color": "",
+              "percent_done": 0,
+              "identifier": "#2",
+              "index": 2,
+              "related_tasks": {},
+              "attachments": null,
+              "cover_image_attachment_id": 0,
+              "is_favorite": false,
+              "subscription": {
+                "id": 2,
+                "entity": "task",
+                "entity_id": 2,
+                "created": "2026-10-11T17:32:22Z"
+              },
+              "created": "2026-10-11T17:32:22Z",
+              "updated": "2026-10-11T17:33:10Z",
+              "bucket_id": 0,
+              "position": 0,
+              "reactions": null,
+              "created_by": {
+                "id": 1,
+                "name": "",
+                "username": "<redacted:pii>",
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            }
+          }
+        },
+        "source": "capture/kanban.har#entries[21]",
+        "bind": {
+          "projectView908": "$.bucket.project_view_id",
+          "task911": "$.task_id",
+          "project914": "$.task.project_id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putTasksPosition",
+        "method": "PUT",
+        "path": "/tasks/{taskId}/position",
+        "pathParams": {
+          "taskId": {
+            "var": "task911"
+          }
+        },
+        "body": {
+          "project_view_id": {
+            "$var": "projectView908"
+          },
+          "position": 0
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Position",
+          "body": {
+            "task_id": 2,
+            "project_view_id": 12,
+            "position": 2147483648
+          }
+        },
+        "source": "capture/kanban.har#entries[22]",
+        "bind": {
+          "task932": "$.task_id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putProjectsViewsBucketsTasks",
+        "method": "PUT",
+        "path": "/projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project914"
+          },
+          "viewId": {
+            "var": "view834"
+          },
+          "bucketId": {
+            "var": "bucket899"
+          }
+        },
+        "body": {
+          "task_id": {
+            "$var": "task932"
+          }
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task2",
+          "body": {
+            "bucket_id": 10,
+            "bucket": {
+              "id": 10,
+              "title": "Waiting on parts",
+              "project_view_id": 12,
+              "limit": 0,
+              "count": 1,
+              "position": 655360,
+              "created": "2026-10-11T17:35:56Z",
+              "updated": "2026-10-11T17:35:56Z",
+              "created_by": null
+            },
+            "task_id": 2,
+            "project_view_id": 12,
+            "task": {
+              "id": 2,
+              "title": "Fix the leaking tap",
+              "description": "",
+              "project_id": 2,
+              "done": false,
+              "done_at": "0001-01-01T00:00:00Z",
+              "due_date": "0001-01-01T00:00:00Z",
+              "reminders": null,
+              "repeat_after": 0,
+              "repeat_mode": 0,
+              "priority": 0,
+              "start_date": "0001-01-01T00:00:00Z",
+              "end_date": "0001-01-01T00:00:00Z",
+              "assignees": null,
+              "labels": [
+                {
+                  "id": 1,
+                  "title": "plumbing",
+                  "description": "",
+                  "hex_color": "ffbe0b",
+                  "created_by": {
+                    "id": 1,
+                    "name": "",
+                    "username": "<redacted:pii>",
+                    "created": "2026-10-11T17:31:53Z",
+                    "updated": "2026-10-11T17:31:53Z"
+                  },
+                  "created": "2026-10-11T17:33:10Z",
+                  "updated": "2026-10-11T17:33:10Z"
+                }
+              ],
+              "hex_color": "",
+              "percent_done": 0,
+              "identifier": "#2",
+              "index": 2,
+              "related_tasks": {},
+              "attachments": null,
+              "cover_image_attachment_id": 0,
+              "is_favorite": false,
+              "subscription": {
+                "id": 2,
+                "entity": "task",
+                "entity_id": 2,
+                "created": "2026-10-11T17:32:22Z"
+              },
+              "created": "2026-10-11T17:32:22Z",
+              "updated": "2026-10-11T17:33:10Z",
+              "bucket_id": 0,
+              "position": 0,
+              "reactions": null,
+              "created_by": {
+                "id": 1,
+                "name": "",
+                "username": "<redacted:pii>",
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            }
+          }
+        },
+        "source": "capture/kanban.har#entries[23]",
+        "bind": {
+          "projectView936": "$.bucket.project_view_id",
+          "task939": "$.task_id",
+          "project942": "$.task.project_id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putTasksPosition",
+        "method": "PUT",
+        "path": "/tasks/{taskId}/position",
+        "pathParams": {
+          "taskId": {
+            "var": "task939"
+          }
+        },
+        "body": {
+          "project_view_id": {
+            "$var": "projectView936"
+          },
+          "position": 0
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Position",
+          "body": {
+            "task_id": 2,
+            "project_view_id": 12,
+            "position": 2147483648
+          }
+        },
+        "source": "capture/kanban.har#entries[24]",
+        "bind": {
+          "task960": "$.task_id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putProjectsViewsBucketsTasks",
+        "method": "PUT",
+        "path": "/projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project942"
+          },
+          "viewId": {
+            "var": "view834"
+          },
+          "bucketId": {
+            "var": "bucket430"
+          }
+        },
+        "body": {
+          "task_id": {
+            "$var": "task960"
+          }
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task2",
+          "body": {
+            "bucket_id": 9,
+            "bucket": {
+              "id": 9,
+              "title": "Done",
+              "project_view_id": 12,
+              "limit": 0,
+              "count": 2,
+              "position": 300,
+              "created": "2026-10-11T17:32:10Z",
+              "updated": "2026-10-11T17:32:10Z",
+              "created_by": null
+            },
+            "task_id": 2,
+            "project_view_id": 12,
+            "task": {
+              "id": 2,
+              "title": "Fix the leaking tap",
+              "description": "",
+              "project_id": 2,
+              "done": true,
+              "done_at": "2026-10-11T17:36:13.515063334Z",
+              "due_date": "0001-01-01T00:00:00Z",
+              "reminders": null,
+              "repeat_after": 0,
+              "repeat_mode": 0,
+              "priority": 0,
+              "start_date": "0001-01-01T00:00:00Z",
+              "end_date": "0001-01-01T00:00:00Z",
+              "assignees": null,
+              "labels": [
+                {
+                  "id": 1,
+                  "title": "plumbing",
+                  "description": "",
+                  "hex_color": "ffbe0b",
+                  "created_by": {
+                    "id": 1,
+                    "name": "",
+                    "username": "<redacted:pii>",
+                    "created": "2026-10-11T17:31:53Z",
+                    "updated": "2026-10-11T17:31:53Z"
+                  },
+                  "created": "2026-10-11T17:33:10Z",
+                  "updated": "2026-10-11T17:33:10Z"
+                }
+              ],
+              "hex_color": "",
+              "percent_done": 0,
+              "identifier": "#2",
+              "index": 2,
+              "related_tasks": {},
+              "attachments": null,
+              "cover_image_attachment_id": 0,
+              "is_favorite": false,
+              "subscription": {
+                "id": 2,
+                "entity": "task",
+                "entity_id": 2,
+                "created": "2026-10-11T17:32:22Z"
+              },
+              "created": "2026-10-11T17:32:22Z",
+              "updated": "2026-10-11T17:36:13.515084836Z",
+              "bucket_id": 0,
+              "position": 0,
+              "reactions": null,
+              "created_by": {
+                "id": 1,
+                "name": "",
+                "username": "<redacted:pii>",
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            }
+          }
+        },
+        "source": "capture/kanban.har#entries[25]",
+        "bind": {
+          "projectView964": "$.bucket.project_view_id",
+          "task967": "$.task_id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "putTasksPosition",
+        "method": "PUT",
+        "path": "/tasks/{taskId}/position",
+        "pathParams": {
+          "taskId": {
+            "var": "task967"
+          }
+        },
+        "body": {
+          "project_view_id": {
+            "$var": "projectView964"
+          },
+          "position": 131072
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Position",
+          "body": {
+            "task_id": 2,
+            "project_view_id": 12,
+            "position": 131072
+          }
+        },
+        "source": "capture/kanban.har#entries[26]"
+      }
+    }
+  ]
+}

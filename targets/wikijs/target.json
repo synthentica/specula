@@ -1,0 +1,37 @@
+{
+  "name": "wikijs",
+  "origin": "http://localhost:3000",
+  "apiPrefix": "",
+  "redact": {
+    "values": []
+  },
+  "brand": [
+    "Wiki.js",
+    "wikijs",
+    "Requarks"
+  ],
+  "volatile": {
+    "keys": [
+      "id",
+      "createdAt",
+      "updatedAt",
+      "versionId",
+      "versionDate",
+      "lastLoginAt",
+      "hash",
+      "stacktrace"
+    ]
+  },
+  "ui": {
+    "login": {
+      "path": "/login",
+      "user": "email"
+    },
+    "views": {
+      "home": "/",
+      "page": "/notes/first-steps",
+      "history": "/h/en/home",
+      "tags": "/t"
+    }
+  }
+}

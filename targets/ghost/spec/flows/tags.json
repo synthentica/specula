@@ -1,0 +1,3170 @@
+{
+  "name": "tags",
+  "order": 4,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > header > section > div > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember126",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postTags",
+        "method": "POST",
+        "path": "/tags/",
+        "body": {
+          "tags": [
+            {
+              "name": "Outdoors",
+              "slug": "outdoors",
+              "description": "Trips, trails and time outside.",
+              "meta_title": null,
+              "meta_description": null,
+              "twitter_image": null,
+              "twitter_title": null,
+              "twitter_description": null,
+              "og_image": null,
+              "og_title": null,
+              "og_description": null,
+              "codeinjection_head": null,
+              "codeinjection_foot": null,
+              "canonical_url": null,
+              "accent_color": null,
+              "feature_image": null,
+              "visibility": "public"
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Tag",
+          "envelope": "tags",
+          "body": {
+            "tags": [
+              {
+                "id": "6acbc9d4b2f88b00015b31c4",
+                "name": "Outdoors",
+                "slug": "outdoors",
+                "description": "Trips, trails and time outside.",
+                "feature_image": null,
+                "visibility": "public",
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "canonical_url": null,
+                "accent_color": null,
+                "created_at": "2026-10-11T17:39:32.000Z",
+                "updated_at": "2026-10-11T17:39:32.000Z",
+                "url": "http://localhost:2368/404/"
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[0]",
+        "bind": {
+          "tag268": "$.tags[0].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > header > section > div > button",
+          "role": "button",
+          "name": "Save",
+          "id": "ember126",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTags2",
+        "method": "GET",
+        "path": "/tags/{tagId}/",
+        "pathParams": {
+          "tagId": {
+            "var": "tag268"
+          }
+        },
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Tag",
+          "envelope": "tags",
+          "body": {
+            "tags": [
+              {
+                "id": "6acbc9d4b2f88b00015b31c4",
+                "name": "Outdoors",
+                "slug": "outdoors",
+                "description": "Trips, trails and time outside.",
+                "feature_image": null,
+                "visibility": "public",
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "canonical_url": null,
+                "accent_color": null,
+                "created_at": "2026-10-11T17:39:32.000Z",
+                "updated_at": "2026-10-11T17:39:32.000Z",
+                "url": "http://localhost:2368/404/"
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[1]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "#ember67",
+          "role": "link",
+          "name": "Posts",
+          "id": "ember67",
+          "href": "#/posts/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "filter",
+            "status:scheduled"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[2]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "#ember67",
+          "role": "link",
+          "name": "Posts",
+          "id": "ember67",
+          "href": "#/posts/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "updated_at desc"
+          ],
+          [
+            "filter",
+            "status:draft"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[3]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "#ember67",
+          "role": "link",
+          "name": "Posts",
+          "id": "ember67",
+          "href": "#/posts/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "30"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "allFilter",
+            "status:[draft,scheduled,published,sent]"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "filter",
+            "status:[published,sent]"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "uuid": "7397c164-6f46-44f1-82b8-0aaca26840a1",
+                "title": "Coming soon",
+                "slug": "coming-soon",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "comment_id": "6acbc96bb2f88b00015b2f7d",
+                "feature_image": "https://example.invalid/v4.0.0/images/feature-image.jpg",
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f04",
+                    "name": "News",
+                    "slug": "news",
+                    "description": null,
+                    "feature_image": null,
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "url": "http://localhost:2368/tag/news/"
+                  }
+                ],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": {
+                  "id": "6acbc96ab2f88b00015b2f04",
+                  "name": "News",
+                  "slug": "news",
+                  "description": null,
+                  "feature_image": null,
+                  "visibility": "public",
+                  "og_image": null,
+                  "og_title": null,
+                  "og_description": null,
+                  "twitter_image": null,
+                  "twitter_title": null,
+                  "twitter_description": null,
+                  "meta_title": null,
+                  "meta_description": null,
+                  "codeinjection_head": null,
+                  "codeinjection_foot": null,
+                  "canonical_url": null,
+                  "accent_color": null,
+                  "created_at": "2026-10-11T17:37:46.000Z",
+                  "updated_at": "2026-10-11T17:37:46.000Z",
+                  "url": "http://localhost:2368/tag/news/"
+                },
+                "email_segment": "all",
+                "url": "http://localhost:2368/coming-soon/",
+                "excerpt": "This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can subscribe in the meantime if you'd like to stay up to date and receive emails when new content is published!",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 30,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[4]",
+        "bind": {
+          "post274": "$.posts[?title=\"Weekend hike in the hills\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "#ember67",
+          "role": "link",
+          "name": "Posts",
+          "id": "ember67",
+          "href": "#/posts/"
+        }
+      },
+      "request": {
+        "operationId": "postStatsPostsMemberCounts",
+        "method": "POST",
+        "path": "/stats/posts-member-counts/",
+        "body": {
+          "postIds": [
+            {
+              "$var": "post274"
+            },
+            {
+              "$var": "post97"
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "stats": [
+              {
+                "6acbc9a4b2f88b00015b31bc": {
+                  "free_members": 0,
+                  "paid_members": 0
+                },
+                "6acbc96bb2f88b00015b2f7d": {
+                  "free_members": 0,
+                  "paid_members": 0
+                }
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[5]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts2",
+        "method": "GET",
+        "path": "/posts/{postId}/",
+        "pathParams": {
+          "postId": {
+            "var": "post274"
+          }
+        },
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "include",
+            "tags,authors,authors.roles,email,tiers,newsletter,count.clicks,post_revisions,post_revisions.author"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Post",
+          "envelope": "posts",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "tags": [],
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "post_revisions": [
+                  {
+                    "id": "6acbc9a4b2f88b00015b31be",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740324865,
+                    "created_at": "2026-10-11T17:38:44.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "draft",
+                    "reason": "initial_revision",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  },
+                  {
+                    "id": "6acbc9bbb2f88b00015b31c2",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740347823,
+                    "created_at": "2026-10-11T17:39:07.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "published",
+                    "reason": "published",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": null,
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[6]",
+        "bind": {
+          "postCreatedAt329": "$.posts[0].created_at",
+          "postUpdatedAt330": "$.posts[0].updated_at",
+          "author332": "$.posts[0].authors[0].id",
+          "authorLastSeen333": "$.posts[0].authors[0].last_seen",
+          "authorCreatedAt334": "$.posts[0].authors[0].created_at",
+          "authorUpdatedAt335": "$.posts[0].authors[0].updated_at",
+          "tier336": "$.posts[0].tiers[?name=\"Free\"].id",
+          "tierCreatedAt337": "$.posts[0].tiers[?name=\"Free\"].created_at",
+          "tierUpdatedAt338": "$.posts[0].tiers[?name=\"Free\"].updated_at"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSnippets",
+        "method": "GET",
+        "path": "/snippets/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "snippets": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[7]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getMembers",
+        "method": "GET",
+        "path": "/members/",
+        "query": [
+          [
+            "order",
+            "id"
+          ],
+          [
+            "limit",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "include",
+            "newsletters,labels"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "members": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[8]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSettings",
+        "method": "GET",
+        "path": "/settings/",
+        "query": [
+          [
+            "group",
+            "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "settings": [
+              {
+                "key": "title",
+                "value": "Field notes"
+              },
+              {
+                "key": "description",
+                "value": "Thoughts, stories and ideas."
+              },
+              {
+                "key": "heading_font",
+                "value": ""
+              },
+              {
+                "key": "body_font",
+                "value": ""
+              },
+              {
+                "key": "logo",
+                "value": ""
+              },
+              {
+                "key": "cover_image",
+                "value": "https://example.invalid/v5.0.0/images/publication-cover.jpg"
+              },
+              {
+                "key": "icon",
+                "value": ""
+              },
+              {
+                "key": "accent_color",
+                "value": "#FF1A75"
+              },
+              {
+                "key": "locale",
+                "value": "en"
+              },
+              {
+                "key": "timezone",
+                "value": "Etc/UTC"
+              },
+              {
+                "key": "codeinjection_head",
+                "value": ""
+              },
+              {
+                "key": "codeinjection_foot",
+                "value": ""
+              },
+              {
+                "key": "facebook",
+                "value": "app"
+              },
+              {
+                "key": "twitter",
+                "value": "@app"
+              },
+              {
+                "key": "navigation",
+                "value": "[{\"label\":\"Home\",\"url\":\"/\"},{\"label\":\"About\",\"url\":\"/about/\"}]"
+              },
+              {
+                "key": "secondary_navigation",
+                "value": "[{\"label\":\"Sign up\",\"url\":\"#/portal/\"}]"
+              },
+              {
+                "key": "meta_title",
+                "value": null
+              },
+              {
+                "key": "meta_description",
+                "value": null
+              },
+              {
+                "key": "og_image",
+                "value": null
+              },
+              {
+                "key": "og_title",
+                "value": null
+              },
+              {
+                "key": "og_description",
+                "value": null
+              },
+              {
+                "key": "twitter_image",
+                "value": null
+              },
+              {
+                "key": "twitter_title",
+                "value": null
+              },
+              {
+                "key": "twitter_description",
+                "value": null
+              },
+              {
+                "key": "active_theme",
+                "value": "source"
+              },
+              {
+                "key": "is_private",
+                "value": false
+              },
+              {
+                "key": "password",
+                "value": ""
+              },
+              {
+                "key": "public_hash",
+                "value": "7301b422ab22a4f77d8857955c909a"
+              },
+              {
+                "key": "default_content_visibility",
+                "value": "public"
+              },
+              {
+                "key": "default_content_visibility_tiers",
+                "value": "[]"
+              },
+              {
+                "key": "members_signup_access",
+                "value": "all"
+              },
+              {
+                "key": "members_support_address",
+                "value": "noreply"
+              },
+              {
+                "key": "stripe_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_plans",
+                "value": "[]"
+              },
+              {
+                "key": "stripe_connect_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_livemode",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_display_name",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_account_id",
+                "value": null
+              },
+              {
+                "key": "members_monthly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_yearly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_track_sources",
+                "value": true
+              },
+              {
+                "key": "blocked_email_domains",
+                "value": "[]"
+              },
+              {
+                "key": "portal_name",
+                "value": true
+              },
+              {
+                "key": "portal_button",
+                "value": false
+              },
+              {
+                "key": "portal_plans",
+                "value": "[\"free\"]"
+              },
+              {
+                "key": "portal_default_plan",
+                "value": "yearly"
+              },
+              {
+                "key": "portal_products",
+                "value": "[]"
+              },
+              {
+                "key": "portal_button_style",
+                "value": "icon-and-text"
+              },
+              {
+                "key": "portal_button_icon",
+                "value": null
+              },
+              {
+                "key": "portal_button_signup_text",
+                "value": "Subscribe"
+              },
+              {
+                "key": "portal_signup_terms_html",
+                "value": null
+              },
+              {
+                "key": "portal_signup_checkbox_required",
+                "value": false
+              },
+              {
+                "key": "mailgun_domain",
+                "value": null
+              },
+              {
+                "key": "mailgun_api_key",
+                "value": null
+              },
+              {
+                "key": "mailgun_base_url",
+                "value": null
+              },
+              {
+                "key": "email_track_opens",
+                "value": true
+              },
+              {
+                "key": "email_track_clicks",
+                "value": true
+              },
+              {
+                "key": "email_verification_required",
+                "value": false
+              },
+              {
+                "key": "amp",
+                "value": false
+              },
+              {
+                "key": "amp_gtag_id",
+                "value": null
+              },
+              {
+                "key": "firstpromoter",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_id",
+                "value": null
+              },
+              {
+                "key": "labs",
+                "value": "{\"audienceFeedback\":true,\"i18n\":true,\"themeErrorsNotification\":true,\"announcementBar\":true,\"customFonts\":true,\"contentVisibility\":true,\"members\":true}"
+              },
+              {
+                "key": "slack_url",
+                "value": ""
+              },
+              {
+                "key": "slack_username",
+                "value": "App"
+              },
+              {
+                "key": "unsplash",
+                "value": true
+              },
+              {
+                "key": "shared_views",
+                "value": "[]"
+              },
+              {
+                "key": "editor_default_email_recipients",
+                "value": "visibility"
+              },
+              {
+                "key": "editor_default_email_recipients_filter",
+                "value": "all"
+              },
+              {
+                "key": "announcement_content",
+                "value": null
+              },
+              {
+                "key": "announcement_visibility",
+                "value": "[]"
+              },
+              {
+                "key": "announcement_background",
+                "value": "dark"
+              },
+              {
+                "key": "comments_enabled",
+                "value": "off"
+              },
+              {
+                "key": "outbound_link_tagging",
+                "value": true
+              },
+              {
+                "key": "web_analytics",
+                "value": true
+              },
+              {
+                "key": "pintura",
+                "value": true
+              },
+              {
+                "key": "pintura_js_url",
+                "value": null
+              },
+              {
+                "key": "pintura_css_url",
+                "value": null
+              },
+              {
+                "key": "donations_currency",
+                "value": "USD"
+              },
+              {
+                "key": "donations_suggested_amount",
+                "value": "500"
+              },
+              {
+                "key": "recommendations_enabled",
+                "value": false
+              },
+              {
+                "key": "require_email_mfa",
+                "value": false
+              },
+              {
+                "key": "social_web",
+                "value": true
+              },
+              {
+                "key": "explore_ping",
+                "value": true
+              },
+              {
+                "key": "explore_ping_growth",
+                "value": false
+              },
+              {
+                "key": "members_enabled",
+                "value": true
+              },
+              {
+                "key": "members_invite_only",
+                "value": false
+              },
+              {
+                "key": "allow_self_signup",
+                "value": true
+              },
+              {
+                "key": "paid_members_enabled",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_account",
+                "value": null
+              },
+              {
+                "key": "donations_enabled",
+                "value": false
+              },
+              {
+                "key": "default_email_address",
+                "value": "<redacted:email>"
+              },
+              {
+                "key": "support_email_address",
+                "value": "noreply@localhost"
+              },
+              {
+                "key": "all_blocked_email_domains",
+                "value": []
+              },
+              {
+                "key": "social_web_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_configured",
+                "value": false
+              }
+            ],
+            "meta": {
+              "filters": {
+                "group": "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[9]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "status",
+            "active"
+          ],
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "include",
+            "count.active_members"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent",
+                "count": {
+                  "active_members": 0
+                }
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[10]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "status",
+            "active"
+          ],
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "include",
+            "count.active_members"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent",
+                "count": {
+                  "active_members": 0
+                }
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[11]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "fields",
+            "id,url,title,visibility,published_at"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "title": "Weekend hike in the hills",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/"
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "title": "Coming soon",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "url": "http://localhost:2368/coming-soon/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[12]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "fields",
+            "id,url,title,visibility,published_at"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "title": "Weekend hike in the hills",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/"
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "title": "Coming soon",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "url": "http://localhost:2368/coming-soon/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[13]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSearchIndexUsers",
+        "method": "GET",
+        "path": "/search-index/users/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Tag2",
+          "envelope": "users",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "slug": "wp",
+                "name": "<redacted:pii>",
+                "url": "http://localhost:2368/author/wp/",
+                "profile_image": null
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[14]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSearchIndexTags",
+        "method": "GET",
+        "path": "/search-index/tags/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Tag2",
+          "envelope": "tags",
+          "body": {
+            "tags": [
+              {
+                "id": "6acbc9d4b2f88b00015b31c4",
+                "slug": "outdoors",
+                "name": "Outdoors",
+                "url": "http://localhost:2368/404/"
+              },
+              {
+                "id": "6acbc96ab2f88b00015b2f04",
+                "slug": "news",
+                "name": "News",
+                "url": "http://localhost:2368/tag/news/"
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[15]",
+        "bind": {
+          "tag380": "$.tags[?name=\"Outdoors\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSearchIndexPosts",
+        "method": "GET",
+        "path": "/search-index/posts/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Post2",
+          "envelope": "posts",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "title": "Weekend hike in the hills",
+                "status": "published",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "visibility": "public"
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "url": "http://localhost:2368/coming-soon/",
+                "title": "Coming soon",
+                "status": "published",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "visibility": "public"
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[16]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getSearchIndexPages",
+        "method": "GET",
+        "path": "/search-index/pages/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Post2",
+          "envelope": "pages",
+          "body": {
+            "pages": [
+              {
+                "id": "6acbc96bb2f88b00015b2f7f",
+                "url": "http://localhost:2368/about/",
+                "title": "About this site",
+                "status": "published",
+                "published_at": "2026-10-11T17:37:48.000Z",
+                "visibility": "public"
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[17]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "fields",
+            "id,url,title,visibility,published_at"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "title": "Weekend hike in the hills",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/"
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "title": "Coming soon",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "url": "http://localhost:2368/coming-soon/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[18]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "section > div:nth-of-type(1) > div:nth-of-type(1) > li > a:nth-of-type(1)",
+          "role": "link",
+          "name": "Weekend hike in the hills By <redacted:pii> - a few seconds ago P…",
+          "id": "ember167",
+          "href": "#/editor/post/6acbc9a4b2f88b00015b31bc/"
+        }
+      },
+      "request": {
+        "operationId": "getPosts",
+        "method": "GET",
+        "path": "/posts/",
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "filter",
+            "status:published"
+          ],
+          [
+            "fields",
+            "id,url,title,visibility,published_at"
+          ],
+          [
+            "order",
+            "published_at desc"
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "title": "Weekend hike in the hills",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/"
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f7d",
+                "title": "Coming soon",
+                "visibility": "public",
+                "published_at": "2026-10-11T17:37:47.000Z",
+                "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[[\"a\",[\"href\",\"#/portal/\"]]],\"sections\":[[1,\"p\",[[0,[],0,\"This is Field notes, a brand new site by <redacted:pii> that's just getting started. Things will be up and running here shortly, but you can \"],[0,[0],1,\"subscribe\"],[0,[],0,\" in the meantime if you'd like to stay up to date and receive emails when new content is published!\"]]]],\"appVersion\":\"4.0\"}",
+                "lexical": null,
+                "url": "http://localhost:2368/coming-soon/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[19]",
+        "bind": {
+          "post392": "$.posts[?title=\"Weekend hike in the hills\"].id",
+          "postPublishedAt393": "$.posts[?title=\"Weekend hike in the hills\"].published_at"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "body > div:nth-of-type(2) > div > main > button",
+          "role": "button",
+          "name": "Settings",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getUsers",
+        "method": "GET",
+        "path": "/users/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "name": "<redacted:pii>",
+                "slug": "wp",
+                "email": "<redacted:email>",
+                "profile_image": null,
+                "cover_image": null,
+                "bio": null,
+                "website": null,
+                "location": null,
+                "facebook": null,
+                "twitter": null,
+                "threads": null,
+                "bluesky": null,
+                "mastodon": null,
+                "tiktok": null,
+                "youtube": null,
+                "instagram": null,
+                "linkedin": null,
+                "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                "status": "active",
+                "meta_title": null,
+                "meta_description": null,
+                "tour": null,
+                "last_seen": "2026-10-11T17:38:25.000Z",
+                "comment_notifications": true,
+                "free_member_signup_notification": true,
+                "paid_subscription_started_notification": true,
+                "paid_subscription_canceled_notification": false,
+                "mention_notifications": true,
+                "recommendation_notifications": true,
+                "milestone_notifications": true,
+                "donation_notifications": true,
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:38:26.000Z",
+                "roles": [
+                  {
+                    "id": "6acbc966b2f88b00015b2ef7",
+                    "name": "Owner",
+                    "description": "Blog Owner",
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:37:42.000Z"
+                  }
+                ],
+                "url": "http://localhost:2368/author/wp/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[20]",
+        "bind": {
+          "role400": "$.users[0].roles[0].id",
+          "roleCreatedAt401": "$.users[0].roles[0].created_at",
+          "roleUpdatedAt402": "$.users[0].roles[0].updated_at"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTags",
+        "method": "GET",
+        "path": "/tags/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "order",
+            "name asc"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tags": [
+              {
+                "id": "6acbc96ab2f88b00015b2f04",
+                "name": "News",
+                "slug": "news",
+                "description": null,
+                "feature_image": null,
+                "visibility": "public",
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "canonical_url": null,
+                "accent_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "url": "http://localhost:2368/tag/news/"
+              },
+              {
+                "id": "6acbc9d4b2f88b00015b31c4",
+                "name": "Outdoors",
+                "slug": "outdoors",
+                "description": "Trips, trails and time outside.",
+                "feature_image": null,
+                "visibility": "public",
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "canonical_url": null,
+                "accent_color": null,
+                "created_at": "2026-10-11T17:39:32.000Z",
+                "updated_at": "2026-10-11T17:39:32.000Z",
+                "url": "http://localhost:2368/404/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 2,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/tags.har#entries[21]",
+        "bind": {
+          "tagCreatedAt407": "$.tags[?name=\"Outdoors\"].created_at",
+          "tagUpdatedAt408": "$.tags[?name=\"Outdoors\"].updated_at"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "key",
+        "target": {
+          "tag": "input",
+          "selector": "#tag-input > ul > input",
+          "role": "searchbox",
+          "id": "ember-power-select-trigger-multiple-input-ember186",
+          "type": "search"
+        },
+        "key": "Enter"
+      },
+      "request": {
+        "operationId": "putPosts",
+        "method": "PUT",
+        "path": "/posts/{postId}/",
+        "pathParams": {
+          "postId": {
+            "var": "post392"
+          }
+        },
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "include",
+            "tags,authors,authors.roles,email,tiers,newsletter,count.clicks,post_revisions,post_revisions.author"
+          ]
+        ],
+        "body": {
+          "posts": [
+            {
+              "id": {
+                "$var": "post392"
+              },
+              "count": {
+                "clicks": 0,
+                "positive_feedback": 0,
+                "negative_feedback": 0
+              },
+              "created_at": {
+                "$var": "postCreatedAt329"
+              },
+              "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+              "custom_excerpt": null,
+              "featured": false,
+              "canonical_url": null,
+              "codeinjection_foot": null,
+              "codeinjection_head": null,
+              "custom_template": null,
+              "og_image": null,
+              "og_title": null,
+              "og_description": null,
+              "twitter_image": null,
+              "twitter_title": null,
+              "twitter_description": null,
+              "email_subject": null,
+              "html": null,
+              "visibility": "public",
+              "meta_description": null,
+              "meta_title": null,
+              "mobiledoc": null,
+              "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+              "plaintext": null,
+              "published_at": {
+                "$var": "postPublishedAt393"
+              },
+              "slug": "weekend-hike-in-the-hills",
+              "status": "published",
+              "title": "Weekend hike in the hills",
+              "updated_at": {
+                "$var": "postUpdatedAt330"
+              },
+              "email_segment": "all",
+              "email_only": false,
+              "feature_image": null,
+              "feature_image_alt": null,
+              "feature_image_caption": null,
+              "tiers": [
+                {
+                  "id": {
+                    "$var": "tier336"
+                  },
+                  "name": "Free",
+                  "slug": "free",
+                  "active": true,
+                  "welcome_page_url": null,
+                  "visibility": "public",
+                  "trial_days": 0,
+                  "description": null,
+                  "type": "free",
+                  "currency": null,
+                  "monthly_price": null,
+                  "yearly_price": null,
+                  "created_at": {
+                    "$var": "tierCreatedAt337"
+                  },
+                  "updated_at": {
+                    "$var": "tierUpdatedAt338"
+                  },
+                  "monthly_price_id": null,
+                  "yearly_price_id": null
+                },
+                {
+                  "id": {
+                    "$var": "tier11"
+                  },
+                  "name": "Field notes",
+                  "slug": "default-product",
+                  "active": true,
+                  "welcome_page_url": null,
+                  "visibility": "public",
+                  "trial_days": 0,
+                  "description": null,
+                  "type": "paid",
+                  "currency": "usd",
+                  "monthly_price": 500,
+                  "yearly_price": 5000,
+                  "created_at": {
+                    "$var": "tierCreatedAt337"
+                  },
+                  "updated_at": {
+                    "$var": "tierUpdatedAt338"
+                  },
+                  "monthly_price_id": null,
+                  "yearly_price_id": null
+                }
+              ],
+              "authors": [
+                {
+                  "id": {
+                    "$var": "author332"
+                  },
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "last_seen": {
+                    "$var": "authorLastSeen333"
+                  },
+                  "created_at": {
+                    "$var": "authorCreatedAt334"
+                  },
+                  "updated_at": {
+                    "$var": "authorUpdatedAt335"
+                  },
+                  "facebook": null,
+                  "twitter": null,
+                  "tour": null,
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "roles": [
+                    {
+                      "id": {
+                        "$var": "role400"
+                      },
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": {
+                        "$var": "roleCreatedAt401"
+                      },
+                      "updated_at": {
+                        "$var": "roleUpdatedAt402"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "published_by": null,
+              "tags": [
+                {
+                  "id": {
+                    "$var": "tag380"
+                  },
+                  "name": "Outdoors",
+                  "slug": "outdoors",
+                  "description": "Trips, trails and time outside.",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "twitter_image": null,
+                  "twitter_title": null,
+                  "twitter_description": null,
+                  "og_image": null,
+                  "og_title": null,
+                  "og_description": null,
+                  "codeinjection_head": null,
+                  "codeinjection_foot": null,
+                  "canonical_url": null,
+                  "accent_color": null,
+                  "feature_image": null,
+                  "visibility": "public",
+                  "created_at": {
+                    "$var": "tagCreatedAt407"
+                  },
+                  "updated_at": {
+                    "$var": "tagUpdatedAt408"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Post",
+          "envelope": "posts",
+          "body": {
+            "posts": [
+              {
+                "id": "6acbc9a4b2f88b00015b31bc",
+                "uuid": "532c0f1e-0a8f-4cce-9312-c8c125d3916e",
+                "title": "Weekend hike in the hills",
+                "slug": "weekend-hike-in-the-hills",
+                "mobiledoc": null,
+                "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                "comment_id": "6acbc9a4b2f88b00015b31bc",
+                "feature_image": null,
+                "featured": false,
+                "status": "published",
+                "visibility": "public",
+                "created_at": "2026-10-11T17:38:44.000Z",
+                "updated_at": "2026-10-11T17:39:07.000Z",
+                "published_at": "2026-10-11T17:39:07.000Z",
+                "custom_excerpt": null,
+                "codeinjection_head": null,
+                "codeinjection_foot": null,
+                "custom_template": null,
+                "canonical_url": null,
+                "authors": [
+                  {
+                    "id": "1",
+                    "name": "<redacted:pii>",
+                    "slug": "wp",
+                    "email": "<redacted:email>",
+                    "profile_image": null,
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "threads": null,
+                    "bluesky": null,
+                    "mastodon": null,
+                    "tiktok": null,
+                    "youtube": null,
+                    "instagram": null,
+                    "linkedin": null,
+                    "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                    "status": "active",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "tour": null,
+                    "last_seen": "2026-10-11T17:38:25.000Z",
+                    "comment_notifications": true,
+                    "free_member_signup_notification": true,
+                    "paid_subscription_started_notification": true,
+                    "paid_subscription_canceled_notification": false,
+                    "mention_notifications": true,
+                    "recommendation_notifications": true,
+                    "milestone_notifications": true,
+                    "donation_notifications": true,
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:38:26.000Z",
+                    "roles": [
+                      {
+                        "id": "6acbc966b2f88b00015b2ef7",
+                        "name": "Owner",
+                        "description": "Blog Owner",
+                        "created_at": "2026-10-11T17:37:42.000Z",
+                        "updated_at": "2026-10-11T17:37:42.000Z"
+                      }
+                    ],
+                    "url": "http://localhost:2368/author/wp/"
+                  }
+                ],
+                "post_revisions": [
+                  {
+                    "id": "6acbc9a4b2f88b00015b31be",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":null,\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740324865,
+                    "created_at": "2026-10-11T17:38:44.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "draft",
+                    "reason": "initial_revision",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  },
+                  {
+                    "id": "6acbc9bbb2f88b00015b31c2",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740347823,
+                    "created_at": "2026-10-11T17:39:07.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "published",
+                    "reason": "published",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  },
+                  {
+                    "id": "6acbc9edb2f88b00015b31c7",
+                    "post_id": "6acbc9a4b2f88b00015b31bc",
+                    "lexical": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We left early and reached the ridge before noon. The view was worth every step.\",\"type\":\"extended-text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}",
+                    "created_at_ts": 1791740397908,
+                    "created_at": "2026-10-11T17:39:57.000Z",
+                    "title": "Weekend hike in the hills",
+                    "post_status": "published",
+                    "reason": "published",
+                    "feature_image": null,
+                    "feature_image_alt": null,
+                    "feature_image_caption": null,
+                    "custom_excerpt": null,
+                    "author": {
+                      "id": "1",
+                      "name": "<redacted:pii>",
+                      "slug": "wp",
+                      "email": "<redacted:email>",
+                      "profile_image": null,
+                      "cover_image": null,
+                      "bio": null,
+                      "website": null,
+                      "location": null,
+                      "facebook": null,
+                      "twitter": null,
+                      "threads": null,
+                      "bluesky": null,
+                      "mastodon": null,
+                      "tiktok": null,
+                      "youtube": null,
+                      "instagram": null,
+                      "linkedin": null,
+                      "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                      "status": "active",
+                      "locale": null,
+                      "visibility": "public",
+                      "meta_title": null,
+                      "meta_description": null,
+                      "tour": null,
+                      "last_seen": "2026-10-11T17:38:25.000Z",
+                      "comment_notifications": true,
+                      "free_member_signup_notification": true,
+                      "paid_subscription_started_notification": true,
+                      "paid_subscription_canceled_notification": false,
+                      "mention_notifications": true,
+                      "recommendation_notifications": true,
+                      "milestone_notifications": true,
+                      "donation_notifications": true,
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:38:26.000Z"
+                    }
+                  }
+                ],
+                "tags": [
+                  {
+                    "id": "6acbc9d4b2f88b00015b31c4",
+                    "name": "Outdoors",
+                    "slug": "outdoors",
+                    "description": "Trips, trails and time outside.",
+                    "feature_image": null,
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": null,
+                    "created_at": "2026-10-11T17:39:32.000Z",
+                    "updated_at": "2026-10-11T17:39:32.000Z",
+                    "url": "http://localhost:2368/404/"
+                  }
+                ],
+                "tiers": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f01",
+                    "name": "Free",
+                    "slug": "free",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "free",
+                    "currency": null,
+                    "monthly_price": null,
+                    "yearly_price": null,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  },
+                  {
+                    "id": "6acbc96ab2f88b00015b2f02",
+                    "name": "Field notes",
+                    "slug": "default-product",
+                    "active": true,
+                    "welcome_page_url": null,
+                    "visibility": "public",
+                    "trial_days": 0,
+                    "description": null,
+                    "type": "paid",
+                    "currency": "usd",
+                    "monthly_price": 500,
+                    "yearly_price": 5000,
+                    "created_at": "2026-10-11T17:37:46.000Z",
+                    "updated_at": "2026-10-11T17:37:46.000Z",
+                    "monthly_price_id": null,
+                    "yearly_price_id": null
+                  }
+                ],
+                "count": {
+                  "clicks": 0,
+                  "positive_feedback": 0,
+                  "negative_feedback": 0
+                },
+                "primary_author": {
+                  "id": "1",
+                  "name": "<redacted:pii>",
+                  "slug": "wp",
+                  "email": "<redacted:email>",
+                  "profile_image": null,
+                  "cover_image": null,
+                  "bio": null,
+                  "website": null,
+                  "location": null,
+                  "facebook": null,
+                  "twitter": null,
+                  "threads": null,
+                  "bluesky": null,
+                  "mastodon": null,
+                  "tiktok": null,
+                  "youtube": null,
+                  "instagram": null,
+                  "linkedin": null,
+                  "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                  "status": "active",
+                  "meta_title": null,
+                  "meta_description": null,
+                  "tour": null,
+                  "last_seen": "2026-10-11T17:38:25.000Z",
+                  "comment_notifications": true,
+                  "free_member_signup_notification": true,
+                  "paid_subscription_started_notification": true,
+                  "paid_subscription_canceled_notification": false,
+                  "mention_notifications": true,
+                  "recommendation_notifications": true,
+                  "milestone_notifications": true,
+                  "donation_notifications": true,
+                  "created_at": "2026-10-11T17:37:42.000Z",
+                  "updated_at": "2026-10-11T17:38:26.000Z",
+                  "roles": [
+                    {
+                      "id": "6acbc966b2f88b00015b2ef7",
+                      "name": "Owner",
+                      "description": "Blog Owner",
+                      "created_at": "2026-10-11T17:37:42.000Z",
+                      "updated_at": "2026-10-11T17:37:42.000Z"
+                    }
+                  ],
+                  "url": "http://localhost:2368/author/wp/"
+                },
+                "primary_tag": {
+                  "id": "6acbc9d4b2f88b00015b31c4",
+                  "name": "Outdoors",
+                  "slug": "outdoors",
+                  "description": "Trips, trails and time outside.",
+                  "feature_image": null,
+                  "visibility": "public",
+                  "og_image": null,
+                  "og_title": null,
+                  "og_description": null,
+                  "twitter_image": null,
+                  "twitter_title": null,
+                  "twitter_description": null,
+                  "meta_title": null,
+                  "meta_description": null,
+                  "codeinjection_head": null,
+                  "codeinjection_foot": null,
+                  "canonical_url": null,
+                  "accent_color": null,
+                  "created_at": "2026-10-11T17:39:32.000Z",
+                  "updated_at": "2026-10-11T17:39:32.000Z",
+                  "url": "http://localhost:2368/404/"
+                },
+                "email_segment": "all",
+                "url": "http://localhost:2368/weekend-hike-in-the-hills/",
+                "excerpt": "We left early and reached the ridge before noon. The view was worth every step.",
+                "reading_time": 0,
+                "og_image": null,
+                "og_title": null,
+                "og_description": null,
+                "twitter_image": null,
+                "twitter_title": null,
+                "twitter_description": null,
+                "meta_title": null,
+                "meta_description": null,
+                "email_subject": null,
+                "frontmatter": null,
+                "feature_image_alt": null,
+                "feature_image_caption": null,
+                "email_only": false,
+                "email": null,
+                "newsletter": null
+              }
+            ]
+          }
+        },
+        "source": "capture/tags.har#entries[22]"
+      }
+    }
+  ]
+}

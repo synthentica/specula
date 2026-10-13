@@ -1,0 +1,37 @@
+{
+  "order": [
+    "register",
+    "create-board",
+    "groups",
+    "add-cards",
+    "edit-card",
+    "move-card",
+    "delete-card",
+    "errors",
+    "logout-login"
+  ],
+  "apiPrefix": "/api/v2",
+  "volatileKeys": [
+    "id",
+    "createAt",
+    "updateAt",
+    "deleteAt",
+    "create_at",
+    "update_at",
+    "delete_at",
+    "createdBy",
+    "modifiedBy",
+    "userId",
+    "userID",
+    "boardId",
+    "boardID",
+    "parentId",
+    "teamID",
+    "signupToken",
+    "card_limit_timestamp"
+  ],
+  "headers": {
+    "X-Requested-With": "XMLHttpRequest"
+  },
+  "note": "Flows replay in this order against one fresh instance; variables bound in earlier flows stay available. volatileKeys are never compared by value. headers are sent with every request, as the client did."
+}

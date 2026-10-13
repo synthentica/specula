@@ -1,0 +1,745 @@
+{
+  "channels": [
+    {
+      "url": "/ws",
+      "messages": [
+        {
+          "direction": "sent",
+          "kind": "AUTH",
+          "count": 11,
+          "flows": [
+            "register",
+            "create-board",
+            "groups",
+            "add-cards",
+            "edit-card",
+            "move-card",
+            "delete-card",
+            "errors",
+            "logout-login"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "AUTH"
+                ]
+              },
+              "token": {
+                "type": "string",
+                "x-redacted": "secret"
+              }
+            },
+            "required": [
+              "action",
+              "token"
+            ]
+          }
+        },
+        {
+          "direction": "sent",
+          "kind": "SUBSCRIBE_TEAM",
+          "count": 11,
+          "flows": [
+            "register",
+            "create-board",
+            "groups",
+            "add-cards",
+            "edit-card",
+            "move-card",
+            "delete-card",
+            "errors",
+            "logout-login"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "SUBSCRIBE_TEAM"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "UPDATE_CATEGORY",
+          "count": 1,
+          "flows": [
+            "register"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UPDATE_CATEGORY"
+                ]
+              },
+              "category": {
+                "type": "object",
+                "properties": {
+                  "collapsed": {
+                    "type": "boolean"
+                  },
+                  "createAt": {
+                    "type": "integer"
+                  },
+                  "deleteAt": {
+                    "type": "integer"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Boards"
+                    ]
+                  },
+                  "sorting": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "sortOrder": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      10
+                    ]
+                  },
+                  "teamID": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "system"
+                    ]
+                  },
+                  "updateAt": {
+                    "type": "integer"
+                  },
+                  "userID": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "collapsed",
+                  "createAt",
+                  "deleteAt",
+                  "id",
+                  "name",
+                  "sortOrder",
+                  "sorting",
+                  "teamID",
+                  "type",
+                  "updateAt",
+                  "userID"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "category",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "UPDATE_BOARD",
+          "count": 9,
+          "flows": [
+            "create-board",
+            "groups"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UPDATE_BOARD"
+                ]
+              },
+              "board": {
+                "type": "object",
+                "properties": {
+                  "cardProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "Status"
+                          ]
+                        },
+                        "options": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "color": {
+                                "type": "string",
+                                "x-observed-values": [
+                                  "propColorDefault"
+                                ]
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string",
+                                "x-observed-values": [
+                                  "New group",
+                                  "Todo",
+                                  "Doing",
+                                  "Done"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "color",
+                              "id",
+                              "value"
+                            ]
+                          }
+                        },
+                        "type": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "select"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "options",
+                        "type"
+                      ]
+                    }
+                  },
+                  "channelId": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "createAt": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "string"
+                  },
+                  "deleteAt": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "icon": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "isTemplate": {
+                    "type": "boolean"
+                  },
+                  "minimumRole": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "modifiedBy": {
+                    "type": "string"
+                  },
+                  "properties": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "showDescription": {
+                    "type": "boolean"
+                  },
+                  "teamId": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "0"
+                    ]
+                  },
+                  "templateVersion": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      0
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "",
+                      "Launch plan"
+                    ]
+                  },
+                  "type": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "P"
+                    ]
+                  },
+                  "updateAt": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "cardProperties",
+                  "channelId",
+                  "createAt",
+                  "createdBy",
+                  "deleteAt",
+                  "description",
+                  "icon",
+                  "id",
+                  "isTemplate",
+                  "minimumRole",
+                  "modifiedBy",
+                  "properties",
+                  "showDescription",
+                  "teamId",
+                  "templateVersion",
+                  "title",
+                  "type",
+                  "updateAt"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "board",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "UPDATE_BLOCK",
+          "count": 17,
+          "flows": [
+            "create-board",
+            "add-cards",
+            "edit-card",
+            "move-card",
+            "delete-card"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UPDATE_BLOCK"
+                ]
+              },
+              "block": {
+                "type": "object",
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "createAt": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "string"
+                  },
+                  "deleteAt": {
+                    "type": "integer"
+                  },
+                  "fields": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "cardOrder": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "c3mqh7wd7bbywzyxzmr1gzkxgse",
+                            "cpa5hpdca83bh7n6zhsrs4ke39c",
+                            "cz4kdzjr3xirm5xe1h67sks359h"
+                          ]
+                        }
+                      },
+                      "collapsedOptionIds": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "columnCalculations": {
+                        "type": "object",
+                        "properties": {}
+                      },
+                      "columnWidths": {
+                        "type": "object",
+                        "properties": {}
+                      },
+                      "contentOrder": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "afpwq4n7osfbpxkgab438zi9tto"
+                          ]
+                        }
+                      },
+                      "defaultTemplateId": {
+                        "type": "string",
+                        "x-observed-values": [
+                          ""
+                        ]
+                      },
+                      "filter": {
+                        "type": "object",
+                        "properties": {
+                          "filters": {
+                            "type": "array",
+                            "items": {}
+                          },
+                          "operation": {
+                            "type": "string",
+                            "x-observed-values": [
+                              "and"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "filters",
+                          "operation"
+                        ]
+                      },
+                      "hiddenOptionIds": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "icon": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "🐧",
+                          "💦",
+                          "🗄"
+                        ]
+                      },
+                      "isTemplate": {
+                        "type": "boolean"
+                      },
+                      "kanbanCalculations": {
+                        "type": "object",
+                        "properties": {}
+                      },
+                      "properties": {
+                        "type": "object",
+                        "x-keys": "record-id",
+                        "additionalProperties": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "ab4g498cuehart3fu9nbmrz4ciy",
+                            "aaq54ioap7n868z3d77c53cbiuo"
+                          ]
+                        }
+                      },
+                      "sortOptions": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "viewType": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "board"
+                        ]
+                      },
+                      "visibleOptionIds": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "visiblePropertyIds": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    }
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "modifiedBy": {
+                    "type": "string"
+                  },
+                  "parentId": {
+                    "type": "string"
+                  },
+                  "schema": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      0,
+                      1
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "examples": [
+                      "Board view",
+                      ""
+                    ]
+                  },
+                  "type": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "view",
+                      "card",
+                      "text",
+                      "comment",
+                      ""
+                    ]
+                  },
+                  "updateAt": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "createAt",
+                  "createdBy",
+                  "deleteAt",
+                  "fields",
+                  "id",
+                  "modifiedBy",
+                  "parentId",
+                  "schema",
+                  "title",
+                  "type",
+                  "updateAt"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "block",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "UPDATE_MEMBER",
+          "count": 1,
+          "flows": [
+            "create-board"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UPDATE_MEMBER"
+                ]
+              },
+              "member": {
+                "type": "object",
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "minimumRole": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "roles": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "schemeAdmin": {
+                    "type": "boolean"
+                  },
+                  "schemeCommenter": {
+                    "type": "boolean"
+                  },
+                  "schemeEditor": {
+                    "type": "boolean"
+                  },
+                  "schemeViewer": {
+                    "type": "boolean"
+                  },
+                  "synthetic": {
+                    "type": "boolean"
+                  },
+                  "userId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "minimumRole",
+                  "roles",
+                  "schemeAdmin",
+                  "schemeCommenter",
+                  "schemeEditor",
+                  "schemeViewer",
+                  "synthetic",
+                  "userId"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "member",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "UPDATE_BOARD_CATEGORY",
+          "count": 1,
+          "flows": [
+            "create-board"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UPDATE_BOARD_CATEGORY"
+                ]
+              },
+              "blockCategories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "boardID": {
+                      "type": "string"
+                    },
+                    "categoryID": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "7qtpadj7iffn83dct8et57gtr9h"
+                      ]
+                    },
+                    "hidden": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "boardID",
+                    "categoryID",
+                    "hidden"
+                  ]
+                }
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "blockCategories",
+              "teamId"
+            ]
+          }
+        },
+        {
+          "direction": "sent",
+          "kind": "UNSUBSCRIBE_TEAM",
+          "count": 2,
+          "flows": [
+            "errors",
+            "logout-login"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "UNSUBSCRIBE_TEAM"
+                ]
+              },
+              "teamId": {
+                "type": "string",
+                "x-observed-values": [
+                  "0"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "teamId"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

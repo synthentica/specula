@@ -1,0 +1,53 @@
+{
+  "label": "rebuild",
+  "baseUrl": "http://localhost:4711",
+  "generated": "2026-10-12T17:43:02.447Z",
+  "score": 96,
+  "views": [
+    {
+      "view": "board",
+      "score": 97,
+      "layout": 95,
+      "components": 99,
+      "style": 100,
+      "notes": []
+    },
+    {
+      "view": "overview",
+      "score": 97,
+      "layout": 94,
+      "components": 99,
+      "style": 100,
+      "notes": []
+    },
+    {
+      "view": "projects",
+      "score": 97,
+      "layout": 94,
+      "components": 98,
+      "style": 100,
+      "notes": [
+        "list-item: font weight 600, spec 400"
+      ]
+    },
+    {
+      "view": "task",
+      "score": 94,
+      "layout": 90,
+      "components": 93,
+      "style": 100,
+      "notes": [
+        "card: border all #e5e7eb, spec none",
+        "badge: text transform uppercase, spec none"
+      ]
+    },
+    {
+      "view": "upcoming",
+      "score": 97,
+      "layout": 93,
+      "components": 99,
+      "style": 100,
+      "notes": []
+    }
+  ]
+}

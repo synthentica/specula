@@ -1,0 +1,29 @@
+{
+  "order": [
+    "setup",
+    "login",
+    "create-home",
+    "create-pages",
+    "edit-page",
+    "comments",
+    "browse",
+    "search",
+    "history",
+    "users",
+    "delete-page",
+    "errors",
+    "logout-login"
+  ],
+  "apiPrefix": "",
+  "volatileKeys": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "versionId",
+    "versionDate",
+    "lastLoginAt",
+    "hash",
+    "stacktrace"
+  ],
+  "note": "Flows replay in this order against one fresh instance; variables bound in earlier flows stay available. volatileKeys are never compared by value. headers are sent with every request, as the client did."
+}

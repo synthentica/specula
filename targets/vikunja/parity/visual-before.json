@@ -1,0 +1,93 @@
+{
+  "label": "before",
+  "baseUrl": "http://localhost:4711",
+  "generated": "2026-10-12T17:44:49.379Z",
+  "score": 54,
+  "views": [
+    {
+      "view": "board",
+      "score": 54,
+      "layout": 58,
+      "components": 45,
+      "style": 58,
+      "notes": [
+        "tabs: none, spec has 1",
+        "accent colour #126cfd not used",
+        "column: 1 on the view, spec 4",
+        "button: background #e3f1ee, spec none",
+        "column: background #e3f1ee, spec none",
+        "badge: background #1f7a6d, spec #00db60",
+        "button: 2 on the view, spec 17",
+        "card: typical size 256×128, spec 300×50"
+      ]
+    },
+    {
+      "view": "overview",
+      "score": 54,
+      "layout": 51,
+      "components": 52,
+      "style": 60,
+      "notes": [
+        "accent colour #126cfd not used",
+        "button: background #e3f1ee, spec none",
+        "button: 2 on the view, spec 10",
+        "list-item: none, spec has 8",
+        "font system-ui, spec Open Sans",
+        "input: border all #e2e0d8, spec all #126cfd",
+        "avatar: corner radius 50px, spec 100px",
+        "button: typical size 215×41, spec 40×40"
+      ]
+    },
+    {
+      "view": "projects",
+      "score": 55,
+      "layout": 52,
+      "components": 53,
+      "style": 60,
+      "notes": [
+        "accent colour #126cfd not used",
+        "card: typical size 269×58, spec 174×150",
+        "button: background #e3f1ee, spec none",
+        "button: 3 on the view, spec 12",
+        "list-item: none, spec has 11",
+        "font system-ui, spec Open Sans",
+        "card: border all #e2e0d8, spec none",
+        "avatar: corner radius 50px, spec 100px"
+      ]
+    },
+    {
+      "view": "task",
+      "score": 52,
+      "layout": 54,
+      "components": 40,
+      "style": 60,
+      "notes": [
+        "card: none, spec has 3",
+        "accent colour #126cfd not used",
+        "button: background #1f7a6d, spec none",
+        "badge: background #1f7a6d, spec #00db60",
+        "input: background #ffffff, spec none",
+        "button: 6 on the view, spec 60",
+        "tabs: 1 on the view, spec 8",
+        "list-item: none, spec has 8"
+      ]
+    },
+    {
+      "view": "upcoming",
+      "score": 54,
+      "layout": 53,
+      "components": 48,
+      "style": 60,
+      "notes": [
+        "accent colour #126cfd not used",
+        "button: background #e3f1ee, spec none",
+        "button: 2 on the view, spec 9",
+        "list-item: none, spec has 8",
+        "font system-ui, spec Open Sans",
+        "avatar: corner radius 50px, spec 100px",
+        "button: typical size 215×41, spec 40×40",
+        "heading: font size 12px, spec 32px"
+      ]
+    }
+  ]
+}

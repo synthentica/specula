@@ -1,0 +1,31 @@
+# Local Ghost for specula. State lives in tmpfs, so every `up` starts fresh.
+#
+# The public site loads Portal (member sign-up) from cdn.jsdelivr.net, together with its public
+# source map. Where that CDN is unreachable (a sandbox), serve the same npm package locally:
+#   ./cdn-mirror.sh /some/dir
+#   GHOST_CDN_DIR=/some/dir GHOST_PORTAL_URL=http://localhost:2369/portal/umd/portal.min.js \
+#     docker compose --profile cdn-mirror up -d
+services:
+  ghost:
+    image: mirror.gcr.io/library/ghost:5-alpine  # Docker Hub mirror (same official image)
+    ports:
+      - "127.0.0.1:2368:2368"
+    environment:
+      url: http://localhost:2368
+      NODE_ENV: development
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      mail__transport: Stub
+      server__host: 0.0.0.0  # the default (::) fails where the container has no IPv6
+      portal__url: ${GHOST_PORTAL_URL:-https://cdn.jsdelivr.net/ghost/portal@~{version}/umd/portal.min.js}
+    tmpfs:
+      - /var/lib/ghost/content:uid=1000,gid=1000
+  cdn:
+    profiles: [cdn-mirror]
+    image: mirror.gcr.io/library/nginx:alpine
+    ports:
+      - "127.0.0.1:2369:80"
+    volumes:
+      - ${GHOST_CDN_DIR:-./cdn}:/usr/share/nginx/html:ro
+    # Portal is loaded with crossorigin="anonymous", so the mirror sends the CORS header jsDelivr sends.
+    command: ["sh", "-c", "echo 'server { listen 80; root /usr/share/nginx/html; add_header Access-Control-Allow-Origin * always; }' > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]

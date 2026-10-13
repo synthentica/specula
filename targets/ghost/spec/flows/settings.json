@@ -1,0 +1,2476 @@
+{
+  "name": "settings",
+  "order": 6,
+  "description": "",
+  "steps": [
+    {
+      "action": null,
+      "request": {
+        "operationId": "getSettings",
+        "method": "GET",
+        "path": "/settings/",
+        "query": [
+          [
+            "group",
+            "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,security,social_web,explore"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "settings": [
+              {
+                "key": "title",
+                "value": "Field notes"
+              },
+              {
+                "key": "description",
+                "value": "Thoughts, stories and ideas."
+              },
+              {
+                "key": "heading_font",
+                "value": ""
+              },
+              {
+                "key": "body_font",
+                "value": ""
+              },
+              {
+                "key": "logo",
+                "value": ""
+              },
+              {
+                "key": "cover_image",
+                "value": "https://example.invalid/v5.0.0/images/publication-cover.jpg"
+              },
+              {
+                "key": "icon",
+                "value": ""
+              },
+              {
+                "key": "accent_color",
+                "value": "#FF1A75"
+              },
+              {
+                "key": "locale",
+                "value": "en"
+              },
+              {
+                "key": "timezone",
+                "value": "Etc/UTC"
+              },
+              {
+                "key": "codeinjection_head",
+                "value": ""
+              },
+              {
+                "key": "codeinjection_foot",
+                "value": ""
+              },
+              {
+                "key": "facebook",
+                "value": "app"
+              },
+              {
+                "key": "twitter",
+                "value": "@app"
+              },
+              {
+                "key": "navigation",
+                "value": "[{\"label\":\"Home\",\"url\":\"/\"},{\"label\":\"About\",\"url\":\"/about/\"}]"
+              },
+              {
+                "key": "secondary_navigation",
+                "value": "[{\"label\":\"Sign up\",\"url\":\"#/portal/\"}]"
+              },
+              {
+                "key": "meta_title",
+                "value": null
+              },
+              {
+                "key": "meta_description",
+                "value": null
+              },
+              {
+                "key": "og_image",
+                "value": null
+              },
+              {
+                "key": "og_title",
+                "value": null
+              },
+              {
+                "key": "og_description",
+                "value": null
+              },
+              {
+                "key": "twitter_image",
+                "value": null
+              },
+              {
+                "key": "twitter_title",
+                "value": null
+              },
+              {
+                "key": "twitter_description",
+                "value": null
+              },
+              {
+                "key": "active_theme",
+                "value": "source"
+              },
+              {
+                "key": "is_private",
+                "value": false
+              },
+              {
+                "key": "password",
+                "value": ""
+              },
+              {
+                "key": "public_hash",
+                "value": "7301b422ab22a4f77d8857955c909a"
+              },
+              {
+                "key": "default_content_visibility",
+                "value": "public"
+              },
+              {
+                "key": "default_content_visibility_tiers",
+                "value": "[]"
+              },
+              {
+                "key": "members_signup_access",
+                "value": "all"
+              },
+              {
+                "key": "members_support_address",
+                "value": "noreply"
+              },
+              {
+                "key": "stripe_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_plans",
+                "value": "[]"
+              },
+              {
+                "key": "stripe_connect_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_livemode",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_display_name",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_account_id",
+                "value": null
+              },
+              {
+                "key": "members_monthly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_yearly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_track_sources",
+                "value": true
+              },
+              {
+                "key": "blocked_email_domains",
+                "value": "[]"
+              },
+              {
+                "key": "portal_name",
+                "value": true
+              },
+              {
+                "key": "portal_button",
+                "value": false
+              },
+              {
+                "key": "portal_plans",
+                "value": "[\"free\"]"
+              },
+              {
+                "key": "portal_default_plan",
+                "value": "yearly"
+              },
+              {
+                "key": "portal_products",
+                "value": "[]"
+              },
+              {
+                "key": "portal_button_style",
+                "value": "icon-and-text"
+              },
+              {
+                "key": "portal_button_icon",
+                "value": null
+              },
+              {
+                "key": "portal_button_signup_text",
+                "value": "Subscribe"
+              },
+              {
+                "key": "portal_signup_terms_html",
+                "value": null
+              },
+              {
+                "key": "portal_signup_checkbox_required",
+                "value": false
+              },
+              {
+                "key": "mailgun_domain",
+                "value": null
+              },
+              {
+                "key": "mailgun_api_key",
+                "value": null
+              },
+              {
+                "key": "mailgun_base_url",
+                "value": null
+              },
+              {
+                "key": "email_track_opens",
+                "value": true
+              },
+              {
+                "key": "email_track_clicks",
+                "value": true
+              },
+              {
+                "key": "email_verification_required",
+                "value": false
+              },
+              {
+                "key": "amp",
+                "value": false
+              },
+              {
+                "key": "amp_gtag_id",
+                "value": null
+              },
+              {
+                "key": "firstpromoter",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_id",
+                "value": null
+              },
+              {
+                "key": "labs",
+                "value": "{\"audienceFeedback\":true,\"i18n\":true,\"themeErrorsNotification\":true,\"announcementBar\":true,\"customFonts\":true,\"contentVisibility\":true,\"members\":true}"
+              },
+              {
+                "key": "slack_url",
+                "value": ""
+              },
+              {
+                "key": "slack_username",
+                "value": "App"
+              },
+              {
+                "key": "unsplash",
+                "value": true
+              },
+              {
+                "key": "shared_views",
+                "value": "[]"
+              },
+              {
+                "key": "editor_default_email_recipients",
+                "value": "visibility"
+              },
+              {
+                "key": "editor_default_email_recipients_filter",
+                "value": "all"
+              },
+              {
+                "key": "announcement_content",
+                "value": null
+              },
+              {
+                "key": "announcement_visibility",
+                "value": "[]"
+              },
+              {
+                "key": "announcement_background",
+                "value": "dark"
+              },
+              {
+                "key": "comments_enabled",
+                "value": "off"
+              },
+              {
+                "key": "outbound_link_tagging",
+                "value": true
+              },
+              {
+                "key": "web_analytics",
+                "value": true
+              },
+              {
+                "key": "pintura",
+                "value": true
+              },
+              {
+                "key": "pintura_js_url",
+                "value": null
+              },
+              {
+                "key": "pintura_css_url",
+                "value": null
+              },
+              {
+                "key": "donations_currency",
+                "value": "USD"
+              },
+              {
+                "key": "donations_suggested_amount",
+                "value": "500"
+              },
+              {
+                "key": "require_email_mfa",
+                "value": false
+              },
+              {
+                "key": "social_web",
+                "value": true
+              },
+              {
+                "key": "explore_ping",
+                "value": true
+              },
+              {
+                "key": "explore_ping_growth",
+                "value": false
+              },
+              {
+                "key": "members_enabled",
+                "value": true
+              },
+              {
+                "key": "members_invite_only",
+                "value": false
+              },
+              {
+                "key": "allow_self_signup",
+                "value": true
+              },
+              {
+                "key": "paid_members_enabled",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_account",
+                "value": null
+              },
+              {
+                "key": "donations_enabled",
+                "value": false
+              },
+              {
+                "key": "default_email_address",
+                "value": "<redacted:email>"
+              },
+              {
+                "key": "support_email_address",
+                "value": "noreply@localhost"
+              },
+              {
+                "key": "all_blocked_email_domains",
+                "value": []
+              },
+              {
+                "key": "social_web_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_configured",
+                "value": false
+              }
+            ],
+            "meta": {
+              "filters": {
+                "group": "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,security,social_web,explore"
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[0]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getSite",
+        "method": "GET",
+        "path": "/site/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "site": {
+              "title": "Field notes",
+              "description": "Thoughts, stories and ideas.",
+              "logo": null,
+              "icon": null,
+              "cover_image": "https://example.invalid/v5.0.0/images/publication-cover.jpg",
+              "accent_color": "#FF1A75",
+              "locale": "en",
+              "url": "http://localhost:2368/",
+              "version": "5.130",
+              "allow_external_signup": true,
+              "site_uuid": "37e3a088-e134-4d9b-88bd-0ebed2c413a2"
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[1]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getConfig",
+        "method": "GET",
+        "path": "/config/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "config": {
+              "version": "5.130.6",
+              "environment": "development",
+              "database": "sqlite3",
+              "mail": "Stub",
+              "useGravatar": true,
+              "labs": {
+                "audienceFeedback": true,
+                "i18n": true,
+                "themeErrorsNotification": true,
+                "announcementBar": true,
+                "customFonts": true,
+                "contentVisibility": true,
+                "members": true
+              },
+              "clientExtensions": {},
+              "enableDeveloperExperiments": false,
+              "stripeDirect": false,
+              "mailgunIsConfigured": false,
+              "emailAnalytics": true,
+              "tenor": {
+                "googleApiKey": null,
+                "contentFilter": "off"
+              },
+              "signupForm": {
+                "url": "https://cdn.jsdelivr.net/app/signup-form@~{version}/umd/signup-form.min.js",
+                "version": "0.2"
+              },
+              "security": {
+                "staffDeviceVerification": true
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[2]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getUsersMe",
+        "method": "GET",
+        "path": "/users/me/",
+        "query": [
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Me",
+          "envelope": "users",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "name": "<redacted:pii>",
+                "slug": "wp",
+                "email": "<redacted:email>",
+                "profile_image": null,
+                "cover_image": null,
+                "bio": null,
+                "website": null,
+                "location": null,
+                "facebook": null,
+                "twitter": null,
+                "threads": null,
+                "bluesky": null,
+                "mastodon": null,
+                "tiktok": null,
+                "youtube": null,
+                "instagram": null,
+                "linkedin": null,
+                "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                "status": "active",
+                "meta_title": null,
+                "meta_description": null,
+                "tour": null,
+                "last_seen": "2026-10-11T17:38:25.000Z",
+                "comment_notifications": true,
+                "free_member_signup_notification": true,
+                "paid_subscription_started_notification": true,
+                "paid_subscription_canceled_notification": false,
+                "mention_notifications": true,
+                "recommendation_notifications": true,
+                "milestone_notifications": true,
+                "donation_notifications": true,
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:38:26.000Z",
+                "roles": [
+                  {
+                    "id": "6acbc966b2f88b00015b2ef7",
+                    "name": "Owner",
+                    "description": "Blog Owner",
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:37:42.000Z"
+                  }
+                ],
+                "url": "http://localhost:2368/author/wp/"
+              }
+            ]
+          }
+        },
+        "source": "capture/settings.har#entries[3]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getUsers",
+        "method": "GET",
+        "path": "/users/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "name": "<redacted:pii>",
+                "slug": "wp",
+                "email": "<redacted:email>",
+                "profile_image": null,
+                "cover_image": null,
+                "bio": null,
+                "website": null,
+                "location": null,
+                "facebook": null,
+                "twitter": null,
+                "threads": null,
+                "bluesky": null,
+                "mastodon": null,
+                "tiktok": null,
+                "youtube": null,
+                "instagram": null,
+                "linkedin": null,
+                "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                "status": "active",
+                "meta_title": null,
+                "meta_description": null,
+                "tour": null,
+                "last_seen": "2026-10-11T17:38:25.000Z",
+                "comment_notifications": true,
+                "free_member_signup_notification": true,
+                "paid_subscription_started_notification": true,
+                "paid_subscription_canceled_notification": false,
+                "mention_notifications": true,
+                "recommendation_notifications": true,
+                "milestone_notifications": true,
+                "donation_notifications": true,
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:38:26.000Z",
+                "roles": [
+                  {
+                    "id": "6acbc966b2f88b00015b2ef7",
+                    "name": "Owner",
+                    "description": "Blog Owner",
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:37:42.000Z"
+                  }
+                ],
+                "url": "http://localhost:2368/author/wp/"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[4]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getInvites",
+        "method": "GET",
+        "path": "/invites/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "invites": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 15,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[5]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getRoles",
+        "method": "GET",
+        "path": "/roles/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Role",
+          "envelope": "roles",
+          "body": {
+            "roles": [
+              {
+                "id": "6acbc966b2f88b00015b2ef3",
+                "name": "Administrator",
+                "description": "Administrators",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef4",
+                "name": "Editor",
+                "description": "Editors",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef5",
+                "name": "Author",
+                "description": "Authors",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef6",
+                "name": "Contributor",
+                "description": "Contributors",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef7",
+                "name": "Owner",
+                "description": "Blog Owner",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef8",
+                "name": "Admin Integration",
+                "description": "External Apps",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2ef9",
+                "name": "App Explore Integration",
+                "description": "Internal Integration for the App Explore directory",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2efa",
+                "name": "Self-Serve Migration Integration",
+                "description": "Internal Integration for the Self-Serve migration tool",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2efb",
+                "name": "DB Backup Integration",
+                "description": "Internal DB Backup Client",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2efc",
+                "name": "Scheduler Integration",
+                "description": "Internal Scheduler Client",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              },
+              {
+                "id": "6acbc966b2f88b00015b2efd",
+                "name": "Super Editor",
+                "description": "Super Editors",
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:37:42.000Z"
+              }
+            ]
+          }
+        },
+        "source": "capture/settings.har#entries[6]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getThemes",
+        "method": "GET",
+        "path": "/themes/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Theme",
+          "envelope": "themes",
+          "body": {
+            "themes": [
+              {
+                "name": "app",
+                "package": {
+                  "name": "app",
+                  "description": "A clean, minimal default theme for the App publishing platform",
+                  "demo": "https://example.invalid",
+                  "version": "5.9.0",
+                  "engines": {
+                    "app": ">=5.0.0"
+                  },
+                  "license": "MIT",
+                  "screenshots": {
+                    "desktop": "assets/screenshot-desktop.jpg",
+                    "mobile": "assets/screenshot-mobile.jpg"
+                  },
+                  "scripts": {
+                    "dev": "gulp",
+                    "zip": "gulp zip",
+                    "test": "gscan .",
+                    "test:ci": "gscan --fatal --verbose .",
+                    "pretest": "gulp build",
+                    "preship": "yarn test",
+                    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+                    "postship": "git fetch && gulp release"
+                  },
+                  "author": {
+                    "name": "App Foundation",
+                    "email": "<redacted:email>",
+                    "url": "https://example.invalid/"
+                  },
+                  "gpm": {
+                    "type": "theme",
+                    "categories": [
+                      "Minimal",
+                      "Magazine"
+                    ]
+                  },
+                  "keywords": [
+                    "app",
+                    "theme",
+                    "app-theme"
+                  ],
+                  "repository": {
+                    "type": "git",
+                    "url": "https://github.com/TryApp/App.git"
+                  },
+                  "bugs": "https://github.com/TryApp/App/issues",
+                  "contributors": "https://github.com/TryApp/App/graphs/contributors",
+                  "devDependencies": {
+                    "@tryapp/release-utils": "0.8.1",
+                    "autoprefixer": "10.4.7",
+                    "beeper": "2.1.0",
+                    "cssnano": "5.1.12",
+                    "gscan": "4.48.0",
+                    "gulp": "4.0.2",
+                    "gulp-concat": "2.6.1",
+                    "gulp-livereload": "4.0.2",
+                    "gulp-postcss": "9.0.1",
+                    "gulp-uglify": "3.0.2",
+                    "gulp-zip": "5.1.0",
+                    "inquirer": "8.2.4",
+                    "postcss": "8.2.13",
+                    "postcss-color-mod-function": "3.0.3",
+                    "postcss-easy-import": "4.0.0",
+                    "pump": "3.0.0"
+                  },
+                  "browserslist": [
+                    "defaults"
+                  ],
+                  "config": {
+                    "posts_per_page": 25,
+                    "image_sizes": {
+                      "xxs": {
+                        "width": 30
+                      },
+                      "xs": {
+                        "width": 100
+                      },
+                      "s": {
+                        "width": 300
+                      },
+                      "m": {
+                        "width": 600
+                      },
+                      "l": {
+                        "width": 1000
+                      },
+                      "xl": {
+                        "width": 2000
+                      }
+                    },
+                    "card_assets": true,
+                    "custom": {
+                      "navigation_layout": {
+                        "type": "select",
+                        "options": [
+                          "Logo on cover",
+                          "Logo in the middle",
+                          "Stacked"
+                        ],
+                        "default": "Logo on cover"
+                      },
+                      "title_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif"
+                        ],
+                        "default": "Modern sans-serif"
+                      },
+                      "body_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif"
+                        ],
+                        "default": "Elegant serif"
+                      },
+                      "show_publication_cover": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage"
+                      },
+                      "header_style": {
+                        "type": "select",
+                        "options": [
+                          "Center aligned",
+                          "Left aligned",
+                          "Hidden"
+                        ],
+                        "default": "Center aligned",
+                        "group": "homepage"
+                      },
+                      "feed_layout": {
+                        "type": "select",
+                        "options": [
+                          "Classic",
+                          "Grid",
+                          "List"
+                        ],
+                        "default": "Classic",
+                        "group": "homepage"
+                      },
+                      "color_scheme": {
+                        "type": "select",
+                        "options": [
+                          "Light",
+                          "Dark",
+                          "Auto"
+                        ],
+                        "default": "Light"
+                      },
+                      "post_image_style": {
+                        "type": "select",
+                        "options": [
+                          "Wide",
+                          "Full",
+                          "Small",
+                          "Hidden"
+                        ],
+                        "default": "Wide",
+                        "group": "post"
+                      },
+                      "email_signup_text": {
+                        "type": "text",
+                        "default": "Sign up for more like this.",
+                        "group": "post"
+                      },
+                      "show_recent_posts_footer": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "post"
+                      }
+                    }
+                  },
+                  "renovate": {
+                    "extends": [
+                      "@tryapp:theme"
+                    ]
+                  }
+                },
+                "active": false
+              },
+              {
+                "name": "source",
+                "package": {
+                  "name": "source",
+                  "description": "A default theme for the App publishing platform",
+                  "demo": "https://example.invalid",
+                  "version": "1.5.0",
+                  "engines": {
+                    "app": ">=5.0.0"
+                  },
+                  "license": "MIT",
+                  "scripts": {
+                    "dev": "gulp",
+                    "zip": "gulp zip",
+                    "test": "gscan .",
+                    "test:ci": "gscan --fatal --verbose .",
+                    "pretest": "gulp build",
+                    "preship": "yarn test",
+                    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+                    "postship": "git fetch && gulp release"
+                  },
+                  "author": {
+                    "name": "App Foundation",
+                    "email": "<redacted:email>",
+                    "url": "https://example.invalid/"
+                  },
+                  "gpm": {
+                    "type": "theme",
+                    "categories": [
+                      "Minimal",
+                      "Magazine"
+                    ]
+                  },
+                  "keywords": [
+                    "app",
+                    "theme",
+                    "app-theme"
+                  ],
+                  "repository": {
+                    "type": "git",
+                    "url": "https://github.com/TryApp/Source.git"
+                  },
+                  "bugs": "https://github.com/TryApp/Source/issues",
+                  "contributors": "https://github.com/TryApp/Source/graphs/contributors",
+                  "devDependencies": {
+                    "@tryapp/release-utils": "0.8.1",
+                    "autoprefixer": "10.4.7",
+                    "beeper": "2.1.0",
+                    "cssnano": "5.1.12",
+                    "gscan": "4.48.0",
+                    "gulp": "4.0.2",
+                    "gulp-concat": "2.6.1",
+                    "gulp-livereload": "4.0.2",
+                    "gulp-postcss": "9.0.1",
+                    "gulp-uglify": "3.0.2",
+                    "gulp-zip": "5.1.0",
+                    "inquirer": "8.2.4",
+                    "postcss": "8.2.13",
+                    "postcss-easy-import": "4.0.0",
+                    "pump": "3.0.0"
+                  },
+                  "browserslist": [
+                    "defaults"
+                  ],
+                  "config": {
+                    "posts_per_page": 12,
+                    "image_sizes": {
+                      "xs": {
+                        "width": 160
+                      },
+                      "s": {
+                        "width": 320
+                      },
+                      "m": {
+                        "width": 600
+                      },
+                      "l": {
+                        "width": 960
+                      },
+                      "xl": {
+                        "width": 1200
+                      },
+                      "xxl": {
+                        "width": 2000
+                      }
+                    },
+                    "card_assets": true,
+                    "custom": {
+                      "navigation_layout": {
+                        "type": "select",
+                        "options": [
+                          "Logo in the middle",
+                          "Logo on the left",
+                          "Stacked"
+                        ],
+                        "default": "Logo in the middle"
+                      },
+                      "site_background_color": {
+                        "type": "color",
+                        "default": "#ffffff"
+                      },
+                      "header_and_footer_color": {
+                        "type": "select",
+                        "options": [
+                          "Background color",
+                          "Accent color"
+                        ],
+                        "default": "Background color"
+                      },
+                      "title_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif",
+                          "Consistent mono"
+                        ],
+                        "default": "Modern sans-serif"
+                      },
+                      "body_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif"
+                        ],
+                        "default": "Modern sans-serif"
+                      },
+                      "signup_heading": {
+                        "type": "text",
+                        "description": "Used in your footer across your theme, defaults to site title when empty"
+                      },
+                      "signup_subheading": {
+                        "type": "text",
+                        "description": "Defaults to site description when empty"
+                      },
+                      "header_style": {
+                        "type": "select",
+                        "options": [
+                          "Landing",
+                          "Highlight",
+                          "Magazine",
+                          "Search",
+                          "Off"
+                        ],
+                        "description": "Landing is recommended for all sites, Highlight & Magazine for those with more content",
+                        "default": "Landing",
+                        "group": "homepage"
+                      },
+                      "header_text": {
+                        "type": "text",
+                        "group": "homepage",
+                        "description": "Defaults to site description when empty",
+                        "visibility": "header_style:[Landing, Search]"
+                      },
+                      "background_image": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Use the publication cover set on the Brand tab as your background",
+                        "group": "homepage",
+                        "visibility": "header_style:[Landing, Search]"
+                      },
+                      "show_featured_posts": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "homepage",
+                        "visibility": "header_style:[Highlight, Magazine]"
+                      },
+                      "post_feed_style": {
+                        "type": "select",
+                        "options": [
+                          "List",
+                          "Grid"
+                        ],
+                        "default": "List",
+                        "group": "homepage"
+                      },
+                      "show_images_in_feed": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage",
+                        "visibility": "post_feed_style:List"
+                      },
+                      "show_author": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage"
+                      },
+                      "show_publish_date": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage"
+                      },
+                      "show_publication_info_sidebar": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "homepage"
+                      },
+                      "show_post_metadata": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "post"
+                      },
+                      "enable_drop_caps_on_posts": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "post"
+                      },
+                      "show_related_articles": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "post"
+                      }
+                    }
+                  },
+                  "renovate": {
+                    "extends": [
+                      "@tryapp:theme"
+                    ]
+                  }
+                },
+                "active": true,
+                "templates": []
+              }
+            ]
+          }
+        },
+        "source": "capture/settings.har#entries[7]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f01",
+                "name": "Free",
+                "description": null,
+                "slug": "free",
+                "active": true,
+                "type": "free",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "trial_days": 0
+              },
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 2,
+                "total": 2,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[8]",
+        "bind": {
+          "tier545": "$.tiers[?name=\"Free\"].id"
+        }
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getRecommendations",
+        "method": "GET",
+        "path": "/recommendations/",
+        "query": [
+          [
+            "include",
+            "count.clicks,count.subscribers"
+          ],
+          [
+            "order",
+            "created_at desc"
+          ],
+          [
+            "limit",
+            "5"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "recommendations": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "total": 0,
+                "pages": 0,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[9]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getIncomingRecommendations",
+        "method": "GET",
+        "path": "/incoming_recommendations/",
+        "query": [
+          [
+            "limit",
+            "5"
+          ],
+          [
+            "order",
+            "created_at desc"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "recommendations": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 5,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[10]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getStatsReferrers",
+        "method": "GET",
+        "path": "/stats/referrers/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "stats": [
+              {
+                "date": "2026-10-11",
+                "signups": 1,
+                "source": "Created manually",
+                "paid_conversions": 0
+              }
+            ],
+            "meta": {}
+          }
+        },
+        "source": "capture/settings.har#entries[11]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "include",
+            "count.active_members,count.posts"
+          ],
+          [
+            "limit",
+            "50"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent",
+                "count": {
+                  "posts": 0,
+                  "active_members": 1
+                }
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 50,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[12]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getIntegrations",
+        "method": "GET",
+        "path": "/integrations/",
+        "query": [
+          [
+            "include",
+            "api_keys,webhooks"
+          ],
+          [
+            "limit",
+            "50"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "integrations": [
+              {
+                "id": "6acbc96bb2f88b00015b2f81",
+                "type": "builtin",
+                "name": "Zapier",
+                "slug": "zapier",
+                "icon_image": null,
+                "description": "Built-in Zapier integration",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:37:47.000Z",
+                "api_keys": [
+                  {
+                    "id": "6acbc96bb2f88b00015b2f82",
+                    "type": "admin",
+                    "secret": "<redacted:secret>",
+                    "role_id": "6acbc966b2f88b00015b2ef8",
+                    "integration_id": "6acbc96bb2f88b00015b2f81",
+                    "user_id": null,
+                    "last_seen_at": null,
+                    "last_seen_version": null,
+                    "created_at": "2026-10-11T17:37:47.000Z",
+                    "updated_at": "2026-10-11T17:37:47.000Z"
+                  }
+                ],
+                "webhooks": []
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f83",
+                "type": "core",
+                "name": "App Explore",
+                "slug": "app-explore",
+                "icon_image": null,
+                "description": "Built-in App Explore integration",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:37:47.000Z",
+                "api_keys": [
+                  {
+                    "id": "6acbc96bb2f88b00015b2f84",
+                    "type": "admin",
+                    "secret": "<redacted:secret>",
+                    "role_id": "6acbc966b2f88b00015b2ef9",
+                    "integration_id": "6acbc96bb2f88b00015b2f83",
+                    "user_id": null,
+                    "last_seen_at": null,
+                    "last_seen_version": null,
+                    "created_at": "2026-10-11T17:37:47.000Z",
+                    "updated_at": "2026-10-11T17:37:47.000Z"
+                  }
+                ],
+                "webhooks": []
+              },
+              {
+                "id": "6acbc96bb2f88b00015b2f85",
+                "type": "core",
+                "name": "Self-Serve Migration Integration",
+                "slug": "self-serve-migration",
+                "icon_image": null,
+                "description": "Core Self-Serve Migration integration",
+                "created_at": "2026-10-11T17:37:47.000Z",
+                "updated_at": "2026-10-11T17:37:47.000Z",
+                "api_keys": [
+                  {
+                    "id": "6acbc96bb2f88b00015b2f86",
+                    "type": "admin",
+                    "secret": "<redacted:secret>",
+                    "role_id": "6acbc966b2f88b00015b2efa",
+                    "integration_id": "6acbc96bb2f88b00015b2f85",
+                    "user_id": null,
+                    "last_seen_at": null,
+                    "last_seen_version": null,
+                    "created_at": "2026-10-11T17:37:47.000Z",
+                    "updated_at": "2026-10-11T17:37:47.000Z"
+                  }
+                ],
+                "webhooks": []
+              },
+              {
+                "id": "6acbc96cb2f88b00015b2f8d",
+                "type": "core",
+                "name": "App Core Content API",
+                "slug": "app-core-content",
+                "icon_image": null,
+                "description": "Internal Content API integration for Admin access",
+                "created_at": "2026-10-11T17:37:48.000Z",
+                "updated_at": "2026-10-11T17:37:48.000Z",
+                "api_keys": [
+                  {
+                    "id": "6acbc96cb2f88b00015b2f8e",
+                    "type": "content",
+                    "secret": "<redacted:secret>",
+                    "role_id": null,
+                    "integration_id": "6acbc96cb2f88b00015b2f8d",
+                    "user_id": null,
+                    "last_seen_at": null,
+                    "last_seen_version": null,
+                    "created_at": "2026-10-11T17:37:48.000Z",
+                    "updated_at": "2026-10-11T17:37:48.000Z"
+                  }
+                ],
+                "webhooks": []
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 50,
+                "pages": 1,
+                "total": 4,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[13]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "[data-testid=\"title-and-description\"] > div:nth-of-type(2) > div:nth-of-type(2) > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Save",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "putSettings",
+        "method": "PUT",
+        "path": "/settings/",
+        "body": {
+          "settings": [
+            {
+              "key": "title",
+              "value": "Field notesTrail notes"
+            },
+            {
+              "key": "description",
+              "value": "Short reports from long walks."
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "settings": [
+              {
+                "key": "title",
+                "value": "Field notesTrail notes"
+              },
+              {
+                "key": "description",
+                "value": "Short reports from long walks."
+              },
+              {
+                "key": "heading_font",
+                "value": ""
+              },
+              {
+                "key": "body_font",
+                "value": ""
+              },
+              {
+                "key": "logo",
+                "value": ""
+              },
+              {
+                "key": "cover_image",
+                "value": "https://example.invalid/v5.0.0/images/publication-cover.jpg"
+              },
+              {
+                "key": "icon",
+                "value": ""
+              },
+              {
+                "key": "accent_color",
+                "value": "#FF1A75"
+              },
+              {
+                "key": "locale",
+                "value": "en"
+              },
+              {
+                "key": "timezone",
+                "value": "Etc/UTC"
+              },
+              {
+                "key": "codeinjection_head",
+                "value": ""
+              },
+              {
+                "key": "codeinjection_foot",
+                "value": ""
+              },
+              {
+                "key": "facebook",
+                "value": "app"
+              },
+              {
+                "key": "twitter",
+                "value": "@app"
+              },
+              {
+                "key": "navigation",
+                "value": "[{\"label\":\"Home\",\"url\":\"/\"},{\"label\":\"About\",\"url\":\"/about/\"}]"
+              },
+              {
+                "key": "secondary_navigation",
+                "value": "[{\"label\":\"Sign up\",\"url\":\"#/portal/\"}]"
+              },
+              {
+                "key": "meta_title",
+                "value": null
+              },
+              {
+                "key": "meta_description",
+                "value": null
+              },
+              {
+                "key": "og_image",
+                "value": null
+              },
+              {
+                "key": "og_title",
+                "value": null
+              },
+              {
+                "key": "og_description",
+                "value": null
+              },
+              {
+                "key": "twitter_image",
+                "value": null
+              },
+              {
+                "key": "twitter_title",
+                "value": null
+              },
+              {
+                "key": "twitter_description",
+                "value": null
+              },
+              {
+                "key": "active_theme",
+                "value": "source"
+              },
+              {
+                "key": "is_private",
+                "value": false
+              },
+              {
+                "key": "password",
+                "value": ""
+              },
+              {
+                "key": "public_hash",
+                "value": "7301b422ab22a4f77d8857955c909a"
+              },
+              {
+                "key": "default_content_visibility",
+                "value": "public"
+              },
+              {
+                "key": "default_content_visibility_tiers",
+                "value": "[]"
+              },
+              {
+                "key": "members_signup_access",
+                "value": "all"
+              },
+              {
+                "key": "members_support_address",
+                "value": "noreply"
+              },
+              {
+                "key": "stripe_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_plans",
+                "value": "[]"
+              },
+              {
+                "key": "stripe_connect_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_livemode",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_display_name",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_account_id",
+                "value": null
+              },
+              {
+                "key": "members_monthly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_yearly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_track_sources",
+                "value": true
+              },
+              {
+                "key": "blocked_email_domains",
+                "value": "[]"
+              },
+              {
+                "key": "portal_name",
+                "value": true
+              },
+              {
+                "key": "portal_button",
+                "value": false
+              },
+              {
+                "key": "portal_plans",
+                "value": "[\"free\"]"
+              },
+              {
+                "key": "portal_default_plan",
+                "value": "yearly"
+              },
+              {
+                "key": "portal_products",
+                "value": "[]"
+              },
+              {
+                "key": "portal_button_style",
+                "value": "icon-and-text"
+              },
+              {
+                "key": "portal_button_icon",
+                "value": null
+              },
+              {
+                "key": "portal_button_signup_text",
+                "value": "Subscribe"
+              },
+              {
+                "key": "portal_signup_terms_html",
+                "value": null
+              },
+              {
+                "key": "portal_signup_checkbox_required",
+                "value": false
+              },
+              {
+                "key": "mailgun_domain",
+                "value": null
+              },
+              {
+                "key": "mailgun_api_key",
+                "value": null
+              },
+              {
+                "key": "mailgun_base_url",
+                "value": null
+              },
+              {
+                "key": "email_track_opens",
+                "value": true
+              },
+              {
+                "key": "email_track_clicks",
+                "value": true
+              },
+              {
+                "key": "email_verification_required",
+                "value": false
+              },
+              {
+                "key": "amp",
+                "value": false
+              },
+              {
+                "key": "amp_gtag_id",
+                "value": null
+              },
+              {
+                "key": "firstpromoter",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_id",
+                "value": null
+              },
+              {
+                "key": "labs",
+                "value": "{\"audienceFeedback\":true,\"i18n\":true,\"themeErrorsNotification\":true,\"announcementBar\":true,\"customFonts\":true,\"contentVisibility\":true,\"members\":true}"
+              },
+              {
+                "key": "slack_url",
+                "value": ""
+              },
+              {
+                "key": "slack_username",
+                "value": "App"
+              },
+              {
+                "key": "unsplash",
+                "value": true
+              },
+              {
+                "key": "shared_views",
+                "value": "[]"
+              },
+              {
+                "key": "editor_default_email_recipients",
+                "value": "visibility"
+              },
+              {
+                "key": "editor_default_email_recipients_filter",
+                "value": "all"
+              },
+              {
+                "key": "announcement_content",
+                "value": null
+              },
+              {
+                "key": "announcement_visibility",
+                "value": "[]"
+              },
+              {
+                "key": "announcement_background",
+                "value": "dark"
+              },
+              {
+                "key": "comments_enabled",
+                "value": "off"
+              },
+              {
+                "key": "outbound_link_tagging",
+                "value": true
+              },
+              {
+                "key": "web_analytics",
+                "value": true
+              },
+              {
+                "key": "pintura",
+                "value": true
+              },
+              {
+                "key": "pintura_js_url",
+                "value": null
+              },
+              {
+                "key": "pintura_css_url",
+                "value": null
+              },
+              {
+                "key": "donations_currency",
+                "value": "USD"
+              },
+              {
+                "key": "donations_suggested_amount",
+                "value": "500"
+              },
+              {
+                "key": "recommendations_enabled",
+                "value": false
+              },
+              {
+                "key": "require_email_mfa",
+                "value": false
+              },
+              {
+                "key": "social_web",
+                "value": true
+              },
+              {
+                "key": "explore_ping",
+                "value": true
+              },
+              {
+                "key": "explore_ping_growth",
+                "value": false
+              },
+              {
+                "key": "members_enabled",
+                "value": true
+              },
+              {
+                "key": "members_invite_only",
+                "value": false
+              },
+              {
+                "key": "allow_self_signup",
+                "value": true
+              },
+              {
+                "key": "paid_members_enabled",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_account",
+                "value": null
+              },
+              {
+                "key": "donations_enabled",
+                "value": false
+              },
+              {
+                "key": "default_email_address",
+                "value": "<redacted:email>"
+              },
+              {
+                "key": "support_email_address",
+                "value": "noreply@localhost"
+              },
+              {
+                "key": "all_blocked_email_domains",
+                "value": []
+              },
+              {
+                "key": "social_web_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_configured",
+                "value": false
+              }
+            ],
+            "meta": {}
+          }
+        },
+        "source": "capture/settings.har#entries[15]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "[data-testid=\"title-and-description\"] > div:nth-of-type(2) > div:nth-of-type(2) > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Save",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getSettings",
+        "method": "GET",
+        "path": "/settings/",
+        "query": [
+          [
+            "group",
+            "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "settings": [
+              {
+                "key": "title",
+                "value": "Field notesTrail notes"
+              },
+              {
+                "key": "description",
+                "value": "Short reports from long walks."
+              },
+              {
+                "key": "heading_font",
+                "value": ""
+              },
+              {
+                "key": "body_font",
+                "value": ""
+              },
+              {
+                "key": "logo",
+                "value": ""
+              },
+              {
+                "key": "cover_image",
+                "value": "https://example.invalid/v5.0.0/images/publication-cover.jpg"
+              },
+              {
+                "key": "icon",
+                "value": ""
+              },
+              {
+                "key": "accent_color",
+                "value": "#FF1A75"
+              },
+              {
+                "key": "locale",
+                "value": "en"
+              },
+              {
+                "key": "timezone",
+                "value": "Etc/UTC"
+              },
+              {
+                "key": "codeinjection_head",
+                "value": ""
+              },
+              {
+                "key": "codeinjection_foot",
+                "value": ""
+              },
+              {
+                "key": "facebook",
+                "value": "app"
+              },
+              {
+                "key": "twitter",
+                "value": "@app"
+              },
+              {
+                "key": "navigation",
+                "value": "[{\"label\":\"Home\",\"url\":\"/\"},{\"label\":\"About\",\"url\":\"/about/\"}]"
+              },
+              {
+                "key": "secondary_navigation",
+                "value": "[{\"label\":\"Sign up\",\"url\":\"#/portal/\"}]"
+              },
+              {
+                "key": "meta_title",
+                "value": null
+              },
+              {
+                "key": "meta_description",
+                "value": null
+              },
+              {
+                "key": "og_image",
+                "value": null
+              },
+              {
+                "key": "og_title",
+                "value": null
+              },
+              {
+                "key": "og_description",
+                "value": null
+              },
+              {
+                "key": "twitter_image",
+                "value": null
+              },
+              {
+                "key": "twitter_title",
+                "value": null
+              },
+              {
+                "key": "twitter_description",
+                "value": null
+              },
+              {
+                "key": "active_theme",
+                "value": "source"
+              },
+              {
+                "key": "is_private",
+                "value": false
+              },
+              {
+                "key": "password",
+                "value": ""
+              },
+              {
+                "key": "public_hash",
+                "value": "7301b422ab22a4f77d8857955c909a"
+              },
+              {
+                "key": "default_content_visibility",
+                "value": "public"
+              },
+              {
+                "key": "default_content_visibility_tiers",
+                "value": "[]"
+              },
+              {
+                "key": "members_signup_access",
+                "value": "all"
+              },
+              {
+                "key": "members_support_address",
+                "value": "noreply"
+              },
+              {
+                "key": "stripe_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_plans",
+                "value": "[]"
+              },
+              {
+                "key": "stripe_connect_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_livemode",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_display_name",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_account_id",
+                "value": null
+              },
+              {
+                "key": "members_monthly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_yearly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_track_sources",
+                "value": true
+              },
+              {
+                "key": "blocked_email_domains",
+                "value": "[]"
+              },
+              {
+                "key": "portal_name",
+                "value": true
+              },
+              {
+                "key": "portal_button",
+                "value": false
+              },
+              {
+                "key": "portal_plans",
+                "value": "[\"free\"]"
+              },
+              {
+                "key": "portal_default_plan",
+                "value": "yearly"
+              },
+              {
+                "key": "portal_products",
+                "value": "[]"
+              },
+              {
+                "key": "portal_button_style",
+                "value": "icon-and-text"
+              },
+              {
+                "key": "portal_button_icon",
+                "value": null
+              },
+              {
+                "key": "portal_button_signup_text",
+                "value": "Subscribe"
+              },
+              {
+                "key": "portal_signup_terms_html",
+                "value": null
+              },
+              {
+                "key": "portal_signup_checkbox_required",
+                "value": false
+              },
+              {
+                "key": "mailgun_domain",
+                "value": null
+              },
+              {
+                "key": "mailgun_api_key",
+                "value": null
+              },
+              {
+                "key": "mailgun_base_url",
+                "value": null
+              },
+              {
+                "key": "email_track_opens",
+                "value": true
+              },
+              {
+                "key": "email_track_clicks",
+                "value": true
+              },
+              {
+                "key": "email_verification_required",
+                "value": false
+              },
+              {
+                "key": "amp",
+                "value": false
+              },
+              {
+                "key": "amp_gtag_id",
+                "value": null
+              },
+              {
+                "key": "firstpromoter",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_id",
+                "value": null
+              },
+              {
+                "key": "labs",
+                "value": "{\"audienceFeedback\":true,\"i18n\":true,\"themeErrorsNotification\":true,\"announcementBar\":true,\"customFonts\":true,\"contentVisibility\":true,\"members\":true}"
+              },
+              {
+                "key": "slack_url",
+                "value": ""
+              },
+              {
+                "key": "slack_username",
+                "value": "App"
+              },
+              {
+                "key": "unsplash",
+                "value": true
+              },
+              {
+                "key": "shared_views",
+                "value": "[]"
+              },
+              {
+                "key": "editor_default_email_recipients",
+                "value": "visibility"
+              },
+              {
+                "key": "editor_default_email_recipients_filter",
+                "value": "all"
+              },
+              {
+                "key": "announcement_content",
+                "value": null
+              },
+              {
+                "key": "announcement_visibility",
+                "value": "[]"
+              },
+              {
+                "key": "announcement_background",
+                "value": "dark"
+              },
+              {
+                "key": "comments_enabled",
+                "value": "off"
+              },
+              {
+                "key": "outbound_link_tagging",
+                "value": true
+              },
+              {
+                "key": "web_analytics",
+                "value": true
+              },
+              {
+                "key": "pintura",
+                "value": true
+              },
+              {
+                "key": "pintura_js_url",
+                "value": null
+              },
+              {
+                "key": "pintura_css_url",
+                "value": null
+              },
+              {
+                "key": "donations_currency",
+                "value": "USD"
+              },
+              {
+                "key": "donations_suggested_amount",
+                "value": "500"
+              },
+              {
+                "key": "recommendations_enabled",
+                "value": false
+              },
+              {
+                "key": "require_email_mfa",
+                "value": false
+              },
+              {
+                "key": "social_web",
+                "value": true
+              },
+              {
+                "key": "explore_ping",
+                "value": true
+              },
+              {
+                "key": "explore_ping_growth",
+                "value": false
+              },
+              {
+                "key": "members_enabled",
+                "value": true
+              },
+              {
+                "key": "members_invite_only",
+                "value": false
+              },
+              {
+                "key": "allow_self_signup",
+                "value": true
+              },
+              {
+                "key": "paid_members_enabled",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_account",
+                "value": null
+              },
+              {
+                "key": "donations_enabled",
+                "value": false
+              },
+              {
+                "key": "default_email_address",
+                "value": "<redacted:email>"
+              },
+              {
+                "key": "support_email_address",
+                "value": "noreply@localhost"
+              },
+              {
+                "key": "all_blocked_email_domains",
+                "value": []
+              },
+              {
+                "key": "social_web_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_configured",
+                "value": false
+              }
+            ],
+            "meta": {
+              "filters": {
+                "group": "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+              }
+            }
+          }
+        },
+        "source": "capture/settings.har#entries[16]"
+      }
+    }
+  ]
+}

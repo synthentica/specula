@@ -1,0 +1,31 @@
+{
+  "order": [
+    "setup",
+    "create-post",
+    "publish-post",
+    "tags",
+    "members",
+    "settings",
+    "posts-list",
+    "delete-post",
+    "logout-login",
+    "errors",
+    "session-expired"
+  ],
+  "apiPrefix": "/app/api/admin",
+  "volatileKeys": [
+    "id",
+    "uuid",
+    "created_at",
+    "updated_at",
+    "published_at",
+    "last_seen",
+    "comment_id",
+    "transient_id",
+    "accent_color"
+  ],
+  "headers": {
+    "App-Pragma": "no-cache"
+  },
+  "note": "Flows replay in this order against one fresh instance; variables bound in earlier flows stay available. volatileKeys are never compared by value. headers are sent with every request, as the client did."
+}

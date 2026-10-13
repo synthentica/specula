@@ -1,0 +1,23 @@
+# Original Vikunja instance used as the ground-truth target (local only).
+# State lives in tmpfs: every `docker compose up` starts from an empty instance,
+# which keeps captures reproducible.
+# VIKUNJA_ACCESS_TTL shortens the access-token lifetime (seconds, default 600) so
+# the token-refresh flow can be recorded and replayed without a 10-minute wait.
+# VIKUNJA_RATELIMIT_NOAUTHLIMIT: the replay logs in and opens a socket per flow within
+# seconds, faster than the default 10 unauthenticated requests per minute allow.
+services:
+  vikunja:
+    image: vikunja/vikunja:latest
+    ports:
+      - "127.0.0.1:3456:3456"
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://localhost:3456/
+      VIKUNJA_SERVICE_ENABLEREGISTRATION: "true"
+      VIKUNJA_SERVICE_SECRET: local-dev-only-not-a-secret
+      VIKUNJA_SERVICE_JWTTTLSHORT: ${VIKUNJA_ACCESS_TTL:-600}
+      VIKUNJA_RATELIMIT_NOAUTHLIMIT: "100"
+      VIKUNJA_DATABASE_TYPE: sqlite
+      VIKUNJA_DATABASE_PATH: /data/vikunja.db
+      VIKUNJA_FILES_BASEPATH: /data/files
+    tmpfs:
+      - /data:uid=1000,gid=0

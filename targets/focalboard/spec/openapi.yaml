@@ -1,0 +1,1291 @@
+openapi: "3.1.0"
+info:
+  title: app API (inferred by specula)
+  version: observed
+  description: "Inferred from 432 recorded exchanges in 9 flows. Only observed behaviour is described. x-observed-values lists values seen, not a closed enum."
+servers:
+  - url: /api/v2
+paths:
+  /boards-and-blocks:
+    post:
+      operationId: postBoardsAndBlocks
+      tags: [boards-and-blocks]
+      summary: POST /boards-and-blocks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                blocks:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Block"
+                boards:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/Board"
+              required: [blocks, boards]
+      responses:
+        "200":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  blocks:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Block"
+                  boards:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Board"
+                required: [blocks, boards]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [create-board]
+  /boards/{boardId}:
+    patch:
+      operationId: patchBoardsById
+      tags: [boards]
+      summary: PATCH /boards/{boardId}
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deletedCardProperties:
+                  type: array
+                  items: {}
+                deletedProperties:
+                  type: array
+                  items: {}
+                title:
+                  type: string
+                  x-observed-values: [Launch plan]
+                updatedCardProperties:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                        x-observed-values: [Status]
+                      options:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            color:
+                              type: string
+                              x-observed-values: [propColorDefault]
+                            id:
+                              type: string
+                            value:
+                              type: string
+                              x-observed-values: [New group, Todo, Doing, Done]
+                          required: [color, id, value]
+                      type:
+                        type: string
+                        x-observed-values: [select]
+                    required: [id, name, options, type]
+                updatedProperties:
+                  type: object
+                  properties: {}
+      responses:
+        "200":
+          description: "Observed 8×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Board"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 8
+      x-specula-flows: [create-board, groups]
+  /boards/{boardId}/blocks:
+    get:
+      operationId: getBoardsBlocks
+      tags: [boards]
+      summary: GET /boards/{boardId}/blocks
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: all
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: "Observed 15×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Block"
+        "404":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    x-observed-values: ["{boards} not found"]
+                  errorCode:
+                    type: integer
+                    x-observed-values: [404]
+                required: [error, errorCode]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 16
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+    post:
+      operationId: postBoardsBlocks
+      tags: [boards]
+      summary: POST /boards/{boardId}/blocks
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Block"
+      responses:
+        "200":
+          description: "Observed 5×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Block"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 5
+      x-specula-flows: [add-cards, edit-card]
+  /boards/{boardId}/blocks/{blockId}:
+    delete:
+      operationId: deleteBoardsBlocksById
+      tags: [boards]
+      summary: DELETE /boards/{boardId}/blocks/{blockId}
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: blockId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [delete-card]
+    patch:
+      operationId: patchBoardsBlocksById
+      tags: [boards]
+      summary: PATCH /boards/{boardId}/blocks/{blockId}
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: blockId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deletedFields:
+                  type: array
+                  items: {}
+                title:
+                  type: string
+                  x-observed-values: [Write announcement, Book venue, Order snacks]
+                updatedFields:
+                  type: object
+                  properties:
+                    cardOrder:
+                      type: array
+                      items:
+                        type: string
+                        x-observed-values:
+                          - c3mqh7wd7bbywzyxzmr1gzkxgse
+                          - cpa5hpdca83bh7n6zhsrs4ke39c
+                          - cz4kdzjr3xirm5xe1h67sks359h
+                    contentOrder:
+                      type: array
+                      items:
+                        type: string
+                        x-observed-values: [afpwq4n7osfbpxkgab438zi9tto]
+                    properties:
+                      type: object
+                      x-keys: record-id
+                      additionalProperties:
+                        type: string
+                        x-observed-values: [ab4g498cuehart3fu9nbmrz4ciy, aaq54ioap7n868z3d77c53cbiuo]
+      responses:
+        "200":
+          description: "Observed 10×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      security:
+        - bearerAuth: []
+      x-specula-samples: 10
+      x-specula-flows: [add-cards, edit-card, move-card]
+  /boards/{boardId}/join:
+    post:
+      operationId: postBoardsJoin
+      tags: [boards]
+      summary: POST /boards/{boardId}/join
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "404":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    x-observed-values: ["{boards} not found"]
+                  errorCode:
+                    type: integer
+                    x-observed-values: [404]
+                required: [error, errorCode]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [errors]
+  /boards/{boardId}/members:
+    get:
+      operationId: getBoardsMembers
+      tags: [boards]
+      summary: GET /boards/{boardId}/members
+      parameters:
+        - name: boardId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Observed 17×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Membership"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 17
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+  /clientConfig:
+    get:
+      operationId: getClientConfig
+      tags: [clientConfig]
+      summary: GET /clientConfig
+      responses:
+        "200":
+          description: "Observed 11×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClientConfig"
+      security: []
+      x-specula-samples: 11
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /limits:
+    get:
+      operationId: getLimits
+      tags: [limits]
+      summary: GET /limits
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Limit"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /login:
+    post:
+      operationId: postLogin
+      tags: [login]
+      summary: POST /login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  x-redacted: secret
+                type:
+                  type: string
+                  x-observed-values: [normal]
+                username:
+                  type: string
+                  x-observed-values: [owner]
+              required: [password, type, username]
+      responses:
+        "200":
+          description: "Observed 3×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    x-redacted: secret
+                required: [token]
+        "401":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    x-observed-values: [incorrect login]
+                  errorCode:
+                    type: integer
+                    x-observed-values: [401]
+                required: [error, errorCode]
+      security: []
+      x-specula-samples: 4
+      x-specula-flows: [errors, logout-login, register]
+  /logout:
+    post:
+      operationId: postLogout
+      tags: [logout]
+      summary: POST /logout
+      responses:
+        "200":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [logout-login]
+  /register:
+    post:
+      operationId: postRegister
+      tags: [register]
+      summary: POST /register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  x-redacted: email
+                password:
+                  type: string
+                  x-redacted: secret
+                token:
+                  type: string
+                  x-observed-values: [""]
+                username:
+                  type: string
+                  x-observed-values: [owner]
+              required: [email, password, token, username]
+      responses:
+        "200":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        "401":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  errorCode:
+                    type: integer
+                    x-observed-values: [401]
+                required: [error, errorCode]
+      security: []
+      x-specula-samples: 2
+      x-specula-flows: [errors, register]
+  /teams:
+    get:
+      operationId: getTeams
+      tags: [teams]
+      summary: GET /teams
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Team"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /teams/{teamId}:
+    get:
+      operationId: getTeamsById
+      tags: [teams]
+      summary: GET /teams/{teamId}
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Team"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /teams/{teamId}/boards:
+    get:
+      operationId: getTeamsBoards
+      tags: [teams]
+      summary: GET /teams/{teamId}/boards
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Board"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /teams/{teamId}/categories:
+    get:
+      operationId: getTeamsCategories
+      tags: [teams]
+      summary: GET /teams/{teamId}/categories
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 11×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Category"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 11
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /teams/{teamId}/templates:
+    get:
+      operationId: getTeamsTemplates
+      tags: [teams]
+      summary: GET /teams/{teamId}/templates
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Board"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /teams/{teamId}/users:
+    get:
+      operationId: getTeamsUsers
+      tags: [teams]
+      summary: GET /teams/{teamId}/users
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: exclude_bots
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: search
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [""]
+      responses:
+        "200":
+          description: "Observed 2×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 2
+      x-specula-flows: [edit-card]
+  /users:
+    post:
+      operationId: postUsers
+      tags: [users]
+      summary: POST /users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                x-observed-values: [uwty61fpiapg3ima7unztj6ri8a]
+      responses:
+        "200":
+          description: "Observed 17×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 17
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+  /users/{userId}:
+    get:
+      operationId: getUsersById
+      tags: [users]
+      summary: GET /users/{userId}
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Observed 1×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [create-board]
+  /users/me:
+    get:
+      operationId: getUsersMe
+      tags: [users]
+      summary: GET /users/me
+      responses:
+        "200":
+          description: "Observed 48×"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          description: "Observed 3×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    x-observed-values: [no session token]
+                  errorCode:
+                    type: integer
+                    x-observed-values: [401]
+                required: [error, errorCode]
+      security: []
+      x-specula-samples: 51
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /users/me/config:
+    get:
+      operationId: getUsersMeConfig
+      tags: [users]
+      summary: GET /users/me/config
+      responses:
+        "200":
+          description: "Observed 48×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+        "401":
+          description: "Observed 3×"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    x-observed-values: [no session token]
+                  errorCode:
+                    type: integer
+                    x-observed-values: [401]
+                required: [error, errorCode]
+      security: []
+      x-specula-samples: 51
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+  /users/me/memberships:
+    get:
+      operationId: getUsersMeMemberships
+      tags: [users]
+      summary: GET /users/me/memberships
+      responses:
+        "200":
+          description: "Observed 37×"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Membership"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 37
+      x-specula-flows:
+        - add-cards
+        - create-board
+        - delete-card
+        - edit-card
+        - errors
+        - groups
+        - logout-login
+        - move-card
+        - register
+components:
+  schemas:
+    Block:
+      type: object
+      properties:
+        boardId:
+          type: string
+        createAt:
+          type: integer
+        createdBy:
+          type: string
+        deleteAt:
+          type: integer
+        fields:
+          type: object
+          properties:
+            cardOrder:
+              type: array
+              items:
+                type: string
+                x-observed-values:
+                  - cjpkiya33qsagr4f9hrdwhgiajc
+                  - c3mqh7wd7bbywzyxzmr1gzkxgse
+                  - cpa5hpdca83bh7n6zhsrs4ke39c
+                  - cz4kdzjr3xirm5xe1h67sks359h
+            collapsedOptionIds:
+              type: array
+              items: {}
+            columnCalculations:
+              type: object
+              properties: {}
+            columnWidths:
+              type: object
+              properties: {}
+            contentOrder:
+              type: array
+              items:
+                type: string
+                examples: [az9pexbnwepdsmx7o3cfgerjgio, a61te83y7airkiepysrfjmff97r]
+            defaultTemplateId:
+              type: string
+              x-observed-values: [""]
+            filter:
+              type: object
+              properties:
+                filters:
+                  type: array
+                  items: {}
+                operation:
+                  type: string
+                  x-observed-values: [and]
+              required: [filters, operation]
+            groupById:
+              type: string
+              format: uuid
+              x-observed-values: [d777ba3b-8728-40d1-87a6-59406bbbbfb0]
+            hiddenOptionIds:
+              type: array
+              items:
+                type: string
+                x-observed-values: [""]
+            icon:
+              type: string
+              examples: ["⏰", "📹"]
+            isTemplate:
+              type: boolean
+            kanbanCalculations:
+              type: object
+              properties: {}
+            properties:
+              type: object
+              x-keys: record-id
+              additionalProperties:
+                type: string
+                examples: ["8b05c83e-a44a-4d04-831e-97f01d8e2003", b1abafbf-a038-4a19-8b68-56e0fd2319f7]
+            sortOptions:
+              type: array
+              items:
+                type: object
+                properties:
+                  propertyId:
+                    type: string
+                    format: uuid
+                    x-observed-values: ["4cf1568d-530f-4028-8ffd-bdc65249187e"]
+                  reversed:
+                    type: boolean
+                required: [propertyId, reversed]
+            value:
+              type: boolean
+            viewType:
+              type: string
+              x-observed-values: [board]
+            visibleOptionIds:
+              type: array
+              items: {}
+            visiblePropertyIds:
+              type: array
+              items:
+                type: string
+                format: uuid
+                x-observed-values: ["4cf1568d-530f-4028-8ffd-bdc65249187e"]
+        id:
+          type: string
+        modifiedBy:
+          type: string
+        parentId:
+          type: string
+        schema:
+          type: integer
+          x-observed-values: [1]
+        title:
+          type: string
+          examples: [Team Schedule, Video production]
+        type:
+          type: string
+          examples: [card, view]
+        updateAt:
+          type: integer
+      required:
+        - boardId
+        - createAt
+        - createdBy
+        - deleteAt
+        - fields
+        - id
+        - modifiedBy
+        - parentId
+        - schema
+        - title
+        - type
+        - updateAt
+    Board:
+      type: object
+      properties:
+        cardProperties:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+                examples: [Status, Priority]
+              options:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    color:
+                      type: string
+                      examples: [propColorDefault, propColorPink]
+                    id:
+                      type: string
+                    value:
+                      type: string
+                      examples: [New group, Todo]
+                  required: [color, id, value]
+              type:
+                type: string
+                examples: [select, createdBy]
+            required: [id, name, options, type]
+        channelId:
+          type: string
+          x-observed-values: [""]
+        createAt:
+          type: integer
+        createdBy:
+          type: string
+        deleteAt:
+          type: integer
+        description:
+          type: string
+          x-observed-values: [""]
+        icon:
+          type: string
+          examples: ["", "🍩"]
+        id:
+          type: string
+        isTemplate:
+          type: boolean
+        minimumRole:
+          type: string
+          x-observed-values: [""]
+        modifiedBy:
+          type: string
+        properties:
+          type: object
+          properties:
+            trackingTemplateId:
+              type: string
+              examples: ["54fcf9c610f0ac5e4c522c0657c90602", ecc250bb7dff0fe02247f1110f097544]
+        showDescription:
+          type: boolean
+        teamId:
+          type: string
+          x-observed-values: ["0"]
+        templateVersion:
+          type: integer
+          x-observed-values: [0, 6]
+        title:
+          type: string
+          examples: ["", Launch plan]
+        type:
+          type: string
+          x-observed-values: [P, O]
+        updateAt:
+          type: integer
+      required:
+        - cardProperties
+        - channelId
+        - createAt
+        - createdBy
+        - deleteAt
+        - description
+        - icon
+        - id
+        - isTemplate
+        - minimumRole
+        - modifiedBy
+        - properties
+        - showDescription
+        - teamId
+        - templateVersion
+        - title
+        - type
+        - updateAt
+    Category:
+      type: object
+      properties:
+        boardMetadata:
+          type: array
+          items:
+            type: object
+            properties:
+              boardID:
+                type: string
+              hidden:
+                type: boolean
+            required: [boardID, hidden]
+        collapsed:
+          type: boolean
+        createAt:
+          type: integer
+        deleteAt:
+          type: integer
+        id:
+          type: string
+        name:
+          type: string
+          x-observed-values: [Boards]
+        sorting:
+          type: string
+          x-observed-values: [""]
+        sortOrder:
+          type: integer
+          x-observed-values: [0]
+        teamID:
+          type: string
+        type:
+          type: string
+          x-observed-values: [system]
+        updateAt:
+          type: integer
+        userID:
+          type: string
+      required:
+        - boardMetadata
+        - collapsed
+        - createAt
+        - deleteAt
+        - id
+        - name
+        - sortOrder
+        - sorting
+        - teamID
+        - type
+        - updateAt
+        - userID
+    ClientConfig:
+      type: object
+      properties:
+        enablePublicSharedBoards:
+          type: boolean
+        featureFlags:
+          type: object
+          properties: {}
+        maxFileSize:
+          type: integer
+          x-observed-values: [0]
+        teammateNameDisplay:
+          type: string
+          x-observed-values: [username]
+        telemetry:
+          type: boolean
+        telemetryid:
+          type: string
+          x-observed-values: [""]
+      required:
+        - enablePublicSharedBoards
+        - featureFlags
+        - maxFileSize
+        - teammateNameDisplay
+        - telemetry
+        - telemetryid
+    Limit:
+      type: object
+      properties:
+        card_limit_timestamp:
+          type: integer
+        cards:
+          type: integer
+          x-observed-values: [0]
+        used_cards:
+          type: integer
+          x-observed-values: [0]
+        views:
+          type: integer
+          x-observed-values: [0]
+      required: [card_limit_timestamp, cards, used_cards, views]
+    Membership:
+      type: object
+      properties:
+        boardId:
+          type: string
+        minimumRole:
+          type: string
+          x-observed-values: [""]
+        roles:
+          type: string
+          x-observed-values: [""]
+        schemeAdmin:
+          type: boolean
+        schemeCommenter:
+          type: boolean
+        schemeEditor:
+          type: boolean
+        schemeViewer:
+          type: boolean
+        synthetic:
+          type: boolean
+        userId:
+          type: string
+      required:
+        - boardId
+        - minimumRole
+        - roles
+        - schemeAdmin
+        - schemeCommenter
+        - schemeEditor
+        - schemeViewer
+        - synthetic
+        - userId
+    Team:
+      type: object
+      properties:
+        id:
+          type: string
+        modifiedBy:
+          type: string
+        settings:
+          type: object
+          properties: {}
+        signupToken:
+          type: string
+          x-redacted: secret
+        title:
+          type: string
+          x-observed-values: [""]
+        updateAt:
+          type: integer
+      required: [id, modifiedBy, settings, signupToken, title, updateAt]
+    User:
+      type: object
+      properties:
+        create_at:
+          type: integer
+        delete_at:
+          type: integer
+        firstname:
+          type: string
+          x-observed-values: [""]
+        id:
+          type: string
+        is_bot:
+          type: boolean
+        is_guest:
+          type: boolean
+        lastname:
+          type: string
+          x-observed-values: [""]
+        nickname:
+          type: string
+          x-observed-values: [""]
+        roles:
+          type: string
+          x-observed-values: [""]
+        update_at:
+          type: integer
+        username:
+          type: string
+          x-observed-values: [owner]
+      required:
+        - create_at
+        - delete_at
+        - firstname
+        - id
+        - is_bot
+        - is_guest
+        - lastname
+        - nickname
+        - roles
+        - update_at
+        - username
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

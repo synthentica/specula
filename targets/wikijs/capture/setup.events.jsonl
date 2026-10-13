@@ -1,0 +1,10 @@
+{"t":1791791721101,"type":"capture-start","url":"http://localhost:3000/"}
+{"t":1791791721995,"type":"navigation","url":"http://localhost:3000/","sameDocument":false}
+{"t":1791791723906,"type":"action","id":"a1","kind":"input","target":{"tag":"input","selector":"#input-11","role":"textbox","name":"Administrator Email","id":"input-11","type":"text"},"url":"http://localhost:3000/","valueInfo":{"type":"text","length":17}}
+{"t":1791791724468,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#input-14","role":"textbox","name":"Password","id":"input-14","type":"password"},"url":"http://localhost:3000/","valueInfo":{"type":"password","length":16}}
+{"t":1791791724697,"type":"action","id":"a3","kind":"click","target":{"tag":"label","selector":"div:nth-of-type(4) > div:nth-of-type(6) > div > div:nth-of-type(1) > label","role":"label","name":"Allow Telemetry"},"url":"http://localhost:3000/"}
+{"t":1791791724968,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#input-18","role":"textbox","name":"Confirm Password","id":"input-18","type":"password"},"url":"http://localhost:3000/","valueInfo":{"type":"password","length":16}}
+{"t":1791791725025,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"#input-23","role":"textbox","name":"Site URL","id":"input-23","type":"text"},"url":"http://localhost:3000/","valueInfo":{"type":"text","length":21}}
+{"t":1791791725292,"type":"action","id":"a6","kind":"click","target":{"tag":"button","selector":"div > div > div > div:nth-of-type(5) > button","role":"button","name":"INSTALL","type":"button"},"url":"http://localhost:3000/"}
+{"t":1791791740493,"type":"navigation","url":"http://localhost:3000/login","sameDocument":false}
+{"t":1791791743749,"type":"capture-stop","url":"http://localhost:3000/"}

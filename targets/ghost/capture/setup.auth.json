@@ -1,0 +1,26 @@
+{
+  "authorization": [],
+  "cookiesSent": [
+    "ghost-admin-api-session"
+  ],
+  "cookiesSet": [
+    {
+      "name": "ghost-admin-api-session",
+      "attributes": [
+        "Path",
+        "Expires",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 1
+    }
+  ],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 11,
+      "path": "$.users[0].accessibility",
+      "kind": "opaque"
+    }
+  ]
+}

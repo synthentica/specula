@@ -1,0 +1,21 @@
+{"t":1791740042829,"type":"capture-start","url":"http://localhost:3456/"}
+{"t":1791740044763,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#app > header > div > div:nth-of-type(2) > button","role":"button","name":"<redacted:pii>","type":"button"},"url":"http://localhost:3456/"}
+{"t":1791740047908,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"div > div:nth-of-type(2) > div > div > button:nth-of-type(2)","role":"button","name":"Logout","type":"button"},"url":"http://localhost:3456/"}
+{"t":1791740047917,"type":"ws-close","requestId":"9783.584"}
+{"t":1791740047944,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740047950,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740052923,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#username","role":"textbox","name":"Username Or Email Address","id":"username","type":"text"},"url":"http://localhost:3456/login","valueInfo":{"type":"text","length":9}}
+{"t":1791740056092,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:3456/login","valueInfo":{"type":"password","length":16}}
+{"t":1791740058628,"type":"action","id":"a5","kind":"click","target":{"tag":"button","selector":"#loginform > button","role":"button","name":"LOGIN","type":"button"},"url":"http://localhost:3456/login"}
+{"t":1791740058856,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740058868,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740058947,"type":"ws-open","requestId":"9783.734","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740058963,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740059006,"type":"ws-frame","requestId":"9783.734","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740059006,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740059007,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740059007,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740059007,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740059011,"type":"ws-frame","requestId":"9783.734","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740059031,"type":"ws-frame","requestId":"9783.734","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740064075,"type":"capture-stop","url":"http://localhost:3456/"}

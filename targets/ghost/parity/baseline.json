@@ -1,0 +1,1522 @@
+{
+  "label": "baseline",
+  "baseUrl": "http://localhost:2368",
+  "generated": "2026-10-12T09:06:51.710Z",
+  "passed": 151,
+  "total": 151,
+  "checks": {
+    "keys": 9032,
+    "values": 323,
+    "lists": 223,
+    "flags": 1052
+  },
+  "flows": [
+    {
+      "name": "setup",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "create-post",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "name": "publish-post",
+      "passed": 9,
+      "total": 9
+    },
+    {
+      "name": "tags",
+      "passed": 23,
+      "total": 23
+    },
+    {
+      "name": "members",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "name": "settings",
+      "passed": 16,
+      "total": 16
+    },
+    {
+      "name": "posts-list",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "name": "delete-post",
+      "passed": 19,
+      "total": 19
+    },
+    {
+      "name": "logout-login",
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "name": "errors",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "session-expired",
+      "passed": 15,
+      "total": 15
+    }
+  ],
+  "steps": [
+    {
+      "flow": "setup",
+      "step": 1,
+      "operation": "POST /authentication/setup/",
+      "action": "click \"Create account & start publishing →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[0]",
+      "status": 201
+    },
+    {
+      "flow": "setup",
+      "step": 2,
+      "operation": "POST /session",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[1]",
+      "status": 201
+    },
+    {
+      "flow": "setup",
+      "step": 3,
+      "operation": "GET /users/me/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 4,
+      "operation": "GET /config/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 5,
+      "operation": "GET /settings/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 6,
+      "operation": "GET /tiers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 7,
+      "operation": "GET /themes/active/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 8,
+      "operation": "GET /notifications/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 9,
+      "operation": "PUT /users/{userId}/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 10,
+      "operation": "GET /members/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 1,
+      "operation": "GET /snippets/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 2,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 3,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 4,
+      "operation": "GET /search-index/users/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 5,
+      "operation": "GET /search-index/tags/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 6,
+      "operation": "GET /search-index/posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 7,
+      "operation": "GET /search-index/pages/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 8,
+      "operation": "GET /slugs/post/weekend-hike-in-the-hills/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 9,
+      "operation": "POST /posts/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[8]",
+      "status": 201
+    },
+    {
+      "flow": "create-post",
+      "step": 10,
+      "operation": "GET /settings/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 11,
+      "operation": "GET /newsletters/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 12,
+      "operation": "GET /newsletters/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "create-post",
+      "step": 13,
+      "operation": "PUT /posts/{postId}/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-post.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 1,
+      "operation": "GET /posts/",
+      "action": "click \"Continue, final review →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 2,
+      "operation": "PUT /posts/{postId}/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 3,
+      "operation": "GET /posts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 4,
+      "operation": "GET /posts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 5,
+      "operation": "GET /posts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 6,
+      "operation": "POST /stats/posts-member-counts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 7,
+      "operation": "GET /users/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 8,
+      "operation": "GET /posts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "publish-post",
+      "step": 9,
+      "operation": "GET /posts/",
+      "action": "click \"Publish post, right now\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/publish-post.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 1,
+      "operation": "POST /tags/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[0]",
+      "status": 201
+    },
+    {
+      "flow": "tags",
+      "step": 2,
+      "operation": "GET /tags/{tagId}/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 3,
+      "operation": "GET /posts/",
+      "action": "click \"Posts\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 4,
+      "operation": "GET /posts/",
+      "action": "click \"Posts\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 5,
+      "operation": "GET /posts/",
+      "action": "click \"Posts\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 6,
+      "operation": "POST /stats/posts-member-counts/",
+      "action": "click \"Posts\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 7,
+      "operation": "GET /posts/{postId}/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 8,
+      "operation": "GET /snippets/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 9,
+      "operation": "GET /members/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 10,
+      "operation": "GET /settings/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 11,
+      "operation": "GET /newsletters/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 12,
+      "operation": "GET /newsletters/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 13,
+      "operation": "GET /posts/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 14,
+      "operation": "GET /posts/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 15,
+      "operation": "GET /search-index/users/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 16,
+      "operation": "GET /search-index/tags/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 17,
+      "operation": "GET /search-index/posts/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 18,
+      "operation": "GET /search-index/pages/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 19,
+      "operation": "GET /posts/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 20,
+      "operation": "GET /posts/",
+      "action": "click \"Weekend hike in the hills By <redacted:pii> - a few seconds ago P…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 21,
+      "operation": "GET /users/",
+      "action": "click \"Settings\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 22,
+      "operation": "GET /tags/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "tags",
+      "step": 23,
+      "operation": "PUT /posts/{postId}/",
+      "action": "key",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/tags.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 1,
+      "operation": "GET /labels/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 2,
+      "operation": "GET /tiers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 3,
+      "operation": "GET /newsletters/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 4,
+      "operation": "POST /members/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[5]",
+      "status": 201
+    },
+    {
+      "flow": "members",
+      "step": 5,
+      "operation": "GET /members/stats/count/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 6,
+      "operation": "GET /stats/member_count/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 7,
+      "operation": "GET /members/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 8,
+      "operation": "GET /labels/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 9,
+      "operation": "GET /members/{memberId}/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 10,
+      "operation": "GET /members/events/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 11,
+      "operation": "GET /newsletters/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 12,
+      "operation": "GET /labels/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 13,
+      "operation": "GET /members/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 14,
+      "operation": "GET /tiers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 15,
+      "operation": "GET /newsletters/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "members",
+      "step": 16,
+      "operation": "GET /offers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/members.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 1,
+      "operation": "GET /settings/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 2,
+      "operation": "GET /site/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 3,
+      "operation": "GET /config/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 4,
+      "operation": "GET /users/me/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 5,
+      "operation": "GET /users/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 6,
+      "operation": "GET /invites/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 7,
+      "operation": "GET /roles/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 8,
+      "operation": "GET /themes/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 9,
+      "operation": "GET /tiers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 10,
+      "operation": "GET /recommendations/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 11,
+      "operation": "GET /incoming_recommendations/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 12,
+      "operation": "GET /stats/referrers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 13,
+      "operation": "GET /newsletters/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 14,
+      "operation": "GET /integrations/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 15,
+      "operation": "PUT /settings/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "settings",
+      "step": 16,
+      "operation": "GET /settings/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/settings.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 1,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 2,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 3,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 4,
+      "operation": "POST /stats/posts-member-counts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 5,
+      "operation": "GET /posts/",
+      "action": "click \"Published\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 6,
+      "operation": "POST /stats/posts-member-counts/",
+      "action": "click \"Published\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "posts-list",
+      "step": 7,
+      "operation": "GET /posts/",
+      "action": "click \"Drafts\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/posts-list.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 1,
+      "operation": "GET /snippets/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 2,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 3,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 4,
+      "operation": "GET /search-index/users/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 5,
+      "operation": "GET /search-index/tags/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 6,
+      "operation": "GET /search-index/posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 7,
+      "operation": "GET /search-index/pages/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 8,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 9,
+      "operation": "GET /posts/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 10,
+      "operation": "GET /slugs/post/packing-list-draft/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 11,
+      "operation": "POST /posts/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[10]",
+      "status": 201
+    },
+    {
+      "flow": "delete-post",
+      "step": 12,
+      "operation": "GET /members/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 13,
+      "operation": "GET /settings/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 14,
+      "operation": "GET /newsletters/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 15,
+      "operation": "GET /newsletters/",
+      "action": "key \"Post title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 16,
+      "operation": "PUT /posts/{postId}/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 17,
+      "operation": "GET /users/",
+      "action": "click \"Settings\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "delete-post",
+      "step": 18,
+      "operation": "DELETE /posts/{postId}/",
+      "action": "click \"Delete\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[17]",
+      "status": 204
+    },
+    {
+      "flow": "delete-post",
+      "step": 19,
+      "operation": "GET /posts/",
+      "action": "click \"Delete\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-post.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 1,
+      "operation": "DELETE /session",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[0]",
+      "status": 204
+    },
+    {
+      "flow": "logout-login",
+      "step": 2,
+      "operation": "GET /users/me/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[11]",
+      "status": 403
+    },
+    {
+      "flow": "logout-login",
+      "step": 3,
+      "operation": "GET /users/me/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[12]",
+      "status": 403
+    },
+    {
+      "flow": "logout-login",
+      "step": 4,
+      "operation": "GET /site/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 5,
+      "operation": "GET /authentication/setup/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 6,
+      "operation": "POST /session",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[40]",
+      "status": 201
+    },
+    {
+      "flow": "logout-login",
+      "step": 7,
+      "operation": "GET /users/me/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 8,
+      "operation": "GET /config/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 9,
+      "operation": "GET /settings/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 10,
+      "operation": "GET /tiers/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 11,
+      "operation": "GET /themes/active/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 12,
+      "operation": "GET /notifications/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 13,
+      "operation": "GET /members/",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 1,
+      "operation": "GET /posts/{postId}/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[0]",
+      "status": 404
+    },
+    {
+      "flow": "errors",
+      "step": 2,
+      "operation": "GET /labels/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[2]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 3,
+      "operation": "GET /tiers/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[3]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 4,
+      "operation": "GET /newsletters/",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 5,
+      "operation": "POST /members/",
+      "action": "click \"Save\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[5]",
+      "status": 422
+    },
+    {
+      "flow": "errors",
+      "step": 6,
+      "operation": "GET /members/",
+      "action": "click \"Leave\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 7,
+      "operation": "GET /labels/",
+      "action": "click \"Leave\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 8,
+      "operation": "GET /tiers/",
+      "action": "click \"Leave\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 9,
+      "operation": "GET /newsletters/",
+      "action": "click \"Leave\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 10,
+      "operation": "GET /offers/",
+      "action": "click \"Leave\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 1,
+      "operation": "DELETE /session",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[0]",
+      "status": 204
+    },
+    {
+      "flow": "session-expired",
+      "step": 2,
+      "operation": "GET /users/me/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[11]",
+      "status": 403
+    },
+    {
+      "flow": "session-expired",
+      "step": 3,
+      "operation": "GET /users/me/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[12]",
+      "status": 403
+    },
+    {
+      "flow": "session-expired",
+      "step": 4,
+      "operation": "GET /site/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 5,
+      "operation": "GET /authentication/setup/",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 6,
+      "operation": "POST /session",
+      "action": "click \"Sign in →\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[40]",
+      "status": 422
+    },
+    {
+      "flow": "session-expired",
+      "step": 7,
+      "operation": "POST /session",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[41]",
+      "status": 201
+    },
+    {
+      "flow": "session-expired",
+      "step": 8,
+      "operation": "GET /users/me/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 9,
+      "operation": "GET /config/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 10,
+      "operation": "GET /settings/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 11,
+      "operation": "GET /tiers/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 12,
+      "operation": "GET /themes/active/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[47]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 13,
+      "operation": "GET /notifications/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[49]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 14,
+      "operation": "GET /tags/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "session-expired",
+      "step": 15,
+      "operation": "GET /members/",
+      "action": "click \"Retry\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/session-expired.har#entries[54]",
+      "status": 200
+    }
+  ]
+}

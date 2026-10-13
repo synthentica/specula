@@ -1,0 +1,50 @@
+{
+  "authorization": [],
+  "cookiesSent": [
+    "ghost-admin-api-session"
+  ],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 3,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 3,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 3,
+      "path": "$.posts[1].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 3,
+      "path": "$.posts[1].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 5,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 5,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 5,
+      "path": "$.posts[1].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 5,
+      "path": "$.posts[1].primary_author.accessibility",
+      "kind": "opaque"
+    }
+  ]
+}

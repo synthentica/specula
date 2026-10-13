@@ -1,0 +1,11 @@
+# Local Focalboard (standalone server) for specula. SQLite in tmpfs, so every `up` starts fresh
+# at the sign-up page. Telemetry is off (config.json).
+services:
+  focalboard:
+    image: mattermost/focalboard:latest  # official image (Docker Hub)
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./config.json:/opt/focalboard/config.json:ro
+    tmpfs:
+      - /opt/focalboard/data:uid=65534,gid=65534

@@ -1,0 +1,74 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 55,
+      "firstEntry": 4
+    },
+    {
+      "scheme": "",
+      "count": 8,
+      "firstEntry": 34
+    }
+  ],
+  "cookiesSent": [],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 6,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 7,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 20,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 21,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 44,
+      "path": "$.token",
+      "kind": "opaque"
+    },
+    {
+      "entry": 51,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 52,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 61,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 62,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 72,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 73,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    }
+  ]
+}

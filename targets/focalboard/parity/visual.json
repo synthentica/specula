@@ -1,0 +1,18 @@
+{
+  "label": "rebuild",
+  "baseUrl": "http://localhost:4714",
+  "generated": "2026-10-12T17:43:44.312Z",
+  "score": 98,
+  "views": [
+    {
+      "view": "board",
+      "score": 98,
+      "layout": 99,
+      "components": 94,
+      "style": 100,
+      "notes": [
+        "button: typical size 99×32, spec 24×24"
+      ]
+    }
+  ]
+}

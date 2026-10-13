@@ -1,0 +1,1222 @@
+{
+ "name": "home",
+ "route": "/",
+ "snapshot": {
+  "url": "/",
+  "viewport": {
+   "width": 1280,
+   "height": 800
+  },
+  "documentHeight": 835,
+  "page": {
+   "background": "#ffffff",
+   "color": "#000000",
+   "fontFamily": "Times New Roman",
+   "fontSize": 16,
+   "lineHeight": 0
+  },
+  "regions": [
+   {
+    "role": "topbar",
+    "rect": [
+     0,
+     0,
+     1280,
+     64
+    ],
+    "style": {
+     "background": "#000000",
+     "color": "#ffffff",
+     "shadow": "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    },
+    "fixed": true
+   },
+   {
+    "role": "sidebar",
+    "rect": [
+     0,
+     64,
+     256,
+     736
+    ],
+    "style": {
+     "background": "#1976d2",
+     "color": "#000000de",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    },
+    "fixed": true
+   },
+   {
+    "role": "main",
+    "rect": [
+     0,
+     0,
+     1280,
+     803
+    ],
+    "style": {
+     "color": "#000000de",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      64,
+      256
+     ],
+     "background": "#ffffff"
+    }
+   },
+   {
+    "role": "footer",
+    "rect": [
+     0,
+     803,
+     1280,
+     32
+    ],
+    "style": {
+     "background": "#eeeeee",
+     "color": "#000000de",
+     "shadow": "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      6,
+      272
+     ]
+    }
+   }
+  ],
+  "components": [
+   {
+    "kind": "card",
+    "rect": [
+     4,
+     0,
+     424,
+     64
+    ],
+    "style": {
+     "background": "#000000",
+     "color": "#ffffff",
+     "shadow": "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      12
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     428,
+     0,
+     424,
+     64
+    ],
+    "style": {
+     "background": "#000000",
+     "color": "#ffffff",
+     "shadow": "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "text",
+    "rect": [
+     480,
+     16,
+     292,
+     32
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      8,
+      0
+     ]
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     804,
+     8,
+     48,
+     48
+    ],
+    "style": {
+     "color": "#ffffff",
+     "radius": 50,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1077,
+     0,
+     48,
+     64
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     1125,
+     0,
+     1,
+     64
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#ffffff1f",
+      "width": 1,
+      "sides": "r"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1126,
+     0,
+     48,
+     64
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     1174,
+     0,
+     1,
+     64
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#ffffff1f",
+      "width": 1,
+      "sides": "r"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     1175,
+     0,
+     48,
+     64
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     1223,
+     0,
+     1,
+     64
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#ffffff1f",
+      "width": 1,
+      "sides": "r"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1224,
+     0,
+     48,
+     64
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     0,
+     64,
+     256,
+     60
+    ],
+    "style": {
+     "background": "#1565c0",
+     "color": "#000000de",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      12,
+      12
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     12,
+     76,
+     52,
+     36
+    ],
+    "style": {
+     "background": "#1976d2",
+     "color": "#ffffff",
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3,
+     "padding": [
+      0,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     76,
+     76,
+     168,
+     36
+    ],
+    "style": {
+     "background": "#1976d2",
+     "color": "#ffffff",
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3,
+     "padding": [
+      0,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     0,
+     124,
+     256,
+     1
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#ffffff1f",
+      "width": 1,
+      "sides": "t"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     0,
+     125,
+     256,
+     56
+    ],
+    "style": {
+     "background": "#1976d2",
+     "color": "#ffffff",
+     "shadow": "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      8,
+      0
+     ]
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     0,
+     133,
+     256,
+     40
+    ],
+    "style": {
+     "color": "#ffffff",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     256,
+     154,
+     1024,
+     1
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#0000001f",
+      "width": 1,
+      "sides": "t"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     276,
+     81,
+     230,
+     96
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#000000de",
+     "radius": 4,
+     "shadow": "#00000033 0px 3px 1px -2px, #00000024 0px 2px 2px 0px, #0000001f 0px 1px 5px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     276,
+     197,
+     230,
+     100
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#000000de",
+     "radius": 4,
+     "shadow": "#00000033 0px 3px 1px -2px, #00000024 0px 2px 2px 0px, #0000001f 0px 1px 5px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     296,
+     241,
+     74,
+     32
+    ],
+    "style": {
+     "background": "#e0f2f1",
+     "color": "#000000de",
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      12
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     374,
+     241,
+     44,
+     32
+    ],
+    "style": {
+     "background": "#e0f2f1",
+     "color": "#000000de",
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 400,
+     "padding": [
+      0,
+      12
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     276,
+     317,
+     230,
+     92
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#000000de",
+     "radius": 4,
+     "shadow": "#00000033 0px 3px 1px -2px, #00000024 0px 2px 2px 0px, #0000001f 0px 1px 5px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "outline",
+    "rect": [
+     296,
+     361,
+     132,
+     28
+    ],
+    "style": {
+     "color": "#455a64",
+     "border": {
+      "color": "#455a64",
+      "width": 1,
+      "sides": "all"
+     },
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 12,
+     "fontWeight": 500,
+     "letterSpacing": 1.1,
+     "padding": [
+      0,
+      12.4
+     ]
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "outline",
+    "rect": [
+     436,
+     361,
+     50,
+     28
+    ],
+    "style": {
+     "color": "#455a64",
+     "border": {
+      "color": "#455a64",
+      "width": 1,
+      "sides": "all"
+     },
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 12,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.1,
+     "padding": [
+      0,
+      12.4
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     276,
+     429,
+     230,
+     100
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#000000de",
+     "radius": 4,
+     "shadow": "#00000033 0px 3px 1px -2px, #00000024 0px 2px 2px 0px, #0000001f 0px 1px 5px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     466,
+     449,
+     20,
+     20
+    ],
+    "style": {
+     "color": "#0000008a",
+     "radius": 50,
+     "fontFamily": "Roboto",
+     "fontSize": 10,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 0.9
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     343,
+     549,
+     48,
+     48
+    ],
+    "style": {
+     "color": "#0000008a",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     391,
+     549,
+     48,
+     48
+    ],
+    "style": {
+     "color": "#0000008a",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     1208,
+     728,
+     56,
+     56
+    ],
+    "style": {
+     "background": "#1976d2",
+     "color": "#ffffff",
+     "radius": 50,
+     "shadow": "#00000033 0px 3px 5px -1px, #00000024 0px 6px 10px 0px, #0000001f 0px 1px 18px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3
+    }
+   },
+   {
+    "kind": "heading",
+    "variant": "h1",
+    "rect": [
+     530,
+     179,
+     738,
+     48
+    ],
+    "style": {
+     "color": "#1565c0",
+     "fontFamily": "Roboto",
+     "fontSize": 32,
+     "fontWeight": 700
+    }
+   },
+   {
+    "kind": "list-item",
+    "rect": [
+     554,
+     283,
+     714,
+     24
+    ],
+    "style": {
+     "color": "#424242",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "list-item",
+    "rect": [
+     554,
+     315,
+     714,
+     24
+    ],
+    "style": {
+     "color": "#424242",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "list-item",
+    "rect": [
+     554,
+     347,
+     714,
+     24
+    ],
+    "style": {
+     "color": "#424242",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     530,
+     421,
+     738,
+     41
+    ],
+    "style": {
+     "background": "#607d8b",
+     "color": "#ffffff",
+     "radius": 7,
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 500,
+     "padding": [
+      8,
+      20
+     ]
+    }
+   },
+   {
+    "kind": "card",
+    "rect": [
+     530,
+     462,
+     738,
+     329
+    ],
+    "style": {
+     "background": "#eceff1",
+     "color": "#000000de",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400,
+     "padding": [
+      20,
+      20
+     ]
+    }
+   },
+   {
+    "kind": "input",
+    "variant": "textarea",
+    "rect": [
+     562,
+     488,
+     686,
+     72
+    ],
+    "style": {
+     "color": "#000000de",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "filled",
+    "rect": [
+     1084,
+     572,
+     164,
+     36
+    ],
+    "style": {
+     "background": "#455a64",
+     "color": "#ffffff",
+     "radius": 4,
+     "fontFamily": "Roboto",
+     "fontSize": 14,
+     "fontWeight": 500,
+     "textTransform": "uppercase",
+     "letterSpacing": 1.3,
+     "padding": [
+      0,
+      16
+     ]
+    }
+   },
+   {
+    "kind": "divider",
+    "rect": [
+     550,
+     620,
+     698,
+     1
+    ],
+    "style": {
+     "color": "#808080",
+     "border": {
+      "color": "#0000001f",
+      "width": 1,
+      "sides": "t"
+     },
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1188,
+     665,
+     16,
+     16
+    ],
+    "style": {
+     "color": "#0000008a",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "button",
+    "variant": "text",
+    "rect": [
+     1216,
+     665,
+     16,
+     16
+    ],
+    "style": {
+     "color": "#0000008a",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "avatar",
+    "rect": [
+     572,
+     670,
+     52,
+     52
+    ],
+    "style": {
+     "background": "#ffffff",
+     "color": "#000000de",
+     "radius": 50,
+     "shadow": "#00000033 0px 2px 1px -1px, #00000024 0px 1px 1px 0px, #0000001f 0px 1px 3px 0px",
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "avatar",
+    "rect": [
+     577,
+     675,
+     42,
+     42
+    ],
+    "style": {
+     "background": "#880e4f",
+     "color": "#000000de",
+     "radius": 50,
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "avatar",
+    "rect": [
+     574,
+     672,
+     48,
+     48
+    ],
+    "style": {
+     "background": "#607d8b",
+     "color": "#000000de",
+     "radius": 50,
+     "fontFamily": "Roboto",
+     "fontSize": 16,
+     "fontWeight": 400
+    }
+   },
+   {
+    "kind": "link",
+    "rect": [
+     784,
+     812,
+     38,
+     14
+    ],
+    "style": {
+     "color": "#1976d2",
+     "fontFamily": "Roboto",
+     "fontSize": 12,
+     "fontWeight": 400,
+     "letterSpacing": 0.4
+    }
+   }
+  ],
+  "usage": {
+   "text": [
+    [
+     "#424242",
+     98
+    ],
+    [
+     "#757575",
+     43
+    ],
+    [
+     "#00000099",
+     40
+    ],
+    [
+     "#ffffff",
+     37
+    ],
+    [
+     "#000000de",
+     34
+    ],
+    [
+     "#1976d2",
+     19
+    ],
+    [
+     "#455a64",
+     18
+    ],
+    [
+     "#607d8b",
+     14
+    ],
+    [
+     "#9e9e9e",
+     14
+    ],
+    [
+     "#3f51b5",
+     12
+    ],
+    [
+     "#1565c0",
+     12
+    ],
+    [
+     "#ffffffb3",
+     9
+    ],
+    [
+     "#00796b",
+     5
+    ],
+    [
+     "#009688",
+     4
+    ]
+   ],
+   "background": [
+    [
+     "#ffffff",
+     22806.3
+    ],
+    [
+     "#eceff1",
+     2428
+    ],
+    [
+     "#1976d2",
+     2138.1
+    ],
+    [
+     "#000000",
+     1633.3
+    ],
+    [
+     "#f5f5f5",
+     921.6
+    ],
+    [
+     "#607d8b",
+     323.9
+    ],
+    [
+     "#1e1e1e",
+     176.6
+    ],
+    [
+     "#1565c0",
+     153.6
+    ],
+    [
+     "#eeeeee",
+     110.4
+    ],
+    [
+     "#455a64",
+     59
+    ],
+    [
+     "#e0f2f1",
+     37.9
+    ],
+    [
+     "#880e4f",
+     17.6
+    ],
+    [
+     "#ffffff1f",
+     7.4
+    ]
+   ],
+   "border": [
+    [
+     "#455a64",
+     8
+    ],
+    [
+     "#ffffff1f",
+     4
+    ],
+    [
+     "#00000061",
+     4
+    ],
+    [
+     "#0000001f",
+     2
+    ]
+   ],
+   "fontFamily": [
+    [
+     "Roboto",
+     359
+    ]
+   ],
+   "fontSize": [
+    [
+     "12",
+     113
+    ],
+    [
+     "16",
+     90
+    ],
+    [
+     "14",
+     62
+    ],
+    [
+     "10",
+     46
+    ],
+    [
+     "13",
+     16
+    ],
+    [
+     "24",
+     12
+    ],
+    [
+     "32",
+     12
+    ],
+    [
+     "20",
+     8
+    ]
+   ],
+   "fontWeight": [
+    [
+     "400",
+     271
+    ],
+    [
+     "500",
+     50
+    ],
+    [
+     "700",
+     38
+    ]
+   ],
+   "radius": [
+    [
+     "4",
+     16
+    ],
+    [
+     "50",
+     4
+    ],
+    [
+     "28",
+     1
+    ],
+    [
+     "7",
+     1
+    ]
+   ],
+   "shadow": [
+    [
+     "#00000033 0px 0px 0px 0px, #00000024 0px 0px 0px 0px, #0000001f 0px 0px 0px 0px",
+     9
+    ],
+    [
+     "#00000033 0px 3px 1px -2px, #00000024 0px 2px 2px 0px, #0000001f 0px 1px 5px 0px",
+     4
+    ],
+    [
+     "#00000033 0px 2px 1px -1px, #00000024 0px 1px 1px 0px, #0000001f 0px 1px 3px 0px",
+     2
+    ],
+    [
+     "#00000033 0px 3px 5px -1px, #00000024 0px 6px 10px 0px, #0000001f 0px 1px 18px 0px",
+     1
+    ]
+   ],
+   "spacing": [
+    [
+     "16",
+     13
+    ],
+    [
+     "12",
+     12
+    ],
+    [
+     "20",
+     12
+    ],
+    [
+     "8",
+     8
+    ],
+    [
+     "24",
+     3
+    ],
+    [
+     "64",
+     2
+    ],
+    [
+     "12.4",
+     2
+    ],
+    [
+     "4",
+     1
+    ],
+    [
+     "6",
+     1
+    ]
+   ]
+  }
+ }
+}

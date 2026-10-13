@@ -1,0 +1,15 @@
+# Local Wiki.js 2 for specula. SQLite in tmpfs, so every `up` starts fresh at the setup wizard.
+# Offline install: run `./sideload.sh <dir>` once, then `WIKI_SIDELOAD_DIR=<dir> docker compose up -d`.
+services:
+  wiki:
+    image: ghcr.io/requarks/wiki:2  # official image
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      DB_TYPE: sqlite
+      DB_FILEPATH: /wiki/data/db.sqlite
+    volumes:
+      - ./config.yml:/wiki/config.yml:ro
+      - ${WIKI_SIDELOAD_DIR:-./sideload}:/wiki/data/sideload:ro
+    tmpfs:
+      - /wiki/data:uid=1000,gid=1000

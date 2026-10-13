@@ -1,0 +1,2138 @@
+openapi: "3.1.0"
+info:
+  title: app API (inferred by specula)
+  version: observed
+  description: "Inferred from 109 recorded exchanges in 12 flows. Only observed behaviour is described. x-observed-values lists values seen, not a closed enum."
+servers:
+  - url: /api/v2
+paths:
+  /avatar/{avatarId}:
+    get:
+      operationId: getAvatarById
+      tags: [avatar]
+      summary: GET /avatar/{avatarId}
+      parameters:
+        - name: avatarId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-redacted: pii
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [20, 40, 48]
+      responses:
+        "200":
+          description: "Observed 7×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            "image/svg+xml":
+              schema:
+                type: string
+                format: binary
+      security:
+        - bearerAuth: []
+      x-specula-samples: 7
+      x-specula-flows: [edit-task, errors, logout-login, register, token-refresh]
+  /info:
+    get:
+      operationId: getInfo
+      tags: [info]
+      summary: GET /info
+      responses:
+        "200":
+          description: "Observed 4×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Info"
+      security: []
+      x-specula-samples: 4
+      x-specula-flows: [errors, register]
+  /labels:
+    get:
+      operationId: getLabels
+      tags: [labels]
+      summary: GET /labels
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+      responses:
+        "200":
+          description: "Observed 6×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Label"
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [50]
+                  total:
+                    type: integer
+                    x-observed-values: [0, 1]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [0, 1]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 6
+      x-specula-flows: [errors, labels, logout-login, register, token-refresh]
+    post:
+      operationId: postLabels
+      tags: [labels]
+      summary: POST /labels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hex_color:
+                  type: string
+                title:
+                  type: string
+                  x-observed-values: [plumbing]
+              required: [hex_color, title]
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Label"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [labels]
+  /login:
+    post:
+      operationId: postLogin
+      tags: [login]
+      summary: POST /login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                long_token:
+                  type: boolean
+                password:
+                  type: string
+                  x-redacted: secret
+                username:
+                  type: string
+                  x-redacted: pii
+              required: [password, username]
+      responses:
+        "200":
+          description: "Observed 4×"
+          headers:
+            X-Ratelimit-Limit:
+              schema:
+                type: string
+            X-Ratelimit-Remaining:
+              schema:
+                type: string
+            X-Ratelimit-Reset:
+              schema:
+                type: string
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  token:
+                    type: string
+                    x-redacted: jwt
+                required: [$schema, token]
+        "403":
+          description: "Observed 1×"
+          headers:
+            X-Ratelimit-Limit:
+              schema:
+                type: string
+            X-Ratelimit-Remaining:
+              schema:
+                type: string
+            X-Ratelimit-Reset:
+              schema:
+                type: string
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            "application/problem+json":
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  code:
+                    type: integer
+                    x-observed-values: [1011]
+                  detail:
+                    type: string
+                    x-observed-values: [Wrong username or password.]
+                  status:
+                    type: integer
+                    x-observed-values: [403]
+                  title:
+                    type: string
+                    x-observed-values: [Forbidden]
+                required: [$schema, code, detail, status, title]
+      security: []
+      x-specula-samples: 5
+      x-specula-flows: [errors, logout-login, register, token-refresh]
+  /logout:
+    post:
+      operationId: postLogout
+      tags: [logout]
+      summary: POST /logout
+      responses:
+        "200":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  message:
+                    type: string
+                    x-observed-values: [Successfully logged out.]
+                required: [$schema, message]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 3
+      x-specula-flows: [errors, logout-login, token-refresh]
+  /notifications:
+    get:
+      operationId: getNotifications
+      tags: [notifications]
+      summary: GET /notifications
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+        - name: per_page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [20]
+      responses:
+        "200":
+          description: "Observed 7×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items: {}
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [20]
+                  total:
+                    type: integer
+                    x-observed-values: [0]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [0]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 7
+      x-specula-flows: [errors, logout-login, register, token-refresh]
+  /projects:
+    get:
+      operationId: getProjects
+      tags: [projects]
+      summary: GET /projects
+      parameters:
+        - name: expand
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [permissions]
+        - name: is_archived
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+      responses:
+        "200":
+          description: "Observed 5×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Project"
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [50]
+                  total:
+                    type: integer
+                    x-observed-values: [1, 2]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [1]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 5
+      x-specula-flows: [errors, logout-login, register, token-refresh]
+    post:
+      operationId: postProjects
+      tags: [projects]
+      summary: POST /projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  x-observed-values: [""]
+                hex_color:
+                  type: string
+                identifier:
+                  type: string
+                is_archived:
+                  type: boolean
+                is_favorite:
+                  type: boolean
+                parent_project_id:
+                  type: integer
+                  x-observed-values: [0]
+                position:
+                  type: integer
+                title:
+                  type: string
+                  x-observed-values: [Home renovation]
+              required:
+                - description
+                - hex_color
+                - identifier
+                - is_archived
+                - is_favorite
+                - parent_project_id
+                - position
+                - title
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [create-project]
+  /projects/{projectId}:
+    get:
+      operationId: getProjectsById
+      tags: [projects]
+      summary: GET /projects/{projectId}
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 4×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 4
+      x-specula-flows: [create-project, delete-task, errors, kanban]
+  /projects/{projectId}/tasks/bulk:
+    post:
+      operationId: postProjectsTasksBulk
+      tags: [projects]
+      summary: POST /projects/{projectId}/tasks/bulk
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tasks:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      bucket_id:
+                        type: integer
+                      cover_image_attachment_id:
+                        type: integer
+                        x-observed-values: [0]
+                      description:
+                        type: string
+                        x-observed-values: [""]
+                      done:
+                        type: boolean
+                      hex_color:
+                        type: string
+                      is_favorite:
+                        type: boolean
+                      percent_done:
+                        type: integer
+                        x-observed-values: [0]
+                      priority:
+                        type: integer
+                        x-observed-values: [0]
+                      project_id:
+                        type: integer
+                        x-observed-values: [2]
+                      reminders:
+                        type: array
+                        items: {}
+                      repeat_after:
+                        type: integer
+                        x-observed-values: [0]
+                      repeat_mode:
+                        type: integer
+                        x-observed-values: [0]
+                      title:
+                        type: string
+                        x-observed-values: [Buy paint, Fix the leaking tap, Call the electrician]
+                    required:
+                      - bucket_id
+                      - cover_image_attachment_id
+                      - description
+                      - done
+                      - hex_color
+                      - is_favorite
+                      - percent_done
+                      - priority
+                      - project_id
+                      - reminders
+                      - repeat_after
+                      - repeat_mode
+                      - title
+              required: [tasks]
+      responses:
+        "201":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tasks:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Task"
+                required: [tasks]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 3
+      x-specula-flows: [add-tasks]
+  /projects/{projectId}/views/{viewId}/buckets:
+    get:
+      operationId: getProjectsViewsBuckets
+      tags: [projects]
+      summary: GET /projects/{projectId}/views/{viewId}/buckets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: viewId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Observed 2×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Bucket"
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [50]
+                  total:
+                    type: integer
+                    x-observed-values: [3]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [1]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 2
+      x-specula-flows: [delete-task, edit-task]
+    post:
+      operationId: postProjectsViewsBuckets
+      tags: [projects]
+      summary: POST /projects/{projectId}/views/{viewId}/buckets
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: viewId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  x-observed-values: [Waiting on parts]
+              required: [title]
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Bucket"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [kanban]
+  /projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks:
+    put:
+      operationId: putProjectsViewsBucketsTasks
+      tags: [projects]
+      summary: PUT /projects/{projectId}/views/{viewId}/buckets/{bucketId}/tasks
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: viewId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: bucketId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                task_id:
+                  type: integer
+                  x-observed-values: [2]
+              required: [task_id]
+      responses:
+        "200":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task2"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 3
+      x-specula-flows: [kanban]
+  /projects/{projectId}/views/{viewId}/buckets/tasks:
+    get:
+      operationId: getProjectsViewsBucketsTasks
+      tags: [projects]
+      summary: GET /projects/{projectId}/views/{viewId}/buckets/tasks
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: viewId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: expand
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [comment_count, is_unread]
+          style: form
+          explode: true
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [""]
+        - name: filter_include_nulls
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: filter_timezone
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [GMT]
+        - name: per_page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [25]
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [""]
+      responses:
+        "200":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Bucket"
+                  total:
+                    type: integer
+                    x-observed-values: [3]
+                required: [$schema, items, total]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [kanban]
+  /projects/{projectId}/views/{viewId}/tasks:
+    get:
+      operationId: getProjectsViewsTasks
+      tags: [projects]
+      summary: GET /projects/{projectId}/views/{viewId}/tasks
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: viewId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: expand
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [subtasks, comment_count, is_unread]
+          style: form
+          explode: true
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: ["", "priority > urgent"]
+        - name: filter_include_nulls
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: filter_timezone
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [GMT]
+        - name: order_by
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [asc]
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [""]
+        - name: sort_by
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [position]
+      responses:
+        "200":
+          description: "Observed 9×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Task"
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [50]
+                  total:
+                    type: integer
+                    x-observed-values: [0, 1, 2, 3]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [0, 1]
+                required: [$schema, items, page, per_page, total, total_pages]
+        "400":
+          description: "Observed 2×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            "application/problem+json":
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  code:
+                    type: integer
+                    x-observed-values: [4019]
+                  detail:
+                    type: string
+                  status:
+                    type: integer
+                    x-observed-values: [400]
+                  title:
+                    type: string
+                    x-observed-values: [Bad Request]
+                required: [$schema, code, detail, status, title]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 11
+      x-specula-flows: [add-tasks, create-project, delete-task, errors, kanban, labels]
+  /register:
+    post:
+      operationId: postRegister
+      tags: [register]
+      summary: POST /register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  x-redacted: email
+                language:
+                  type: string
+                  x-observed-values: [en]
+                password:
+                  type: string
+                  x-redacted: secret
+                username:
+                  type: string
+                  x-redacted: pii
+              required: [email, language, password, username]
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Ratelimit-Limit:
+              schema:
+                type: string
+            X-Ratelimit-Remaining:
+              schema:
+                type: string
+            X-Ratelimit-Reset:
+              schema:
+                type: string
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: "Observed 1×"
+          headers:
+            X-Ratelimit-Limit:
+              schema:
+                type: string
+            X-Ratelimit-Remaining:
+              schema:
+                type: string
+            X-Ratelimit-Reset:
+              schema:
+                type: string
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            "application/problem+json":
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  code:
+                    type: integer
+                    x-observed-values: [1001]
+                  detail:
+                    type: string
+                  status:
+                    type: integer
+                    x-observed-values: [400]
+                  title:
+                    type: string
+                    x-observed-values: [Bad Request]
+                required: [$schema, code, detail, status, title]
+      security: []
+      x-specula-samples: 2
+      x-specula-flows: [errors, register]
+  /tasks:
+    get:
+      operationId: getTasks
+      tags: [tasks]
+      summary: GET /tasks
+      parameters:
+        - name: expand
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [comment_count, is_unread]
+          style: form
+          explode: true
+        - name: filter
+          in: query
+          required: false
+          schema:
+            type: string
+            x-observed-values: ["done = false", ""]
+        - name: filter_include_nulls
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: filter_timezone
+          in: query
+          required: false
+          schema:
+            type: string
+            x-observed-values: [GMT]
+        - name: order_by
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [asc, desc]
+          style: form
+          explode: true
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+        - name: per_page
+          in: query
+          required: false
+          schema:
+            type: integer
+            x-observed-values: [1]
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+            x-observed-values: ["", leaking]
+        - name: sort_by
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [due_date, id, done, relevance]
+          style: form
+          explode: true
+      responses:
+        "200":
+          description: "Observed 14×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Task"
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [1, 50]
+                  total:
+                    type: integer
+                    x-observed-values: [0, 1, 2, 3]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [0, 1, 2]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 14
+      x-specula-flows:
+        - delete-task
+        - errors
+        - logout-login
+        - register
+        - search
+        - token-refresh
+        - upcoming-overview
+  /tasks/{taskId}:
+    delete:
+      operationId: deleteTasksById
+      tags: [tasks]
+      summary: DELETE /tasks/{taskId}
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [delete-task]
+    get:
+      operationId: getTasksById
+      tags: [tasks]
+      summary: GET /tasks/{taskId}
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: expand
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+              x-observed-values: [reactions, is_unread, buckets]
+          style: form
+          explode: true
+      responses:
+        "200":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "404":
+          description: "Observed 2×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            "application/problem+json":
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  code:
+                    type: integer
+                    x-observed-values: [4002]
+                  detail:
+                    type: string
+                    x-observed-values: [This task does not exist]
+                  status:
+                    type: integer
+                    x-observed-values: [404]
+                  title:
+                    type: string
+                    x-observed-values: [Not Found]
+                required: [$schema, code, detail, status, title]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 5
+      x-specula-flows: [delete-task, edit-task, errors, labels]
+    patch:
+      operationId: patchTasksById
+      tags: [tasks]
+      summary: PATCH /tasks/{taskId}
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          "application/json-patch+json":
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  op:
+                    type: string
+                    x-observed-values: [add]
+                  path:
+                    type: string
+                    examples: [/title, /description]
+                  value:
+                    anyOf:
+                      - type: array
+                        items: {}
+                      - type: string
+                        x-observed-values: [Buy paint, "", "0001-01-01T00:00:00Z"]
+                      - type: integer
+                        x-observed-values: [0, 2, 3]
+                      - type: boolean
+                required: [op, path, value]
+        description: "JSON Patch document. Observed paths: /bucket_id, /cover_image_attachment_id, /description, /done, /due_date, /end_date, /hex_color, /is_favorite, /percent_done, /priority, /project_id, /reminders, /repeat_after, /repeat_mode, /start_date, /title"
+      responses:
+        "200":
+          description: "Observed 2×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 2
+      x-specula-flows: [edit-task]
+      x-specula-patch-paths:
+        - /bucket_id
+        - /cover_image_attachment_id
+        - /description
+        - /done
+        - /due_date
+        - /end_date
+        - /hex_color
+        - /is_favorite
+        - /percent_done
+        - /priority
+        - /project_id
+        - /reminders
+        - /repeat_after
+        - /repeat_mode
+        - /start_date
+        - /title
+  /tasks/{taskId}/comments:
+    get:
+      operationId: getTasksComments
+      tags: [tasks]
+      summary: GET /tasks/{taskId}/comments
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: order_by
+          in: query
+          required: true
+          schema:
+            type: string
+            x-observed-values: [asc]
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+            x-observed-values: [1]
+      responses:
+        "200":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  items:
+                    type: array
+                    items: {}
+                  page:
+                    type: integer
+                    x-observed-values: [1]
+                  per_page:
+                    type: integer
+                    x-observed-values: [50]
+                  total:
+                    type: integer
+                    x-observed-values: [0]
+                  total_pages:
+                    type: integer
+                    x-observed-values: [0]
+                required: [$schema, items, page, per_page, total, total_pages]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 3
+      x-specula-flows: [delete-task, edit-task, labels]
+    post:
+      operationId: postTasksComments
+      tags: [tasks]
+      summary: POST /tasks/{taskId}/comments
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  x-observed-values: ["<p>Two litres should be enough</p>"]
+              required: [comment]
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [edit-task]
+  /tasks/{taskId}/labels:
+    post:
+      operationId: postTasksLabels
+      tags: [tasks]
+      summary: POST /tasks/{taskId}/labels
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                label_id:
+                  type: integer
+                  x-observed-values: [1]
+              required: [label_id]
+      responses:
+        "201":
+          description: "Observed 1×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  created:
+                    type: string
+                    format: date-time
+                  label_id:
+                    type: integer
+                    x-observed-values: [1]
+                required: [created, label_id]
+      security:
+        - bearerAuth: []
+      x-specula-samples: 1
+      x-specula-flows: [labels]
+  /tasks/{taskId}/position:
+    put:
+      operationId: putTasksPosition
+      tags: [tasks]
+      summary: PUT /tasks/{taskId}/position
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                position:
+                  type: integer
+                project_view_id:
+                  type: integer
+                  x-observed-values: [12]
+              required: [position, project_view_id]
+      responses:
+        "200":
+          description: "Observed 3×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Position"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 3
+      x-specula-flows: [kanban]
+  /user:
+    get:
+      operationId: getUser
+      tags: [user]
+      summary: GET /user
+      responses:
+        "200":
+          description: "Observed 6×"
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+      security:
+        - bearerAuth: []
+      x-specula-samples: 6
+      x-specula-flows: [errors, labels, logout-login, register, token-refresh]
+  /user/token/refresh:
+    post:
+      operationId: postUserTokenRefresh
+      tags: [user]
+      summary: POST /user/token/refresh
+      responses:
+        "200":
+          description: "Observed 7×"
+          headers:
+            X-Ratelimit-Limit:
+              schema:
+                type: string
+            X-Ratelimit-Remaining:
+              schema:
+                type: string
+            X-Ratelimit-Reset:
+              schema:
+                type: string
+            X-Request-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                    format: uri
+                  token:
+                    type: string
+                    x-redacted: jwt
+                required: [$schema, token]
+      security:
+        - cookie_app_refresh_token: []
+      x-specula-samples: 7
+      x-specula-flows: [errors, logout-login, register, token-refresh]
+components:
+  schemas:
+    Bucket:
+      type: object
+      properties:
+        count:
+          type: integer
+          x-observed-values: [0, 1]
+        created:
+          type: string
+          format: date-time
+        created_by:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            id:
+              type: integer
+            name:
+              type: string
+              x-observed-values: [""]
+            updated:
+              type: string
+              format: date-time
+            username:
+              type: string
+              x-redacted: pii
+          required: [created, id, name, updated, username]
+        id:
+          type: integer
+        limit:
+          type: integer
+          x-observed-values: [0]
+        position:
+          type: integer
+        project_view_id:
+          type: integer
+          x-observed-values: [12]
+        tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/Task"
+        title:
+          type: string
+          x-observed-values: [To-Do, Doing, Done, Waiting on parts]
+        updated:
+          type: string
+          format: date-time
+      required:
+        - count
+        - created
+        - created_by
+        - id
+        - limit
+        - position
+        - project_view_id
+        - title
+        - updated
+    Comment:
+      type: object
+      properties:
+        author:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            id:
+              type: integer
+            name:
+              type: string
+              x-observed-values: [""]
+            updated:
+              type: string
+              format: date-time
+            username:
+              type: string
+              x-redacted: pii
+          required: [created, id, name, updated, username]
+        comment:
+          type: string
+          x-observed-values: ["<p>Two litres should be enough</p>"]
+        created:
+          type: string
+          format: date-time
+        id:
+          type: integer
+        reactions:
+          type: "null"
+        updated:
+          type: string
+          format: date-time
+      required: [author, comment, created, id, reactions, updated]
+    Info:
+      type: object
+      properties:
+        $schema:
+          type: string
+          format: uri
+        allow_icon_changes:
+          type: boolean
+        auth:
+          type: object
+          properties:
+            ldap:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+              required: [enabled]
+            local:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                registration_enabled:
+                  type: boolean
+              required: [enabled, registration_enabled]
+            openid_connect:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                providers:
+                  type: "null"
+              required: [enabled, providers]
+          required: [ldap, local, openid_connect]
+        available_migrators:
+          type: array
+          items:
+            type: string
+            x-observed-values: [app-file, ticktick, wekan, csv, planka]
+        caldav_enabled:
+          type: boolean
+        concurrent_writes:
+          type: boolean
+        demo_mode_enabled:
+          type: boolean
+        email_reminders_enabled:
+          type: boolean
+        enabled_background_providers:
+          type: array
+          items:
+            type: string
+            x-observed-values: [upload]
+        enabled_pro_features:
+          type: array
+          items: {}
+        frontend_url:
+          type: string
+          format: uri
+          x-observed-values: ["http://localhost:3456/"]
+        legal:
+          type: object
+          properties:
+            imprint_url:
+              type: string
+              x-observed-values: [""]
+            privacy_policy_url:
+              type: string
+              x-observed-values: [""]
+          required: [imprint_url, privacy_policy_url]
+        link_sharing_enabled:
+          type: boolean
+        max_file_size:
+          type: string
+          x-observed-values: ["20MB"]
+        max_items_per_page:
+          type: integer
+          x-observed-values: [50]
+        motd:
+          type: string
+          x-observed-values: [""]
+        public_teams_enabled:
+          type: boolean
+        task_attachments_enabled:
+          type: boolean
+        task_comments_enabled:
+          type: boolean
+        totp_enabled:
+          type: boolean
+        user_deletion_enabled:
+          type: boolean
+        version:
+          type: string
+          x-observed-values: [v2.7.0]
+        webhooks_enabled:
+          type: boolean
+      required:
+        - $schema
+        - allow_icon_changes
+        - auth
+        - available_migrators
+        - caldav_enabled
+        - concurrent_writes
+        - demo_mode_enabled
+        - email_reminders_enabled
+        - enabled_background_providers
+        - enabled_pro_features
+        - frontend_url
+        - legal
+        - link_sharing_enabled
+        - max_file_size
+        - max_items_per_page
+        - motd
+        - public_teams_enabled
+        - task_attachments_enabled
+        - task_comments_enabled
+        - totp_enabled
+        - user_deletion_enabled
+        - version
+        - webhooks_enabled
+    Label:
+      type: object
+      properties:
+        created:
+          type: string
+          format: date-time
+        created_by:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            id:
+              type: integer
+            name:
+              type: string
+              x-observed-values: [""]
+            updated:
+              type: string
+              format: date-time
+            username:
+              type: string
+              x-redacted: pii
+          required: [created, id, name, updated, username]
+        description:
+          type: string
+          x-observed-values: [""]
+        hex_color:
+          type: string
+        id:
+          type: integer
+        title:
+          type: string
+          x-observed-values: [plumbing]
+        updated:
+          type: string
+          format: date-time
+      required: [created, created_by, description, hex_color, id, title, updated]
+    Position:
+      type: object
+      properties:
+        position:
+          type: integer
+        project_view_id:
+          type: integer
+          x-observed-values: [12]
+        task_id:
+          type: integer
+          x-observed-values: [2]
+      required: [position, project_view_id, task_id]
+    Project:
+      type: object
+      properties:
+        $schema:
+          type: string
+          format: uri
+        background_blur_hash:
+          type: string
+          x-observed-values: [""]
+        background_information:
+          type: "null"
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+          x-observed-values: [""]
+        hex_color:
+          type: string
+        id:
+          type: integer
+        identifier:
+          type: string
+        is_archived:
+          type: boolean
+        is_favorite:
+          type: boolean
+        max_permission:
+          type: [integer, "null"]
+          x-observed-values: [2]
+        owner:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            id:
+              type: integer
+            name:
+              type: string
+              x-observed-values: [""]
+            updated:
+              type: string
+              format: date-time
+            username:
+              type: string
+              x-redacted: pii
+          required: [created, id, name, updated, username]
+        parent_project_id:
+          type: integer
+          x-observed-values: [0]
+        position:
+          type: integer
+        title:
+          type: string
+          x-observed-values: [Home renovation, Inbox, My Open Tasks]
+        updated:
+          type: string
+          format: date-time
+        views:
+          type: array
+          items:
+            type: object
+            properties:
+              bucket_configuration:
+                type: "null"
+              bucket_configuration_mode:
+                type: string
+                x-observed-values: [none, manual]
+              created:
+                type: string
+                format: date-time
+              default_bucket_id:
+                type: integer
+                x-observed-values: [0, 1, 4, 7]
+              done_bucket_id:
+                type: integer
+                x-observed-values: [0, 3, 6, 9]
+              filter:
+                type: [object, "null"]
+                properties:
+                  filter:
+                    type: string
+                    x-observed-values: ["done = false"]
+                  filter_include_nulls:
+                    type: boolean
+                  order_by:
+                    type: "null"
+                  s:
+                    type: string
+                    x-observed-values: [""]
+                  sort_by:
+                    type: "null"
+                required: [filter, filter_include_nulls, order_by, s, sort_by]
+              id:
+                type: integer
+              position:
+                type: integer
+              project_id:
+                type: integer
+                x-observed-values: [-2, 1, 2]
+              title:
+                type: string
+                x-observed-values: [List, Gantt, Table, Kanban]
+              updated:
+                type: string
+                format: date-time
+              view_kind:
+                type: string
+                x-observed-values: [list, gantt, table, kanban]
+            required:
+              - bucket_configuration
+              - bucket_configuration_mode
+              - created
+              - default_bucket_id
+              - done_bucket_id
+              - filter
+              - id
+              - position
+              - project_id
+              - title
+              - updated
+              - view_kind
+      required:
+        - background_blur_hash
+        - background_information
+        - created
+        - description
+        - hex_color
+        - id
+        - identifier
+        - is_archived
+        - is_favorite
+        - max_permission
+        - owner
+        - parent_project_id
+        - position
+        - title
+        - updated
+        - views
+    Task:
+      type: object
+      properties:
+        $schema:
+          type: string
+          format: uri
+        assignees:
+          type: [array, "null"]
+          items: {}
+        attachments:
+          type: "null"
+        bucket_id:
+          type: integer
+        buckets:
+          type: array
+          items:
+            $ref: "#/components/schemas/Bucket"
+        comment_count:
+          type: integer
+          x-observed-values: [0]
+        cover_image_attachment_id:
+          type: integer
+          x-observed-values: [0]
+        created:
+          type: string
+          format: date-time
+        created_by:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            id:
+              type: integer
+            name:
+              type: string
+              x-observed-values: [""]
+            updated:
+              type: string
+              format: date-time
+            username:
+              type: string
+              x-redacted: pii
+          required: [created, id, name, updated, username]
+        description:
+          type: string
+          x-observed-values: [""]
+        done:
+          type: boolean
+        done_at:
+          type: string
+          format: date-time
+        due_date:
+          type: string
+          format: date-time
+        end_date:
+          type: string
+          format: date-time
+        hex_color:
+          type: string
+        id:
+          type: integer
+        identifier:
+          type: string
+        index:
+          type: integer
+        is_favorite:
+          type: boolean
+        labels:
+          type: [array, "null"]
+          items:
+            $ref: "#/components/schemas/Label"
+        max_permission:
+          type: integer
+          x-observed-values: [2]
+        percent_done:
+          type: integer
+          x-observed-values: [0]
+        position:
+          type: integer
+        priority:
+          type: integer
+          x-observed-values: [0, 3]
+        project_id:
+          type: integer
+          x-observed-values: [2]
+        reactions:
+          type: "null"
+        related_tasks:
+          type: [object, "null"]
+          properties: {}
+        reminders:
+          type: "null"
+        repeat_after:
+          type: integer
+          x-observed-values: [0]
+        repeat_mode:
+          type: integer
+          x-observed-values: [0]
+        start_date:
+          type: string
+          format: date-time
+        subscription:
+          type: object
+          properties:
+            created:
+              type: string
+              format: date-time
+            entity:
+              type: string
+              x-observed-values: [task]
+            entity_id:
+              type: integer
+              x-observed-values: [1, 2, 3]
+            id:
+              type: integer
+          required: [created, entity, entity_id, id]
+        title:
+          type: string
+          x-observed-values: [Buy paint, Fix the leaking tap, Call the electrician]
+        updated:
+          type: string
+          format: date-time
+      required:
+        - assignees
+        - attachments
+        - bucket_id
+        - cover_image_attachment_id
+        - created
+        - created_by
+        - description
+        - done
+        - done_at
+        - due_date
+        - end_date
+        - hex_color
+        - id
+        - identifier
+        - index
+        - is_favorite
+        - labels
+        - percent_done
+        - position
+        - priority
+        - project_id
+        - reactions
+        - related_tasks
+        - reminders
+        - repeat_after
+        - repeat_mode
+        - start_date
+        - title
+        - updated
+    Task2:
+      type: object
+      properties:
+        bucket:
+          $ref: "#/components/schemas/Bucket"
+        bucket_id:
+          type: integer
+        project_view_id:
+          type: integer
+          x-observed-values: [12]
+        task:
+          $ref: "#/components/schemas/Task"
+        task_id:
+          type: integer
+          x-observed-values: [2]
+      required: [bucket, bucket_id, project_view_id, task, task_id]
+    User:
+      type: object
+      properties:
+        $schema:
+          type: string
+          format: uri
+        auth_provider:
+          type: string
+          x-observed-values: [local]
+        created:
+          type: string
+          format: date-time
+        deletion_scheduled_at:
+          type: string
+          format: date-time
+        id:
+          type: integer
+        is_admin:
+          type: boolean
+        is_local_user:
+          type: boolean
+        name:
+          type: string
+          x-observed-values: [""]
+        settings:
+          type: object
+          properties:
+            default_project_id:
+              type: integer
+              x-observed-values: [1]
+            discoverable_by_email:
+              type: boolean
+            discoverable_by_name:
+              type: boolean
+            email_reminders_enabled:
+              type: boolean
+            extra_settings_links:
+              type: "null"
+            frontend_settings:
+              type: "null"
+            language:
+              type: string
+              x-observed-values: [en]
+            name:
+              type: string
+              x-observed-values: [""]
+            overdue_tasks_reminders_enabled:
+              type: boolean
+            overdue_tasks_reminders_time:
+              type: string
+              x-observed-values: ["9:00"]
+            timezone:
+              type: string
+              x-observed-values: [GMT]
+            week_start:
+              type: integer
+              x-observed-values: [0]
+          required:
+            - default_project_id
+            - discoverable_by_email
+            - discoverable_by_name
+            - email_reminders_enabled
+            - extra_settings_links
+            - frontend_settings
+            - language
+            - name
+            - overdue_tasks_reminders_enabled
+            - overdue_tasks_reminders_time
+            - timezone
+            - week_start
+        updated:
+          type: string
+          format: date-time
+        username:
+          type: string
+          x-redacted: pii
+      required: [$schema, created, id, name, updated, username]
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "JWT (HS256) with claims exp, iat, id, is_admin, jti, sid, type, username; observed lifetime 600s."
+    cookie_app_refresh_token:
+      type: apiKey
+      in: cookie
+      name: app_refresh_token
+      description: HttpOnly cookie set by the server.

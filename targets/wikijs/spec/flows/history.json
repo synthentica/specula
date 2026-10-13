@@ -1,0 +1,174 @@
+{
+  "name": "history",
+  "order": 9,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query localization.translations",
+          "query pages.history"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "namespace": "history"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $namespace: String!) {\n  localization {\n    translations(locale: $locale, namespace: $namespace) {\n      key\n      value\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page1"
+              },
+              "offsetPage": 0,
+              "offsetSize": 25
+            },
+            "extensions": {},
+            "query": "query ($id: Int!, $offsetPage: Int, $offsetSize: Int) {\n  pages {\n    history(id: $id, offsetPage: $offsetPage, offsetSize: $offsetSize) {\n      trail {\n        versionId\n        authorId\n        authorName\n        actionType\n        valueBefore\n        valueAfter\n        versionDate\n        __typename\n      }\n      total\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "localization": {
+                  "translations": [
+                    {
+                      "key": "restore.confirmButton",
+                      "value": "Restore",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "restore.confirmText",
+                      "value": "Are you sure you want to restore this page content as it was on {{date}}? This version will be copied on top of the current history. As such, newer versions will still be preserved.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "restore.confirmTitle",
+                      "value": "Restore page version?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "restore.success",
+                      "value": "Page version restored succesfully!",
+                      "__typename": "Translation"
+                    }
+                  ],
+                  "__typename": "LocalizationQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "pages": {
+                  "history": {
+                    "trail": [
+                      {
+                        "versionId": 1,
+                        "authorId": 1,
+                        "authorName": "Administrator",
+                        "actionType": "initial",
+                        "valueBefore": null,
+                        "valueAfter": null,
+                        "versionDate": "2026-10-12T07:56:08.914Z",
+                        "__typename": "PageHistory"
+                      }
+                    ],
+                    "total": 1,
+                    "__typename": "PageHistoryResult"
+                  },
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/history.har#entries[27]",
+        "bind": {
+          "version33": "$[1].data.pages.history.trail[0].versionId"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.version"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "versionId": {
+                "$var": "version33"
+              },
+              "pageId": {
+                "$var": "page1"
+              }
+            },
+            "extensions": {},
+            "query": "query ($pageId: Int!, $versionId: Int!) {\n  pages {\n    version(pageId: $pageId, versionId: $versionId) {\n      action\n      authorId\n      authorName\n      content\n      contentType\n      createdAt\n      versionDate\n      description\n      editor\n      isPrivate\n      isPublished\n      locale\n      pageId\n      path\n      publishEndDate\n      publishStartDate\n      tags\n      title\n      versionId\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "version": {
+                    "action": "updated",
+                    "authorId": "1",
+                    "authorName": "Administrator",
+                    "content": "# Team handbook\nThis wiki collects how we work.\n- Onboarding\n- Release checklist\n",
+                    "contentType": "markdown",
+                    "createdAt": "2026-10-12T07:56:52.381Z",
+                    "versionDate": "2026-10-12T07:56:08.914Z",
+                    "description": "Where everything starts",
+                    "editor": "markdown",
+                    "isPrivate": false,
+                    "isPublished": true,
+                    "locale": "en",
+                    "pageId": 1,
+                    "path": "home",
+                    "publishEndDate": "",
+                    "publishStartDate": "",
+                    "tags": [],
+                    "title": "Team handbook",
+                    "versionId": 1,
+                    "__typename": "PageVersion"
+                  },
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/history.har#entries[29]"
+      }
+    }
+  ]
+}

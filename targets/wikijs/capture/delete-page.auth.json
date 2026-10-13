@@ -1,0 +1,36 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 4,
+      "firstEntry": 27,
+      "jwt": {
+        "alg": "RS256",
+        "typ": "JWT",
+        "claimNames": [
+          "ap",
+          "aud",
+          "av",
+          "df",
+          "email",
+          "exp",
+          "groups",
+          "iat",
+          "id",
+          "iss",
+          "lc",
+          "name",
+          "permissions",
+          "tz"
+        ],
+        "lifetimeSec": 1800
+      }
+    }
+  ],
+  "cookiesSent": [
+    "jwt"
+  ],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": []
+}

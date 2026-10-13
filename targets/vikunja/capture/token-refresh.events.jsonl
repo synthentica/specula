@@ -1,0 +1,40 @@
+{"t":1791740190073,"type":"capture-start","url":"http://localhost:3456/projects/2/12"}
+{"t":1791740192568,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#app > header > div:nth-of-type(2) > div:nth-of-type(2) > button","role":"button","name":"<redacted:pii>","type":"button"},"url":"http://localhost:3456/projects/2/12"}
+{"t":1791740195850,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(2)","role":"button","name":"Logout","type":"button"},"url":"http://localhost:3456/projects/2/12"}
+{"t":1791740195860,"type":"ws-close","requestId":"9783.1428"}
+{"t":1791740195890,"type":"navigation","url":"http://localhost:3456/projects/2/12","sameDocument":true}
+{"t":1791740195896,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740200856,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#username","role":"textbox","name":"Username Or Email Address","id":"username","type":"text"},"url":"http://localhost:3456/login","valueInfo":{"type":"text","length":9}}
+{"t":1791740203568,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:3456/login","valueInfo":{"type":"password","length":16}}
+{"t":1791740205801,"type":"action","id":"a5","kind":"click","target":{"tag":"button","selector":"#loginform > button","role":"button","name":"LOGIN","type":"button"},"url":"http://localhost:3456/login"}
+{"t":1791740205961,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740205967,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740206035,"type":"ws-open","requestId":"9783.1433","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740206040,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740206042,"type":"ws-frame","requestId":"9783.1433","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740206052,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740206054,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740206055,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740206055,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740206064,"type":"ws-frame","requestId":"9783.1433","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740206066,"type":"ws-frame","requestId":"9783.1433","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740221005,"type":"ws-close","requestId":"9783.1433"}
+{"t":1791740221869,"type":"ws-open","requestId":"9783.1442","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740221887,"type":"ws-frame","requestId":"9783.1442","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740221887,"type":"ws-frame","requestId":"9783.1442","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740221892,"type":"ws-frame","requestId":"9783.1442","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740221892,"type":"ws-frame","requestId":"9783.1442","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740221892,"type":"ws-frame","requestId":"9783.1442","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740221893,"type":"ws-frame","requestId":"9783.1442","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740236007,"type":"ws-close","requestId":"9783.1442"}
+{"t":1791740237258,"type":"ws-open","requestId":"9783.1445","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740237269,"type":"ws-frame","requestId":"9783.1445","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740237270,"type":"ws-frame","requestId":"9783.1445","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740237275,"type":"ws-frame","requestId":"9783.1445","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740237277,"type":"ws-frame","requestId":"9783.1445","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740237277,"type":"ws-frame","requestId":"9783.1445","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740237277,"type":"ws-frame","requestId":"9783.1445","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740244165,"type":"action","id":"a6","kind":"click","target":{"tag":"a","selector":"aside > nav:nth-of-type(1) > menu > li:nth-of-type(2) > a","role":"link","name":"Upcoming","href":"/tasks/by/upcoming"},"url":"http://localhost:3456/"}
+{"t":1791740244175,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740244180,"type":"navigation","url":"http://localhost:3456/tasks/by/upcoming","sameDocument":true}
+{"t":1791740249345,"type":"capture-stop","url":"http://localhost:3456/projects/2/12"}

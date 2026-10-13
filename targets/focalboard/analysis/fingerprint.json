@@ -1,0 +1,544 @@
+{
+  "generatedBy": "specula fingerprint",
+  "target": "focalboard",
+  "flows": [
+    "add-cards",
+    "create-board",
+    "delete-card",
+    "edit-card",
+    "errors",
+    "groups",
+    "logout-login",
+    "move-card",
+    "register"
+  ],
+  "frontend": [
+    {
+      "claim": "Frontend framework: react",
+      "value": {
+        "framework": "react"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-cards.runtime.json",
+          "detail": "markers.react=true"
+        },
+        {
+          "ref": "capture/create-board.runtime.json",
+          "detail": "markers.react=true"
+        },
+        {
+          "ref": "capture/sources/main.e2497d92.js:294",
+          "detail": "\"** @license React v16.14.0\\n * react-dom.production.min.js\\n *\\n * Copyr\""
+        }
+      ]
+    }
+  ],
+  "libraries": [],
+  "backend": [
+    {
+      "claim": "No server identification headers on API responses",
+      "value": null,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/add-cards.har#entries[4]",
+          "detail": "no Server / X-Powered-By header"
+        }
+      ]
+    },
+    {
+      "claim": "Error response body shapes",
+      "value": [
+        "{error,errorCode}"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[26]",
+          "detail": "404 {error,errorCode}"
+        }
+      ]
+    }
+  ],
+  "thirdParties": [],
+  "auth": [
+    {
+      "claim": "API requests authenticate with an Authorization: Bearer header",
+      "value": {
+        "scheme": "Bearer"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-cards.auth.json",
+          "detail": "48 requests, first capture/add-cards.har#entries[4]"
+        },
+        {
+          "ref": "capture/create-board.auth.json",
+          "detail": "49 requests, first capture/create-board.har#entries[4]"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /api/v2/register",
+      "value": {
+        "endpoint": "POST /api/v2/register",
+        "status": 401,
+        "responseKeys": [
+          "error",
+          "errorCode"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[37]",
+          "detail": "request body keys: email, username, password, token; response keys: error, errorCode"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /api/v2/login",
+      "value": {
+        "endpoint": "POST /api/v2/login",
+        "status": 200,
+        "responseKeys": [
+          "token"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[44]",
+          "detail": "request body keys: username, password, type; response keys: token"
+        }
+      ]
+    },
+    {
+      "claim": "Logout endpoint: POST /api/v2/logout",
+      "value": "POST /api/v2/logout",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[45]",
+          "detail": "200"
+        }
+      ]
+    },
+    {
+      "claim": "8 request(s) got 401",
+      "value": 8,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[34]",
+          "detail": "GET /api/v2/users/me"
+        },
+        {
+          "ref": "capture/errors.har#entries[35]",
+          "detail": "GET /api/v2/users/me/config"
+        },
+        {
+          "ref": "capture/errors.har#entries[37]",
+          "detail": "POST /api/v2/register"
+        }
+      ]
+    },
+    {
+      "claim": "Client keeps auth state in localStorage keys: focalboardSessionId",
+      "value": [
+        "focalboardSessionId"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/add-cards.runtime.json",
+          "detail": "storageKeys.local"
+        }
+      ]
+    }
+  ],
+  "realtime": [
+    {
+      "claim": "WebSocket /ws",
+      "value": {
+        "url": "ws://localhost:8000/ws",
+        "messages": [
+          {
+            "message": "sent AUTH",
+            "count": 11,
+            "keys": [
+              "action",
+              "token"
+            ]
+          },
+          {
+            "message": "sent SUBSCRIBE_TEAM",
+            "count": 11,
+            "keys": [
+              "action",
+              "teamId"
+            ]
+          },
+          {
+            "message": "received UPDATE_BLOCK",
+            "count": 17,
+            "keys": [
+              "action",
+              "teamId",
+              "block"
+            ]
+          },
+          {
+            "message": "received UPDATE_BOARD",
+            "count": 9,
+            "keys": [
+              "action",
+              "teamId",
+              "board"
+            ]
+          },
+          {
+            "message": "received UPDATE_MEMBER",
+            "count": 1,
+            "keys": [
+              "action",
+              "teamId",
+              "member"
+            ]
+          },
+          {
+            "message": "received UPDATE_BOARD_CATEGORY",
+            "count": 1,
+            "keys": [
+              "action",
+              "teamId",
+              "blockCategories"
+            ]
+          },
+          {
+            "message": "sent UNSUBSCRIBE_TEAM",
+            "count": 2,
+            "keys": [
+              "action",
+              "teamId"
+            ]
+          },
+          {
+            "message": "received UPDATE_CATEGORY",
+            "count": 1,
+            "keys": [
+              "action",
+              "teamId",
+              "category"
+            ]
+          }
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-cards.events.jsonl:5",
+          "detail": "sent keys: action, token"
+        },
+        {
+          "ref": "capture/add-cards.events.jsonl:6",
+          "detail": "sent keys: action, teamId"
+        },
+        {
+          "ref": "capture/add-cards.events.jsonl:9",
+          "detail": "received keys: action, teamId, block"
+        },
+        {
+          "ref": "capture/create-board.events.jsonl:8",
+          "detail": "received keys: action, teamId, board"
+        }
+      ]
+    }
+  ],
+  "flags": [],
+  "routes": [
+    {
+      "route": "/",
+      "visited": true,
+      "ref": "capture/sources/main.e2497d92.js:325"
+    },
+    {
+      "route": "/welcome",
+      "visited": false,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/error",
+      "visited": true,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/login",
+      "visited": true,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/register",
+      "visited": true,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/change_password",
+      "visited": false,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/board/:boardId?/:viewId?/:cardId?",
+      "visited": false,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/team/:teamId/:boardId?/:viewId?/:cardId?",
+      "visited": false,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    },
+    {
+      "route": "/:boardId?/:viewId?/:cardId?",
+      "visited": true,
+      "ref": "capture/sources/main.e2497d92.js:349"
+    }
+  ],
+  "apiPathsInCode": {
+    "note": "String literals in first-party bundles shaped like API paths. \"observed\" = also seen in recorded traffic (after removing apiPrefix). Unobserved ones are candidates, not facts.",
+    "paths": [
+      {
+        "path": "/api/v2/boards-and-blocks",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}/archive/export",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}/join",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}/members",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}/members/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/boards/{}/sharing",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/files/teams",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/limits",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/login",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/logout",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/register",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/statistics",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/subscriptions",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/subscriptions/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/subscriptions/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/archive/export",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/categories",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/categories/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/categories/{}/boards/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/categories/{}/boards/reorder",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/categories/reorder",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/channels/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/teams/{}/onboard",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/{}/changepassword",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/{}/config",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/me",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/me/config",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/api/v2/users/me/memberships",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/archive/import",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/boards/{}",
+        "observed": true,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/plugins/focalboard",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/png/unicode",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:7"
+      },
+      {
+        "path": "/shared/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/{}/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/{}/new/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/{}/shared/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/${null==a",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/team/${null==t",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/users",
+        "observed": true,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      },
+      {
+        "path": "/workspace/{}",
+        "observed": false,
+        "ref": "capture/sources/main.e2497d92.js:349"
+      }
+    ]
+  }
+}

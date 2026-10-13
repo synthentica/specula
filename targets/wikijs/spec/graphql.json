@@ -1,0 +1,2701 @@
+{
+  "note": "Operations sent to the GraphQL endpoint, keyed by the client operation name or by \"<type> <fields>\". documents are the exact query texts the client sent (whitespace normalized); data is the shape of the result; errors are top-level GraphQL errors; failures are in-band results with a false success flag.",
+  "operations": [
+    {
+      "name": "mutation authentication.login",
+      "type": "mutation",
+      "fields": [
+        "authentication.login"
+      ],
+      "count": 3,
+      "flows": [
+        "login",
+        "logout-login"
+      ],
+      "documents": [
+        "mutation($username:String! $password:String! $strategy:String!){authentication{login(username:$username password:$password strategy:$strategy){responseResult{succeeded errorCode slug message __typename}jwt mustChangePwd mustProvideTFA mustSetupTFA continuationToken redirect tfaQRImage __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "x-redacted": "secret"
+          },
+          "strategy": {
+            "type": "string",
+            "x-observed-values": [
+              "local"
+            ]
+          },
+          "username": {
+            "type": "string",
+            "x-redacted": "email"
+          }
+        },
+        "required": [
+          "password",
+          "strategy",
+          "username"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "authentication": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "AuthenticationMutation"
+                ]
+              },
+              "login": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "AuthenticationLoginResponse"
+                    ]
+                  },
+                  "continuationToken": {
+                    "type": "null"
+                  },
+                  "jwt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "x-redacted": "jwt"
+                  },
+                  "mustChangePwd": {
+                    "type": "null"
+                  },
+                  "mustProvideTFA": {
+                    "type": "null"
+                  },
+                  "mustSetupTFA": {
+                    "type": "null"
+                  },
+                  "redirect": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "x-observed-values": [
+                      "/"
+                    ]
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0,
+                          1002
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Invalid email / username or password.",
+                          "Login success"
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "AuthLoginFailed",
+                          "ok"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  },
+                  "tfaQRImage": {
+                    "type": "null"
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "continuationToken",
+                  "jwt",
+                  "mustChangePwd",
+                  "mustProvideTFA",
+                  "mustSetupTFA",
+                  "redirect",
+                  "responseResult",
+                  "tfaQRImage"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "login"
+            ]
+          }
+        },
+        "required": [
+          "authentication"
+        ]
+      },
+      "failures": [
+        {
+          "path": "$.data.authentication.login.responseResult",
+          "succeeded": false,
+          "errorCode": 1002,
+          "slug": "AuthLoginFailed",
+          "message": "Invalid email / username or password."
+        }
+      ]
+    },
+    {
+      "name": "mutation comments.create",
+      "type": "mutation",
+      "fields": [
+        "comments.create"
+      ],
+      "count": 1,
+      "flows": [
+        "comments"
+      ],
+      "documents": [
+        "mutation($pageId:Int! $replyTo:Int $content:String! $guestName:String $guestEmail:String){comments{create(pageId:$pageId replyTo:$replyTo content:$content guestName:$guestName guestEmail:$guestEmail){responseResult{succeeded errorCode slug message __typename}id __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "x-observed-values": [
+              "Can we move the demo to Thursday?"
+            ]
+          },
+          "guestEmail": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "guestName": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "pageId": {
+            "type": "integer",
+            "x-observed-values": [
+              1
+            ]
+          },
+          "replyTo": {
+            "type": "integer",
+            "x-observed-values": [
+              0
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "guestEmail",
+          "guestName",
+          "pageId",
+          "replyTo"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "comments": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "CommentMutation"
+                ]
+              },
+              "create": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "CommentCreateResponse"
+                    ]
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "New comment posted successfully"
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ok"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "id",
+                  "responseResult"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "create"
+            ]
+          }
+        },
+        "required": [
+          "comments"
+        ]
+      }
+    },
+    {
+      "name": "mutation pages.create",
+      "type": "mutation",
+      "fields": [
+        "pages.create"
+      ],
+      "count": 4,
+      "flows": [
+        "create-home",
+        "create-pages",
+        "errors"
+      ],
+      "documents": [
+        "mutation($content:String! $description:String! $editor:String! $isPrivate:Boolean! $isPublished:Boolean! $locale:String! $path:String! $publishEndDate:Date $publishStartDate:Date $scriptCss:String $scriptJs:String $tags:[String]! $title:String!){pages{create(content:$content description:$description editor:$editor isPrivate:$isPrivate isPublished:$isPublished locale:$locale path:$path publishEndDate:$publishEndDate publishStartDate:$publishStartDate scriptCss:$scriptCss scriptJs:$scriptJs tags:$tags title:$title){responseResult{succeeded errorCode slug message __typename}page{id updatedAt __typename}__typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "x-observed-values": [
+              "# Ideas\nA place for rough ideas.\n",
+              "Same path as an existing page.\n"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "x-observed-values": [
+              "Where everything starts",
+              ""
+            ]
+          },
+          "editor": {
+            "type": "string",
+            "x-observed-values": [
+              "markdown"
+            ]
+          },
+          "isPrivate": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "locale": {
+            "type": "string",
+            "x-observed-values": [
+              "en"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "x-observed-values": [
+              "home",
+              "notes/first-steps",
+              "notes/ideas"
+            ]
+          },
+          "publishEndDate": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "publishStartDate": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "scriptCss": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "scriptJs": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-observed-values": [
+                "guide",
+                "notes"
+              ]
+            }
+          },
+          "title": {
+            "type": "string",
+            "x-observed-values": [
+              "Team handbook",
+              "First steps",
+              "Ideas",
+              "Duplicate"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "description",
+          "editor",
+          "isPrivate",
+          "isPublished",
+          "locale",
+          "path",
+          "publishEndDate",
+          "publishStartDate",
+          "scriptCss",
+          "scriptJs",
+          "tags",
+          "title"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageMutation"
+                ]
+              },
+              "create": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "PageResponse"
+                    ]
+                  },
+                  "page": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Page"
+                        ]
+                      },
+                      "id": {
+                        "type": "integer"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "id",
+                      "updatedAt"
+                    ]
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0,
+                          6002
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Page created successfully."
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ok",
+                          "PageDuplicateCreate"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "page",
+                  "responseResult"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "create"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      },
+      "failures": [
+        {
+          "path": "$.data.pages.create.responseResult",
+          "succeeded": false,
+          "errorCode": 6002,
+          "slug": "PageDuplicateCreate",
+          "message": "Cannot create this page because an entry already exists at the same path."
+        }
+      ]
+    },
+    {
+      "name": "mutation pages.delete",
+      "type": "mutation",
+      "fields": [
+        "pages.delete"
+      ],
+      "count": 1,
+      "flows": [
+        "delete-page"
+      ],
+      "documents": [
+        "mutation($id:Int!){pages{delete(id:$id){responseResult{succeeded errorCode slug message __typename}__typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageMutation"
+                ]
+              },
+              "delete": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "DefaultResponse"
+                    ]
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Page has been deleted."
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ok"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "responseResult"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "delete"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "mutation pages.update",
+      "type": "mutation",
+      "fields": [
+        "pages.update"
+      ],
+      "count": 1,
+      "flows": [
+        "edit-page"
+      ],
+      "documents": [
+        "mutation($id:Int! $content:String $description:String $editor:String $isPrivate:Boolean $isPublished:Boolean $locale:String $path:String $publishEndDate:Date $publishStartDate:Date $scriptCss:String $scriptJs:String $tags:[String]$title:String){pages{update(id:$id content:$content description:$description editor:$editor isPrivate:$isPrivate isPublished:$isPublished locale:$locale path:$path publishEndDate:$publishEndDate publishStartDate:$publishStartDate scriptCss:$scriptCss scriptJs:$scriptJs tags:$tags title:$title){responseResult{succeeded errorCode slug message __typename}page{updatedAt __typename}__typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "x-observed-values": [
+              "Where everything starts"
+            ]
+          },
+          "editor": {
+            "type": "string",
+            "x-observed-values": [
+              "markdown"
+            ]
+          },
+          "id": {
+            "type": "integer"
+          },
+          "isPrivate": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "locale": {
+            "type": "string",
+            "x-observed-values": [
+              "en"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "x-observed-values": [
+              "home"
+            ]
+          },
+          "publishEndDate": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "publishStartDate": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "scriptCss": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "scriptJs": {
+            "type": "string",
+            "x-observed-values": [
+              ""
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-observed-values": [
+                "guide"
+              ]
+            }
+          },
+          "title": {
+            "type": "string",
+            "x-observed-values": [
+              "Team handbook"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "description",
+          "editor",
+          "id",
+          "isPrivate",
+          "isPublished",
+          "locale",
+          "path",
+          "publishEndDate",
+          "publishStartDate",
+          "scriptCss",
+          "scriptJs",
+          "tags",
+          "title"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageMutation"
+                ]
+              },
+              "update": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "PageResponse"
+                    ]
+                  },
+                  "page": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Page"
+                        ]
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "updatedAt"
+                    ]
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "Page has been updated."
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ok"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "page",
+                  "responseResult"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "update"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "mutation users.create",
+      "type": "mutation",
+      "fields": [
+        "users.create"
+      ],
+      "count": 2,
+      "flows": [
+        "users"
+      ],
+      "documents": [
+        "mutation($providerKey:String! $email:String! $name:String! $passwordRaw:String $groups:[Int]! $mustChangePassword:Boolean $sendWelcomeEmail:Boolean){users{create(providerKey:$providerKey email:$email name:$name passwordRaw:$passwordRaw groups:$groups mustChangePassword:$mustChangePassword sendWelcomeEmail:$sendWelcomeEmail){responseResult{succeeded errorCode slug message __typename}__typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "x-redacted": "email"
+          },
+          "groups": {
+            "type": "array",
+            "items": {}
+          },
+          "mustChangePassword": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "x-observed-values": [
+              "Robin Member"
+            ]
+          },
+          "passwordRaw": {
+            "type": "string",
+            "x-redacted": "secret"
+          },
+          "providerKey": {
+            "type": "string",
+            "x-observed-values": [
+              "local"
+            ]
+          },
+          "sendWelcomeEmail": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "email",
+          "groups",
+          "mustChangePassword",
+          "name",
+          "passwordRaw",
+          "providerKey",
+          "sendWelcomeEmail"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "UserMutation"
+                ]
+              },
+              "create": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "UserResponse"
+                    ]
+                  },
+                  "responseResult": {
+                    "type": "object",
+                    "properties": {
+                      "__typename": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ResponseStatus"
+                        ]
+                      },
+                      "errorCode": {
+                        "type": "integer",
+                        "x-observed-values": [
+                          0,
+                          1004
+                        ]
+                      },
+                      "message": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "User created successfully"
+                        ]
+                      },
+                      "slug": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "ok",
+                          "AuthAccountAlreadyExists"
+                        ]
+                      },
+                      "succeeded": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "__typename",
+                      "errorCode",
+                      "message",
+                      "slug",
+                      "succeeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "responseResult"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "create"
+            ]
+          }
+        },
+        "required": [
+          "users"
+        ]
+      },
+      "failures": [
+        {
+          "path": "$.data.users.create.responseResult",
+          "succeeded": false,
+          "errorCode": 1004,
+          "slug": "AuthAccountAlreadyExists",
+          "message": "An account already exists using this email address."
+        }
+      ]
+    },
+    {
+      "name": "query authentication.activeStrategies",
+      "type": "query",
+      "fields": [
+        "authentication.activeStrategies"
+      ],
+      "count": 4,
+      "flows": [
+        "logout-login",
+        "setup",
+        "users"
+      ],
+      "documents": [
+        "{authentication{activeStrategies(enabledOnly:true){key strategy{key logo color icon useForm usernameType __typename}displayName order selfRegistration __typename}__typename}}",
+        "{authentication{activeStrategies{key displayName __typename}__typename}}"
+      ],
+      "variables": {},
+      "data": {
+        "type": "object",
+        "properties": {
+          "authentication": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "AuthenticationQuery"
+                ]
+              },
+              "activeStrategies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "AuthenticationActiveStrategy"
+                      ]
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "Local"
+                      ]
+                    },
+                    "key": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "local"
+                      ]
+                    },
+                    "order": {
+                      "type": "integer",
+                      "x-observed-values": [
+                        0
+                      ]
+                    },
+                    "selfRegistration": {
+                      "type": "boolean"
+                    },
+                    "strategy": {
+                      "type": "object",
+                      "properties": {
+                        "__typename": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "AuthenticationStrategy"
+                          ]
+                        },
+                        "color": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "primary"
+                          ]
+                        },
+                        "icon": {
+                          "type": "string"
+                        },
+                        "key": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "local"
+                          ]
+                        },
+                        "logo": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "useForm": {
+                          "type": "boolean"
+                        },
+                        "usernameType": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "email"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "__typename",
+                        "color",
+                        "icon",
+                        "key",
+                        "logo",
+                        "useForm",
+                        "usernameType"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "displayName",
+                    "key"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "activeStrategies"
+            ]
+          }
+        },
+        "required": [
+          "authentication"
+        ]
+      }
+    },
+    {
+      "name": "query comments.list",
+      "type": "query",
+      "fields": [
+        "comments.list"
+      ],
+      "count": 10,
+      "flows": [
+        "comments",
+        "create-home",
+        "create-pages",
+        "edit-page",
+        "logout-login",
+        "search"
+      ],
+      "documents": [
+        "query($locale:String! $path:String!){comments{list(locale:$locale path:$path){id render authorName createdAt updatedAt __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "locale": {
+            "type": "string",
+            "x-observed-values": [
+              "en"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "x-observed-values": [
+              "home",
+              "notes/first-steps",
+              "notes/ideas"
+            ]
+          }
+        },
+        "required": [
+          "locale",
+          "path"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "comments": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "CommentQuery"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "CommentPost"
+                      ]
+                    },
+                    "authorName": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "Administrator"
+                      ]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "render": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "authorName",
+                    "createdAt",
+                    "id",
+                    "render",
+                    "updatedAt"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "list"
+            ]
+          }
+        },
+        "required": [
+          "comments"
+        ]
+      }
+    },
+    {
+      "name": "query groups.list",
+      "type": "query",
+      "fields": [
+        "groups.list"
+      ],
+      "count": 2,
+      "flows": [
+        "users"
+      ],
+      "documents": [
+        "{groups{list{id name isSystem __typename}__typename}}"
+      ],
+      "variables": {},
+      "data": {
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "GroupQuery"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "GroupMinimal"
+                      ]
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "isSystem": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "Administrators",
+                        "Guests"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "id",
+                    "isSystem",
+                    "name"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "list"
+            ]
+          }
+        },
+        "required": [
+          "groups"
+        ]
+      }
+    },
+    {
+      "name": "query localization.translations",
+      "type": "query",
+      "fields": [
+        "localization.translations"
+      ],
+      "count": 7,
+      "flows": [
+        "browse",
+        "create-home",
+        "history",
+        "setup",
+        "users"
+      ],
+      "documents": [
+        "query($locale:String! $namespace:String!){localization{translations(locale:$locale namespace:$namespace){key value __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "locale": {
+            "type": "string",
+            "x-observed-values": [
+              "en"
+            ]
+          },
+          "namespace": {
+            "type": "string",
+            "examples": [
+              "common",
+              "auth"
+            ]
+          }
+        },
+        "required": [
+          "locale",
+          "namespace"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "localization": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "LocalizationQuery"
+                ]
+              },
+              "translations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "Translation"
+                      ]
+                    },
+                    "key": {
+                      "type": "string",
+                      "examples": [
+                        "actions.add",
+                        "actions.apply"
+                      ]
+                    },
+                    "value": {
+                      "type": "string",
+                      "examples": [
+                        "Add",
+                        "Apply"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "key",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "translations"
+            ]
+          }
+        },
+        "required": [
+          "localization"
+        ]
+      }
+    },
+    {
+      "name": "query pages.checkConflicts",
+      "type": "query",
+      "fields": [
+        "pages.checkConflicts"
+      ],
+      "count": 2,
+      "flows": [
+        "edit-page"
+      ],
+      "documents": [
+        "query($id:Int! $checkoutDate:Date!){pages{checkConflicts(id:$id checkoutDate:$checkoutDate)__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "checkoutDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "checkoutDate",
+          "id"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "checkConflicts": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "__typename",
+              "checkConflicts"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.history",
+      "type": "query",
+      "fields": [
+        "pages.history"
+      ],
+      "count": 1,
+      "flows": [
+        "history"
+      ],
+      "documents": [
+        "query($id:Int! $offsetPage:Int $offsetSize:Int){pages{history(id:$id offsetPage:$offsetPage offsetSize:$offsetSize){trail{versionId authorId authorName actionType valueBefore valueAfter versionDate __typename}total __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "offsetPage": {
+            "type": "integer",
+            "x-observed-values": [
+              0
+            ]
+          },
+          "offsetSize": {
+            "type": "integer",
+            "x-observed-values": [
+              25
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "offsetPage",
+          "offsetSize"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "history": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "PageHistoryResult"
+                    ]
+                  },
+                  "total": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      1
+                    ]
+                  },
+                  "trail": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "__typename": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "PageHistory"
+                          ]
+                        },
+                        "actionType": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "initial"
+                          ]
+                        },
+                        "authorId": {
+                          "type": "integer",
+                          "x-observed-values": [
+                            1
+                          ]
+                        },
+                        "authorName": {
+                          "type": "string",
+                          "x-observed-values": [
+                            "Administrator"
+                          ]
+                        },
+                        "valueAfter": {
+                          "type": "null"
+                        },
+                        "valueBefore": {
+                          "type": "null"
+                        },
+                        "versionDate": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "versionId": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "__typename",
+                        "actionType",
+                        "authorId",
+                        "authorName",
+                        "valueAfter",
+                        "valueBefore",
+                        "versionDate",
+                        "versionId"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "total",
+                  "trail"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "history"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.list",
+      "type": "query",
+      "fields": [
+        "pages.list"
+      ],
+      "count": 5,
+      "flows": [
+        "browse",
+        "delete-page"
+      ],
+      "documents": [
+        "query($limit:Int $orderBy:PageOrderBy $orderByDirection:PageOrderByDirection $tags:[String!]$locale:String){pages{list(limit:$limit orderBy:$orderBy orderByDirection:$orderByDirection tags:$tags locale:$locale){id locale path title description createdAt updatedAt tags __typename}__typename}}",
+        "{pages{list{id locale path title description contentType isPublished isPrivate privateNS createdAt updatedAt __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "locale": {
+            "type": "null"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-observed-values": [
+                "notes",
+                "guide"
+              ]
+            }
+          }
+        },
+        "required": [
+          "locale",
+          "tags"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "PageListItem"
+                      ]
+                    },
+                    "contentType": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "markdown"
+                      ]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "description": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "",
+                        "Where everything starts"
+                      ]
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "isPrivate": {
+                      "type": "boolean"
+                    },
+                    "isPublished": {
+                      "type": "boolean"
+                    },
+                    "locale": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "en"
+                      ]
+                    },
+                    "path": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "notes/first-steps",
+                        "notes/ideas",
+                        "home"
+                      ]
+                    },
+                    "privateNS": {
+                      "type": "null"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "x-observed-values": [
+                          "notes",
+                          "guide"
+                        ]
+                      }
+                    },
+                    "title": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "First steps",
+                        "Ideas",
+                        "Team handbook"
+                      ]
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "createdAt",
+                    "description",
+                    "id",
+                    "locale",
+                    "path",
+                    "title",
+                    "updatedAt"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "list"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.search",
+      "type": "query",
+      "fields": [
+        "pages.search"
+      ],
+      "count": 2,
+      "flows": [
+        "search"
+      ],
+      "documents": [
+        "query($query:String!){pages{search(query:$query){results{id title description path locale __typename}suggestions totalHits __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "x-observed-values": [
+              "release",
+              "nothing-like-this"
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "search": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "PageSearchResponse"
+                    ]
+                  },
+                  "results": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "suggestions": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "totalHits": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      0
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "results",
+                  "suggestions",
+                  "totalHits"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "search"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.searchTags",
+      "type": "query",
+      "fields": [
+        "pages.searchTags"
+      ],
+      "count": 8,
+      "flows": [
+        "create-home",
+        "create-pages"
+      ],
+      "documents": [
+        "query($query:String!){pages{searchTags(query:$query)__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "x-observed-values": [
+              "g",
+              "guide",
+              "n",
+              "notes"
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "searchTags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "x-observed-values": [
+                    "guide",
+                    "notes"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "searchTags"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.single",
+      "type": "query",
+      "fields": [
+        "pages.single"
+      ],
+      "count": 2,
+      "flows": [
+        "delete-page",
+        "errors"
+      ],
+      "documents": [
+        "query($id:Int!){pages{single(id:$id){id path hash title description isPrivate isPublished privateNS publishStartDate publishEndDate contentType createdAt updatedAt editor locale authorId authorName authorEmail creatorId creatorName creatorEmail __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "single": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Page"
+                    ]
+                  },
+                  "authorEmail": {
+                    "type": "string",
+                    "x-redacted": "email"
+                  },
+                  "authorId": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      1
+                    ]
+                  },
+                  "authorName": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Administrator"
+                    ]
+                  },
+                  "contentType": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "markdown"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "creatorEmail": {
+                    "type": "string",
+                    "x-redacted": "email"
+                  },
+                  "creatorId": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      1
+                    ]
+                  },
+                  "creatorName": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Administrator"
+                    ]
+                  },
+                  "description": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "editor": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "markdown"
+                    ]
+                  },
+                  "hash": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "isPrivate": {
+                    "type": "boolean"
+                  },
+                  "isPublished": {
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "en"
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "notes/ideas"
+                    ]
+                  },
+                  "privateNS": {
+                    "type": "null"
+                  },
+                  "publishEndDate": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "publishStartDate": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Ideas"
+                    ]
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "authorEmail",
+                  "authorId",
+                  "authorName",
+                  "contentType",
+                  "createdAt",
+                  "creatorEmail",
+                  "creatorId",
+                  "creatorName",
+                  "description",
+                  "editor",
+                  "hash",
+                  "id",
+                  "isPrivate",
+                  "isPublished",
+                  "locale",
+                  "path",
+                  "privateNS",
+                  "publishEndDate",
+                  "publishStartDate",
+                  "title",
+                  "updatedAt"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "single"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      },
+      "errors": [
+        {
+          "message": "This page does not exist.",
+          "code": "INTERNAL_SERVER_ERROR",
+          "path": "pages.single"
+        }
+      ]
+    },
+    {
+      "name": "query pages.tags",
+      "type": "query",
+      "fields": [
+        "pages.tags"
+      ],
+      "count": 1,
+      "flows": [
+        "browse"
+      ],
+      "documents": [
+        "{pages{tags{tag title __typename}__typename}}"
+      ],
+      "variables": {},
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "PageTag"
+                      ]
+                    },
+                    "tag": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "guide",
+                        "notes"
+                      ]
+                    },
+                    "title": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "guide",
+                        "notes"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "tag",
+                    "title"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "tags"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query pages.version",
+      "type": "query",
+      "fields": [
+        "pages.version"
+      ],
+      "count": 1,
+      "flows": [
+        "history"
+      ],
+      "documents": [
+        "query($pageId:Int! $versionId:Int!){pages{version(pageId:$pageId versionId:$versionId){action authorId authorName content contentType createdAt versionDate description editor isPrivate isPublished locale pageId path publishEndDate publishStartDate tags title versionId __typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "type": "integer",
+            "x-observed-values": [
+              1
+            ]
+          },
+          "versionId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pageId",
+          "versionId"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "pages": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "PageQuery"
+                ]
+              },
+              "version": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "PageVersion"
+                    ]
+                  },
+                  "action": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "updated"
+                    ]
+                  },
+                  "authorId": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "1"
+                    ]
+                  },
+                  "authorName": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Administrator"
+                    ]
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "contentType": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "markdown"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "description": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Where everything starts"
+                    ]
+                  },
+                  "editor": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "markdown"
+                    ]
+                  },
+                  "isPrivate": {
+                    "type": "boolean"
+                  },
+                  "isPublished": {
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "en"
+                    ]
+                  },
+                  "pageId": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      1
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "home"
+                    ]
+                  },
+                  "publishEndDate": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "publishStartDate": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "title": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Team handbook"
+                    ]
+                  },
+                  "versionDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "versionId": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "action",
+                  "authorId",
+                  "authorName",
+                  "content",
+                  "contentType",
+                  "createdAt",
+                  "description",
+                  "editor",
+                  "isPrivate",
+                  "isPublished",
+                  "locale",
+                  "pageId",
+                  "path",
+                  "publishEndDate",
+                  "publishStartDate",
+                  "tags",
+                  "title",
+                  "versionDate",
+                  "versionId"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "version"
+            ]
+          }
+        },
+        "required": [
+          "pages"
+        ]
+      }
+    },
+    {
+      "name": "query system.info",
+      "type": "query",
+      "fields": [
+        "system.info"
+      ],
+      "count": 4,
+      "flows": [
+        "browse",
+        "delete-page",
+        "errors",
+        "users"
+      ],
+      "documents": [
+        "{system{info{currentVersion latestVersion groupsTotal pagesTotal usersTotal tagsTotal __typename}__typename}}"
+      ],
+      "variables": {},
+      "data": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "SystemQuery"
+                ]
+              },
+              "info": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "SystemInfo"
+                    ]
+                  },
+                  "currentVersion": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "2.5.316"
+                    ]
+                  },
+                  "groupsTotal": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      2
+                    ]
+                  },
+                  "latestVersion": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "2.5.316"
+                    ]
+                  },
+                  "pagesTotal": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      2,
+                      3
+                    ]
+                  },
+                  "tagsTotal": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      2
+                    ]
+                  },
+                  "usersTotal": {
+                    "type": "integer",
+                    "x-observed-values": [
+                      2,
+                      3
+                    ]
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "currentVersion",
+                  "groupsTotal",
+                  "latestVersion",
+                  "pagesTotal",
+                  "tagsTotal",
+                  "usersTotal"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "info"
+            ]
+          }
+        },
+        "required": [
+          "system"
+        ]
+      }
+    },
+    {
+      "name": "query users.list",
+      "type": "query",
+      "fields": [
+        "users.list"
+      ],
+      "count": 2,
+      "flows": [
+        "users"
+      ],
+      "documents": [
+        "{users{list{id name email providerKey isSystem isActive createdAt lastLoginAt __typename}__typename}}"
+      ],
+      "variables": {},
+      "data": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "UserQuery"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "__typename": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "UserMinimal"
+                      ]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "email": {
+                      "type": "string",
+                      "x-redacted": "email"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "isActive": {
+                      "type": "boolean"
+                    },
+                    "isSystem": {
+                      "type": "boolean"
+                    },
+                    "lastLoginAt": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date-time"
+                    },
+                    "name": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "Administrator",
+                        "Guest",
+                        "Robin Member"
+                      ]
+                    },
+                    "providerKey": {
+                      "type": "string",
+                      "x-observed-values": [
+                        "local"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "__typename",
+                    "createdAt",
+                    "email",
+                    "id",
+                    "isActive",
+                    "isSystem",
+                    "lastLoginAt",
+                    "name",
+                    "providerKey"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "__typename",
+              "list"
+            ]
+          }
+        },
+        "required": [
+          "users"
+        ]
+      }
+    },
+    {
+      "name": "query users.single",
+      "type": "query",
+      "fields": [
+        "users.single"
+      ],
+      "count": 1,
+      "flows": [
+        "users"
+      ],
+      "documents": [
+        "query($id:Int!){users{single(id:$id){id name email providerKey providerName providerId providerIs2FACapable location jobTitle timezone isSystem isActive isVerified createdAt updatedAt lastLoginAt tfaIsActive groups{id name __typename}__typename}__typename}}"
+      ],
+      "variables": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "object",
+            "properties": {
+              "__typename": {
+                "type": "string",
+                "x-observed-values": [
+                  "UserQuery"
+                ]
+              },
+              "single": {
+                "type": "object",
+                "properties": {
+                  "__typename": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "User"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "email": {
+                    "type": "string",
+                    "x-redacted": "email"
+                  },
+                  "groups": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "isSystem": {
+                    "type": "boolean"
+                  },
+                  "isVerified": {
+                    "type": "boolean"
+                  },
+                  "jobTitle": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "lastLoginAt": {
+                    "type": "null"
+                  },
+                  "location": {
+                    "type": "string",
+                    "x-observed-values": [
+                      ""
+                    ]
+                  },
+                  "name": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Robin Member"
+                    ]
+                  },
+                  "providerId": {
+                    "type": "null"
+                  },
+                  "providerIs2FACapable": {
+                    "type": "boolean"
+                  },
+                  "providerKey": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "local"
+                    ]
+                  },
+                  "providerName": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "Local"
+                    ]
+                  },
+                  "tfaIsActive": {
+                    "type": "boolean"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "x-observed-values": [
+                      "America/New_York"
+                    ]
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": [
+                  "__typename",
+                  "createdAt",
+                  "email",
+                  "groups",
+                  "id",
+                  "isActive",
+                  "isSystem",
+                  "isVerified",
+                  "jobTitle",
+                  "lastLoginAt",
+                  "location",
+                  "name",
+                  "providerId",
+                  "providerIs2FACapable",
+                  "providerKey",
+                  "providerName",
+                  "tfaIsActive",
+                  "timezone",
+                  "updatedAt"
+                ]
+              }
+            },
+            "required": [
+              "__typename",
+              "single"
+            ]
+          }
+        },
+        "required": [
+          "users"
+        ]
+      }
+    }
+  ]
+}

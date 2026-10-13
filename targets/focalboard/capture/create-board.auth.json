@@ -1,0 +1,54 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 49,
+      "firstEntry": 4
+    }
+  ],
+  "cookiesSent": [],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 6,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 7,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 20,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 21,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 31,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 32,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 43,
+      "path": "$.signupToken",
+      "kind": "opaque"
+    },
+    {
+      "entry": 44,
+      "path": "$[0].signupToken",
+      "kind": "opaque"
+    }
+  ]
+}

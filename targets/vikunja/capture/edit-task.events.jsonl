@@ -1,0 +1,11 @@
+{"t":1791739949975,"type":"capture-start","url":"http://localhost:3456/projects/2/9"}
+{"t":1791739951970,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"div > div > span:nth-of-type(1) > span > a","role":"link","name":"Buy paint","href":"/tasks/1"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791739952091,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791739952094,"type":"navigation","url":"http://localhost:3456/tasks/1","sameDocument":true}
+{"t":1791739956761,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"div > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(5)","role":"button","name":"SET PRIORITY","type":"button"},"url":"http://localhost:3456/tasks/1"}
+{"t":1791739960043,"type":"action","id":"a3","kind":"change","target":{"tag":"select","selector":"div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > select","role":"combobox","name":"Priority","type":"select-one"},"url":"http://localhost:3456/tasks/1","valueInfo":{"type":"select-one","length":1}}
+{"t":1791739964018,"type":"action","id":"a4","kind":"click","target":{"tag":"div","selector":"div:nth-of-type(1) > div > div > div:nth-of-type(2) > div","name":"Add your comment, hit '/' for more options…"},"url":"http://localhost:3456/tasks/1"}
+{"t":1791739966366,"type":"action","id":"a5","kind":"input","target":{"tag":"div","selector":"div:nth-of-type(1) > div > div > div:nth-of-type(2) > div","name":"Add your comment, hit '/' for more options…"},"url":"http://localhost:3456/tasks/1","valueInfo":{"type":"contenteditable","length":27}}
+{"t":1791739968928,"type":"action","id":"a6","kind":"click","target":{"tag":"button","selector":"div > div > div > div:nth-of-type(2) > button","role":"button","name":"COMMENT","type":"button"},"url":"http://localhost:3456/tasks/1"}
+{"t":1791739973226,"type":"action","id":"a7","kind":"click","target":{"tag":"button","selector":"div > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)","role":"button","name":"MARK TASK DONE!","type":"button"},"url":"http://localhost:3456/tasks/1"}
+{"t":1791739977363,"type":"capture-stop","url":"http://localhost:3456/projects/2/9"}

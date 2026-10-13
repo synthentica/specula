@@ -1,0 +1,42 @@
+[
+  {
+    "url": "http://localhost:2368/public/member-attribution.min.js?v=a03a66991b",
+    "sha256": "8349be76739704f383dba850d3f17edf89c38d35d5f867382433111fc015aaf8",
+    "file": "member-attribution.min.8349be76.js",
+    "length": 3006,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:2368/public/cards.min.js?v=a03a66991b",
+    "sha256": "0fa389a717242bfe900c9d688e7e086b5db05a740db66317011ae6c09be3eb80",
+    "file": "cards.min.0fa389a7.js",
+    "length": 6882,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:2369/portal/umd/portal.min.js",
+    "sha256": "3b4a04433817b08e6cb4e0a914ce5416ccf769b3f1eaa40850a5c78027da93e5",
+    "file": "portal.min.3b4a0443.js",
+    "length": 1632231,
+    "firstParty": false,
+    "callsTarget": true,
+    "sourceMapUrl": "http://localhost:2369/portal/umd/portal.min.js.map",
+    "sourceMapFile": "portal.min.3b4a0443.js.map"
+  },
+  {
+    "url": "http://localhost:2368/assets/built/source.js?v=a03a66991b",
+    "sha256": "3bceafa53269a4c05c1f59e9293f7915e7e85a4119d0647ce5299b2b40941137",
+    "file": "source.3bceafa5.js",
+    "length": 52705,
+    "firstParty": true,
+    "sourceMapUrl": "http://localhost:2368/assets/built/source.js.map",
+    "sourceMapFile": "source.3bceafa5.js.map"
+  },
+  {
+    "url": "http://localhost:2368/",
+    "sha256": "177b1439363af96c42cd7371cca28de7b3a19c98a4f4767b89d3a4b47b60db91",
+    "file": "script.177b1439.js",
+    "length": 903,
+    "firstParty": true
+  }
+]

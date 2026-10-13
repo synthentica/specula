@@ -1,0 +1,49 @@
+{
+  "name": "focalboard",
+  "origin": "http://localhost:8000",
+  "apiPrefix": "/api/v2",
+  "redact": {
+    "values": []
+  },
+  "brand": [
+    "Focalboard",
+    "focalboard",
+    "Mattermost"
+  ],
+  "volatile": {
+    "keys": [
+      "id",
+      "createAt",
+      "updateAt",
+      "deleteAt",
+      "create_at",
+      "update_at",
+      "delete_at",
+      "createdBy",
+      "modifiedBy",
+      "userId",
+      "userID",
+      "boardId",
+      "boardID",
+      "parentId",
+      "teamID",
+      "signupToken",
+      "card_limit_timestamp",
+      "updateAt"
+    ]
+  },
+  "ui": {
+    "login": {
+      "path": "/login",
+      "user": "username",
+      "value": "owner"
+    },
+    "seedFlow": "move-card",
+    "views": {
+      "board": "/team/0/{boardId}"
+    },
+    "dismiss": [
+      ".VersionMessage .IconButton"
+    ]
+  }
+}

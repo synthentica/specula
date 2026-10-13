@@ -1,0 +1,1076 @@
+openapi: "3.1.0"
+info:
+  title: app API (inferred by specula)
+  version: observed
+  description: "Inferred from 52 recorded exchanges in 13 flows. Only observed behaviour is described. x-observed-values lists values seen, not a closed enum."
+servers:
+  - url: /
+paths:
+  /finalize:
+    post:
+      operationId: postFinalize
+      tags: [finalize]
+      summary: POST /finalize
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                adminEmail:
+                  type: string
+                  x-redacted: email
+                adminPassword:
+                  type: string
+                  x-redacted: secret
+                adminPasswordConfirm:
+                  type: string
+                  x-redacted: secret
+                siteUrl:
+                  type: string
+                  format: uri
+                  x-observed-values: ["http://localhost:3000"]
+                telemetry:
+                  type: boolean
+              required: [adminEmail, adminPassword, adminPasswordConfirm, siteUrl, telemetry]
+      responses:
+        "200":
+          description: "Observed 1×"
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Finalize"
+      security: []
+      x-specula-samples: 1
+      x-specula-flows: [setup]
+  /graphql:
+    post:
+      operationId: postGraphql
+      tags: [graphql]
+      summary: POST /graphql
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  extensions:
+                    type: object
+                    properties: {}
+                  operationName:
+                    type: "null"
+                  query:
+                    type: string
+                  variables:
+                    type: object
+                    properties:
+                      checkoutDate:
+                        type: string
+                        format: date-time
+                      content:
+                        type: string
+                        x-observed-values:
+                          - "# Ideas\nA place for rough ideas.\n"
+                          - "Can we move the demo to Thursday?"
+                          - "Same path as an existing page.\n"
+                      description:
+                        type: string
+                        x-observed-values: [Where everything starts, ""]
+                      editor:
+                        type: string
+                        x-observed-values: [markdown]
+                      email:
+                        type: string
+                        x-redacted: email
+                      groups:
+                        type: array
+                        items: {}
+                      guestEmail:
+                        type: string
+                        x-observed-values: [""]
+                      guestName:
+                        type: string
+                        x-observed-values: [""]
+                      id:
+                        type: integer
+                      isPrivate:
+                        type: boolean
+                      isPublished:
+                        type: boolean
+                      locale:
+                        type: [string, "null"]
+                        x-observed-values: [en]
+                      mustChangePassword:
+                        type: boolean
+                      name:
+                        type: string
+                        x-observed-values: [Robin Member]
+                      namespace:
+                        type: string
+                        examples: [common, auth]
+                      offsetPage:
+                        type: integer
+                        x-observed-values: [0]
+                      offsetSize:
+                        type: integer
+                        x-observed-values: [25]
+                      pageId:
+                        type: integer
+                        x-observed-values: [1]
+                      password:
+                        type: string
+                        x-redacted: secret
+                      passwordRaw:
+                        type: string
+                        x-redacted: secret
+                      path:
+                        type: string
+                        x-observed-values: [home, notes/first-steps, notes/ideas]
+                      providerKey:
+                        type: string
+                        x-observed-values: [local]
+                      publishEndDate:
+                        type: string
+                        x-observed-values: [""]
+                      publishStartDate:
+                        type: string
+                        x-observed-values: [""]
+                      query:
+                        type: string
+                        examples: [g, guide]
+                      replyTo:
+                        type: integer
+                        x-observed-values: [0]
+                      scriptCss:
+                        type: string
+                        x-observed-values: [""]
+                      scriptJs:
+                        type: string
+                        x-observed-values: [""]
+                      sendWelcomeEmail:
+                        type: boolean
+                      strategy:
+                        type: string
+                        x-observed-values: [local]
+                      tags:
+                        type: array
+                        items:
+                          type: string
+                          x-observed-values: [guide, notes]
+                      title:
+                        type: string
+                        x-observed-values: [Team handbook, First steps, Ideas, Duplicate]
+                      username:
+                        type: string
+                        x-redacted: email
+                      versionId:
+                        type: integer
+                required: [extensions, operationName, query, variables]
+      responses:
+        "200":
+          description: "Observed 51×"
+          headers:
+            X-Content-Type-Options:
+              schema:
+                type: string
+            X-Frame-Options:
+              schema:
+                type: string
+            X-UA-Compatible:
+              schema:
+                type: string
+            X-XSS-Protection:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    data:
+                      type: object
+                      properties:
+                        authentication:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [AuthenticationQuery, AuthenticationMutation]
+                            activeStrategies:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [AuthenticationActiveStrategy]
+                                  displayName:
+                                    type: string
+                                    x-observed-values: [Local]
+                                  key:
+                                    type: string
+                                    x-observed-values: [local]
+                                  order:
+                                    type: integer
+                                    x-observed-values: [0]
+                                  selfRegistration:
+                                    type: boolean
+                                  strategy:
+                                    type: object
+                                    properties:
+                                      __typename:
+                                        type: string
+                                        x-observed-values: [AuthenticationStrategy]
+                                      color:
+                                        type: string
+                                        x-observed-values: [primary]
+                                      icon:
+                                        type: string
+                                      key:
+                                        type: string
+                                        x-observed-values: [local]
+                                      logo:
+                                        type: string
+                                        format: uri
+                                      useForm:
+                                        type: boolean
+                                      usernameType:
+                                        type: string
+                                        x-observed-values: [email]
+                                    required: [__typename, color, icon, key, logo, useForm, usernameType]
+                                required: [__typename, displayName, key]
+                            login:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [AuthenticationLoginResponse]
+                                continuationToken:
+                                  type: "null"
+                                jwt:
+                                  type: [string, "null"]
+                                  x-redacted: jwt
+                                mustChangePwd:
+                                  type: "null"
+                                mustProvideTFA:
+                                  type: "null"
+                                mustSetupTFA:
+                                  type: "null"
+                                redirect:
+                                  type: [string, "null"]
+                                  x-observed-values: [/]
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0, 1002]
+                                    message:
+                                      type: string
+                                      x-observed-values: [Invalid email / username or password., Login success]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [AuthLoginFailed, ok]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                                tfaQRImage:
+                                  type: "null"
+                              required:
+                                - __typename
+                                - continuationToken
+                                - jwt
+                                - mustChangePwd
+                                - mustProvideTFA
+                                - mustSetupTFA
+                                - redirect
+                                - responseResult
+                                - tfaQRImage
+                          required: [__typename]
+                        comments:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [CommentQuery, CommentMutation]
+                            create:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [CommentCreateResponse]
+                                id:
+                                  type: integer
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0]
+                                    message:
+                                      type: string
+                                      x-observed-values: [New comment posted successfully]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [ok]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                              required: [__typename, id, responseResult]
+                            list:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [CommentPost]
+                                  authorName:
+                                    type: string
+                                    x-observed-values: [Administrator]
+                                  createdAt:
+                                    type: string
+                                    format: date-time
+                                  id:
+                                    type: integer
+                                  render:
+                                    type: string
+                                  updatedAt:
+                                    type: string
+                                    format: date-time
+                                required: [__typename, authorName, createdAt, id, render, updatedAt]
+                          required: [__typename]
+                        groups:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [GroupQuery]
+                            list:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [GroupMinimal]
+                                  id:
+                                    type: integer
+                                  isSystem:
+                                    type: boolean
+                                  name:
+                                    type: string
+                                    x-observed-values: [Administrators, Guests]
+                                required: [__typename, id, isSystem, name]
+                          required: [__typename, list]
+                        localization:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [LocalizationQuery]
+                            translations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [Translation]
+                                  key:
+                                    type: string
+                                    examples: [actions.add, actions.apply]
+                                  value:
+                                    type: string
+                                    examples: [Add, Apply]
+                                required: [__typename, key, value]
+                          required: [__typename, translations]
+                        pages:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [PageQuery, PageMutation]
+                            checkConflicts:
+                              type: boolean
+                            create:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [PageResponse]
+                                page:
+                                  type: [object, "null"]
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [Page]
+                                    id:
+                                      type: integer
+                                    updatedAt:
+                                      type: string
+                                      format: date-time
+                                  required: [__typename, id, updatedAt]
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0, 6002]
+                                    message:
+                                      type: string
+                                      x-observed-values: [Page created successfully.]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [ok, PageDuplicateCreate]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                              required: [__typename, page, responseResult]
+                            delete:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [DefaultResponse]
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0]
+                                    message:
+                                      type: string
+                                      x-observed-values: [Page has been deleted.]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [ok]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                              required: [__typename, responseResult]
+                            history:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [PageHistoryResult]
+                                total:
+                                  type: integer
+                                  x-observed-values: [1]
+                                trail:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      __typename:
+                                        type: string
+                                        x-observed-values: [PageHistory]
+                                      actionType:
+                                        type: string
+                                        x-observed-values: [initial]
+                                      authorId:
+                                        type: integer
+                                        x-observed-values: [1]
+                                      authorName:
+                                        type: string
+                                        x-observed-values: [Administrator]
+                                      valueAfter:
+                                        type: "null"
+                                      valueBefore:
+                                        type: "null"
+                                      versionDate:
+                                        type: string
+                                        format: date-time
+                                      versionId:
+                                        type: integer
+                                    required:
+                                      - __typename
+                                      - actionType
+                                      - authorId
+                                      - authorName
+                                      - valueAfter
+                                      - valueBefore
+                                      - versionDate
+                                      - versionId
+                              required: [__typename, total, trail]
+                            list:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [PageListItem]
+                                  contentType:
+                                    type: string
+                                    x-observed-values: [markdown]
+                                  createdAt:
+                                    type: string
+                                    format: date-time
+                                  description:
+                                    type: string
+                                    x-observed-values: ["", Where everything starts]
+                                  id:
+                                    type: integer
+                                  isPrivate:
+                                    type: boolean
+                                  isPublished:
+                                    type: boolean
+                                  locale:
+                                    type: string
+                                    x-observed-values: [en]
+                                  path:
+                                    type: string
+                                    x-observed-values: [notes/first-steps, notes/ideas, home]
+                                  privateNS:
+                                    type: "null"
+                                  tags:
+                                    type: array
+                                    items:
+                                      type: string
+                                      x-observed-values: [notes, guide]
+                                  title:
+                                    type: string
+                                    x-observed-values: [First steps, Ideas, Team handbook]
+                                  updatedAt:
+                                    type: string
+                                    format: date-time
+                                required:
+                                  - __typename
+                                  - createdAt
+                                  - description
+                                  - id
+                                  - locale
+                                  - path
+                                  - title
+                                  - updatedAt
+                            search:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [PageSearchResponse]
+                                results:
+                                  type: array
+                                  items: {}
+                                suggestions:
+                                  type: array
+                                  items: {}
+                                totalHits:
+                                  type: integer
+                                  x-observed-values: [0]
+                              required: [__typename, results, suggestions, totalHits]
+                            searchTags:
+                              type: array
+                              items:
+                                type: string
+                                x-observed-values: [guide, notes]
+                            single:
+                              type: [object, "null"]
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [Page]
+                                authorEmail:
+                                  type: string
+                                  x-redacted: email
+                                authorId:
+                                  type: integer
+                                  x-observed-values: [1]
+                                authorName:
+                                  type: string
+                                  x-observed-values: [Administrator]
+                                contentType:
+                                  type: string
+                                  x-observed-values: [markdown]
+                                createdAt:
+                                  type: string
+                                  format: date-time
+                                creatorEmail:
+                                  type: string
+                                  x-redacted: email
+                                creatorId:
+                                  type: integer
+                                  x-observed-values: [1]
+                                creatorName:
+                                  type: string
+                                  x-observed-values: [Administrator]
+                                description:
+                                  type: string
+                                  x-observed-values: [""]
+                                editor:
+                                  type: string
+                                  x-observed-values: [markdown]
+                                hash:
+                                  type: string
+                                id:
+                                  type: integer
+                                isPrivate:
+                                  type: boolean
+                                isPublished:
+                                  type: boolean
+                                locale:
+                                  type: string
+                                  x-observed-values: [en]
+                                path:
+                                  type: string
+                                  x-observed-values: [notes/ideas]
+                                privateNS:
+                                  type: "null"
+                                publishEndDate:
+                                  type: string
+                                  x-observed-values: [""]
+                                publishStartDate:
+                                  type: string
+                                  x-observed-values: [""]
+                                title:
+                                  type: string
+                                  x-observed-values: [Ideas]
+                                updatedAt:
+                                  type: string
+                                  format: date-time
+                              required:
+                                - __typename
+                                - authorEmail
+                                - authorId
+                                - authorName
+                                - contentType
+                                - createdAt
+                                - creatorEmail
+                                - creatorId
+                                - creatorName
+                                - description
+                                - editor
+                                - hash
+                                - id
+                                - isPrivate
+                                - isPublished
+                                - locale
+                                - path
+                                - privateNS
+                                - publishEndDate
+                                - publishStartDate
+                                - title
+                                - updatedAt
+                            tags:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [PageTag]
+                                  tag:
+                                    type: string
+                                    x-observed-values: [guide, notes]
+                                  title:
+                                    type: string
+                                    x-observed-values: [guide, notes]
+                                required: [__typename, tag, title]
+                            update:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [PageResponse]
+                                page:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [Page]
+                                    updatedAt:
+                                      type: string
+                                      format: date-time
+                                  required: [__typename, updatedAt]
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0]
+                                    message:
+                                      type: string
+                                      x-observed-values: [Page has been updated.]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [ok]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                              required: [__typename, page, responseResult]
+                            version:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [PageVersion]
+                                action:
+                                  type: string
+                                  x-observed-values: [updated]
+                                authorId:
+                                  type: string
+                                  x-observed-values: ["1"]
+                                authorName:
+                                  type: string
+                                  x-observed-values: [Administrator]
+                                content:
+                                  type: string
+                                contentType:
+                                  type: string
+                                  x-observed-values: [markdown]
+                                createdAt:
+                                  type: string
+                                  format: date-time
+                                description:
+                                  type: string
+                                  x-observed-values: [Where everything starts]
+                                editor:
+                                  type: string
+                                  x-observed-values: [markdown]
+                                isPrivate:
+                                  type: boolean
+                                isPublished:
+                                  type: boolean
+                                locale:
+                                  type: string
+                                  x-observed-values: [en]
+                                pageId:
+                                  type: integer
+                                  x-observed-values: [1]
+                                path:
+                                  type: string
+                                  x-observed-values: [home]
+                                publishEndDate:
+                                  type: string
+                                  x-observed-values: [""]
+                                publishStartDate:
+                                  type: string
+                                  x-observed-values: [""]
+                                tags:
+                                  type: array
+                                  items: {}
+                                title:
+                                  type: string
+                                  x-observed-values: [Team handbook]
+                                versionDate:
+                                  type: string
+                                  format: date-time
+                                versionId:
+                                  type: integer
+                              required:
+                                - __typename
+                                - action
+                                - authorId
+                                - authorName
+                                - content
+                                - contentType
+                                - createdAt
+                                - description
+                                - editor
+                                - isPrivate
+                                - isPublished
+                                - locale
+                                - pageId
+                                - path
+                                - publishEndDate
+                                - publishStartDate
+                                - tags
+                                - title
+                                - versionDate
+                                - versionId
+                          required: [__typename]
+                        system:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [SystemQuery]
+                            info:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [SystemInfo]
+                                currentVersion:
+                                  type: string
+                                  x-observed-values: ["2.5.316"]
+                                groupsTotal:
+                                  type: integer
+                                  x-observed-values: [2]
+                                latestVersion:
+                                  type: string
+                                  x-observed-values: ["2.5.316"]
+                                pagesTotal:
+                                  type: integer
+                                  x-observed-values: [2, 3]
+                                tagsTotal:
+                                  type: integer
+                                  x-observed-values: [2]
+                                usersTotal:
+                                  type: integer
+                                  x-observed-values: [2, 3]
+                              required:
+                                - __typename
+                                - currentVersion
+                                - groupsTotal
+                                - latestVersion
+                                - pagesTotal
+                                - tagsTotal
+                                - usersTotal
+                          required: [__typename, info]
+                        users:
+                          type: object
+                          properties:
+                            __typename:
+                              type: string
+                              x-observed-values: [UserQuery, UserMutation]
+                            create:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [UserResponse]
+                                responseResult:
+                                  type: object
+                                  properties:
+                                    __typename:
+                                      type: string
+                                      x-observed-values: [ResponseStatus]
+                                    errorCode:
+                                      type: integer
+                                      x-observed-values: [0, 1004]
+                                    message:
+                                      type: string
+                                      x-observed-values: [User created successfully]
+                                    slug:
+                                      type: string
+                                      x-observed-values: [ok, AuthAccountAlreadyExists]
+                                    succeeded:
+                                      type: boolean
+                                  required: [__typename, errorCode, message, slug, succeeded]
+                              required: [__typename, responseResult]
+                            list:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  __typename:
+                                    type: string
+                                    x-observed-values: [UserMinimal]
+                                  createdAt:
+                                    type: string
+                                    format: date-time
+                                  email:
+                                    type: string
+                                    x-redacted: email
+                                  id:
+                                    type: integer
+                                  isActive:
+                                    type: boolean
+                                  isSystem:
+                                    type: boolean
+                                  lastLoginAt:
+                                    type: [string, "null"]
+                                    format: date-time
+                                  name:
+                                    type: string
+                                    x-observed-values: [Administrator, Guest, Robin Member]
+                                  providerKey:
+                                    type: string
+                                    x-observed-values: [local]
+                                required:
+                                  - __typename
+                                  - createdAt
+                                  - email
+                                  - id
+                                  - isActive
+                                  - isSystem
+                                  - lastLoginAt
+                                  - name
+                                  - providerKey
+                            single:
+                              type: object
+                              properties:
+                                __typename:
+                                  type: string
+                                  x-observed-values: [User]
+                                createdAt:
+                                  type: string
+                                  format: date-time
+                                email:
+                                  type: string
+                                  x-redacted: email
+                                groups:
+                                  type: array
+                                  items: {}
+                                id:
+                                  type: integer
+                                isActive:
+                                  type: boolean
+                                isSystem:
+                                  type: boolean
+                                isVerified:
+                                  type: boolean
+                                jobTitle:
+                                  type: string
+                                  x-observed-values: [""]
+                                lastLoginAt:
+                                  type: "null"
+                                location:
+                                  type: string
+                                  x-observed-values: [""]
+                                name:
+                                  type: string
+                                  x-observed-values: [Robin Member]
+                                providerId:
+                                  type: "null"
+                                providerIs2FACapable:
+                                  type: boolean
+                                providerKey:
+                                  type: string
+                                  x-observed-values: [local]
+                                providerName:
+                                  type: string
+                                  x-observed-values: [Local]
+                                tfaIsActive:
+                                  type: boolean
+                                timezone:
+                                  type: string
+                                  x-observed-values: [America/New_York]
+                                updatedAt:
+                                  type: string
+                                  format: date-time
+                              required:
+                                - __typename
+                                - createdAt
+                                - email
+                                - groups
+                                - id
+                                - isActive
+                                - isSystem
+                                - isVerified
+                                - jobTitle
+                                - lastLoginAt
+                                - location
+                                - name
+                                - providerId
+                                - providerIs2FACapable
+                                - providerKey
+                                - providerName
+                                - tfaIsActive
+                                - timezone
+                                - updatedAt
+                          required: [__typename]
+                    errors:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          extensions:
+                            type: object
+                            properties:
+                              code:
+                                type: string
+                                x-observed-values: [INTERNAL_SERVER_ERROR]
+                              exception:
+                                type: object
+                                properties:
+                                  code:
+                                    type: integer
+                                    x-observed-values: [6003]
+                                  message:
+                                    type: string
+                                    x-observed-values: [This page does not exist.]
+                                  stack:
+                                    type: string
+                                  stacktrace:
+                                    type: array
+                                    items:
+                                      type: string
+                                required: [code, message, stack, stacktrace]
+                            required: [code, exception]
+                          locations:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                column:
+                                  type: integer
+                                  x-observed-values: [5]
+                                line:
+                                  type: integer
+                                  x-observed-values: [3]
+                              required: [column, line]
+                          message:
+                            type: string
+                            x-observed-values: [This page does not exist.]
+                          path:
+                            type: array
+                            items:
+                              type: string
+                              x-observed-values: [pages, single]
+                        required: [extensions, locations, message, path]
+                  required: [data]
+      security: []
+      x-specula-samples: 51
+      x-specula-flows:
+        - browse
+        - comments
+        - create-home
+        - create-pages
+        - delete-page
+        - edit-page
+        - errors
+        - history
+        - login
+        - logout-login
+        - search
+        - setup
+        - users
+components:
+  schemas:
+    Finalize:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        redirectPath:
+          type: string
+          x-observed-values: [/]
+        redirectPort:
+          type: integer
+          x-observed-values: [3000]
+      required: [ok, redirectPath, redirectPort]
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "JWT (RS256) with claims ap, aud, av, df, email, exp, groups, iat, id, iss, lc, name, permissions, tz; observed lifetime 1800s."

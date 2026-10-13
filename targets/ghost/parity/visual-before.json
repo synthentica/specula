@@ -1,0 +1,76 @@
+{
+  "label": "before",
+  "baseUrl": "http://localhost:4712",
+  "generated": "2026-10-12T17:44:59.859Z",
+  "score": 46,
+  "views": [
+    {
+      "view": "editor",
+      "score": 46,
+      "layout": 36,
+      "components": 52,
+      "style": 51,
+      "notes": [
+        "font Iowan Old Style, spec Inter",
+        "main text colour #6f675d, spec #15171a",
+        "button: background none, spec #ffffff",
+        "input: background #fffdf9, spec none",
+        "most used radius 999px, spec 6px",
+        "sidebar: present, the spec view has none",
+        "button: border all #2f6f5e, spec none",
+        "input: border all #e2dbcf, spec none"
+      ]
+    },
+    {
+      "view": "members",
+      "score": 45,
+      "layout": 42,
+      "components": 37,
+      "style": 58,
+      "notes": [
+        "column: none, spec has 2",
+        "font Iowan Old Style, spec Inter",
+        "main text colour #6f675d, spec #15171a",
+        "button: background #2f6f5e, spec none",
+        "row: background none, spec #ffffff",
+        "heading: 1 on the view, spec 5",
+        "list-item: none, spec has 9",
+        "avatar: none, spec has 2"
+      ]
+    },
+    {
+      "view": "posts",
+      "score": 52,
+      "layout": 57,
+      "components": 41,
+      "style": 57,
+      "notes": [
+        "font Iowan Old Style, spec Inter",
+        "main text colour #6f675d, spec #15171a",
+        "button: background #2f6f5e, spec #ffffff",
+        "avatar: none, spec has 2",
+        "most used radius 999px, spec 6px",
+        "heading: typical size 160×33, spec 524×21",
+        "heading: 1 on the view, spec 3",
+        "button: text colour #ffffff, spec #394047"
+      ]
+    },
+    {
+      "view": "tags",
+      "score": 39,
+      "layout": 33,
+      "components": 23,
+      "style": 63,
+      "notes": [
+        "topbar: missing (spec 320×0×960×100 at x,y,w,h)",
+        "tabs: none, spec has 1",
+        "font Iowan Old Style, spec Inter",
+        "main text colour #6f675d, spec #15171a",
+        "badge: none, spec has 1",
+        "button: background #2f6f5e, spec none",
+        "list-item: none, spec has 9",
+        "avatar: none, spec has 2"
+      ]
+    }
+  ]
+}

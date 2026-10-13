@@ -1,0 +1,10 @@
+{
+  "login": { "path": "/#/signin", "user": "username" },
+  "views": {
+    "overview": "/#/",
+    "upcoming": "/#/upcoming",
+    "projects": "/#/projects",
+    "board": "/#/projects/{projectId}/board",
+    "task": "/#/tasks/{taskId}"
+  }
+}

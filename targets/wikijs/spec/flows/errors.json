@@ -1,0 +1,166 @@
+{
+  "name": "errors",
+  "order": 12,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "content": "Same path as an existing page.\n",
+              "description": "",
+              "editor": "markdown",
+              "locale": "en",
+              "isPrivate": false,
+              "isPublished": true,
+              "path": "notes/first-steps",
+              "publishEndDate": "",
+              "publishStartDate": "",
+              "scriptCss": "",
+              "scriptJs": "",
+              "tags": [],
+              "title": "Duplicate"
+            },
+            "extensions": {},
+            "query": "mutation ($content: String!, $description: String!, $editor: String!, $isPrivate: Boolean!, $isPublished: Boolean!, $locale: String!, $path: String!, $publishEndDate: Date, $publishStartDate: Date, $scriptCss: String, $scriptJs: String, $tags: [String]!, $title: String!) {\n  pages {\n    create(content: $content, description: $description, editor: $editor, isPrivate: $isPrivate, isPublished: $isPublished, locale: $locale, path: $path, publishEndDate: $publishEndDate, publishStartDate: $publishStartDate, scriptCss: $scriptCss, scriptJs: $scriptJs, tags: $tags, title: $title) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      page {\n        id\n        updatedAt\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": false,
+                      "errorCode": 6002,
+                      "slug": "PageDuplicateCreate",
+                      "message": "Cannot create this page because an entry already exists at the same path.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "page": null,
+                    "__typename": "PageResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/errors.har#entries[38]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query system.info",
+          "query pages.single"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  system {\n    info {\n      currentVersion\n      latestVersion\n      groupsTotal\n      pagesTotal\n      usersTotal\n      tagsTotal\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {
+              "id": 999
+            },
+            "extensions": {},
+            "query": "query ($id: Int!) {\n  pages {\n    single(id: $id) {\n      id\n      path\n      hash\n      title\n      description\n      isPrivate\n      isPublished\n      privateNS\n      publishStartDate\n      publishEndDate\n      contentType\n      createdAt\n      updatedAt\n      editor\n      locale\n      authorId\n      authorName\n      authorEmail\n      creatorId\n      creatorName\n      creatorEmail\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "system": {
+                  "info": {
+                    "currentVersion": "2.5.316",
+                    "latestVersion": "2.5.316",
+                    "groupsTotal": 2,
+                    "pagesTotal": 2,
+                    "usersTotal": 3,
+                    "tagsTotal": 2,
+                    "__typename": "SystemInfo"
+                  },
+                  "__typename": "SystemQuery"
+                }
+              }
+            },
+            {
+              "errors": [
+                {
+                  "message": "This page does not exist.",
+                  "locations": [
+                    {
+                      "line": 3,
+                      "column": 5
+                    }
+                  ],
+                  "path": [
+                    "pages",
+                    "single"
+                  ],
+                  "extensions": {
+                    "code": "INTERNAL_SERVER_ERROR",
+                    "exception": {
+                      "stack": "PageNotFound 6003: This page does not exist.\n    at single (/wiki/server/graph/resolvers/page.js:170:15)",
+                      "code": 6003,
+                      "message": "This page does not exist.",
+                      "stacktrace": [
+                        "PageNotFound 6003: This page does not exist.",
+                        "    at single (/wiki/server/graph/resolvers/page.js:170:15)"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "data": {
+                "pages": {
+                  "single": null,
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/errors.har#entries[63]"
+      }
+    }
+  ]
+}

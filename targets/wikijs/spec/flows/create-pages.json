@@ -1,0 +1,539 @@
+{
+  "name": "create-pages",
+  "order": 4,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(2) > div > div:nth-of-type(1) > div > input",
+          "role": "textbox",
+          "name": "Title",
+          "id": "input-150",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "n"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[38]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)",
+          "role": "textbox",
+          "name": "Tags",
+          "id": "input-165",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "notes"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[39]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)",
+          "role": "textbox",
+          "name": "Tags",
+          "id": "input-165",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "g"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [
+                    "guide"
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[40]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)",
+          "role": "textbox",
+          "name": "Tags",
+          "id": "input-165",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "guide"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [
+                    "guide"
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[41]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "content": "# First steps\nGet an account, then read the release checklist.\n",
+              "description": "",
+              "editor": "markdown",
+              "locale": "en",
+              "isPrivate": false,
+              "isPublished": true,
+              "path": "notes/first-steps",
+              "publishEndDate": "",
+              "publishStartDate": "",
+              "scriptCss": "",
+              "scriptJs": "",
+              "tags": [
+                "notes",
+                "guide"
+              ],
+              "title": "First steps"
+            },
+            "extensions": {},
+            "query": "mutation ($content: String!, $description: String!, $editor: String!, $isPrivate: Boolean!, $isPublished: Boolean!, $locale: String!, $path: String!, $publishEndDate: Date, $publishStartDate: Date, $scriptCss: String, $scriptJs: String, $tags: [String]!, $title: String!) {\n  pages {\n    create(content: $content, description: $description, editor: $editor, isPrivate: $isPrivate, isPublished: $isPublished, locale: $locale, path: $path, publishEndDate: $publishEndDate, publishStartDate: $publishStartDate, scriptCss: $scriptCss, scriptJs: $scriptJs, tags: $tags, title: $title) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      page {\n        id\n        updatedAt\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Page created successfully.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "page": {
+                      "id": 2,
+                      "updatedAt": "2026-10-12T07:56:28.132Z",
+                      "__typename": "Page"
+                    },
+                    "__typename": "PageResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[42]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "notes/first-steps"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[71]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(2) > div > div:nth-of-type(1) > div > input",
+          "role": "textbox",
+          "name": "Title",
+          "id": "input-150",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "n"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [
+                    "notes"
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[112]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > input:nth-of-type(1)",
+          "role": "textbox",
+          "name": "Tags",
+          "id": "input-165",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.searchTags"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "query": "notes"
+            },
+            "extensions": {},
+            "query": "query ($query: String!) {\n  pages {\n    searchTags(query: $query)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "searchTags": [
+                    "notes"
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[113]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "CREATE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "content": "# Ideas\nA place for rough ideas.\n",
+              "description": "",
+              "editor": "markdown",
+              "locale": "en",
+              "isPrivate": false,
+              "isPublished": true,
+              "path": "notes/ideas",
+              "publishEndDate": "",
+              "publishStartDate": "",
+              "scriptCss": "",
+              "scriptJs": "",
+              "tags": [
+                "notes"
+              ],
+              "title": "Ideas"
+            },
+            "extensions": {},
+            "query": "mutation ($content: String!, $description: String!, $editor: String!, $isPrivate: Boolean!, $isPublished: Boolean!, $locale: String!, $path: String!, $publishEndDate: Date, $publishStartDate: Date, $scriptCss: String, $scriptJs: String, $tags: [String]!, $title: String!) {\n  pages {\n    create(content: $content, description: $description, editor: $editor, isPrivate: $isPrivate, isPublished: $isPublished, locale: $locale, path: $path, publishEndDate: $publishEndDate, publishStartDate: $publishStartDate, scriptCss: $scriptCss, scriptJs: $scriptJs, tags: $tags, title: $title) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      page {\n        id\n        updatedAt\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Page created successfully.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "page": {
+                      "id": 3,
+                      "updatedAt": "2026-10-12T07:56:40.962Z",
+                      "__typename": "Page"
+                    },
+                    "__typename": "PageResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[114]",
+        "bind": {
+          "page5": "$[0].data.pages.create.page.id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "notes/ideas"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/create-pages.har#entries[143]"
+      }
+    }
+  ]
+}

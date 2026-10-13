@@ -1,0 +1,316 @@
+{
+  "name": "delete-page",
+  "order": 11,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query system.info",
+          "query pages.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  system {\n    info {\n      currentVersion\n      latestVersion\n      groupsTotal\n      pagesTotal\n      usersTotal\n      tagsTotal\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  pages {\n    list {\n      id\n      locale\n      path\n      title\n      description\n      contentType\n      isPublished\n      isPrivate\n      privateNS\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "system": {
+                  "info": {
+                    "currentVersion": "2.5.316",
+                    "latestVersion": "2.5.316",
+                    "groupsTotal": 2,
+                    "pagesTotal": 3,
+                    "usersTotal": 3,
+                    "tagsTotal": 2,
+                    "__typename": "SystemInfo"
+                  },
+                  "__typename": "SystemQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "pages": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "locale": "en",
+                      "path": "home",
+                      "title": "Team handbook",
+                      "description": "Where everything starts",
+                      "contentType": "markdown",
+                      "isPublished": true,
+                      "isPrivate": false,
+                      "privateNS": null,
+                      "createdAt": "2026-10-12T07:56:06.560Z",
+                      "updatedAt": "2026-10-12T07:56:54.842Z",
+                      "__typename": "PageListItem"
+                    },
+                    {
+                      "id": 2,
+                      "locale": "en",
+                      "path": "notes/first-steps",
+                      "title": "First steps",
+                      "description": "",
+                      "contentType": "markdown",
+                      "isPublished": true,
+                      "isPrivate": false,
+                      "privateNS": null,
+                      "createdAt": "2026-10-12T07:56:25.766Z",
+                      "updatedAt": "2026-10-12T07:56:28.132Z",
+                      "__typename": "PageListItem"
+                    },
+                    {
+                      "id": 3,
+                      "locale": "en",
+                      "path": "notes/ideas",
+                      "title": "Ideas",
+                      "description": "",
+                      "contentType": "markdown",
+                      "isPublished": true,
+                      "isPrivate": false,
+                      "privateNS": null,
+                      "createdAt": "2026-10-12T07:56:38.810Z",
+                      "updatedAt": "2026-10-12T07:56:40.962Z",
+                      "__typename": "PageListItem"
+                    }
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/delete-page.har#entries[27]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "td",
+          "selector": "div > table > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
+          "name": "en / notes/ideas"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.single"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page5"
+              }
+            },
+            "extensions": {},
+            "query": "query ($id: Int!) {\n  pages {\n    single(id: $id) {\n      id\n      path\n      hash\n      title\n      description\n      isPrivate\n      isPublished\n      privateNS\n      publishStartDate\n      publishEndDate\n      contentType\n      createdAt\n      updatedAt\n      editor\n      locale\n      authorId\n      authorName\n      authorEmail\n      creatorId\n      creatorName\n      creatorEmail\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "single": {
+                    "id": 3,
+                    "path": "notes/ideas",
+                    "hash": "e66ab32b032651c1ff6cf66c9677808f6eda4eef",
+                    "title": "Ideas",
+                    "description": "",
+                    "isPrivate": false,
+                    "isPublished": true,
+                    "privateNS": null,
+                    "publishStartDate": "",
+                    "publishEndDate": "",
+                    "contentType": "markdown",
+                    "createdAt": "2026-10-12T07:56:38.810Z",
+                    "updatedAt": "2026-10-12T07:56:40.962Z",
+                    "editor": "markdown",
+                    "locale": "en",
+                    "authorId": 1,
+                    "authorName": "Administrator",
+                    "authorEmail": "<redacted:email>",
+                    "creatorId": 1,
+                    "creatorName": "Administrator",
+                    "creatorEmail": "<redacted:email>",
+                    "__typename": "Page"
+                  },
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/delete-page.har#entries[32]",
+        "bind": {
+          "page68": "$[0].data.pages.single.id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(3) > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "DELETE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.delete"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page68"
+              }
+            },
+            "extensions": {},
+            "query": "mutation ($id: Int!) {\n  pages {\n    delete(id: $id) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "delete": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Page has been deleted.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "__typename": "DefaultResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/delete-page.har#entries[34]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(3) > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "DELETE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  pages {\n    list {\n      id\n      locale\n      path\n      title\n      description\n      contentType\n      isPublished\n      isPrivate\n      privateNS\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "locale": "en",
+                      "path": "home",
+                      "title": "Team handbook",
+                      "description": "Where everything starts",
+                      "contentType": "markdown",
+                      "isPublished": true,
+                      "isPrivate": false,
+                      "privateNS": null,
+                      "createdAt": "2026-10-12T07:56:06.560Z",
+                      "updatedAt": "2026-10-12T07:56:54.842Z",
+                      "__typename": "PageListItem"
+                    },
+                    {
+                      "id": 2,
+                      "locale": "en",
+                      "path": "notes/first-steps",
+                      "title": "First steps",
+                      "description": "",
+                      "contentType": "markdown",
+                      "isPublished": true,
+                      "isPrivate": false,
+                      "privateNS": null,
+                      "createdAt": "2026-10-12T07:56:25.766Z",
+                      "updatedAt": "2026-10-12T07:56:28.132Z",
+                      "__typename": "PageListItem"
+                    }
+                  ],
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/delete-page.har#entries[35]"
+      }
+    }
+  ]
+}

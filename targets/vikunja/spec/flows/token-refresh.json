@@ -1,0 +1,1144 @@
+{
+  "name": "token-refresh",
+  "order": 12,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Logout",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postLogout",
+        "method": "POST",
+        "path": "/logout",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/LogoutBodyBody.json",
+            "message": "Successfully logged out."
+          }
+        },
+        "source": "capture/token-refresh.har#entries[0]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postLogin",
+        "method": "POST",
+        "path": "/login",
+        "body": {
+          "username": "<redacted:pii>",
+          "password": "<redacted:secret>",
+          "long_token": false
+        },
+        "contentType": "application/json",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/token-refresh.har#entries[1]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getUser",
+        "method": "GET",
+        "path": "/user",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/User",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/UserInfoBody.json",
+            "id": 1,
+            "name": "",
+            "username": "<redacted:pii>",
+            "created": "2026-10-11T17:31:53Z",
+            "updated": "2026-10-11T17:31:53Z",
+            "settings": {
+              "name": "",
+              "email_reminders_enabled": false,
+              "discoverable_by_name": false,
+              "discoverable_by_email": false,
+              "overdue_tasks_reminders_enabled": true,
+              "overdue_tasks_reminders_time": "9:00",
+              "default_project_id": 1,
+              "week_start": 0,
+              "language": "en",
+              "timezone": "GMT",
+              "frontend_settings": null,
+              "extra_settings_links": null
+            },
+            "deletion_scheduled_at": "0001-01-01T00:00:00Z",
+            "is_local_user": true,
+            "auth_provider": "local",
+            "is_admin": false
+          }
+        },
+        "source": "capture/token-refresh.har#entries[2]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getAvatarById",
+        "method": "GET",
+        "path": "/avatar/{avatarId}",
+        "pathParams": {
+          "avatarId": {
+            "value": "<redacted:pii>"
+          }
+        },
+        "query": [
+          [
+            "size",
+            "40"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "image/svg+xml"
+        },
+        "source": "capture/token-refresh.har#entries[3]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjects",
+        "method": "GET",
+        "path": "/projects",
+        "query": [
+          [
+            "is_archived",
+            "true"
+          ],
+          [
+            "expand",
+            "permissions"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedProject.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "Inbox",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 65536,
+                "views": [
+                  {
+                    "id": 1,
+                    "title": "List",
+                    "project_id": 1,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 2,
+                    "title": "Gantt",
+                    "project_id": 1,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 3,
+                    "title": "Table",
+                    "project_id": 1,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 4,
+                    "title": "Kanban",
+                    "project_id": 1,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 1,
+                    "done_bucket_id": 3,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              },
+              {
+                "id": 2,
+                "title": "Home renovation",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 131072,
+                "views": [
+                  {
+                    "id": 9,
+                    "title": "List",
+                    "project_id": 2,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 10,
+                    "title": "Gantt",
+                    "project_id": 2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 11,
+                    "title": "Table",
+                    "project_id": 2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 12,
+                    "title": "Kanban",
+                    "project_id": 2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 7,
+                    "done_bucket_id": 9,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:36:13Z"
+              },
+              {
+                "id": -2,
+                "title": "My Open Tasks",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "0001-01-01T00:00:00Z",
+                  "updated": "0001-01-01T00:00:00Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 0,
+                "views": [
+                  {
+                    "id": 5,
+                    "title": "List",
+                    "project_id": -2,
+                    "view_kind": "list",
+                    "filter": null,
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 6,
+                    "title": "Gantt",
+                    "project_id": -2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 7,
+                    "title": "Table",
+                    "project_id": -2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 8,
+                    "title": "Kanban",
+                    "project_id": -2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 4,
+                    "done_bucket_id": 6,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/token-refresh.har#entries[4]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels",
+        "query": [
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Label",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedLabelWithTaskID.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "plumbing",
+                "description": "",
+                "hex_color": "ffbe0b",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "created": "2026-10-11T17:33:10Z",
+                "updated": "2026-10-11T17:33:10Z"
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/token-refresh.har#entries[5]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postUserTokenRefresh",
+        "method": "POST",
+        "path": "/user/token/refresh",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/token-refresh.har#entries[6]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications",
+        "query": [
+          [
+            "page",
+            "1"
+          ],
+          [
+            "per_page",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedDatabaseNotification.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 20,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/token-refresh.har#entries[7]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:13",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/token-refresh.events.jsonl:14"
+        }
+      ]
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:15"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.updated"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:16"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.deleted"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:17"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "notification.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:18"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:19"
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "sort_by",
+            "due_date"
+          ],
+          [
+            "sort_by",
+            "id"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "order_by",
+            "desc"
+          ],
+          [
+            "filter",
+            "done = false"
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/token-refresh.har#entries[8]"
+      },
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/token-refresh.events.jsonl:20"
+        }
+      ]
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "per_page",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "Buy paint",
+                "description": "",
+                "project_id": 2,
+                "done": true,
+                "done_at": "2026-10-11T17:32:53Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 3,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#1",
+                "index": 1,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:19Z",
+                "updated": "2026-10-11T17:32:53Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 1,
+            "total_pages": 2
+          }
+        },
+        "source": "capture/token-refresh.har#entries[9]"
+      }
+    },
+    {
+      "action": null,
+      "pauseMs": 15783,
+      "pauseReason": "token-lifetime",
+      "request": {
+        "operationId": "postUserTokenRefresh",
+        "method": "POST",
+        "path": "/user/token/refresh",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/token-refresh.har#entries[10]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "reconnect": true,
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:23",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/token-refresh.events.jsonl:24"
+        }
+      ]
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications",
+        "query": [
+          [
+            "page",
+            "1"
+          ],
+          [
+            "per_page",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedDatabaseNotification.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 20,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/token-refresh.har#entries[11]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:25"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.updated"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:26"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.deleted"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:27"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "notification.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:28"
+    },
+    {
+      "action": null,
+      "pauseMs": 15365,
+      "pauseReason": "token-lifetime",
+      "request": {
+        "operationId": "postUserTokenRefresh",
+        "method": "POST",
+        "path": "/user/token/refresh",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/token-refresh.har#entries[12]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "reconnect": true,
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:31",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/token-refresh.events.jsonl:32"
+        }
+      ]
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications",
+        "query": [
+          [
+            "page",
+            "1"
+          ],
+          [
+            "per_page",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedDatabaseNotification.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 20,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/token-refresh.har#entries[13]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:33"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.updated"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:34"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.deleted"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:35"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "notification.created"
+        }
+      },
+      "source": "capture/token-refresh.events.jsonl:36"
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "aside > nav:nth-of-type(1) > menu > li:nth-of-type(2) > a",
+          "role": "link",
+          "name": "Upcoming",
+          "href": "/tasks/by/upcoming"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "sort_by",
+            "due_date"
+          ],
+          [
+            "sort_by",
+            "id"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "order_by",
+            "desc"
+          ],
+          [
+            "filter",
+            {
+              "$template": "done = false && due_date < '{{now:604800:iso}}' && due_date > '{{now:0:iso}}'"
+            }
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/token-refresh.har#entries[14]"
+      }
+    }
+  ]
+}

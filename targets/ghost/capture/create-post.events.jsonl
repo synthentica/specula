@@ -1,0 +1,8 @@
+{"t":1791740312840,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740314014,"type":"navigation","url":"http://localhost:2368/ghost/#/editor/post/","sameDocument":true}
+{"t":1791740319948,"type":"action","id":"a1","kind":"click","target":{"tag":"textarea","selector":"#ember46","role":"textbox","name":"Post title","id":"ember46","type":"textarea"},"url":"http://localhost:2368/ghost/#/editor/post/"}
+{"t":1791740322693,"type":"action","id":"a2","kind":"input","target":{"tag":"textarea","selector":"#ember46","role":"textbox","name":"Post title","id":"ember46","type":"textarea"},"url":"http://localhost:2368/ghost/#/editor/post/","valueInfo":{"type":"textarea","length":25}}
+{"t":1791740324142,"type":"action","id":"a3","kind":"key","target":{"tag":"textarea","selector":"#ember46","role":"textbox","name":"Post title","id":"ember46","type":"textarea"},"url":"http://localhost:2368/ghost/#/editor/post/","key":"Enter"}
+{"t":1791740324961,"type":"navigation","url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc","sameDocument":true}
+{"t":1791740327135,"type":"action","id":"a4","kind":"input","target":{"tag":"div","selector":"div > div:nth-of-type(1) > div > div:nth-of-type(1) > div","role":"textbox","name":"We left early and reached the ridge before noon. The view wa…"},"url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc","valueInfo":{"type":"contenteditable","length":79}}
+{"t":1791740334178,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

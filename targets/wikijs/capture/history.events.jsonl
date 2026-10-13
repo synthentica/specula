@@ -1,0 +1,3 @@
+{"t":1791791865659,"type":"capture-start","url":"http://localhost:3000/home"}
+{"t":1791791866630,"type":"navigation","url":"http://localhost:3000/h/en/home","sameDocument":false}
+{"t":1791791871319,"type":"capture-stop","url":"http://localhost:3000/home"}

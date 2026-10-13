@@ -1,0 +1,15 @@
+{
+  "authorization": [],
+  "cookiesSent": [
+    "jwt"
+  ],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 1,
+      "path": "$[0].data.authentication.login.jwt",
+      "kind": "jwt"
+    }
+  ]
+}

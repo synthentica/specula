@@ -1,0 +1,139 @@
+{
+  "name": "login",
+  "order": 2,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "#input-22",
+          "role": "textbox",
+          "name": "Password",
+          "id": "input-22",
+          "type": "password"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation authentication.login"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "username": "<redacted:email>",
+              "password": "<redacted:secret:other>",
+              "strategy": "local"
+            },
+            "extensions": {},
+            "query": "mutation ($username: String!, $password: String!, $strategy: String!) {\n  authentication {\n    login(username: $username, password: $password, strategy: $strategy) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      jwt\n      mustChangePwd\n      mustProvideTFA\n      mustSetupTFA\n      continuationToken\n      redirect\n      tfaQRImage\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "authentication": {
+                  "login": {
+                    "responseResult": {
+                      "succeeded": false,
+                      "errorCode": 1002,
+                      "slug": "AuthLoginFailed",
+                      "message": "Invalid email / username or password.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "jwt": null,
+                    "mustChangePwd": null,
+                    "mustProvideTFA": null,
+                    "mustSetupTFA": null,
+                    "continuationToken": null,
+                    "redirect": null,
+                    "tfaQRImage": null,
+                    "__typename": "AuthenticationLoginResponse"
+                  },
+                  "__typename": "AuthenticationMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/login.har#entries[0]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "#input-22",
+          "role": "textbox",
+          "name": "Password",
+          "id": "input-22",
+          "type": "password"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation authentication.login"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "username": "<redacted:email>",
+              "password": "<redacted:secret>",
+              "strategy": "local"
+            },
+            "extensions": {},
+            "query": "mutation ($username: String!, $password: String!, $strategy: String!) {\n  authentication {\n    login(username: $username, password: $password, strategy: $strategy) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      jwt\n      mustChangePwd\n      mustProvideTFA\n      mustSetupTFA\n      continuationToken\n      redirect\n      tfaQRImage\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "authentication": {
+                  "login": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Login success",
+                      "__typename": "ResponseStatus"
+                    },
+                    "jwt": "<redacted:jwt>",
+                    "mustChangePwd": null,
+                    "mustProvideTFA": null,
+                    "mustSetupTFA": null,
+                    "continuationToken": null,
+                    "redirect": "/",
+                    "tfaQRImage": null,
+                    "__typename": "AuthenticationLoginResponse"
+                  },
+                  "__typename": "AuthenticationMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/login.har#entries[1]"
+      }
+    }
+  ]
+}

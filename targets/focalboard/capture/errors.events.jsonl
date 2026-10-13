@@ -1,0 +1,27 @@
+{"t":1791794905615,"type":"capture-start","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794906471,"type":"navigation","url":"http://localhost:8000/bnosuchboardexists0000000000/vnosuchview000000000000000000","sameDocument":false}
+{"t":1791794906755,"type":"ws-open","requestId":"15882.476","url":"ws://localhost:8000/ws"}
+{"t":1791794906768,"type":"ws-frame","requestId":"15882.476","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794906768,"type":"ws-frame","requestId":"15882.476","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794906982,"type":"navigation","url":"http://localhost:8000/error?id=board-not-found","sameDocument":true}
+{"t":1791794906993,"type":"ws-frame","requestId":"15882.476","direction":"sent","opcode":1,"payload":"{\"action\":\"UNSUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794909103,"type":"navigation","url":"http://localhost:8000/register","sameDocument":false}
+{"t":1791794909379,"type":"ws-open","requestId":"15882.514","url":"ws://localhost:8000/ws"}
+{"t":1791794910156,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#main > div > form > button","role":"button","name":"Register","type":"submit"},"url":"http://localhost:8000/register"}
+{"t":1791794910158,"type":"action","id":"a2","kind":"submit","target":{"tag":"form","selector":"#main > div > form","role":"form","name":"Sign up for your account Register"},"url":"http://localhost:8000/register"}
+{"t":1791794910449,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#login-email","role":"textbox","name":"Enter email","id":"login-email","type":"text"},"url":"http://localhost:8000/register","valueInfo":{"type":"text","length":18}}
+{"t":1791794910474,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#login-username","role":"textbox","name":"Enter username","id":"login-username","type":"text"},"url":"http://localhost:8000/register","valueInfo":{"type":"text","length":5}}
+{"t":1791794910497,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"#login-password","role":"textbox","name":"Enter password","id":"login-password","type":"password"},"url":"http://localhost:8000/register","valueInfo":{"type":"password","length":16}}
+{"t":1791794911422,"type":"navigation","url":"http://localhost:8000/login","sameDocument":false}
+{"t":1791794911682,"type":"ws-open","requestId":"15882.532","url":"ws://localhost:8000/ws"}
+{"t":1791794912406,"type":"action","id":"a6","kind":"click","target":{"tag":"button","selector":"#main > div > form > button","role":"button","name":"Log in","type":"submit"},"url":"http://localhost:8000/login"}
+{"t":1791794912408,"type":"action","id":"a7","kind":"submit","target":{"tag":"form","selector":"#main > div > form","role":"form","name":"Log in Log in"},"url":"http://localhost:8000/login"}
+{"t":1791794912542,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794912544,"type":"ws-frame","requestId":"15882.532","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794912562,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794912568,"type":"ws-frame","requestId":"15882.532","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794912734,"type":"action","id":"a8","kind":"input","target":{"tag":"input","selector":"#login-username","role":"textbox","name":"Enter username","id":"login-username","type":"text"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","valueInfo":{"type":"text","length":5}}
+{"t":1791794912738,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","sameDocument":true}
+{"t":1791794912788,"type":"action","id":"a9","kind":"input","target":{"tag":"input","selector":"#login-password","role":"textbox","name":"Enter password","id":"login-password","type":"password"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","valueInfo":{"type":"password","length":15}}
+{"t":1791794912834,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","sameDocument":true}
+{"t":1791794915626,"type":"capture-stop","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}

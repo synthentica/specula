@@ -1,0 +1,25 @@
+{
+  "label": "before",
+  "baseUrl": "http://localhost:4714",
+  "generated": "2026-10-12T17:45:32.117Z",
+  "score": 50,
+  "views": [
+    {
+      "view": "board",
+      "score": 50,
+      "layout": 41,
+      "components": 39,
+      "style": 75,
+      "notes": [
+        "topbar: missing (spec 240×0×1040×137 at x,y,w,h)",
+        "badge: none, spec has 1",
+        "card: background #fbfaf6, spec none",
+        "input: 1 on the view, spec 6",
+        "sidebar: background #fbfaf6, spec #1e325c",
+        "link: none, spec has 2",
+        "font system-ui, spec Open Sans",
+        "card: typical size 260×138, spec 260×52"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{"t":1791791892514,"type":"capture-start","url":"http://localhost:3000/a/users/3"}
+{"t":1791791893464,"type":"navigation","url":"http://localhost:3000/a/pages","sameDocument":false}
+{"t":1791791895982,"type":"action","id":"a1","kind":"click","target":{"tag":"td","selector":"div > table > tbody > tr:nth-of-type(2) > td:nth-of-type(3)","name":"en / notes/ideas"},"url":"http://localhost:3000/a/pages"}
+{"t":1791791895997,"type":"navigation","url":"http://localhost:3000/a/pages/3","sameDocument":true}
+{"t":1791791897368,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"div > div > div:nth-of-type(1) > div > button:nth-of-type(1)","role":"button","name":"ACTIONS","type":"button"},"url":"http://localhost:3000/a/pages/3"}
+{"t":1791791897979,"type":"action","id":"a3","kind":"click","target":{"tag":"div","selector":"#app > div:nth-of-type(2) > div > div:nth-of-type(2)","role":"menuitem","name":"Delete","id":"list-item-238"},"url":"http://localhost:3000/a/pages/3"}
+{"t":1791791898595,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"div > div > div:nth-of-type(3) > div > button:nth-of-type(2)","role":"button","name":"DELETE","type":"button"},"url":"http://localhost:3000/a/pages/3"}
+{"t":1791791899907,"type":"navigation","url":"http://localhost:3000/a/pages","sameDocument":true}
+{"t":1791791902651,"type":"capture-stop","url":"http://localhost:3000/a/users/3"}

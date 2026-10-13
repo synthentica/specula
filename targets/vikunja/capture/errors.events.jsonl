@@ -1,0 +1,57 @@
+{"t":1791740064840,"type":"capture-start","url":"http://localhost:3456/"}
+{"t":1791740065921,"type":"navigation","url":"http://localhost:3456/tasks/3","sameDocument":false}
+{"t":1791740066401,"type":"navigation","url":"http://localhost:3456/tasks/3","sameDocument":true}
+{"t":1791740066630,"type":"navigation","url":"http://localhost:3456/tasks/3","sameDocument":true}
+{"t":1791740066726,"type":"ws-open","requestId":"9783.968","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740066749,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740066757,"type":"ws-frame","requestId":"9783.968","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740066766,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740066767,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740066768,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740066768,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740066779,"type":"ws-frame","requestId":"9783.968","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740066807,"type":"ws-frame","requestId":"9783.968","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740067783,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740071529,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a","role":"link","name":"Home renovation","href":"/projects/2"},"url":"http://localhost:3456/"}
+{"t":1791740071676,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740071688,"type":"navigation","url":"http://localhost:3456/projects/2/0","sameDocument":true}
+{"t":1791740071715,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740076411,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"#main-content > div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)","role":"button","name":"FILTERS","type":"button"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740079708,"type":"action","id":"a3","kind":"click","target":{"tag":"div","selector":"div > div:nth-of-type(1) > div:nth-of-type(1) > div > div","role":"textbox","name":"Filter query"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740081576,"type":"action","id":"a4","kind":"input","target":{"tag":"div","selector":"div > div:nth-of-type(1) > div:nth-of-type(1) > div > div","role":"textbox","name":"Filter query"},"url":"http://localhost:3456/projects/2/9","valueInfo":{"type":"contenteditable","length":17}}
+{"t":1791740085193,"type":"action","id":"a5","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)","role":"button","name":"SHOW RESULTS","type":"button"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740085220,"type":"navigation","url":"http://localhost:3456/projects/2/9?filter=priority+%3E+urgent","sameDocument":true}
+{"t":1791740089313,"type":"action","id":"a6","kind":"key","target":{"tag":"button","selector":"#main-content > div > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)","role":"button","name":"FILTERS","type":"button"},"url":"http://localhost:3456/projects/2/9?filter=priority+%3E+urgent","key":"Escape"}
+{"t":1791740092179,"type":"action","id":"a7","kind":"click","target":{"tag":"button","selector":"#app > header > div:nth-of-type(2) > div:nth-of-type(2) > button","role":"button","name":"<redacted:pii>","type":"button"},"url":"http://localhost:3456/projects/2/9?filter=priority+%3E+urgent"}
+{"t":1791740095270,"type":"action","id":"a8","kind":"click","target":{"tag":"button","selector":"div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(2)","role":"button","name":"Logout","type":"button"},"url":"http://localhost:3456/projects/2/9?filter=priority+%3E+urgent"}
+{"t":1791740095281,"type":"ws-close","requestId":"9783.968"}
+{"t":1791740095313,"type":"navigation","url":"http://localhost:3456/projects/2/9?filter=priority+%3E+urgent","sameDocument":true}
+{"t":1791740095316,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740100234,"type":"action","id":"a9","kind":"input","target":{"tag":"input","selector":"#username","role":"textbox","name":"Username Or Email Address","id":"username","type":"text"},"url":"http://localhost:3456/login","valueInfo":{"type":"text","length":9}}
+{"t":1791740103619,"type":"action","id":"a10","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:3456/login","valueInfo":{"type":"password","length":15}}
+{"t":1791740106038,"type":"action","id":"a11","kind":"click","target":{"tag":"button","selector":"#loginform > button","role":"button","name":"LOGIN","type":"button"},"url":"http://localhost:3456/login"}
+{"t":1791740109738,"type":"navigation","url":"http://localhost:3456/register","sameDocument":false}
+{"t":1791740110161,"type":"navigation","url":"http://localhost:3456/register","sameDocument":true}
+{"t":1791740110162,"type":"navigation","url":"http://localhost:3456/register","sameDocument":true}
+{"t":1791740114743,"type":"action","id":"a12","kind":"input","target":{"tag":"input","selector":"#username","role":"textbox","name":"Username","id":"username","type":"text"},"url":"http://localhost:3456/register","valueInfo":{"type":"text","length":9}}
+{"t":1791740117572,"type":"action","id":"a13","kind":"input","target":{"tag":"input","selector":"#email","role":"textbox","name":"Email address","id":"email","type":"email"},"url":"http://localhost:3456/register","valueInfo":{"type":"email","length":24}}
+{"t":1791740120282,"type":"action","id":"a14","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:3456/register","valueInfo":{"type":"password","length":16}}
+{"t":1791740123040,"type":"action","id":"a15","kind":"click","target":{"tag":"button","selector":"#register-submit","role":"button","name":"CREATE ACCOUNT","id":"register-submit","type":"button"},"url":"http://localhost:3456/register"}
+{"t":1791740126611,"type":"navigation","url":"http://localhost:3456/login","sameDocument":false}
+{"t":1791740126966,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740126966,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740130848,"type":"action","id":"a16","kind":"input","target":{"tag":"input","selector":"#username","role":"textbox","name":"Username Or Email Address","id":"username","type":"text"},"url":"http://localhost:3456/login","valueInfo":{"type":"text","length":9}}
+{"t":1791740133952,"type":"action","id":"a17","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:3456/login","valueInfo":{"type":"password","length":16}}
+{"t":1791740136162,"type":"action","id":"a18","kind":"click","target":{"tag":"button","selector":"#loginform > button","role":"button","name":"LOGIN","type":"button"},"url":"http://localhost:3456/login"}
+{"t":1791740136408,"type":"navigation","url":"http://localhost:3456/login","sameDocument":true}
+{"t":1791740136417,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740136518,"type":"ws-open","requestId":"9783.1375","url":"ws://localhost:3456/api/v2/ws"}
+{"t":1791740136520,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740136529,"type":"ws-frame","requestId":"9783.1375","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740136531,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.created\"}"}
+{"t":1791740136532,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.updated\"}"}
+{"t":1791740136532,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"timer.deleted\"}"}
+{"t":1791740136533,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"subscribe\",\"event\":\"notification.created\"}"}
+{"t":1791740136619,"type":"ws-frame","requestId":"9783.1375","direction":"sent","opcode":1,"payload":"{\"action\":\"auth\",\"token\":\"<redacted:jwt>\"}"}
+{"t":1791740136629,"type":"ws-frame","requestId":"9783.1375","direction":"received","opcode":1,"payload":"{\"action\":\"auth.success\",\"success\":true}"}
+{"t":1791740141681,"type":"capture-stop","url":"http://localhost:3456/"}

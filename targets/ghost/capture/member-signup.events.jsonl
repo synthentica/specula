@@ -1,0 +1,9 @@
+{"t":1791783249039,"type":"capture-start","url":"http://localhost:2368/"}
+{"t":1791783251259,"type":"navigation","url":"http://localhost:2368/","sameDocument":false}
+{"t":1791783253636,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"#gh-navigation > div > div:nth-of-type(2) > div > a:nth-of-type(2)","role":"link","name":"Subscribe","href":"#/portal/signup"},"url":"http://localhost:2368/"}
+{"t":1791783254663,"type":"action","id":"a2","kind":"click","target":{"tag":"input","selector":"#input-name","role":"textbox","name":"Name","id":"input-name","type":"text"},"url":"about:srcdoc"}
+{"t":1791783255281,"type":"action","id":"a3","kind":"click","target":{"tag":"input","selector":"#input-email","role":"textbox","name":"Email","id":"input-email","type":"email"},"url":"about:srcdoc"}
+{"t":1791783255569,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#input-name","role":"textbox","name":"Name","id":"input-name","type":"text"},"url":"about:srcdoc","valueInfo":{"type":"text","length":13}}
+{"t":1791783256442,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"#input-email","role":"textbox","name":"Email","id":"input-email","type":"email"},"url":"about:srcdoc","valueInfo":{"type":"email","length":18}}
+{"t":1791783256647,"type":"action","id":"a6","kind":"click","target":{"tag":"button","selector":"div > div:nth-of-type(2) > div > div > button","role":"button","name":"Sign up","type":"submit"},"url":"about:srcdoc"}
+{"t":1791783258806,"type":"capture-stop","url":"http://localhost:2368/"}

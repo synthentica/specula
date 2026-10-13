@@ -1,0 +1,1189 @@
+{
+  "name": "logout-login",
+  "order": 9,
+  "description": "",
+  "steps": [
+    {
+      "action": null,
+      "request": {
+        "operationId": "deleteSession",
+        "method": "DELETE",
+        "path": "/session",
+        "auth": "cookie",
+        "expect": {
+          "status": 204
+        },
+        "source": "capture/logout-login.har#entries[0]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getUsersMe",
+        "method": "GET",
+        "path": "/users/me/",
+        "query": [
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 403,
+          "contentType": "application/json",
+          "body": {
+            "errors": [
+              {
+                "message": "Authorization failed",
+                "context": "Unable to determine the authenticated user or integration. Check that cookies are being passed through if using session authentication.",
+                "type": "NoPermissionError",
+                "details": null,
+                "property": null,
+                "help": null,
+                "code": null,
+                "id": "1181ad70-c59b-11f1-a140-7522b990bc7e",
+                "appErrorCode": null
+              }
+            ]
+          }
+        },
+        "source": "capture/logout-login.har#entries[11]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getUsersMe",
+        "method": "GET",
+        "path": "/users/me/",
+        "query": [
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 403,
+          "contentType": "application/json",
+          "body": {
+            "errors": [
+              {
+                "message": "Authorization failed",
+                "context": "Unable to determine the authenticated user or integration. Check that cookies are being passed through if using session authentication.",
+                "type": "NoPermissionError",
+                "details": null,
+                "property": null,
+                "help": null,
+                "code": null,
+                "id": "1184e1c0-c59b-11f1-a140-7522b990bc7e",
+                "appErrorCode": null
+              }
+            ]
+          }
+        },
+        "source": "capture/logout-login.har#entries[12]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getSite",
+        "method": "GET",
+        "path": "/site/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "site": {
+              "title": "Field notesTrail notes",
+              "description": "Short reports from long walks.",
+              "logo": null,
+              "icon": null,
+              "cover_image": "https://example.invalid/v5.0.0/images/publication-cover.jpg",
+              "accent_color": "#FF1A75",
+              "locale": "en",
+              "url": "http://localhost:2368/",
+              "version": "5.130",
+              "allow_external_signup": true,
+              "site_uuid": "37e3a088-e134-4d9b-88bd-0ebed2c413a2"
+            }
+          }
+        },
+        "source": "capture/logout-login.har#entries[13]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getAuthenticationSetup",
+        "method": "GET",
+        "path": "/authentication/setup/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "setup": [
+              {
+                "status": true
+              }
+            ]
+          }
+        },
+        "source": "capture/logout-login.har#entries[14]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "postSession",
+        "method": "POST",
+        "path": "/session",
+        "body": {
+          "username": "<redacted:email>",
+          "password": "<redacted:secret>"
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 201,
+          "contentType": "text/plain"
+        },
+        "source": "capture/logout-login.har#entries[40]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getUsersMe",
+        "method": "GET",
+        "path": "/users/me/",
+        "query": [
+          [
+            "include",
+            "roles"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Me",
+          "envelope": "users",
+          "body": {
+            "users": [
+              {
+                "id": "1",
+                "name": "<redacted:pii>",
+                "slug": "wp",
+                "email": "<redacted:email>",
+                "profile_image": null,
+                "cover_image": null,
+                "bio": null,
+                "website": null,
+                "location": null,
+                "facebook": null,
+                "twitter": null,
+                "threads": null,
+                "bluesky": null,
+                "mastodon": null,
+                "tiktok": null,
+                "youtube": null,
+                "instagram": null,
+                "linkedin": null,
+                "accessibility": "{\"onboarding\":{\"completedSteps\":[],\"checklistState\":\"started\"}}",
+                "status": "active",
+                "meta_title": null,
+                "meta_description": null,
+                "tour": null,
+                "last_seen": "2026-10-11T17:42:14.000Z",
+                "comment_notifications": true,
+                "free_member_signup_notification": true,
+                "paid_subscription_started_notification": true,
+                "paid_subscription_canceled_notification": false,
+                "mention_notifications": true,
+                "recommendation_notifications": true,
+                "milestone_notifications": true,
+                "donation_notifications": true,
+                "created_at": "2026-10-11T17:37:42.000Z",
+                "updated_at": "2026-10-11T17:42:14.000Z",
+                "roles": [
+                  {
+                    "id": "6acbc966b2f88b00015b2ef7",
+                    "name": "Owner",
+                    "description": "Blog Owner",
+                    "created_at": "2026-10-11T17:37:42.000Z",
+                    "updated_at": "2026-10-11T17:37:42.000Z"
+                  }
+                ],
+                "url": "http://localhost:2368/author/wp/"
+              }
+            ]
+          }
+        },
+        "source": "capture/logout-login.har#entries[41]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getConfig",
+        "method": "GET",
+        "path": "/config/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "config": {
+              "version": "5.130.6",
+              "environment": "development",
+              "database": "sqlite3",
+              "mail": "Stub",
+              "useGravatar": true,
+              "labs": {
+                "audienceFeedback": true,
+                "i18n": true,
+                "themeErrorsNotification": true,
+                "announcementBar": true,
+                "customFonts": true,
+                "contentVisibility": true,
+                "members": true
+              },
+              "clientExtensions": {},
+              "enableDeveloperExperiments": false,
+              "stripeDirect": false,
+              "mailgunIsConfigured": false,
+              "emailAnalytics": true,
+              "tenor": {
+                "googleApiKey": null,
+                "contentFilter": "off"
+              },
+              "signupForm": {
+                "url": "https://cdn.jsdelivr.net/app/signup-form@~{version}/umd/signup-form.min.js",
+                "version": "0.2"
+              },
+              "security": {
+                "staffDeviceVerification": true
+              }
+            }
+          }
+        },
+        "source": "capture/logout-login.har#entries[42]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getSettings",
+        "method": "GET",
+        "path": "/settings/",
+        "query": [
+          [
+            "group",
+            "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "settings": [
+              {
+                "key": "title",
+                "value": "Field notesTrail notes"
+              },
+              {
+                "key": "description",
+                "value": "Short reports from long walks."
+              },
+              {
+                "key": "heading_font",
+                "value": ""
+              },
+              {
+                "key": "body_font",
+                "value": ""
+              },
+              {
+                "key": "logo",
+                "value": ""
+              },
+              {
+                "key": "cover_image",
+                "value": "https://example.invalid/v5.0.0/images/publication-cover.jpg"
+              },
+              {
+                "key": "icon",
+                "value": ""
+              },
+              {
+                "key": "accent_color",
+                "value": "#FF1A75"
+              },
+              {
+                "key": "locale",
+                "value": "en"
+              },
+              {
+                "key": "timezone",
+                "value": "Etc/UTC"
+              },
+              {
+                "key": "codeinjection_head",
+                "value": ""
+              },
+              {
+                "key": "codeinjection_foot",
+                "value": ""
+              },
+              {
+                "key": "facebook",
+                "value": "app"
+              },
+              {
+                "key": "twitter",
+                "value": "@app"
+              },
+              {
+                "key": "navigation",
+                "value": "[{\"label\":\"Home\",\"url\":\"/\"},{\"label\":\"About\",\"url\":\"/about/\"}]"
+              },
+              {
+                "key": "secondary_navigation",
+                "value": "[{\"label\":\"Sign up\",\"url\":\"#/portal/\"}]"
+              },
+              {
+                "key": "meta_title",
+                "value": null
+              },
+              {
+                "key": "meta_description",
+                "value": null
+              },
+              {
+                "key": "og_image",
+                "value": null
+              },
+              {
+                "key": "og_title",
+                "value": null
+              },
+              {
+                "key": "og_description",
+                "value": null
+              },
+              {
+                "key": "twitter_image",
+                "value": null
+              },
+              {
+                "key": "twitter_title",
+                "value": null
+              },
+              {
+                "key": "twitter_description",
+                "value": null
+              },
+              {
+                "key": "active_theme",
+                "value": "source"
+              },
+              {
+                "key": "is_private",
+                "value": false
+              },
+              {
+                "key": "password",
+                "value": ""
+              },
+              {
+                "key": "public_hash",
+                "value": "7301b422ab22a4f77d8857955c909a"
+              },
+              {
+                "key": "default_content_visibility",
+                "value": "public"
+              },
+              {
+                "key": "default_content_visibility_tiers",
+                "value": "[]"
+              },
+              {
+                "key": "members_signup_access",
+                "value": "all"
+              },
+              {
+                "key": "members_support_address",
+                "value": "noreply"
+              },
+              {
+                "key": "stripe_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_plans",
+                "value": "[]"
+              },
+              {
+                "key": "stripe_connect_publishable_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_secret_key",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_livemode",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_display_name",
+                "value": null
+              },
+              {
+                "key": "stripe_connect_account_id",
+                "value": null
+              },
+              {
+                "key": "members_monthly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_yearly_price_id",
+                "value": null
+              },
+              {
+                "key": "members_track_sources",
+                "value": true
+              },
+              {
+                "key": "blocked_email_domains",
+                "value": "[]"
+              },
+              {
+                "key": "portal_name",
+                "value": true
+              },
+              {
+                "key": "portal_button",
+                "value": false
+              },
+              {
+                "key": "portal_plans",
+                "value": "[\"free\"]"
+              },
+              {
+                "key": "portal_default_plan",
+                "value": "yearly"
+              },
+              {
+                "key": "portal_products",
+                "value": "[]"
+              },
+              {
+                "key": "portal_button_style",
+                "value": "icon-and-text"
+              },
+              {
+                "key": "portal_button_icon",
+                "value": null
+              },
+              {
+                "key": "portal_button_signup_text",
+                "value": "Subscribe"
+              },
+              {
+                "key": "portal_signup_terms_html",
+                "value": null
+              },
+              {
+                "key": "portal_signup_checkbox_required",
+                "value": false
+              },
+              {
+                "key": "mailgun_domain",
+                "value": null
+              },
+              {
+                "key": "mailgun_api_key",
+                "value": null
+              },
+              {
+                "key": "mailgun_base_url",
+                "value": null
+              },
+              {
+                "key": "email_track_opens",
+                "value": true
+              },
+              {
+                "key": "email_track_clicks",
+                "value": true
+              },
+              {
+                "key": "email_verification_required",
+                "value": false
+              },
+              {
+                "key": "amp",
+                "value": false
+              },
+              {
+                "key": "amp_gtag_id",
+                "value": null
+              },
+              {
+                "key": "firstpromoter",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_id",
+                "value": null
+              },
+              {
+                "key": "labs",
+                "value": "{\"audienceFeedback\":true,\"i18n\":true,\"themeErrorsNotification\":true,\"announcementBar\":true,\"customFonts\":true,\"contentVisibility\":true,\"members\":true}"
+              },
+              {
+                "key": "slack_url",
+                "value": ""
+              },
+              {
+                "key": "slack_username",
+                "value": "App"
+              },
+              {
+                "key": "unsplash",
+                "value": true
+              },
+              {
+                "key": "shared_views",
+                "value": "[]"
+              },
+              {
+                "key": "editor_default_email_recipients",
+                "value": "visibility"
+              },
+              {
+                "key": "editor_default_email_recipients_filter",
+                "value": "all"
+              },
+              {
+                "key": "announcement_content",
+                "value": null
+              },
+              {
+                "key": "announcement_visibility",
+                "value": "[]"
+              },
+              {
+                "key": "announcement_background",
+                "value": "dark"
+              },
+              {
+                "key": "comments_enabled",
+                "value": "off"
+              },
+              {
+                "key": "outbound_link_tagging",
+                "value": true
+              },
+              {
+                "key": "web_analytics",
+                "value": true
+              },
+              {
+                "key": "pintura",
+                "value": true
+              },
+              {
+                "key": "pintura_js_url",
+                "value": null
+              },
+              {
+                "key": "pintura_css_url",
+                "value": null
+              },
+              {
+                "key": "donations_currency",
+                "value": "USD"
+              },
+              {
+                "key": "donations_suggested_amount",
+                "value": "500"
+              },
+              {
+                "key": "recommendations_enabled",
+                "value": false
+              },
+              {
+                "key": "require_email_mfa",
+                "value": false
+              },
+              {
+                "key": "social_web",
+                "value": true
+              },
+              {
+                "key": "explore_ping",
+                "value": true
+              },
+              {
+                "key": "explore_ping_growth",
+                "value": false
+              },
+              {
+                "key": "members_enabled",
+                "value": true
+              },
+              {
+                "key": "members_invite_only",
+                "value": false
+              },
+              {
+                "key": "allow_self_signup",
+                "value": true
+              },
+              {
+                "key": "paid_members_enabled",
+                "value": false
+              },
+              {
+                "key": "firstpromoter_account",
+                "value": null
+              },
+              {
+                "key": "donations_enabled",
+                "value": false
+              },
+              {
+                "key": "default_email_address",
+                "value": "<redacted:email>"
+              },
+              {
+                "key": "support_email_address",
+                "value": "noreply@localhost"
+              },
+              {
+                "key": "all_blocked_email_domains",
+                "value": []
+              },
+              {
+                "key": "social_web_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_enabled",
+                "value": false
+              },
+              {
+                "key": "web_analytics_configured",
+                "value": false
+              }
+            ],
+            "meta": {
+              "filters": {
+                "group": "site,theme,private,members,portal,newsletter,email,amp,labs,slack,unsplash,views,firstpromoter,editor,comments,analytics,announcement,pintura,donations,recommendations,security,social_web,explore"
+              }
+            }
+          }
+        },
+        "source": "capture/logout-login.har#entries[43]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "query": [
+          [
+            "filter",
+            "type:paid+active:true"
+          ],
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 1,
+                "total": 1,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/logout-login.har#entries[44]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getThemesActive",
+        "method": "GET",
+        "path": "/themes/active/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Theme",
+          "envelope": "themes",
+          "body": {
+            "themes": [
+              {
+                "name": "source",
+                "package": {
+                  "name": "source",
+                  "description": "A default theme for the App publishing platform",
+                  "demo": "https://example.invalid",
+                  "version": "1.5.0",
+                  "engines": {
+                    "app": ">=5.0.0"
+                  },
+                  "license": "MIT",
+                  "scripts": {
+                    "dev": "gulp",
+                    "zip": "gulp zip",
+                    "test": "gscan .",
+                    "test:ci": "gscan --fatal --verbose .",
+                    "pretest": "gulp build",
+                    "preship": "yarn test",
+                    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+                    "postship": "git fetch && gulp release"
+                  },
+                  "author": {
+                    "name": "App Foundation",
+                    "email": "<redacted:email>",
+                    "url": "https://example.invalid/"
+                  },
+                  "gpm": {
+                    "type": "theme",
+                    "categories": [
+                      "Minimal",
+                      "Magazine"
+                    ]
+                  },
+                  "keywords": [
+                    "app",
+                    "theme",
+                    "app-theme"
+                  ],
+                  "repository": {
+                    "type": "git",
+                    "url": "https://github.com/TryApp/Source.git"
+                  },
+                  "bugs": "https://github.com/TryApp/Source/issues",
+                  "contributors": "https://github.com/TryApp/Source/graphs/contributors",
+                  "devDependencies": {
+                    "@tryapp/release-utils": "0.8.1",
+                    "autoprefixer": "10.4.7",
+                    "beeper": "2.1.0",
+                    "cssnano": "5.1.12",
+                    "gscan": "4.48.0",
+                    "gulp": "4.0.2",
+                    "gulp-concat": "2.6.1",
+                    "gulp-livereload": "4.0.2",
+                    "gulp-postcss": "9.0.1",
+                    "gulp-uglify": "3.0.2",
+                    "gulp-zip": "5.1.0",
+                    "inquirer": "8.2.4",
+                    "postcss": "8.2.13",
+                    "postcss-easy-import": "4.0.0",
+                    "pump": "3.0.0"
+                  },
+                  "browserslist": [
+                    "defaults"
+                  ],
+                  "config": {
+                    "posts_per_page": 12,
+                    "image_sizes": {
+                      "xs": {
+                        "width": 160
+                      },
+                      "s": {
+                        "width": 320
+                      },
+                      "m": {
+                        "width": 600
+                      },
+                      "l": {
+                        "width": 960
+                      },
+                      "xl": {
+                        "width": 1200
+                      },
+                      "xxl": {
+                        "width": 2000
+                      }
+                    },
+                    "card_assets": true,
+                    "custom": {
+                      "navigation_layout": {
+                        "type": "select",
+                        "options": [
+                          "Logo in the middle",
+                          "Logo on the left",
+                          "Stacked"
+                        ],
+                        "default": "Logo in the middle"
+                      },
+                      "site_background_color": {
+                        "type": "color",
+                        "default": "#ffffff"
+                      },
+                      "header_and_footer_color": {
+                        "type": "select",
+                        "options": [
+                          "Background color",
+                          "Accent color"
+                        ],
+                        "default": "Background color"
+                      },
+                      "title_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif",
+                          "Consistent mono"
+                        ],
+                        "default": "Modern sans-serif"
+                      },
+                      "body_font": {
+                        "type": "select",
+                        "options": [
+                          "Modern sans-serif",
+                          "Elegant serif"
+                        ],
+                        "default": "Modern sans-serif"
+                      },
+                      "signup_heading": {
+                        "type": "text",
+                        "description": "Used in your footer across your theme, defaults to site title when empty"
+                      },
+                      "signup_subheading": {
+                        "type": "text",
+                        "description": "Defaults to site description when empty"
+                      },
+                      "header_style": {
+                        "type": "select",
+                        "options": [
+                          "Landing",
+                          "Highlight",
+                          "Magazine",
+                          "Search",
+                          "Off"
+                        ],
+                        "description": "Landing is recommended for all sites, Highlight & Magazine for those with more content",
+                        "default": "Landing",
+                        "group": "homepage"
+                      },
+                      "header_text": {
+                        "type": "text",
+                        "group": "homepage",
+                        "description": "Defaults to site description when empty",
+                        "visibility": "header_style:[Landing, Search]"
+                      },
+                      "background_image": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Use the publication cover set on the Brand tab as your background",
+                        "group": "homepage",
+                        "visibility": "header_style:[Landing, Search]"
+                      },
+                      "show_featured_posts": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "homepage",
+                        "visibility": "header_style:[Highlight, Magazine]"
+                      },
+                      "post_feed_style": {
+                        "type": "select",
+                        "options": [
+                          "List",
+                          "Grid"
+                        ],
+                        "default": "List",
+                        "group": "homepage"
+                      },
+                      "show_images_in_feed": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage",
+                        "visibility": "post_feed_style:List"
+                      },
+                      "show_author": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage"
+                      },
+                      "show_publish_date": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "homepage"
+                      },
+                      "show_publication_info_sidebar": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "homepage"
+                      },
+                      "show_post_metadata": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "post"
+                      },
+                      "enable_drop_caps_on_posts": {
+                        "type": "boolean",
+                        "default": false,
+                        "group": "post"
+                      },
+                      "show_related_articles": {
+                        "type": "boolean",
+                        "default": true,
+                        "group": "post"
+                      }
+                    }
+                  },
+                  "renovate": {
+                    "extends": [
+                      "@tryapp:theme"
+                    ]
+                  }
+                },
+                "active": true,
+                "templates": []
+              }
+            ]
+          }
+        },
+        "source": "capture/logout-login.har#entries[46]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "notifications": []
+          }
+        },
+        "source": "capture/logout-login.har#entries[48]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember5",
+          "role": "button",
+          "name": "Sign in →",
+          "id": "ember5",
+          "type": "submit"
+        }
+      },
+      "request": {
+        "operationId": "getMembers",
+        "method": "GET",
+        "path": "/members/",
+        "query": [
+          [
+            "order",
+            "id"
+          ],
+          [
+            "limit",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "include",
+            "newsletters,labels"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 1,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/logout-login.har#entries[52]"
+      }
+    }
+  ]
+}

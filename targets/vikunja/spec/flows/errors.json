@@ -1,0 +1,2207 @@
+{
+  "name": "errors",
+  "order": 10,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getInfo",
+        "method": "GET",
+        "path": "/info",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Info",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppInfos.json",
+            "version": "v2.7.0",
+            "frontend_url": "http://localhost:3456/",
+            "motd": "",
+            "link_sharing_enabled": true,
+            "max_file_size": "20MB",
+            "max_items_per_page": 50,
+            "available_migrators": [
+              "app-file",
+              "ticktick",
+              "wekan",
+              "csv",
+              "planka"
+            ],
+            "task_attachments_enabled": true,
+            "enabled_background_providers": [
+              "upload"
+            ],
+            "totp_enabled": true,
+            "legal": {
+              "imprint_url": "",
+              "privacy_policy_url": ""
+            },
+            "caldav_enabled": true,
+            "auth": {
+              "local": {
+                "enabled": true,
+                "registration_enabled": true
+              },
+              "ldap": {
+                "enabled": false
+              },
+              "openid_connect": {
+                "enabled": false,
+                "providers": null
+              }
+            },
+            "email_reminders_enabled": true,
+            "user_deletion_enabled": true,
+            "task_comments_enabled": true,
+            "demo_mode_enabled": false,
+            "webhooks_enabled": true,
+            "public_teams_enabled": false,
+            "allow_icon_changes": false,
+            "enabled_pro_features": [],
+            "concurrent_writes": false
+          }
+        },
+        "source": "capture/errors.har#entries[55]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getUser",
+        "method": "GET",
+        "path": "/user",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/User",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/UserInfoBody.json",
+            "id": 1,
+            "name": "",
+            "username": "<redacted:pii>",
+            "created": "2026-10-11T17:31:53Z",
+            "updated": "2026-10-11T17:31:53Z",
+            "settings": {
+              "name": "",
+              "email_reminders_enabled": false,
+              "discoverable_by_name": false,
+              "discoverable_by_email": false,
+              "overdue_tasks_reminders_enabled": true,
+              "overdue_tasks_reminders_time": "9:00",
+              "default_project_id": 1,
+              "week_start": 0,
+              "language": "en",
+              "timezone": "GMT",
+              "frontend_settings": null,
+              "extra_settings_links": null
+            },
+            "deletion_scheduled_at": "0001-01-01T00:00:00Z",
+            "is_local_user": true,
+            "auth_provider": "local",
+            "is_admin": false
+          }
+        },
+        "source": "capture/errors.har#entries[56]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getAvatarById",
+        "method": "GET",
+        "path": "/avatar/{avatarId}",
+        "pathParams": {
+          "avatarId": {
+            "value": "<redacted:pii>"
+          }
+        },
+        "query": [
+          [
+            "size",
+            "40"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "image/svg+xml"
+        },
+        "source": "capture/errors.har#entries[89]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getProjects",
+        "method": "GET",
+        "path": "/projects",
+        "query": [
+          [
+            "is_archived",
+            "true"
+          ],
+          [
+            "expand",
+            "permissions"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedProject.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "Inbox",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 65536,
+                "views": [
+                  {
+                    "id": 1,
+                    "title": "List",
+                    "project_id": 1,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 2,
+                    "title": "Gantt",
+                    "project_id": 1,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 3,
+                    "title": "Table",
+                    "project_id": 1,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 4,
+                    "title": "Kanban",
+                    "project_id": 1,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 1,
+                    "done_bucket_id": 3,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              },
+              {
+                "id": 2,
+                "title": "Home renovation",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 131072,
+                "views": [
+                  {
+                    "id": 9,
+                    "title": "List",
+                    "project_id": 2,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 10,
+                    "title": "Gantt",
+                    "project_id": 2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 11,
+                    "title": "Table",
+                    "project_id": 2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 12,
+                    "title": "Kanban",
+                    "project_id": 2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 7,
+                    "done_bucket_id": 9,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:33:46Z"
+              },
+              {
+                "id": -2,
+                "title": "My Open Tasks",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "0001-01-01T00:00:00Z",
+                  "updated": "0001-01-01T00:00:00Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 0,
+                "views": [
+                  {
+                    "id": 5,
+                    "title": "List",
+                    "project_id": -2,
+                    "view_kind": "list",
+                    "filter": null,
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 6,
+                    "title": "Gantt",
+                    "project_id": -2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 7,
+                    "title": "Table",
+                    "project_id": -2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 8,
+                    "title": "Kanban",
+                    "project_id": -2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 4,
+                    "done_bucket_id": 6,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[90]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels",
+        "query": [
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Label",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedLabelWithTaskID.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "plumbing",
+                "description": "",
+                "hex_color": "ffbe0b",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "created": "2026-10-11T17:33:10Z",
+                "updated": "2026-10-11T17:33:10Z"
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[91]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getTasksById",
+        "method": "GET",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task400"
+          }
+        },
+        "query": [
+          [
+            "expand",
+            "reactions"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "expand",
+            "buckets"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 404,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Not Found",
+            "status": 404,
+            "detail": "This task does not exist",
+            "code": 4002
+          }
+        },
+        "source": "capture/errors.har#entries[92]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postUserTokenRefresh",
+        "method": "POST",
+        "path": "/user/token/refresh",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/errors.har#entries[93]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/errors.events.jsonl:6",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/errors.events.jsonl:7"
+        }
+      ]
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications",
+        "query": [
+          [
+            "page",
+            "1"
+          ],
+          [
+            "per_page",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedDatabaseNotification.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 20,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/errors.har#entries[94]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.created"
+        }
+      },
+      "source": "capture/errors.events.jsonl:8"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.updated"
+        }
+      },
+      "source": "capture/errors.events.jsonl:9"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.deleted"
+        }
+      },
+      "source": "capture/errors.events.jsonl:10"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "notification.created"
+        }
+      },
+      "source": "capture/errors.events.jsonl:11"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/errors.events.jsonl:12",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/errors.events.jsonl:13"
+        }
+      ]
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTasksById",
+        "method": "GET",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task400"
+          }
+        },
+        "query": [
+          [
+            "expand",
+            "reactions"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "expand",
+            "buckets"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 404,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Not Found",
+            "status": 404,
+            "detail": "This task does not exist",
+            "code": 4002
+          }
+        },
+        "source": "capture/errors.har#entries[95]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a",
+          "role": "link",
+          "name": "Home renovation",
+          "href": "/projects/2"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsById",
+        "method": "GET",
+        "path": "/projects/{projectId}",
+        "pathParams": {
+          "projectId": {
+            "var": "project401"
+          }
+        },
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/ProjectReadBody.json",
+            "id": 2,
+            "title": "Home renovation",
+            "description": "",
+            "identifier": "",
+            "hex_color": "",
+            "parent_project_id": 0,
+            "owner": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "is_archived": false,
+            "background_information": null,
+            "background_blur_hash": "",
+            "is_favorite": false,
+            "position": 131072,
+            "views": [
+              {
+                "id": 9,
+                "title": "List",
+                "project_id": 2,
+                "view_kind": "list",
+                "filter": {
+                  "s": "",
+                  "sort_by": null,
+                  "order_by": null,
+                  "filter": "done = false",
+                  "filter_include_nulls": false
+                },
+                "position": 100,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 10,
+                "title": "Gantt",
+                "project_id": 2,
+                "view_kind": "gantt",
+                "filter": null,
+                "position": 200,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 11,
+                "title": "Table",
+                "project_id": 2,
+                "view_kind": "table",
+                "filter": null,
+                "position": 300,
+                "bucket_configuration_mode": "none",
+                "bucket_configuration": null,
+                "default_bucket_id": 0,
+                "done_bucket_id": 0,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              },
+              {
+                "id": 12,
+                "title": "Kanban",
+                "project_id": 2,
+                "view_kind": "kanban",
+                "filter": null,
+                "position": 400,
+                "bucket_configuration_mode": "manual",
+                "bucket_configuration": null,
+                "default_bucket_id": 7,
+                "done_bucket_id": 9,
+                "updated": "2026-10-11T17:32:10Z",
+                "created": "2026-10-11T17:32:10Z"
+              }
+            ],
+            "max_permission": 2,
+            "created": "2026-10-11T17:32:10Z",
+            "updated": "2026-10-11T17:33:46Z"
+          }
+        },
+        "source": "capture/errors.har#entries[111]",
+        "bind": {
+          "project675": "$.id",
+          "view679": "$.views[?view_kind=\"list\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a",
+          "role": "link",
+          "name": "Home renovation",
+          "href": "/projects/2"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project675"
+          },
+          "viewId": {
+            "var": "view679"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": [
+                  {
+                    "id": 1,
+                    "title": "plumbing",
+                    "description": "",
+                    "hex_color": "ffbe0b",
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    },
+                    "created": "2026-10-11T17:33:10Z",
+                    "updated": "2026-10-11T17:33:10Z"
+                  }
+                ],
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:33:10Z",
+                "bucket_id": 0,
+                "comment_count": 0,
+                "position": 32768,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[112]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)",
+          "role": "button",
+          "name": "SHOW RESULTS",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project675"
+          },
+          "viewId": {
+            "var": "view679"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            "priority > urgent"
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 400,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Bad Request",
+            "status": 400,
+            "detail": "The task filter value 'urgent' for field 'priority' is invalid.",
+            "code": 4019
+          }
+        },
+        "source": "capture/errors.har#entries[113]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div > div > footer > button:nth-of-type(2)",
+          "role": "button",
+          "name": "SHOW RESULTS",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project675"
+          },
+          "viewId": {
+            "var": "view679"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            "priority > urgent"
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 400,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Bad Request",
+            "status": 400,
+            "detail": "The task filter value 'urgent' for field 'priority' is invalid.",
+            "code": 4019
+          }
+        },
+        "source": "capture/errors.har#entries[114]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div > div > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Logout",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postLogout",
+        "method": "POST",
+        "path": "/logout",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/LogoutBodyBody.json",
+            "message": "Successfully logged out."
+          }
+        },
+        "source": "capture/errors.har#entries[116]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postLogin",
+        "method": "POST",
+        "path": "/login",
+        "body": {
+          "username": "<redacted:pii>",
+          "password": "<redacted:secret:other>",
+          "long_token": false
+        },
+        "contentType": "application/json",
+        "auth": "none",
+        "expect": {
+          "status": 403,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Forbidden",
+            "status": 403,
+            "detail": "Wrong username or password.",
+            "code": 1011
+          }
+        },
+        "source": "capture/errors.har#entries[119]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getInfo",
+        "method": "GET",
+        "path": "/info",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Info",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppInfos.json",
+            "version": "v2.7.0",
+            "frontend_url": "http://localhost:3456/",
+            "motd": "",
+            "link_sharing_enabled": true,
+            "max_file_size": "20MB",
+            "max_items_per_page": 50,
+            "available_migrators": [
+              "app-file",
+              "ticktick",
+              "wekan",
+              "csv",
+              "planka"
+            ],
+            "task_attachments_enabled": true,
+            "enabled_background_providers": [
+              "upload"
+            ],
+            "totp_enabled": true,
+            "legal": {
+              "imprint_url": "",
+              "privacy_policy_url": ""
+            },
+            "caldav_enabled": true,
+            "auth": {
+              "local": {
+                "enabled": true,
+                "registration_enabled": true
+              },
+              "ldap": {
+                "enabled": false
+              },
+              "openid_connect": {
+                "enabled": false,
+                "providers": null
+              }
+            },
+            "email_reminders_enabled": true,
+            "user_deletion_enabled": true,
+            "task_comments_enabled": true,
+            "demo_mode_enabled": false,
+            "webhooks_enabled": true,
+            "public_teams_enabled": false,
+            "allow_icon_changes": false,
+            "enabled_pro_features": [],
+            "concurrent_writes": false
+          }
+        },
+        "source": "capture/errors.har#entries[175]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#register-submit",
+          "role": "button",
+          "name": "CREATE ACCOUNT",
+          "id": "register-submit",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postRegister",
+        "method": "POST",
+        "path": "/register",
+        "body": {
+          "username": "<redacted:pii>",
+          "email": "<redacted:email>",
+          "password": "<redacted:secret>",
+          "language": "en"
+        },
+        "contentType": "application/json",
+        "auth": "none",
+        "expect": {
+          "status": 400,
+          "contentType": "application/problem+json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppErrorModel.json",
+            "title": "Bad Request",
+            "status": 400,
+            "detail": "A user with this username already exists.",
+            "code": 1001
+          }
+        },
+        "source": "capture/errors.har#entries[182]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "getInfo",
+        "method": "GET",
+        "path": "/info",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Info",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AppInfos.json",
+            "version": "v2.7.0",
+            "frontend_url": "http://localhost:3456/",
+            "motd": "",
+            "link_sharing_enabled": true,
+            "max_file_size": "20MB",
+            "max_items_per_page": 50,
+            "available_migrators": [
+              "app-file",
+              "ticktick",
+              "wekan",
+              "csv",
+              "planka"
+            ],
+            "task_attachments_enabled": true,
+            "enabled_background_providers": [
+              "upload"
+            ],
+            "totp_enabled": true,
+            "legal": {
+              "imprint_url": "",
+              "privacy_policy_url": ""
+            },
+            "caldav_enabled": true,
+            "auth": {
+              "local": {
+                "enabled": true,
+                "registration_enabled": true
+              },
+              "ldap": {
+                "enabled": false
+              },
+              "openid_connect": {
+                "enabled": false,
+                "providers": null
+              }
+            },
+            "email_reminders_enabled": true,
+            "user_deletion_enabled": true,
+            "task_comments_enabled": true,
+            "demo_mode_enabled": false,
+            "webhooks_enabled": true,
+            "public_teams_enabled": false,
+            "allow_icon_changes": false,
+            "enabled_pro_features": [],
+            "concurrent_writes": false
+          }
+        },
+        "source": "capture/errors.har#entries[238]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postLogin",
+        "method": "POST",
+        "path": "/login",
+        "body": {
+          "username": "<redacted:pii>",
+          "password": "<redacted:secret>",
+          "long_token": false
+        },
+        "contentType": "application/json",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/errors.har#entries[245]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getUser",
+        "method": "GET",
+        "path": "/user",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/User",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/UserInfoBody.json",
+            "id": 1,
+            "name": "",
+            "username": "<redacted:pii>",
+            "created": "2026-10-11T17:31:53Z",
+            "updated": "2026-10-11T17:31:53Z",
+            "settings": {
+              "name": "",
+              "email_reminders_enabled": false,
+              "discoverable_by_name": false,
+              "discoverable_by_email": false,
+              "overdue_tasks_reminders_enabled": true,
+              "overdue_tasks_reminders_time": "9:00",
+              "default_project_id": 1,
+              "week_start": 0,
+              "language": "en",
+              "timezone": "GMT",
+              "frontend_settings": null,
+              "extra_settings_links": null
+            },
+            "deletion_scheduled_at": "0001-01-01T00:00:00Z",
+            "is_local_user": true,
+            "auth_provider": "local",
+            "is_admin": false
+          }
+        },
+        "source": "capture/errors.har#entries[246]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getAvatarById",
+        "method": "GET",
+        "path": "/avatar/{avatarId}",
+        "pathParams": {
+          "avatarId": {
+            "value": "<redacted:pii>"
+          }
+        },
+        "query": [
+          [
+            "size",
+            "40"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "image/svg+xml"
+        },
+        "source": "capture/errors.har#entries[255]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjects",
+        "method": "GET",
+        "path": "/projects",
+        "query": [
+          [
+            "is_archived",
+            "true"
+          ],
+          [
+            "expand",
+            "permissions"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Project",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedProject.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "Inbox",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 65536,
+                "views": [
+                  {
+                    "id": 1,
+                    "title": "List",
+                    "project_id": 1,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 2,
+                    "title": "Gantt",
+                    "project_id": 1,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 3,
+                    "title": "Table",
+                    "project_id": 1,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 4,
+                    "title": "Kanban",
+                    "project_id": 1,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 1,
+                    "done_bucket_id": 3,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              },
+              {
+                "id": 2,
+                "title": "Home renovation",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 131072,
+                "views": [
+                  {
+                    "id": 9,
+                    "title": "List",
+                    "project_id": 2,
+                    "view_kind": "list",
+                    "filter": {
+                      "s": "",
+                      "sort_by": null,
+                      "order_by": null,
+                      "filter": "done = false",
+                      "filter_include_nulls": false
+                    },
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 10,
+                    "title": "Gantt",
+                    "project_id": 2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 11,
+                    "title": "Table",
+                    "project_id": 2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  },
+                  {
+                    "id": 12,
+                    "title": "Kanban",
+                    "project_id": 2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 7,
+                    "done_bucket_id": 9,
+                    "updated": "2026-10-11T17:32:10Z",
+                    "created": "2026-10-11T17:32:10Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:33:46Z"
+              },
+              {
+                "id": -2,
+                "title": "My Open Tasks",
+                "description": "",
+                "identifier": "",
+                "hex_color": "",
+                "parent_project_id": 0,
+                "owner": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "0001-01-01T00:00:00Z",
+                  "updated": "0001-01-01T00:00:00Z"
+                },
+                "is_archived": false,
+                "background_information": null,
+                "background_blur_hash": "",
+                "is_favorite": false,
+                "position": 0,
+                "views": [
+                  {
+                    "id": 5,
+                    "title": "List",
+                    "project_id": -2,
+                    "view_kind": "list",
+                    "filter": null,
+                    "position": 100,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 6,
+                    "title": "Gantt",
+                    "project_id": -2,
+                    "view_kind": "gantt",
+                    "filter": null,
+                    "position": 200,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 7,
+                    "title": "Table",
+                    "project_id": -2,
+                    "view_kind": "table",
+                    "filter": null,
+                    "position": 300,
+                    "bucket_configuration_mode": "none",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 0,
+                    "done_bucket_id": 0,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  },
+                  {
+                    "id": 8,
+                    "title": "Kanban",
+                    "project_id": -2,
+                    "view_kind": "kanban",
+                    "filter": null,
+                    "position": 400,
+                    "bucket_configuration_mode": "manual",
+                    "bucket_configuration": null,
+                    "default_bucket_id": 4,
+                    "done_bucket_id": 6,
+                    "updated": "2026-10-11T17:31:53Z",
+                    "created": "2026-10-11T17:31:53Z"
+                  }
+                ],
+                "max_permission": 2,
+                "created": "2026-10-11T17:31:53Z",
+                "updated": "2026-10-11T17:31:53Z"
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[256]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels",
+        "query": [
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Label",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedLabelWithTaskID.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "plumbing",
+                "description": "",
+                "hex_color": "ffbe0b",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "created": "2026-10-11T17:33:10Z",
+                "updated": "2026-10-11T17:33:10Z"
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[257]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "reconnect": true,
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/errors.events.jsonl:49"
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getNotifications",
+        "method": "GET",
+        "path": "/notifications",
+        "query": [
+          [
+            "page",
+            "1"
+          ],
+          [
+            "per_page",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedDatabaseNotification.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 20,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/errors.har#entries[258]"
+      },
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/errors.events.jsonl:50"
+        }
+      ]
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.created"
+        }
+      },
+      "source": "capture/errors.events.jsonl:51"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.updated"
+        }
+      },
+      "source": "capture/errors.events.jsonl:52"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "timer.deleted"
+        }
+      },
+      "source": "capture/errors.events.jsonl:53"
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "subscribe",
+          "event": "notification.created"
+        }
+      },
+      "source": "capture/errors.events.jsonl:54"
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postUserTokenRefresh",
+        "method": "POST",
+        "path": "/user/token/refresh",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/AuthTokenBodyBody.json",
+            "token": "<redacted:jwt>"
+          }
+        },
+        "source": "capture/errors.har#entries[259]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "sort_by",
+            "due_date"
+          ],
+          [
+            "sort_by",
+            "id"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "order_by",
+            "desc"
+          ],
+          [
+            "filter",
+            "done = false"
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": [
+                  {
+                    "id": 1,
+                    "title": "plumbing",
+                    "description": "",
+                    "hex_color": "ffbe0b",
+                    "created_by": {
+                      "id": 1,
+                      "name": "",
+                      "username": "<redacted:pii>",
+                      "created": "2026-10-11T17:31:53Z",
+                      "updated": "2026-10-11T17:31:53Z"
+                    },
+                    "created": "2026-10-11T17:33:10Z",
+                    "updated": "2026-10-11T17:33:10Z"
+                  }
+                ],
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:33:10Z",
+                "bucket_id": 0,
+                "comment_count": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/errors.har#entries[260]"
+      }
+    },
+    {
+      "action": null,
+      "send": {
+        "channel": "/api/v2/ws",
+        "message": {
+          "action": "auth",
+          "token": "<redacted:jwt>"
+        }
+      },
+      "source": "capture/errors.events.jsonl:55",
+      "receive": [
+        {
+          "channel": "/api/v2/ws",
+          "kind": "auth.success",
+          "message": {
+            "action": "auth.success",
+            "success": true
+          },
+          "source": "capture/errors.events.jsonl:56"
+        }
+      ]
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#loginform > button",
+          "role": "button",
+          "name": "LOGIN",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTasks",
+        "method": "GET",
+        "path": "/tasks",
+        "query": [
+          [
+            "per_page",
+            "1"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "Buy paint",
+                "description": "",
+                "project_id": 2,
+                "done": true,
+                "done_at": "2026-10-11T17:32:53Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 3,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#1",
+                "index": 1,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:19Z",
+                "updated": "2026-10-11T17:32:53Z",
+                "bucket_id": 0,
+                "position": 0,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 1,
+            "total_pages": 2
+          }
+        },
+        "source": "capture/errors.har#entries[261]"
+      }
+    }
+  ]
+}

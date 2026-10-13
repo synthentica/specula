@@ -1,0 +1,31 @@
+{
+  "order": [
+    "register",
+    "create-project",
+    "add-tasks",
+    "edit-task",
+    "labels",
+    "search",
+    "delete-task",
+    "upcoming-overview",
+    "logout-login",
+    "errors",
+    "kanban",
+    "token-refresh"
+  ],
+  "apiPrefix": "/api/v2",
+  "volatileKeys": [
+    "id",
+    "created",
+    "updated",
+    "identifier",
+    "index",
+    "uid",
+    "hex_color",
+    "position",
+    "kanban_position",
+    "done_at",
+    "bucket_id"
+  ],
+  "note": "Flows replay in this order against one fresh instance; variables bound in earlier flows stay available. volatileKeys are never compared by value. headers are sent with every request, as the client did."
+}

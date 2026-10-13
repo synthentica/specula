@@ -1,0 +1,9 @@
+{"t":1791740521216,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740522293,"type":"navigation","url":"http://localhost:2368/ghost/#/signout/","sameDocument":true}
+{"t":1791740522389,"type":"navigation","url":"http://localhost:2368/ghost/","sameDocument":false}
+{"t":1791740523028,"type":"navigation","url":"http://localhost:2368/ghost/#/signin","sameDocument":true}
+{"t":1791740529718,"type":"action","id":"a1","kind":"input","target":{"tag":"input","selector":"#identification","role":"textbox","name":"Email address","id":"identification","type":"email"},"url":"http://localhost:2368/ghost/#/signin","valueInfo":{"type":"email","length":22}}
+{"t":1791740532573,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:2368/ghost/#/signin","valueInfo":{"type":"password","length":16}}
+{"t":1791740534754,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"#ember5","role":"button","name":"Sign in →","id":"ember5","type":"submit"},"url":"http://localhost:2368/ghost/#/signin"}
+{"t":1791740535132,"type":"navigation","url":"http://localhost:2368/ghost/#/dashboard","sameDocument":true}
+{"t":1791740543039,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

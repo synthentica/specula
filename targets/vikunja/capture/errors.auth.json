@@ -1,0 +1,127 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 19,
+      "firstEntry": 56,
+      "jwt": {
+        "alg": "HS256",
+        "typ": "JWT",
+        "claimNames": [
+          "exp",
+          "iat",
+          "id",
+          "is_admin",
+          "jti",
+          "sid",
+          "type",
+          "username"
+        ],
+        "lifetimeSec": 600
+      }
+    }
+  ],
+  "cookiesSent": [
+    "vikunja_refresh_token"
+  ],
+  "cookiesSet": [
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 93
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 93
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 116
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 116
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 245
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 245
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 259
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 259
+    }
+  ],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 93,
+      "path": "$.token",
+      "kind": "jwt"
+    },
+    {
+      "entry": 245,
+      "path": "$.token",
+      "kind": "jwt"
+    },
+    {
+      "entry": 259,
+      "path": "$.token",
+      "kind": "jwt"
+    }
+  ]
+}

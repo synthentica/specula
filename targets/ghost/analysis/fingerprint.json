@@ -1,0 +1,893 @@
+{
+  "generatedBy": "specula fingerprint",
+  "target": "ghost",
+  "flows": [
+    "create-post",
+    "delete-post",
+    "errors",
+    "logout-login",
+    "member-signup",
+    "members",
+    "posts-list",
+    "publish-post",
+    "session-expired",
+    "settings",
+    "setup",
+    "tags"
+  ],
+  "frontend": [
+    {
+      "claim": "Frontend framework: ember",
+      "value": {
+        "framework": "ember"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/create-post.runtime.json",
+          "detail": "markers.ember=true"
+        },
+        {
+          "ref": "capture/delete-post.runtime.json",
+          "detail": "markers.ember=true"
+        },
+        {
+          "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3280",
+          "detail": "\"?:\\\\+([A-Za-z0-9.-]+))?$/.exec(Ember.VERSION),r=parseInt(i[1],10)<2&&parse\""
+        }
+      ]
+    },
+    {
+      "claim": "Frontend framework: react",
+      "value": {
+        "framework": "react"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/create-post.runtime.json",
+          "detail": "markers.react=true"
+        },
+        {
+          "ref": "capture/delete-post.runtime.json",
+          "detail": "markers.react=true"
+        },
+        {
+          "ref": "capture/sources/chunk.524.9c2366b9ec011d61ea88.aec4b7df.js:2",
+          "detail": "\"ion(){return t(n(72854))}),e(\\\"react-dom\\\",[],function(){return t(n(953\""
+        }
+      ]
+    },
+    {
+      "claim": "Build tool: Vite (Rollup chunking)",
+      "value": {
+        "tool": "vite",
+        "chunks": 1
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/sources/chunk.728.985c45ad584b4b91ca60.2b223ee0.js:4283",
+          "detail": "\"preload\\\"===e.attributes.rel||\\\"modulepreload\\\"===e.attributes.rel)&&\\\"script\""
+        },
+        {
+          "ref": "capture/sources/index.json",
+          "detail": "chunk names like /ghost/assets/admin-x-settings/admin-x-settings.js"
+        }
+      ]
+    },
+    {
+      "claim": "Build tool: webpack",
+      "value": {
+        "tool": "webpack"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/sources/chunk.524.9c2366b9ec011d61ea88.aec4b7df.js:23",
+          "detail": "\"0\\nreturn t.O(c)},n=globalThis.webpackChunk_ember_auto_import_=globalThis\""
+        }
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "claim": "Library: @tanstack/query",
+      "value": "@tanstack/query",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/index-BVxh86CD.2874af01.js:19279",
+          "detail": "\"f window < \\\"u\\\" ? (window.ReactQueryClientContext || (window.ReactQueryC\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: i18next",
+      "value": "i18next",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/portal.min.3b4a0443.js:3412",
+          "detail": "\"[1]:{};this.prefix=n.prefix||\\\"i18next:\\\",this.logger=t||rP,this.opti\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: date-fns",
+      "value": "date-fns",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/chunk.728.985c45ad584b4b91ca60.2b223ee0.js:7396",
+          "detail": "\"(\\\"Starting with v2.0.0-beta.1 date-fns doesn't accept strings as dat\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: @sentry/browser",
+      "value": "@sentry/browser",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/chunk.524.9c2366b9ec011d61ea88.aec4b7df.js:2",
+          "detail": "\".slice.call(arguments,1))},e(\\\"@sentry/browser\\\",[],function(){return\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: dompurify",
+      "value": "dompurify",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/koenig-lexical.umd.37bd1e3e.js:1695",
+          "detail": "\"e,onChange:i})})}/*! @license DOMPurify 3.2.6 | (c) Cure53 and other \""
+        }
+      ]
+    }
+  ],
+  "backend": [
+    {
+      "claim": "Server identification headers",
+      "value": [
+        "x-powered-by: Express"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/create-post.har#entries[0]",
+          "detail": "x-powered-by: Express"
+        }
+      ]
+    },
+    {
+      "claim": "Custom response headers (e.g. pagination metadata)",
+      "value": [
+        "x-cache-invalidate",
+        "x-powered-by"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/create-post.har#entries[0]",
+          "detail": "X-Powered-By: Express"
+        },
+        {
+          "ref": "capture/create-post.har#entries[12]",
+          "detail": "X-Cache-Invalidate: /p/532c0f1e-0a8f-4cce-9312-c8c125d3916e/, /p/532c0f1e-0a8f-4"
+        }
+      ]
+    },
+    {
+      "claim": "Error response body shapes",
+      "value": [
+        "{errors}"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[0]",
+          "detail": "404 {errors}"
+        }
+      ]
+    },
+    {
+      "claim": "CORS headers present on API",
+      "value": "http://localhost:2368",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/create-post.har#entries[8]",
+          "detail": "Access-Control-Allow-Origin"
+        }
+      ]
+    }
+  ],
+  "thirdParties": [
+    {
+      "claim": "Third-party host: static.ghost.org",
+      "value": {
+        "host": "static.ghost.org",
+        "category": "unclassified"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/delete-post.har#entries[19]",
+          "detail": "GET static.ghost.org/v4.0.0/images/ghost-orb-1.png"
+        },
+        {
+          "ref": "capture/errors.har#entries[1]",
+          "detail": "GET static.ghost.org/v4.0.0/images/ghost-orb-1.png"
+        }
+      ]
+    },
+    {
+      "claim": "Third-party host: www.gravatar.com",
+      "value": {
+        "host": "www.gravatar.com",
+        "category": "images / media"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[11]",
+          "detail": "GET www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb"
+        },
+        {
+          "ref": "capture/members.har#entries[12]",
+          "detail": "GET www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb"
+        }
+      ]
+    },
+    {
+      "claim": "Third-party host: fonts.bunny.net",
+      "value": {
+        "host": "fonts.bunny.net",
+        "category": "unclassified"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[19]",
+          "detail": "GET fonts.bunny.net/css"
+        },
+        {
+          "ref": "capture/logout-login.har#entries[20]",
+          "detail": "GET fonts.bunny.net/css"
+        }
+      ]
+    },
+    {
+      "claim": "Third-party host: ghost.org",
+      "value": {
+        "host": "ghost.org",
+        "category": "unclassified"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[49]",
+          "detail": "GET ghost.org/changelog.json"
+        },
+        {
+          "ref": "capture/session-expired.har#entries[50]",
+          "detail": "GET ghost.org/changelog.json"
+        }
+      ]
+    },
+    {
+      "claim": "Third-party host: localhost:2369",
+      "value": {
+        "host": "localhost:2369",
+        "category": "unclassified"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/member-signup.har#entries[4]",
+          "detail": "GET localhost:2369/portal/umd/portal.min.js"
+        }
+      ]
+    },
+    {
+      "claim": "Third-party host: cdn.jsdelivr.net",
+      "value": {
+        "host": "cdn.jsdelivr.net",
+        "category": "CDN / fonts"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/member-signup.har#entries[5]",
+          "detail": "GET cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js"
+        }
+      ]
+    }
+  ],
+  "auth": [
+    {
+      "claim": "Cookie \"ghost-admin-api-session\" is set by DELETE /ghost/api/admin/session, POST /ghost/api/admin/session",
+      "value": {
+        "name": "ghost-admin-api-session",
+        "setBy": {
+          "DELETE /ghost/api/admin/session": [
+            "Path",
+            "Expires",
+            "HttpOnly",
+            "SameSite"
+          ],
+          "POST /ghost/api/admin/session": [
+            "Path",
+            "Expires",
+            "HttpOnly",
+            "SameSite"
+          ]
+        }
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[0]",
+          "detail": "Set-Cookie ghost-admin-api-session; Path; Expires; HttpOnly; SameSite"
+        },
+        {
+          "ref": "capture/logout-login.har#entries[40]",
+          "detail": "Set-Cookie ghost-admin-api-session; Path; Expires; HttpOnly; SameSite"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /ghost/api/admin/session",
+      "value": {
+        "endpoint": "POST /ghost/api/admin/session",
+        "status": 201,
+        "responseKeys": []
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/logout-login.har#entries[40]",
+          "detail": "request body keys: username, password; response keys: "
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /ghost/api/admin/authentication/setup/",
+      "value": {
+        "endpoint": "POST /ghost/api/admin/authentication/setup/",
+        "status": 201,
+        "responseKeys": [
+          "users"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/setup.har#entries[0]",
+          "detail": "request body keys: setup; response keys: users"
+        }
+      ]
+    },
+    {
+      "claim": "No 401 responses observed (the answer to an expired token was not seen)",
+      "value": 0,
+      "confidence": "medium",
+      "evidence": []
+    }
+  ],
+  "realtime": [
+    {
+      "claim": "No realtime channel observed",
+      "value": null,
+      "confidence": "medium",
+      "evidence": []
+    }
+  ],
+  "flags": [
+    {
+      "claim": "Feature flag SDK in bundle: PostHog feature flags",
+      "value": "PostHog feature flags",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:4666",
+          "detail": "\"e){function t(){return window.posthog?.__loaded}Object.defineProper\""
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "route": "/explore",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:2583"
+    },
+    {
+      "route": "/",
+      "visited": true,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/setup/done",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/signin/verify",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/signup/:token",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/reset/:token",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/analytics",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/*sub",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/posts/analytics/:post_id",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/posts/analytics/beta/:post_id",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/posts/analytics/:post_id/mentions",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/posts/analytics/:post_id/debug",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/restore",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/tags/new",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/tags/:tag_slug",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/settings",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/activitypub",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/*query",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/*platform",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3491"
+    },
+    {
+      "route": "/members/new",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3492"
+    },
+    {
+      "route": "/members/:member_id",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3492"
+    },
+    {
+      "route": "/*path",
+      "visited": false,
+      "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3492"
+    },
+    {
+      "route": "/settings/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:19682"
+    },
+    {
+      "route": "/users/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:19788"
+    },
+    {
+      "route": "/config/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:19878"
+    },
+    {
+      "route": "/site/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:19891"
+    },
+    {
+      "route": "/integrations/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:20625"
+    },
+    {
+      "route": "/invites/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:20894"
+    },
+    {
+      "route": "/roles/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:20933"
+    },
+    {
+      "route": "/members/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:20970"
+    },
+    {
+      "route": "/newsletters/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:20973"
+    },
+    {
+      "route": "/posts/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:21302"
+    },
+    {
+      "route": "/posts/export/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:21305"
+    },
+    {
+      "route": "/tiers/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:21584"
+    },
+    {
+      "route": "/labels/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:21584"
+    },
+    {
+      "route": "/offers/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:21584"
+    },
+    {
+      "route": "/recommendations/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29016"
+    },
+    {
+      "route": "/incoming_recommendations/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29051"
+    },
+    {
+      "route": "/stats/referrers/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29194"
+    },
+    {
+      "route": "/custom_theme_settings/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29810"
+    },
+    {
+      "route": "/themes/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29822"
+    },
+    {
+      "route": "/themes/active/",
+      "visited": false,
+      "ref": "capture/sources/index-BVxh86CD.2874af01.js:29825"
+    },
+    {
+      "route": "/actions/",
+      "visited": false,
+      "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:16555"
+    },
+    {
+      "route": "/users/me/token/",
+      "visited": false,
+      "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:20818"
+    }
+  ],
+  "apiPathsInCode": {
+    "note": "String literals in first-party bundles shaped like API paths. \"observed\" = also seen in recorded traffic (after removing apiPrefix). Unobserved ones are candidates, not facts.",
+    "paths": [
+      {
+        "path": "/content/images/size/w192h192",
+        "observed": false,
+        "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:16335"
+      },
+      {
+        "path": "/data/attributes",
+        "observed": false,
+        "ref": "capture/sources/chunk.728.985c45ad584b4b91ca60.2b223ee0.js:11946"
+      },
+      {
+        "path": "/data/attributes/{}",
+        "observed": false,
+        "ref": "capture/sources/vendor-aed0068cf9b67d042dd23a6343545b7b.a8da4fb9.js:6285"
+      },
+      {
+        "path": "/email_previews/posts",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:464"
+      },
+      {
+        "path": "/emails/{}/analytics",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:2367"
+      },
+      {
+        "path": "/emails/{}/recipient-failures",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:2366"
+      },
+      {
+        "path": "/emails/analytics",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:2374"
+      },
+      {
+        "path": "/explore/about",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3550"
+      },
+      {
+        "path": "/explore/submit",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:3548"
+      },
+      {
+        "path": "/files/upload",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:1671"
+      },
+      {
+        "path": "/ghost/api",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19579"
+      },
+      {
+        "path": "/ghost/api/admin",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19449"
+      },
+      {
+        "path": "/ghost/api/admin/identities",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:4374"
+      },
+      {
+        "path": "/ghost/api/admin/site",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:4376"
+      },
+      {
+        "path": "/ghost/i18n/lib",
+        "observed": false,
+        "ref": "capture/sources/portal.min.3b4a0443.js:3412"
+      },
+      {
+        "path": "/images/upload",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:939"
+      },
+      {
+        "path": "/integrations/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:20642"
+      },
+      {
+        "path": "/integrations/{}/api_key/{}/refresh",
+        "observed": false,
+        "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:3353"
+      },
+      {
+        "path": "/invites/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:20921"
+      },
+      {
+        "path": "/media/thumbnail/upload",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:1671"
+      },
+      {
+        "path": "/media/upload",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:1671"
+      },
+      {
+        "path": "/migrate/mailchimp",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21422"
+      },
+      {
+        "path": "/migrate/medium",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21414"
+      },
+      {
+        "path": "/migrate/squarespace",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21406"
+      },
+      {
+        "path": "/migrate/substack",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21390"
+      },
+      {
+        "path": "/migrate/wordpress",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21398"
+      },
+      {
+        "path": "/newsletters/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21003"
+      },
+      {
+        "path": "/newsletters/verifications",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21013"
+      },
+      {
+        "path": "/offers/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:28571"
+      },
+      {
+        "path": "/portal/preview",
+        "observed": false,
+        "ref": "capture/sources/portal.min.3b4a0443.js:412"
+      },
+      {
+        "path": "/portal/preview/offer",
+        "observed": false,
+        "ref": "capture/sources/portal.min.3b4a0443.js:412"
+      },
+      {
+        "path": "/pro/billing/plans",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:717"
+      },
+      {
+        "path": "/recommendations/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29027"
+      },
+      {
+        "path": "/recommendations/check",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29047"
+      },
+      {
+        "path": "/redirects/download",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21094"
+      },
+      {
+        "path": "/redirects/upload",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21089"
+      },
+      {
+        "path": "/settings/migration",
+        "observed": false,
+        "ref": "capture/sources/ghost-060c0f303364be7ed22510336af44764.a84bbba5.js:2782"
+      },
+      {
+        "path": "/settings/routes/yaml",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:21096"
+      },
+      {
+        "path": "/settings/stripe/connect",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19700"
+      },
+      {
+        "path": "/settings/verifications",
+        "observed": false,
+        "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:19684"
+      },
+      {
+        "path": "/slack/test",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19704"
+      },
+      {
+        "path": "/themes/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29845"
+      },
+      {
+        "path": "/themes/{}/activate",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29828"
+      },
+      {
+        "path": "/themes/install",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29856"
+      },
+      {
+        "path": "/themes/upload",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:29872"
+      },
+      {
+        "path": "/tiers/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:28359"
+      },
+      {
+        "path": "/users/{}",
+        "observed": true,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19811"
+      },
+      {
+        "path": "/users/me",
+        "observed": true,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19612"
+      },
+      {
+        "path": "/users/owner",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19840"
+      },
+      {
+        "path": "/users/password",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19829"
+      },
+      {
+        "path": "/users/sign_in",
+        "observed": false,
+        "ref": "capture/sources/vendor-aed0068cf9b67d042dd23a6343545b7b.a8da4fb9.js:8340"
+      },
+      {
+        "path": "/users/slug/{}",
+        "observed": false,
+        "ref": "capture/sources/index-BVxh86CD.2874af01.js:19807"
+      },
+      {
+        "path": "/webhooks/{}",
+        "observed": false,
+        "ref": "capture/sources/modals-B5dtfzsB.0cbdc6cc.js:3146"
+      }
+    ]
+  }
+}

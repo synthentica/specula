@@ -1,0 +1,76 @@
+{
+  "label": "before",
+  "baseUrl": "http://localhost:4713",
+  "generated": "2026-10-12T17:45:24.401Z",
+  "score": 32,
+  "views": [
+    {
+      "view": "history",
+      "score": 27,
+      "layout": 31,
+      "components": 17,
+      "style": 30,
+      "notes": [
+        "card: none, spec has 4",
+        "footer: missing (spec 0×768×1280×32 at x,y,w,h)",
+        "table: none, spec has 1",
+        "accent colour #1976d2 not used",
+        "font Iowan Old Style, spec Roboto",
+        "main text colour #5f6b63, spec #000000de",
+        "badge: none, spec has 2",
+        "input: background #f7f3ea, spec none"
+      ]
+    },
+    {
+      "view": "home",
+      "score": 34,
+      "layout": 35,
+      "components": 37,
+      "style": 30,
+      "notes": [
+        "card: none, spec has 10",
+        "sidebar: missing (spec 0×64×256×736 at x,y,w,h)",
+        "accent colour #1976d2 not used",
+        "font Iowan Old Style, spec Roboto",
+        "main text colour #5f6b63, spec #000000de",
+        "input: background #f7f3ea, spec none",
+        "button: background #2e6b4f, spec none",
+        "topbar: background #fffdf8, spec #000000"
+      ]
+    },
+    {
+      "view": "page",
+      "score": 39,
+      "layout": 36,
+      "components": 41,
+      "style": 41,
+      "notes": [
+        "card: none, spec has 10",
+        "sidebar: missing (spec 0×64×256×736 at x,y,w,h)",
+        "accent colour #1976d2 not used",
+        "main text colour #5f6b63, spec #000000de",
+        "footer: box 169,345,942,35, spec 0,768,1280,32 (x,y,w,h)",
+        "input: background #f7f3ea, spec none",
+        "button: background #2e6b4f, spec none",
+        "topbar: background #fffdf8, spec #000000"
+      ]
+    },
+    {
+      "view": "tags",
+      "score": 28,
+      "layout": 25,
+      "components": 22,
+      "style": 36,
+      "notes": [
+        "card: none, spec has 3",
+        "column: none, spec has 1",
+        "sidebar: missing (spec 0×64×300×736 at x,y,w,h)",
+        "footer: missing (spec 0×768×1280×32 at x,y,w,h)",
+        "accent colour #1976d2 not used",
+        "main text colour #5f6b63, spec #000000de",
+        "input: background #f7f3ea, spec none",
+        "button: background #e3efe6, spec none"
+      ]
+    }
+  ]
+}

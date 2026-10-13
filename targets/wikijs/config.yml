@@ -1,0 +1,10 @@
+# Wiki.js config for specula: the image's defaults plus offline mode, which loads locale strings
+# from the sideload folder (see sideload.sh) instead of graph.requarks.io and skips update checks.
+port: 3000
+bindIP: 0.0.0.0
+db:
+  type: $(DB_TYPE)
+  storage: $(DB_FILEPATH)
+logLevel: info
+offline: true
+dataPath: ./data

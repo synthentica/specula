@@ -1,0 +1,9 @@
+{
+  "login": { "path": "/#/signin", "user": "email" },
+  "views": {
+    "posts": "/#/posts/published",
+    "editor": "/#/editor/{postId}",
+    "tags": "/#/tags",
+    "members": "/#/members"
+  }
+}

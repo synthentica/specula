@@ -1,0 +1,51 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 2,
+      "firstEntry": 28,
+      "jwt": {
+        "alg": "RS256",
+        "typ": "JWT",
+        "claimNames": [
+          "ap",
+          "aud",
+          "av",
+          "df",
+          "email",
+          "exp",
+          "groups",
+          "iat",
+          "id",
+          "iss",
+          "lc",
+          "name",
+          "permissions",
+          "tz"
+        ],
+        "lifetimeSec": 1800
+      }
+    }
+  ],
+  "cookiesSent": [
+    "jwt"
+  ],
+  "cookiesSet": [
+    {
+      "name": "jwt",
+      "attributes": [
+        "Path",
+        "Expires"
+      ],
+      "entry": 31
+    }
+  ],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 91,
+      "path": "$[0].data.authentication.login.jwt",
+      "kind": "jwt"
+    }
+  ]
+}

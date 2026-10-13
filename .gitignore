@@ -1,0 +1,17 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.env.*
+
+# Machine-local Claude Code settings.
+.claude/settings.local.json
+
+# Scripts and source maps fetched during capture are the observed apps' own code:
+# kept on the machine that recorded them, never published.
+targets/*/capture/sources/
+
+# A target recorded on a hosted service with a real account stays private: the
+# service's terms restrict republishing its content (see README, "A hosted service").
+targets/umami/
+docs/screenshots/plainview-*.png

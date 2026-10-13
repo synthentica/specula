@@ -1,0 +1,676 @@
+{
+  "name": "users",
+  "order": 10,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query system.info",
+          "query users.list",
+          "query authentication.activeStrategies",
+          "query authentication.activeStrategies",
+          "query groups.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  system {\n    info {\n      currentVersion\n      latestVersion\n      groupsTotal\n      pagesTotal\n      usersTotal\n      tagsTotal\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  users {\n    list {\n      id\n      name\n      email\n      providerKey\n      isSystem\n      isActive\n      createdAt\n      lastLoginAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  authentication {\n    activeStrategies {\n      key\n      displayName\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  authentication {\n    activeStrategies {\n      key\n      displayName\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  groups {\n    list {\n      id\n      name\n      isSystem\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "system": {
+                  "info": {
+                    "currentVersion": "2.5.316",
+                    "latestVersion": "2.5.316",
+                    "groupsTotal": 2,
+                    "pagesTotal": 3,
+                    "usersTotal": 2,
+                    "tagsTotal": 2,
+                    "__typename": "SystemInfo"
+                  },
+                  "__typename": "SystemQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "users": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "name": "Administrator",
+                      "email": "<redacted:email>",
+                      "providerKey": "local",
+                      "isSystem": false,
+                      "isActive": true,
+                      "createdAt": "2026-10-12T07:55:26.823Z",
+                      "lastLoginAt": "2026-10-12T07:55:50.096Z",
+                      "__typename": "UserMinimal"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Guest",
+                      "email": "<redacted:email:2>",
+                      "providerKey": "local",
+                      "isSystem": true,
+                      "isActive": true,
+                      "createdAt": "2026-10-12T07:55:27.253Z",
+                      "lastLoginAt": null,
+                      "__typename": "UserMinimal"
+                    }
+                  ],
+                  "__typename": "UserQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "authentication": {
+                  "activeStrategies": [
+                    {
+                      "key": "local",
+                      "displayName": "Local",
+                      "__typename": "AuthenticationActiveStrategy"
+                    }
+                  ],
+                  "__typename": "AuthenticationQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "authentication": {
+                  "activeStrategies": [
+                    {
+                      "key": "local",
+                      "displayName": "Local",
+                      "__typename": "AuthenticationActiveStrategy"
+                    }
+                  ],
+                  "__typename": "AuthenticationQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "groups": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "name": "Administrators",
+                      "isSystem": true,
+                      "__typename": "GroupMinimal"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Guests",
+                      "isSystem": true,
+                      "__typename": "GroupMinimal"
+                    }
+                  ],
+                  "__typename": "GroupQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/users.har#entries[27]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(3) > div > button:nth-of-type(3)",
+          "role": "button",
+          "name": "CREATE AND CLOSE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation users.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "providerKey": "local",
+              "email": "<redacted:email:3>",
+              "passwordRaw": "<redacted:secret:other>",
+              "name": "Robin Member",
+              "groups": [],
+              "mustChangePassword": false,
+              "sendWelcomeEmail": false
+            },
+            "extensions": {},
+            "query": "mutation ($providerKey: String!, $email: String!, $name: String!, $passwordRaw: String, $groups: [Int]!, $mustChangePassword: Boolean, $sendWelcomeEmail: Boolean) {\n  users {\n    create(providerKey: $providerKey, email: $email, name: $name, passwordRaw: $passwordRaw, groups: $groups, mustChangePassword: $mustChangePassword, sendWelcomeEmail: $sendWelcomeEmail) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "users": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "User created successfully",
+                      "__typename": "ResponseStatus"
+                    },
+                    "__typename": "UserResponse"
+                  },
+                  "__typename": "UserMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/users.har#entries[31]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(3) > div > button:nth-of-type(3)",
+          "role": "button",
+          "name": "CREATE AND CLOSE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query users.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  users {\n    list {\n      id\n      name\n      email\n      providerKey\n      isSystem\n      isActive\n      createdAt\n      lastLoginAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "users": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "name": "Administrator",
+                      "email": "<redacted:email>",
+                      "providerKey": "local",
+                      "isSystem": false,
+                      "isActive": true,
+                      "createdAt": "2026-10-12T07:55:26.823Z",
+                      "lastLoginAt": "2026-10-12T07:55:50.096Z",
+                      "__typename": "UserMinimal"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Guest",
+                      "email": "<redacted:email:2>",
+                      "providerKey": "local",
+                      "isSystem": true,
+                      "isActive": true,
+                      "createdAt": "2026-10-12T07:55:27.253Z",
+                      "lastLoginAt": null,
+                      "__typename": "UserMinimal"
+                    },
+                    {
+                      "id": 3,
+                      "name": "Robin Member",
+                      "email": "<redacted:email:3>",
+                      "providerKey": "local",
+                      "isSystem": false,
+                      "isActive": true,
+                      "createdAt": "2026-10-12T07:57:59.326Z",
+                      "lastLoginAt": null,
+                      "__typename": "UserMinimal"
+                    }
+                  ],
+                  "__typename": "UserQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/users.har#entries[32]",
+        "bind": {
+          "user52": "$[0].data.users.list[?name=\"Robin Member\"].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(3) > div > button:nth-of-type(3)",
+          "role": "button",
+          "name": "CREATE AND CLOSE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation users.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "providerKey": "local",
+              "email": "<redacted:email:3>",
+              "passwordRaw": "<redacted:secret:other>",
+              "name": "Robin Member",
+              "groups": [],
+              "mustChangePassword": false,
+              "sendWelcomeEmail": false
+            },
+            "extensions": {},
+            "query": "mutation ($providerKey: String!, $email: String!, $name: String!, $passwordRaw: String, $groups: [Int]!, $mustChangePassword: Boolean, $sendWelcomeEmail: Boolean) {\n  users {\n    create(providerKey: $providerKey, email: $email, name: $name, passwordRaw: $passwordRaw, groups: $groups, mustChangePassword: $mustChangePassword, sendWelcomeEmail: $sendWelcomeEmail) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "users": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": false,
+                      "errorCode": 1004,
+                      "slug": "AuthAccountAlreadyExists",
+                      "message": "An account already exists using this email address.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "__typename": "UserResponse"
+                  },
+                  "__typename": "UserMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/users.har#entries[33]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "td",
+          "selector": "div > table > tbody > tr:nth-of-type(3) > td:nth-of-type(4)",
+          "name": "Local"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query localization.translations",
+          "query users.single",
+          "query groups.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "namespace": "profile"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $namespace: String!) {\n  localization {\n    translations(locale: $locale, namespace: $namespace) {\n      key\n      value\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "user52"
+              }
+            },
+            "extensions": {},
+            "query": "query ($id: Int!) {\n  users {\n    single(id: $id) {\n      id\n      name\n      email\n      providerKey\n      providerName\n      providerId\n      providerIs2FACapable\n      location\n      jobTitle\n      timezone\n      isSystem\n      isActive\n      isVerified\n      createdAt\n      updatedAt\n      lastLoginAt\n      tfaIsActive\n      groups {\n        id\n        name\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  groups {\n    list {\n      id\n      name\n      isSystem\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "localization": {
+                  "translations": [
+                    {
+                      "key": "activity.commentsPosted",
+                      "value": "Comments posted",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "activity.joinedOn",
+                      "value": "Joined on",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "activity.lastLoginOn",
+                      "value": "Last login on",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "activity.lastUpdatedOn",
+                      "value": "Profile last updated on",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "activity.pagesCreated",
+                      "value": "Pages created",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "activity.title",
+                      "value": "Activity",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "appearance",
+                      "value": "Appearance",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "appearanceDark",
+                      "value": "Dark",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "appearanceDefault",
+                      "value": "Site Default",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "appearanceLight",
+                      "value": "Light",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.changePassSuccess",
+                      "value": "Password changed successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.changePassword",
+                      "value": "Change Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.currentPassword",
+                      "value": "Current Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.newPassword",
+                      "value": "New Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.provider",
+                      "value": "Provider",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.title",
+                      "value": "Authentication",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "auth.verifyPassword",
+                      "value": "Confirm New Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.title",
+                      "value": "Comments",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "dateFormat",
+                      "value": "Date Format",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "displayName",
+                      "value": "Display Name",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "groups.title",
+                      "value": "Groups",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "jobTitle",
+                      "value": "Job Title",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "localeDefault",
+                      "value": "Locale Default",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "location",
+                      "value": "Location",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "myInfo",
+                      "value": "My Info",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.emptyList",
+                      "value": "No pages to display.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.headerCreatedAt",
+                      "value": "Created",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.headerPath",
+                      "value": "Path",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.headerTitle",
+                      "value": "Title",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.headerUpdatedAt",
+                      "value": "Last Updated",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.refreshSuccess",
+                      "value": "Page list has been refreshed.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.subtitle",
+                      "value": "List of pages I created or last modified",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pages.title",
+                      "value": "Pages",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "preferences",
+                      "value": "Preferences",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "save.success",
+                      "value": "Profile saved successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "subtitle",
+                      "value": "My personal info",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "timezone",
+                      "value": "Timezone",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "title",
+                      "value": "Profile",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "viewPublicProfile",
+                      "value": "View Public Profile",
+                      "__typename": "Translation"
+                    }
+                  ],
+                  "__typename": "LocalizationQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "users": {
+                  "single": {
+                    "id": 3,
+                    "name": "Robin Member",
+                    "email": "<redacted:email:3>",
+                    "providerKey": "local",
+                    "providerName": "Local",
+                    "providerId": null,
+                    "providerIs2FACapable": true,
+                    "location": "",
+                    "jobTitle": "",
+                    "timezone": "America/New_York",
+                    "isSystem": false,
+                    "isActive": true,
+                    "isVerified": true,
+                    "createdAt": "2026-10-12T07:57:59.326Z",
+                    "updatedAt": "2026-10-12T07:57:59.326Z",
+                    "lastLoginAt": null,
+                    "tfaIsActive": false,
+                    "groups": [],
+                    "__typename": "User"
+                  },
+                  "__typename": "UserQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "groups": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "name": "Administrators",
+                      "isSystem": true,
+                      "__typename": "GroupMinimal"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Guests",
+                      "isSystem": true,
+                      "__typename": "GroupMinimal"
+                    }
+                  ],
+                  "__typename": "GroupQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/users.har#entries[35]"
+      }
+    }
+  ]
+}

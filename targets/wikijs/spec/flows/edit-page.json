@@ -1,0 +1,229 @@
+{
+  "name": "edit-page",
+  "order": 5,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "key",
+        "target": {
+          "tag": "div",
+          "selector": "div:nth-of-type(1) > div > div > div > div:nth-of-type(5)",
+          "role": "presentation",
+          "name": "1 # Team handbook 2 This wiki collects how we work. 3 - Onbo…"
+        },
+        "key": "Control+End"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.checkConflicts"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page1"
+              },
+              "checkoutDate": {
+                "$var": "pageUpdatedAt2"
+              }
+            },
+            "extensions": {},
+            "query": "query ($id: Int!, $checkoutDate: Date!) {\n  pages {\n    checkConflicts(id: $id, checkoutDate: $checkoutDate)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "checkConflicts": false,
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/edit-page.har#entries[32]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "SAVE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query pages.checkConflicts"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page1"
+              },
+              "checkoutDate": {
+                "$var": "pageUpdatedAt2"
+              }
+            },
+            "extensions": {},
+            "query": "query ($id: Int!, $checkoutDate: Date!) {\n  pages {\n    checkConflicts(id: $id, checkoutDate: $checkoutDate)\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "checkConflicts": false,
+                  "__typename": "PageQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/edit-page.har#entries[33]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(3) > header > div > button:nth-of-type(1)",
+          "role": "button",
+          "name": "SAVE",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation pages.update"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "id": {
+                "$var": "page1"
+              },
+              "content": "# Team handbook\nThis wiki collects how we work.\n- Onboarding\n- Release checklist\n- Weekly demo every Friday",
+              "description": "Where everything starts",
+              "editor": "markdown",
+              "locale": "en",
+              "isPrivate": false,
+              "isPublished": true,
+              "path": "home",
+              "publishEndDate": "",
+              "publishStartDate": "",
+              "scriptCss": "",
+              "scriptJs": "",
+              "tags": [
+                "guide"
+              ],
+              "title": "Team handbook"
+            },
+            "extensions": {},
+            "query": "mutation ($id: Int!, $content: String, $description: String, $editor: String, $isPrivate: Boolean, $isPublished: Boolean, $locale: String, $path: String, $publishEndDate: Date, $publishStartDate: Date, $scriptCss: String, $scriptJs: String, $tags: [String], $title: String) {\n  pages {\n    update(id: $id, content: $content, description: $description, editor: $editor, isPrivate: $isPrivate, isPublished: $isPublished, locale: $locale, path: $path, publishEndDate: $publishEndDate, publishStartDate: $publishStartDate, scriptCss: $scriptCss, scriptJs: $scriptJs, tags: $tags, title: $title) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      page {\n        updatedAt\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "pages": {
+                  "update": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Page has been updated.",
+                      "__typename": "ResponseStatus"
+                    },
+                    "page": {
+                      "updatedAt": "2026-10-12T07:56:54.842Z",
+                      "__typename": "Page"
+                    },
+                    "__typename": "PageResponse"
+                  },
+                  "__typename": "PageMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/edit-page.har#entries[34]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/edit-page.har#entries[64]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "name": "comments",
+  "order": 6,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/comments.har#entries[28]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(2) > div > div > div:nth-of-type(2) > button",
+          "role": "button",
+          "name": "Post Comment",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation comments.create"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "pageId": {
+                "$var": "page1"
+              },
+              "replyTo": 0,
+              "content": "Can we move the demo to Thursday?",
+              "guestName": "",
+              "guestEmail": ""
+            },
+            "extensions": {},
+            "query": "mutation ($pageId: Int!, $replyTo: Int, $content: String!, $guestName: String, $guestEmail: String) {\n  comments {\n    create(pageId: $pageId, replyTo: $replyTo, content: $content, guestName: $guestName, guestEmail: $guestEmail) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      id\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "create": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "New comment posted successfully",
+                      "__typename": "ResponseStatus"
+                    },
+                    "id": 1,
+                    "__typename": "CommentCreateResponse"
+                  },
+                  "__typename": "CommentMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/comments.har#entries[31]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div:nth-of-type(2) > div > div > div:nth-of-type(2) > button",
+          "role": "button",
+          "name": "Post Comment",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "render": "<p>Can we move the demo to Thursday?</p>\n",
+                      "authorName": "Administrator",
+                      "createdAt": "2026-10-12T07:57:05.395Z",
+                      "updatedAt": "2026-10-12T07:57:05.395Z",
+                      "__typename": "CommentPost"
+                    }
+                  ],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/comments.har#entries[32]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"t":1791740288902,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740291232,"type":"action","id":"a1","kind":"input","target":{"tag":"input","selector":"#blog-title","role":"textbox","name":"Site title","id":"blog-title","type":"text"},"url":"http://localhost:2368/ghost/#/setup","valueInfo":{"type":"text","length":11}}
+{"t":1791740293880,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#name","role":"textbox","name":"Full name","id":"name","type":"text"},"url":"http://localhost:2368/ghost/#/setup","valueInfo":{"type":"text","length":9}}
+{"t":1791740296655,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#email","role":"textbox","name":"Email address","id":"email","type":"email"},"url":"http://localhost:2368/ghost/#/setup","valueInfo":{"type":"email","length":22}}
+{"t":1791740299551,"type":"action","id":"a4","kind":"input","target":{"tag":"input","selector":"#password","role":"textbox","name":"Password","id":"password","type":"password"},"url":"http://localhost:2368/ghost/#/setup","valueInfo":{"type":"password","length":16}}
+{"t":1791740301934,"type":"action","id":"a5","kind":"click","target":{"tag":"button","selector":"#ember4","role":"button","name":"Create account & start publishing →","id":"ember4","type":"submit"},"url":"http://localhost:2368/ghost/#/setup"}
+{"t":1791740305876,"type":"navigation","url":"http://localhost:2368/ghost/#/dashboard","sameDocument":true}
+{"t":1791740310590,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

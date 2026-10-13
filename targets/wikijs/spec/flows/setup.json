@@ -1,0 +1,1392 @@
+{
+  "name": "setup",
+  "order": 1,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div > div:nth-of-type(5) > button",
+          "role": "button",
+          "name": "INSTALL",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postFinalize",
+        "method": "POST",
+        "path": "/finalize",
+        "body": {
+          "adminEmail": "<redacted:email>",
+          "adminPassword": "<redacted:secret>",
+          "adminPasswordConfirm": "<redacted:secret>",
+          "siteUrl": "http://localhost:3000",
+          "telemetry": false
+        },
+        "contentType": "application/json",
+        "auth": "none",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Finalize",
+          "body": {
+            "ok": true,
+            "redirectPath": "/",
+            "redirectPort": 3000
+          }
+        },
+        "source": "capture/setup.har#entries[11]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "pauseMs": 13693,
+      "pauseReason": "app-wait",
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query localization.translations",
+          "query localization.translations"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "namespace": "common"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $namespace: String!) {\n  localization {\n    translations(locale: $locale, namespace: $namespace) {\n      key\n      value\n      __typename\n    }\n    __typename\n  }\n}\n"
+          },
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "namespace": "auth"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $namespace: String!) {\n  localization {\n    translations(locale: $locale, namespace: $namespace) {\n      key\n      value\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "localization": {
+                  "translations": [
+                    {
+                      "key": "actions.add",
+                      "value": "Add",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.apply",
+                      "value": "Apply",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.browse",
+                      "value": "Browse...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.cancel",
+                      "value": "Cancel",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.clear",
+                      "value": "Clear",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.close",
+                      "value": "Close",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.confirm",
+                      "value": "Confirm",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.convert",
+                      "value": "Convert",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.copy",
+                      "value": "Copy",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.create",
+                      "value": "Create",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.delete",
+                      "value": "Delete",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.discard",
+                      "value": "Discard",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.discardChanges",
+                      "value": "Discard Changes",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.download",
+                      "value": "Download",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.edit",
+                      "value": "Edit",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.exit",
+                      "value": "Exit",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.fetch",
+                      "value": "Fetch",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.generate",
+                      "value": "Generate",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.insert",
+                      "value": "Insert",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.move",
+                      "value": "Move",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.ok",
+                      "value": "OK",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.optimize",
+                      "value": "Optimize",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.page",
+                      "value": "Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.preview",
+                      "value": "Preview",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.proceed",
+                      "value": "Proceed",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.properties",
+                      "value": "Properties",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.refresh",
+                      "value": "Refresh",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.rename",
+                      "value": "Rename",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.returnToTop",
+                      "value": "Return to top",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.save",
+                      "value": "Save",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.saveChanges",
+                      "value": "Save Changes",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.select",
+                      "value": "Select",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.upload",
+                      "value": "Upload",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.beFirst",
+                      "value": "Be the first to comment.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.contentMissingError",
+                      "value": "Comment is empty or too short!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.deleteConfirmTitle",
+                      "value": "Confirm Delete",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.deletePermanentWarn",
+                      "value": "This action cannot be undone!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.deleteSuccess",
+                      "value": "Comment was deleted successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.deleteWarn",
+                      "value": "Are you sure you want to permanently delete this comment?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.fieldContent",
+                      "value": "Comment Content",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.fieldEmail",
+                      "value": "Your Email Address",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.fieldName",
+                      "value": "Your Name",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.loading",
+                      "value": "Loading comments...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.markdownFormat",
+                      "value": "Markdown Format",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.modified",
+                      "value": "modified {{reldate}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.newComment",
+                      "value": "New Comment",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.newPlaceholder",
+                      "value": "Write a new comment...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.none",
+                      "value": "No comments yet.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.postComment",
+                      "value": "Post Comment",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.postSuccess",
+                      "value": "New comment posted successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.postingAs",
+                      "value": "Posting as {{name}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.sdTitle",
+                      "value": "Talk",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.title",
+                      "value": "Comments",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.updateComment",
+                      "value": "Update Comment",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.updateSuccess",
+                      "value": "Comment was updated successfully.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "comments.viewDiscussion",
+                      "value": "View Discussion",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.days",
+                      "value": "Day(s)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.every",
+                      "value": "Every",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.hours",
+                      "value": "Hour(s)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.minutes",
+                      "value": "Minute(s)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.months",
+                      "value": "Month(s)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "duration.years",
+                      "value": "Year(s)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "error.unexpected",
+                      "value": "An unexpected error occurred.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "footer.copyright",
+                      "value": "© {{year}} {{company}}. All rights reserved.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "footer.license",
+                      "value": "Content is available under the {{license}}, by {{company}}.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "footer.poweredBy",
+                      "value": "Powered by",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.account",
+                      "value": "Account",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.admin",
+                      "value": "Administration",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.assets",
+                      "value": "Assets",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.browseTags",
+                      "value": "Browse by Tags",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.convert",
+                      "value": "Convert",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.currentPage",
+                      "value": "Current Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.delete",
+                      "value": "Delete",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.duplicate",
+                      "value": "Duplicate",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.edit",
+                      "value": "Edit",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.history",
+                      "value": "History",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.home",
+                      "value": "Home",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.imagesFiles",
+                      "value": "Images & Files",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.language",
+                      "value": "Language",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.login",
+                      "value": "Login",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.logout",
+                      "value": "Logout",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.move",
+                      "value": "Move / Rename",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.myWiki",
+                      "value": "My Wiki",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.newPage",
+                      "value": "New Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.pageActions",
+                      "value": "Page Actions",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.profile",
+                      "value": "Profile",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.search",
+                      "value": "Search...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchClose",
+                      "value": "Close",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchCopyLink",
+                      "value": "Copy Search Link",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchDidYouMean",
+                      "value": "Did you mean...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchHint",
+                      "value": "Type at least 2 characters to start searching...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchLoading",
+                      "value": "Searching...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchNoResult",
+                      "value": "No pages matching your query.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.searchResultsCount",
+                      "value": "Found {{total}} results",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.siteMap",
+                      "value": "Site Map",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.view",
+                      "value": "View",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "header.viewSource",
+                      "value": "View Source",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.alr",
+                      "value": "All Rights Reserved",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.cc0",
+                      "value": "Public Domain",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccby",
+                      "value": " Creative Commons Attribution License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccbync",
+                      "value": "Creative Commons Attribution-NonCommercial License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccbyncnd",
+                      "value": "Creative Commons Attribution-NonCommercial-NoDerivs License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccbyncsa",
+                      "value": "Creative Commons Attribution-NonCommercial-ShareAlike License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccbynd",
+                      "value": "Creative Commons Attribution-NoDerivs License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.ccbysa",
+                      "value": "Creative Commons Attribution-ShareAlike License",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "license.none",
+                      "value": "None",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "modernBrowser",
+                      "value": "modern browser",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "newpage.create",
+                      "value": "Create Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "newpage.goback",
+                      "value": "Go back",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "newpage.subtitle",
+                      "value": "Would you like to create it now?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "newpage.title",
+                      "value": "This page does not exist yet.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "notfound.gohome",
+                      "value": "Home",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "notfound.subtitle",
+                      "value": "This page does not exist.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "notfound.title",
+                      "value": "Not Found",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "outdatedBrowserWarning",
+                      "value": "Your browser is outdated. Upgrade to a {{modernBrowser}}.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.bookmark",
+                      "value": "Bookmark",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.convert",
+                      "value": "Convert Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.convertSubtitle",
+                      "value": "The page content will be converted into the format of the newly selected editor. Note that some formatting or non-rendered content may be lost as a result of the conversion. A snapshot will be added to the page history and can be restored at any time.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.convertTitle",
+                      "value": "Select the editor you want to use going forward for the page {{title}}:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.delete",
+                      "value": "Delete Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.deleteSubtitle",
+                      "value": "The page can be restored from the administration area.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.deleteTitle",
+                      "value": "Are you sure you want to delete page {{title}}?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.editExternal",
+                      "value": "Edit on {{name}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.editPage",
+                      "value": "Edit Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.global",
+                      "value": "Global",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.id",
+                      "value": "ID {{id}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.lastEditedBy",
+                      "value": "Last edited by",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.loading",
+                      "value": "Loading Page...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.printFormat",
+                      "value": "Print Format",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.private",
+                      "value": "Private",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.published",
+                      "value": "Published",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.returnNormalView",
+                      "value": "Return to Normal View",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.share",
+                      "value": "Share",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.tags",
+                      "value": "Tags",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.tagsMatching",
+                      "value": "Pages matching tags",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.toc",
+                      "value": "Page Contents",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.unpublished",
+                      "value": "Unpublished",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.unpublishedWarning",
+                      "value": "This page is not published.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.versionId",
+                      "value": "Version ID {{id}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.viewingSource",
+                      "value": "Viewing source of page {{path}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "page.viewingSourceVersion",
+                      "value": "Viewing source as of {{date}} of page {{path}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.createTitle",
+                      "value": "Select New Page Location",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.folderEmptyWarning",
+                      "value": "This folder is empty.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.moveTitle",
+                      "value": "Move / Rename Page Location",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.pages",
+                      "value": "Pages",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.selectTitle",
+                      "value": "Select a Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pageSelector.virtualFolders",
+                      "value": "Virtual Folders",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "password.average",
+                      "value": "Average",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "password.strong",
+                      "value": "Strong",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "password.veryStrong",
+                      "value": "Very Strong",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "password.veryWeak",
+                      "value": "Very Weak",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "password.weak",
+                      "value": "Weak",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "sidebar.browse",
+                      "value": "Browse",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "sidebar.currentDirectory",
+                      "value": "Current Directory",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "sidebar.mainMenu",
+                      "value": "Main Menu",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "sidebar.root",
+                      "value": "(root)",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.create",
+                      "value": "You cannot create the page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.download",
+                      "value": "You cannot download the page content.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.downloadVersion",
+                      "value": "You cannot download the content for this page version.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.edit",
+                      "value": "You cannot edit the page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.history",
+                      "value": "You cannot view the page history.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.source",
+                      "value": "You cannot view the page source.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.sourceVersion",
+                      "value": "You cannot view the source of this version of the page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.action.view",
+                      "value": "You cannot view this page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.goback",
+                      "value": "Go Back",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.login",
+                      "value": "Login As...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "unauthorized.title",
+                      "value": "Unauthorized",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "user.search",
+                      "value": "Search User",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "user.searchPlaceholder",
+                      "value": "Search Users...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "welcome.createhome",
+                      "value": "Create Home Page",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "welcome.goadmin",
+                      "value": "Administration",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "welcome.subtitle",
+                      "value": "Let's get started and create the home page.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "welcome.title",
+                      "value": "Welcome to your wiki!",
+                      "__typename": "Translation"
+                    }
+                  ],
+                  "__typename": "LocalizationQuery"
+                }
+              }
+            },
+            {
+              "data": {
+                "localization": {
+                  "translations": [
+                    {
+                      "key": "actions.login",
+                      "value": "Log In",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "actions.register",
+                      "value": "Register",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.instructions",
+                      "value": "You must choose a new password:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.loading",
+                      "value": "Changing password...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.newPasswordPlaceholder",
+                      "value": "New Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.newPasswordVerifyPlaceholder",
+                      "value": "Verify New Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.proceed",
+                      "value": "Change Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "changePwd.subtitle",
+                      "value": "Choose a new password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "enterCredentials",
+                      "value": "Enter your credentials",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.invalidLogin",
+                      "value": "Invalid Login",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.invalidLoginMsg",
+                      "value": "The email or password is invalid.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.invalidUserEmail",
+                      "value": "Invalid User Email",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.loginError",
+                      "value": "Login error",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.notYetAuthorized",
+                      "value": "You have not been authorized to login to this site yet.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.tooManyAttempts",
+                      "value": "Too many attempts!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.tooManyAttemptsMsg",
+                      "value": "You've made too many failed attempts in a short period of time, please try again {{time}}.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "errors.userNotFound",
+                      "value": "User not found",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.email",
+                      "value": "Email Address",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.emailUser",
+                      "value": "Email / Username",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.name",
+                      "value": "Name",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.password",
+                      "value": "Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.username",
+                      "value": "Username",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "fields.verifyPassword",
+                      "value": "Verify Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordCancel",
+                      "value": "Cancel",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordLink",
+                      "value": "Forgot your password?",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordLoading",
+                      "value": "Requesting password reset...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordSubtitle",
+                      "value": "Enter your email address to receive the instructions to reset your password:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordSuccess",
+                      "value": "Check your emails for password reset instructions!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "forgotPasswordTitle",
+                      "value": "Forgot your password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "genericError",
+                      "value": "Authentication is unavailable.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "invalidEmail",
+                      "value": "Email address is invalid.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "invalidEmailUsername",
+                      "value": "Enter a valid email / username.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "invalidPassword",
+                      "value": "Enter a valid password.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "loginRequired",
+                      "value": "Login required",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "loginSuccess",
+                      "value": "Login Successful! Redirecting...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "loginUsingStrategy",
+                      "value": "Login using {{strategy}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "missingEmail",
+                      "value": "Missing email address.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "missingName",
+                      "value": "Name is missing.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "missingPassword",
+                      "value": "Missing password.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "nameTooLong",
+                      "value": "Name is too long.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "nameTooShort",
+                      "value": "Name is too short.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "orLoginUsingStrategy",
+                      "value": "or login using...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "passwordNotMatch",
+                      "value": "Both passwords do not match.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "passwordTooShort",
+                      "value": "Password is too short.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "pleaseWait",
+                      "value": "Please wait",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.azure",
+                      "value": "Azure Active Directory",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.facebook",
+                      "value": "Facebook",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.github",
+                      "value": "GitHub",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.google",
+                      "value": "Google ID",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.ldap",
+                      "value": "LDAP / Active Directory",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.local",
+                      "value": "Local",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.slack",
+                      "value": "Slack",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "providers.windowslive",
+                      "value": "Microsoft Account",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "registerCheckEmail",
+                      "value": "Check your emails to activate your account.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "registerSubTitle",
+                      "value": "Fill-in the form below to create your account.",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "registerSuccess",
+                      "value": "Account created successfully!",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "registerTitle",
+                      "value": "Create an account",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "registering",
+                      "value": "Creating account...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "selectAuthProvider",
+                      "value": "Select Authentication Provider",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "sendResetPassword",
+                      "value": "Reset Password",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "signingIn",
+                      "value": "Signing In...",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "switchToLogin.link",
+                      "value": "Login instead",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "switchToLogin.text",
+                      "value": "Already have an account? {{link}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "switchToRegister.link",
+                      "value": "Create an account",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "switchToRegister.text",
+                      "value": "Don't have an account yet? {{link}}",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfa.placeholder",
+                      "value": "XXXXXX",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfa.subtitle",
+                      "value": "Security code required:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfa.title",
+                      "value": "Two Factor Authentication",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfa.verifyToken",
+                      "value": "Verify",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfaFormTitle",
+                      "value": "Enter the security code generated from your trusted device:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfaSetupInstrFirst",
+                      "value": "1) Scan the QR code below from your mobile 2FA application:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfaSetupInstrSecond",
+                      "value": "2) Enter the security code generated from your trusted device:",
+                      "__typename": "Translation"
+                    },
+                    {
+                      "key": "tfaSetupTitle",
+                      "value": "Your administrator has required Two-Factor Authentication (2FA) to be enabled on your account.",
+                      "__typename": "Translation"
+                    }
+                  ],
+                  "__typename": "LocalizationQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/setup.har#entries[29]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query authentication.activeStrategies"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  authentication {\n    activeStrategies(enabledOnly: true) {\n      key\n      strategy {\n        key\n        logo\n        color\n        icon\n        useForm\n        usernameType\n        __typename\n      }\n      displayName\n      order\n      selfRegistration\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "authentication": {
+                  "activeStrategies": [
+                    {
+                      "key": "local",
+                      "strategy": {
+                        "key": "local",
+                        "logo": "https://example.invalid/logo/app.svg",
+                        "color": "primary",
+                        "icon": "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t width=\"64px\" height=\"64px\" viewBox=\"0 0 64 64\" enable-background=\"new 0 0 64 64\" xml:space=\"preserve\">\n<path d=\"M32,19c13.089,0,27-3.154,27-9S45.089,1,32,1S5,4.154,5,10S18.911,19,32,19z\"/>\n<path d=\"M32,41c13.089,0,27-3.154,27-9V14.436c-1.481,1.493-3.963,2.968-8.022,4.174C45.864,20.128,38.946,21,32,21\n\ts-13.864-0.872-18.978-2.391C8.963,17.403,6.481,15.929,5,14.436V32C5,37.846,18.911,41,32,41z\"/>\n<path d=\"M32,63c13.089,0,27-3.154,27-9V36.436c-1.481,1.493-3.963,2.968-8.022,4.174C45.864,42.128,38.946,43,32,43\n\ts-13.864-0.872-18.978-2.391C8.963,39.403,6.481,37.929,5,36.436V54C5,59.846,18.911,63,32,63z\"/>\n</svg>\n",
+                        "useForm": true,
+                        "usernameType": "email",
+                        "__typename": "AuthenticationStrategy"
+                      },
+                      "displayName": "Local",
+                      "order": 0,
+                      "selfRegistration": false,
+                      "__typename": "AuthenticationActiveStrategy"
+                    }
+                  ],
+                  "__typename": "AuthenticationQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/setup.har#entries[35]"
+      }
+    }
+  ]
+}

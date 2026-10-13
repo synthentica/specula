@@ -1,0 +1,28 @@
+{"t":1791794917035,"type":"capture-start","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794917880,"type":"navigation","url":"http://localhost:8000/","sameDocument":false}
+{"t":1791794918160,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","sameDocument":true}
+{"t":1791794918182,"type":"ws-open","requestId":"15882.591","url":"ws://localhost:8000/ws"}
+{"t":1791794918213,"type":"ws-frame","requestId":"15882.591","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794918214,"type":"ws-frame","requestId":"15882.591","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794918417,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","sameDocument":true}
+{"t":1791794920725,"type":"action","id":"a1","kind":"click","target":{"tag":"div","selector":"div:nth-of-type(1) > div:nth-of-type(1) > div > div > div","role":"button","name":"menuwrapper"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794921384,"type":"action","id":"a2","kind":"click","target":{"tag":"div","selector":"div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)","role":"button","name":"Log out"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}
+{"t":1791794921413,"type":"ws-frame","requestId":"15882.591","direction":"sent","opcode":1,"payload":"{\"action\":\"UNSUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794921414,"type":"navigation","url":"http://localhost:8000/error?id=not-logged-in&r=%2F","sameDocument":true}
+{"t":1791794921421,"type":"navigation","url":"http://localhost:8000/login?r=/","sameDocument":true}
+{"t":1791794921423,"type":"navigation","url":"http://localhost:8000/login","sameDocument":true}
+{"t":1791794922683,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"#main > div > form > button","role":"button","name":"Log in","type":"submit"},"url":"http://localhost:8000/login"}
+{"t":1791794922684,"type":"action","id":"a4","kind":"submit","target":{"tag":"form","selector":"#main > div > form","role":"form","name":"Log in Log in"},"url":"http://localhost:8000/login"}
+{"t":1791794923017,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"#login-username","role":"textbox","name":"Enter username","id":"login-username","type":"text"},"url":"http://localhost:8000/login","valueInfo":{"type":"text","length":5}}
+{"t":1791794923033,"type":"action","id":"a6","kind":"input","target":{"tag":"input","selector":"#login-password","role":"textbox","name":"Enter password","id":"login-password","type":"password"},"url":"http://localhost:8000/login","valueInfo":{"type":"password","length":12}}
+{"t":1791794923988,"type":"action","id":"a7","kind":"click","target":{"tag":"button","selector":"#main > div > form > button","role":"button","name":"Log in","type":"submit"},"url":"http://localhost:8000/login"}
+{"t":1791794923989,"type":"action","id":"a8","kind":"submit","target":{"tag":"form","selector":"#main > div > form","role":"form","name":"Log in Log in"},"url":"http://localhost:8000/login"}
+{"t":1791794924107,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794924111,"type":"ws-frame","requestId":"15882.591","direction":"sent","opcode":1,"payload":"{\"action\":\"AUTH\",\"token\":\"<redacted:secret>\"}"}
+{"t":1791794924118,"type":"navigation","url":"http://localhost:8000/","sameDocument":true}
+{"t":1791794924132,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa","sameDocument":true}
+{"t":1791794924139,"type":"ws-frame","requestId":"15882.591","direction":"sent","opcode":1,"payload":"{\"action\":\"SUBSCRIBE_TEAM\",\"teamId\":\"0\"}"}
+{"t":1791794924172,"type":"navigation","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","sameDocument":true}
+{"t":1791794924313,"type":"action","id":"a9","kind":"input","target":{"tag":"input","selector":"#login-username","role":"textbox","name":"Enter username","id":"login-username","type":"text"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","valueInfo":{"type":"text","length":5}}
+{"t":1791794924328,"type":"action","id":"a10","kind":"input","target":{"tag":"input","selector":"#login-password","role":"textbox","name":"Enter password","id":"login-password","type":"password"},"url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige","valueInfo":{"type":"password","length":15}}
+{"t":1791794927207,"type":"capture-stop","url":"http://localhost:8000/b1dooum4safgcuf5za47ebg3gaa/v3eaywyyz6ib6tkzeuy77k3gige"}

@@ -1,0 +1,1446 @@
+{
+  "generatedBy": "specula fingerprint",
+  "target": "vikunja",
+  "flows": [
+    "add-tasks",
+    "create-project",
+    "delete-task",
+    "edit-task",
+    "errors",
+    "kanban",
+    "labels",
+    "logout-login",
+    "register",
+    "search",
+    "token-refresh",
+    "upcoming-overview"
+  ],
+  "frontend": [
+    {
+      "claim": "Frontend framework: vue",
+      "value": {
+        "framework": "vue",
+        "version": "3.5.42"
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.runtime.json",
+          "detail": "markers.vue=true, version 3.5.42"
+        },
+        {
+          "ref": "capture/create-project.runtime.json",
+          "detail": "markers.vue=true, version 3.5.42"
+        },
+        {
+          "ref": "capture/sources/vue.runtime.esm-bundler-DBDXy1Ot.af77b1f4.js:4",
+          "detail": "\"(u,a,l),s=!0,c._container=a,a.__vue_app__=c,Eo(u.component)}},onUnmount\""
+        }
+      ]
+    },
+    {
+      "claim": "Build tool: Vite (Rollup chunking)",
+      "value": {
+        "tool": "vite",
+        "chunks": 76
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/sources/AsyncEditor-CpECmkOH.a39478b8.js:1",
+          "detail": "\"const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||\""
+        },
+        {
+          "ref": "capture/sources/index.json",
+          "detail": "chunk names like /assets/rolldown-runtime-B0Z9INg1.js"
+        }
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "claim": "Library: vue-router",
+      "value": "vue-router",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/index-Cl6IJP7b.877a1d0f.js:14",
+          "detail": "\",(e,t)=>{let d=F(`Icon`),p=F(`RouterView`),m=F(`Modal`),h=nt(`shortcut\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: pinia",
+      "value": "pinia",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/config-WRmwG2Z_.cf52d111.js:1",
+          "detail": "\"i),e.config.globalProperties.$pinia=i,r.forEach(e=>n.push(e)),r=[\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: @tanstack/query",
+      "value": "@tanstack/query",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/AsyncEditor-CpECmkOH.a39478b8.js:1",
+          "detail": "\"ayjs.min-BcJkixEx.js\\\",\\\"assets/useQuery-CHuXoEEX.js\\\",\\\"assets/useBlurH\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: tiptap / ProseMirror",
+      "value": "tiptap / ProseMirror",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/FilterInput-Dc8tqOk2.f936d062.js:1",
+          "detail": "\"{return{projectId:void 0}},addProseMirrorPlugins(){let{filterLabelsByQu\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: vue-i18n",
+      "value": "vue-i18n",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/AddTask-sSHY1URK.c94e0bc8.js:1",
+          "detail": "\"5rH.js\\\";import{n as re}from\\\"./vue-i18n.runtime-CI9oBnaf.js\\\";import{t\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: dayjs",
+      "value": "dayjs",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/AsyncEditor-CpECmkOH.a39478b8.js:1",
+          "detail": "\"-i18n-13-CCYNpxd1.js\\\",\\\"assets/dayjs.min-BcJkixEx.js\\\",\\\"assets/useQ\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: @sentry/browser",
+      "value": "@sentry/browser",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/login.5eade6e6.js:3",
+          "detail": "\"0cd4b55c5a18d@o1047380.ingest.sentry.io/6024480'\\n\\twindow.CUSTOM_LOGO_\""
+        }
+      ]
+    },
+    {
+      "claim": "Library: floating-ui",
+      "value": "floating-ui",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/sources/index-Cl6IJP7b.877a1d0f.js:14",
+          "detail": "\"ensureTeleport(),await this.$_computePosition())},triggers:{handler:`$_refr\""
+        }
+      ]
+    }
+  ],
+  "backend": [
+    {
+      "claim": "No server identification headers on API responses",
+      "value": null,
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.har#entries[0]",
+          "detail": "no Server / X-Powered-By header"
+        }
+      ]
+    },
+    {
+      "claim": "Custom response headers (e.g. pagination metadata)",
+      "value": [
+        "x-ratelimit-limit",
+        "x-ratelimit-remaining",
+        "x-ratelimit-reset",
+        "x-request-id"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.har#entries[0]",
+          "detail": "X-Request-Id: oVzhvzhejAIxZmcslUUidZhsikIxkJQl"
+        },
+        {
+          "ref": "capture/errors.har#entries[93]",
+          "detail": "X-Ratelimit-Reset: 1791740118"
+        },
+        {
+          "ref": "capture/errors.har#entries[93]",
+          "detail": "X-Ratelimit-Remaining: 58"
+        },
+        {
+          "ref": "capture/errors.har#entries[93]",
+          "detail": "X-Ratelimit-Limit: 60"
+        }
+      ]
+    },
+    {
+      "claim": "Partial updates use JSON Patch (RFC 6902 style op/path/value arrays)",
+      "value": "PATCH /api/v2/tasks/{taskId}",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/edit-task.har#entries[23]",
+          "detail": "[{\"op\":\"add\",\"path\":\"/title\",\"value\":\"Buy paint\"},{\"op\":\"add\",\"path\":\"/description\",\"value\":\"\"},{\"op\":\"add\",\"path\":\"/don"
+        }
+      ]
+    },
+    {
+      "claim": "Error response body shapes",
+      "value": [
+        "{$schema,code,detail,status,title}"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[92]",
+          "detail": "404 {$schema,code,detail,status,title}"
+        }
+      ]
+    },
+    {
+      "claim": "CORS headers present on API",
+      "value": "http://localhost:3456",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.har#entries[0]",
+          "detail": "Access-Control-Allow-Origin"
+        }
+      ]
+    }
+  ],
+  "thirdParties": [],
+  "auth": [
+    {
+      "claim": "API requests authenticate with an Authorization: Bearer header carrying a JWT",
+      "value": {
+        "scheme": "Bearer",
+        "jwt": {
+          "alg": "HS256",
+          "typ": "JWT",
+          "claimNames": [
+            "exp",
+            "iat",
+            "id",
+            "is_admin",
+            "jti",
+            "sid",
+            "type",
+            "username"
+          ],
+          "lifetimeSec": 600
+        }
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.auth.json",
+          "detail": "6 requests, first capture/add-tasks.har#entries[0], alg HS256, claims exp/iat/id/is_admin/jti/sid/type/username, lifetime 600s"
+        },
+        {
+          "ref": "capture/create-project.auth.json",
+          "detail": "3 requests, first capture/create-project.har#entries[9], alg HS256, claims exp/iat/id/is_admin/jti/sid/type/username, lifetime 600s"
+        }
+      ]
+    },
+    {
+      "claim": "Cookie \"vikunja_refresh_token\" is set by POST /api/v2/user/token/refresh, POST /api/v2/logout, POST /api/v2/login",
+      "value": {
+        "name": "vikunja_refresh_token",
+        "setBy": {
+          "POST /api/v2/user/token/refresh": [
+            "Path",
+            "Max-Age",
+            "HttpOnly",
+            "SameSite"
+          ],
+          "POST /api/v2/logout": [
+            "Path",
+            "Max-Age",
+            "HttpOnly",
+            "SameSite"
+          ],
+          "POST /api/v2/login": [
+            "Path",
+            "Max-Age",
+            "HttpOnly",
+            "SameSite"
+          ]
+        }
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[93]",
+          "detail": "Set-Cookie vikunja_refresh_token; Path; Max-Age; HttpOnly; SameSite"
+        },
+        {
+          "ref": "capture/errors.har#entries[116]",
+          "detail": "Set-Cookie vikunja_refresh_token; Path; Max-Age; HttpOnly; SameSite"
+        },
+        {
+          "ref": "capture/errors.har#entries[245]",
+          "detail": "Set-Cookie vikunja_refresh_token; Path; Max-Age; HttpOnly; SameSite"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /api/v2/login",
+      "value": {
+        "endpoint": "POST /api/v2/login",
+        "status": 403,
+        "responseKeys": [
+          "$schema",
+          "title",
+          "status",
+          "detail",
+          "code"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[119]",
+          "detail": "request body keys: username, password, long_token; response keys: $schema, title, status, detail, code"
+        }
+      ]
+    },
+    {
+      "claim": "Credential endpoint: POST /api/v2/register",
+      "value": {
+        "endpoint": "POST /api/v2/register",
+        "status": 400,
+        "responseKeys": [
+          "$schema",
+          "title",
+          "status",
+          "detail",
+          "code"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[182]",
+          "detail": "request body keys: username, email, password, language; response keys: $schema, title, status, detail, code"
+        }
+      ]
+    },
+    {
+      "claim": "Token refresh: POST /api/v2/user/token/refresh (sends cookie vikunja_refresh_token)",
+      "value": {
+        "endpoint": "POST /api/v2/user/token/refresh",
+        "observed": 7,
+        "responseKeys": [
+          "$schema",
+          "token"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[93]",
+          "detail": "200, 18ms"
+        },
+        {
+          "ref": "capture/errors.har#entries[259]",
+          "detail": "200, 31ms"
+        },
+        {
+          "ref": "capture/logout-login.har#entries[7]",
+          "detail": "200, 7ms"
+        }
+      ]
+    },
+    {
+      "claim": "Logout endpoint: POST /api/v2/logout",
+      "value": "POST /api/v2/logout",
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[116]",
+          "detail": "200"
+        }
+      ]
+    },
+    {
+      "claim": "No 401 responses observed (the answer to an expired token was not seen)",
+      "value": 0,
+      "confidence": "medium",
+      "evidence": []
+    },
+    {
+      "claim": "Client keeps auth state in localStorage keys: token",
+      "value": [
+        "token"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "ref": "capture/add-tasks.runtime.json",
+          "detail": "storageKeys.local"
+        }
+      ]
+    }
+  ],
+  "realtime": [
+    {
+      "claim": "WebSocket /api/v2/ws",
+      "value": {
+        "url": "ws://localhost:3456/api/v2/ws",
+        "messages": [
+          {
+            "message": "sent auth",
+            "count": 12,
+            "keys": [
+              "action",
+              "token"
+            ]
+          },
+          {
+            "message": "received auth.success",
+            "count": 12,
+            "keys": [
+              "action",
+              "success"
+            ]
+          },
+          {
+            "message": "sent subscribe",
+            "count": 28,
+            "keys": [
+              "action",
+              "event"
+            ]
+          }
+        ],
+        "subscribedEvents": [
+          "timer.created",
+          "timer.updated",
+          "timer.deleted",
+          "notification.created"
+        ]
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.events.jsonl:6",
+          "detail": "sent keys: action, token"
+        },
+        {
+          "ref": "capture/errors.events.jsonl:7",
+          "detail": "received keys: action, success"
+        },
+        {
+          "ref": "capture/errors.events.jsonl:8",
+          "detail": "sent keys: action, event"
+        }
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "claim": "Server-provided feature switches in GET /api/v2/info",
+      "value": {
+        "link_sharing_enabled": true,
+        "task_attachments_enabled": true,
+        "totp_enabled": true,
+        "caldav_enabled": true,
+        "auth.local.enabled": true,
+        "auth.local.registration_enabled": true,
+        "auth.ldap.enabled": false,
+        "auth.openid_connect.enabled": false,
+        "email_reminders_enabled": true,
+        "user_deletion_enabled": true,
+        "task_comments_enabled": true,
+        "demo_mode_enabled": false,
+        "webhooks_enabled": true,
+        "public_teams_enabled": false,
+        "allow_icon_changes": false
+      },
+      "confidence": "high",
+      "evidence": [
+        {
+          "ref": "capture/errors.har#entries[55]",
+          "detail": "15 boolean switches"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "route": "/is_favorite",
+      "visited": false,
+      "ref": "capture/sources/index-Cl6IJP7b.877a1d0f.js:14"
+    },
+    {
+      "route": "/",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:2"
+    },
+    {
+      "route": "/${e}",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:2"
+    },
+    {
+      "route": "/:pathMatch(.*)*",
+      "name": "not-found",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/:pathMatch(.*)",
+      "name": "bad-not-found",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/login",
+      "name": "user.login",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/get-password-reset",
+      "name": "user.password-reset.request",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/password-reset",
+      "name": "user.password-reset.reset",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/register",
+      "name": "user.register",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings",
+      "name": "user.settings",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/avatar",
+      "name": "user.settings.avatar",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/caldav",
+      "name": "user.settings.caldav",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/mcp",
+      "name": "user.settings.mcp",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/data-export",
+      "name": "user.settings.data-export",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/feeds",
+      "name": "user.settings.feeds",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/deletion",
+      "name": "user.settings.deletion",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/email-update",
+      "name": "user.settings.email-update",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/general",
+      "name": "user.settings.general",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/password-update",
+      "name": "user.settings.password-update",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/totp",
+      "name": "user.settings.totp",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/api-tokens",
+      "name": "user.settings.apiTokens",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/sessions",
+      "name": "user.settings.sessions",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/webhooks",
+      "name": "user.settings.webhooks",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/bots",
+      "name": "user.settings.bots",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/settings/migrate",
+      "name": "migrate.start",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/migrate/csv",
+      "name": "migrate.csv",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/migrate/:service",
+      "name": "migrate.service",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/user/export/download",
+      "name": "user.export.download",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/share/:share/auth",
+      "name": "link-share.auth",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/tasks/:id",
+      "name": "task.detail",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/tasks/by/upcoming",
+      "name": "tasks.range",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/lists:pathMatch(.*)*",
+      "name": "lists",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects",
+      "name": "projects.index",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/new",
+      "name": "project.create",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:parentProjectId/new",
+      "name": "project.createFromParent",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId(\\\\d+)/settings/edit",
+      "name": "project.settings.edit",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/background",
+      "name": "project.settings.background",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/duplicate",
+      "name": "project.settings.duplicate",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/share",
+      "name": "project.settings.share",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/webhooks",
+      "name": "project.settings.webhooks",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId(\\\\d+)/settings/delete",
+      "name": "project.settings.delete",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/archive",
+      "name": "project.settings.archive",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/settings/views",
+      "name": "project.settings.views",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId(-[2-9]\\\\d*|-1\\\\d+)/settings/edit",
+      "name": "filter.settings.edit",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId(-[2-9]\\\\d*|-1\\\\d+)/settings/delete",
+      "name": "filter.settings.delete",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/info",
+      "name": "project.info",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId",
+      "name": "project.index",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/projects/:projectId/:viewId",
+      "name": "project.view",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/teams",
+      "name": "teams.index",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/teams/new",
+      "name": "teams.create",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/teams/:id/edit",
+      "name": "teams.edit",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/labels",
+      "name": "labels.index",
+      "visited": true,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/labels/new",
+      "name": "labels.create",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/filters/new",
+      "name": "filters.create",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/auth/openid/:provider",
+      "name": "openid.auth",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/oauth/authorize",
+      "name": "oauth.authorize",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/about",
+      "name": "about",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/time-tracking",
+      "name": "time-tracking",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    },
+    {
+      "route": "/admin",
+      "visited": false,
+      "ref": "capture/sources/router-atHWBv7u.e45be14f.js:3"
+    }
+  ],
+  "apiPathsInCode": {
+    "note": "String literals in first-party bundles shaped like API paths. \"observed\" = also seen in recorded traffic (after removing apiPrefix). Unobserved ones are candidates, not facts.",
+    "paths": [
+      {
+        "path": "/a/b",
+        "observed": false,
+        "ref": "capture/sources/index-Cl6IJP7b.877a1d0f.js:11"
+      },
+      {
+        "path": "/admin/invite-links",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/invite-links/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/overview",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/projects",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/projects/{}/owner",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/teams",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users/{}/admin",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users/{}/password",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users/{}/password-reset-email",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/admin/users/{}/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/api/v2",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/auth/openid/{}/callback",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/avatar/{}",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/backgrounds/unsplash/images/{}/thumb",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/backgrounds/unsplash/search",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/filters/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/info",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/invite-links/check",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/labels/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/logout",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/mcp/info",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/csv/detect",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/csv/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/csv/preview",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/csv/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/microsoft-todo/auth",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/microsoft-todo/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/microsoft-todo/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/planka/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/planka/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/ticktick/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/ticktick/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/todoist/auth",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/todoist/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/todoist/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/trello/auth",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/trello/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/trello/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/vikunja-file/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/vikunja-file/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/wekan/migrate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/migration/wekan/status",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/notifications",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/notifications/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/background",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/backgrounds/unsplash",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/backgrounds/upload",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/duplicate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/shares",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/shares/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/tasks",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/tasks/bulk",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/teams",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/teams/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/users",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/users/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/users/search",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}/buckets",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}/buckets/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}/buckets/{}/tasks",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}/buckets/tasks",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/views/{}/tasks",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/webhooks",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/projects/{}/webhooks/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/shares/{}/auth",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/subscriptions/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/assignees",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/assignees/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/attachments",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/attachments/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/comments",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/comments/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/duplicate",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/labels",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/labels/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/position",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/read",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/relations",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tasks/{}/relations/{}/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/teams/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/teams/{}/members",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/teams/{}/members/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/teams/{}/members/{}/admin",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/time-entries/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/time-entries/timer/stop",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/tokens/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/bots",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/bots/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/confirm",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/deletion/cancel",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/deletion/confirm",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/deletion/request",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/export",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/export/request",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/password",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/password/reset",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/password/token",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/sessions",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/sessions/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/avatar/provider",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/email",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/email/resend",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/token/caldav",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/token/caldav/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/totp/disable",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/totp/enable",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/totp/enroll",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/totp/qrcode",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/webhooks/{}",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/settings/webhooks/events",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/timezones",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/token",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/user/token/refresh",
+        "observed": true,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      },
+      {
+        "path": "/webhooks/events",
+        "observed": false,
+        "ref": "capture/sources/generated-Bjw8obn2.b1b15d16.js:6"
+      }
+    ]
+  }
+}

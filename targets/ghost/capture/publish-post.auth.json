@@ -1,0 +1,85 @@
+{
+  "authorization": [],
+  "cookiesSent": [
+    "ghost-admin-api-session"
+  ],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 0,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 0,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 1,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 1,
+      "path": "$.posts[0].post_revisions[0].author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 1,
+      "path": "$.posts[0].post_revisions[1].author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 1,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 4,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 4,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 4,
+      "path": "$.posts[1].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 4,
+      "path": "$.posts[1].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 7,
+      "path": "$.users[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 8,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 8,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 9,
+      "path": "$.posts[0].authors[0].accessibility",
+      "kind": "opaque"
+    },
+    {
+      "entry": 9,
+      "path": "$.posts[0].primary_author.accessibility",
+      "kind": "opaque"
+    }
+  ]
+}

@@ -1,0 +1,602 @@
+{
+  "label": "rebuild",
+  "baseUrl": "http://127.0.0.1:4473",
+  "generated": "2026-10-12T09:09:56.472Z",
+  "passed": 52,
+  "total": 52,
+  "checks": {
+    "keys": 3565,
+    "values": 97,
+    "lists": 80,
+    "flags": 58
+  },
+  "flows": [
+    {
+      "name": "setup",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "name": "login",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "create-home",
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "name": "create-pages",
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "edit-page",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "name": "comments",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "name": "browse",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "name": "search",
+      "passed": 3,
+      "total": 3
+    },
+    {
+      "name": "history",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "users",
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "name": "delete-page",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "name": "errors",
+      "passed": 2,
+      "total": 2
+    },
+    {
+      "name": "logout-login",
+      "passed": 5,
+      "total": 5
+    }
+  ],
+  "steps": [
+    {
+      "flow": "setup",
+      "step": 1,
+      "operation": "POST /finalize",
+      "action": "click \"INSTALL\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 2,
+      "operation": "query localization.translations + query localization.translations (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "setup",
+      "step": 3,
+      "operation": "query authentication.activeStrategies (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/setup.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "login",
+      "step": 1,
+      "operation": "mutation authentication.login (POST /graphql)",
+      "action": "input \"Password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/login.har#entries[0]",
+      "status": 200
+    },
+    {
+      "flow": "login",
+      "step": 2,
+      "operation": "mutation authentication.login (POST /graphql)",
+      "action": "input \"Password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/login.har#entries[1]",
+      "status": 200
+    },
+    {
+      "flow": "create-home",
+      "step": 1,
+      "operation": "query localization.translations (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-home.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "create-home",
+      "step": 2,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Short Description\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-home.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "create-home",
+      "step": 3,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Tags\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-home.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "create-home",
+      "step": 4,
+      "operation": "mutation pages.create (POST /graphql)",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-home.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "create-home",
+      "step": 5,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-home.har#entries[70]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 1,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 2,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Tags\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 3,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "click \"Tags\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 4,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Tags\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 5,
+      "operation": "mutation pages.create (POST /graphql)",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 6,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[71]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 7,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Title\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[112]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 8,
+      "operation": "query pages.searchTags (POST /graphql)",
+      "action": "input \"Tags\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[113]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 9,
+      "operation": "mutation pages.create (POST /graphql)",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[114]",
+      "status": 200
+    },
+    {
+      "flow": "create-pages",
+      "step": 10,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-pages.har#entries[143]",
+      "status": 200
+    },
+    {
+      "flow": "edit-page",
+      "step": 1,
+      "operation": "query pages.checkConflicts (POST /graphql)",
+      "action": "key \"1 # Team handbook 2 This wiki collects how we work. 3 - Onbo…\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-page.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "edit-page",
+      "step": 2,
+      "operation": "query pages.checkConflicts (POST /graphql)",
+      "action": "click \"SAVE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-page.har#entries[33]",
+      "status": 200
+    },
+    {
+      "flow": "edit-page",
+      "step": 3,
+      "operation": "mutation pages.update (POST /graphql)",
+      "action": "click \"SAVE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-page.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "edit-page",
+      "step": 4,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-page.har#entries[64]",
+      "status": 200
+    },
+    {
+      "flow": "comments",
+      "step": 1,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/comments.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "comments",
+      "step": 2,
+      "operation": "mutation comments.create (POST /graphql)",
+      "action": "click \"Post Comment\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/comments.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "comments",
+      "step": 3,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "click \"Post Comment\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/comments.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "browse",
+      "step": 1,
+      "operation": "query localization.translations + query pages.tags (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/browse.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "browse",
+      "step": 2,
+      "operation": "query pages.list (POST /graphql)",
+      "action": "click \"notes\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/browse.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "browse",
+      "step": 3,
+      "operation": "query pages.list (POST /graphql)",
+      "action": "click \"guide\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/browse.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "browse",
+      "step": 4,
+      "operation": "query localization.translations + query system.info + query pages.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/browse.har#entries[57]",
+      "status": 200
+    },
+    {
+      "flow": "search",
+      "step": 1,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/search.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "search",
+      "step": 2,
+      "operation": "query pages.search (POST /graphql)",
+      "action": "input",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/search.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "search",
+      "step": 3,
+      "operation": "query pages.search (POST /graphql)",
+      "action": "input",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/search.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "history",
+      "step": 1,
+      "operation": "query localization.translations + query pages.history (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/history.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "history",
+      "step": 2,
+      "operation": "query pages.version (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/history.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "users",
+      "step": 1,
+      "operation": "query system.info + query users.list + query authentication.activeStrategies + query authentication.activeStrategies + query groups.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/users.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "users",
+      "step": 2,
+      "operation": "mutation users.create (POST /graphql)",
+      "action": "click \"CREATE AND CLOSE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/users.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "users",
+      "step": 3,
+      "operation": "query users.list (POST /graphql)",
+      "action": "click \"CREATE AND CLOSE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/users.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "users",
+      "step": 4,
+      "operation": "mutation users.create (POST /graphql)",
+      "action": "click \"CREATE AND CLOSE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/users.har#entries[33]",
+      "status": 200
+    },
+    {
+      "flow": "users",
+      "step": 5,
+      "operation": "query localization.translations + query users.single + query groups.list (POST /graphql)",
+      "action": "click \"Local\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/users.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "delete-page",
+      "step": 1,
+      "operation": "query system.info + query pages.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-page.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "delete-page",
+      "step": 2,
+      "operation": "query pages.single (POST /graphql)",
+      "action": "click \"en / notes/ideas\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-page.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "delete-page",
+      "step": 3,
+      "operation": "mutation pages.delete (POST /graphql)",
+      "action": "click \"DELETE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-page.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "delete-page",
+      "step": 4,
+      "operation": "query pages.list (POST /graphql)",
+      "action": "click \"DELETE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-page.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 1,
+      "operation": "mutation pages.create (POST /graphql)",
+      "action": "click \"CREATE\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 2,
+      "operation": "query system.info + query pages.single (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[63]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 1,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 2,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[60]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 3,
+      "operation": "query authentication.activeStrategies (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[85]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 4,
+      "operation": "mutation authentication.login (POST /graphql)",
+      "action": "input \"Password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[91]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 5,
+      "operation": "query comments.list (POST /graphql)",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[120]",
+      "status": 200
+    }
+  ]
+}

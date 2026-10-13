@@ -1,0 +1,687 @@
+{
+  "name": "edit-task",
+  "order": 4,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Buy paint",
+          "href": "/tasks/1"
+        }
+      },
+      "request": {
+        "operationId": "getTasksById",
+        "method": "GET",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task108"
+          }
+        },
+        "query": [
+          [
+            "expand",
+            "reactions"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "expand",
+            "buckets"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/TaskReadOneBody.json",
+            "id": 1,
+            "title": "Buy paint",
+            "description": "",
+            "project_id": 2,
+            "done": false,
+            "done_at": "0001-01-01T00:00:00Z",
+            "due_date": "0001-01-01T00:00:00Z",
+            "reminders": null,
+            "repeat_after": 0,
+            "repeat_mode": 0,
+            "priority": 0,
+            "start_date": "0001-01-01T00:00:00Z",
+            "end_date": "0001-01-01T00:00:00Z",
+            "assignees": null,
+            "labels": null,
+            "hex_color": "",
+            "percent_done": 0,
+            "identifier": "#1",
+            "index": 1,
+            "related_tasks": {},
+            "attachments": null,
+            "cover_image_attachment_id": 0,
+            "is_favorite": false,
+            "subscription": {
+              "id": 1,
+              "entity": "task",
+              "entity_id": 1,
+              "created": "2026-10-11T17:32:19Z"
+            },
+            "created": "2026-10-11T17:32:19Z",
+            "updated": "2026-10-11T17:32:19Z",
+            "bucket_id": 0,
+            "buckets": [
+              {
+                "id": 7,
+                "title": "To-Do",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 100,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": null
+              }
+            ],
+            "position": 0,
+            "reactions": null,
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "max_permission": 2
+          }
+        },
+        "source": "capture/edit-task.har#entries[17]",
+        "bind": {
+          "task180": "$.id",
+          "project181": "$.project_id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Buy paint",
+          "href": "/tasks/1"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsBuckets",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/buckets",
+        "pathParams": {
+          "projectId": {
+            "var": "project181"
+          },
+          "viewId": {
+            "var": "view91"
+          }
+        },
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Bucket",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedBucket.json",
+            "items": [
+              {
+                "id": 7,
+                "title": "To-Do",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 100,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 8,
+                "title": "Doing",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 200,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 9,
+                "title": "Done",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 300,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 3,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/edit-task.har#entries[20]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Buy paint",
+          "href": "/tasks/1"
+        }
+      },
+      "request": {
+        "operationId": "getTasksComments",
+        "method": "GET",
+        "path": "/tasks/{taskId}/comments",
+        "pathParams": {
+          "taskId": {
+            "var": "task180"
+          }
+        },
+        "query": [
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTaskComment.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/edit-task.har#entries[21]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Buy paint",
+          "href": "/tasks/1"
+        }
+      },
+      "request": {
+        "operationId": "getAvatarById",
+        "method": "GET",
+        "path": "/avatar/{avatarId}",
+        "pathParams": {
+          "avatarId": {
+            "value": "<redacted:pii>"
+          }
+        },
+        "query": [
+          [
+            "size",
+            "48"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "image/svg+xml"
+        },
+        "source": "capture/edit-task.har#entries[22]"
+      }
+    },
+    {
+      "action": {
+        "kind": "change",
+        "target": {
+          "tag": "select",
+          "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > select",
+          "role": "combobox",
+          "name": "Priority",
+          "type": "select-one"
+        }
+      },
+      "request": {
+        "operationId": "patchTasksById",
+        "method": "PATCH",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task180"
+          }
+        },
+        "body": [
+          {
+            "op": "add",
+            "path": "/title",
+            "value": "Buy paint"
+          },
+          {
+            "op": "add",
+            "path": "/description",
+            "value": ""
+          },
+          {
+            "op": "add",
+            "path": "/done",
+            "value": false
+          },
+          {
+            "op": "add",
+            "path": "/due_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/start_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/end_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/priority",
+            "value": 3
+          },
+          {
+            "op": "add",
+            "path": "/hex_color",
+            "value": ""
+          },
+          {
+            "op": "add",
+            "path": "/percent_done",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/repeat_after",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/repeat_mode",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/is_favorite",
+            "value": false
+          },
+          {
+            "op": "add",
+            "path": "/bucket_id",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/project_id",
+            "value": {
+              "$var": "project181"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/reminders",
+            "value": []
+          },
+          {
+            "op": "add",
+            "path": "/cover_image_attachment_id",
+            "value": 0
+          }
+        ],
+        "contentType": "application/json-patch+json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "body": {
+            "id": 1,
+            "title": "Buy paint",
+            "description": "",
+            "project_id": 2,
+            "done": false,
+            "done_at": "0001-01-01T00:00:00Z",
+            "due_date": "0001-01-01T00:00:00Z",
+            "reminders": null,
+            "repeat_after": 0,
+            "repeat_mode": 0,
+            "priority": 3,
+            "start_date": "0001-01-01T00:00:00Z",
+            "end_date": "0001-01-01T00:00:00Z",
+            "assignees": [],
+            "labels": null,
+            "hex_color": "",
+            "percent_done": 0,
+            "identifier": "#1",
+            "index": 1,
+            "related_tasks": {},
+            "attachments": null,
+            "cover_image_attachment_id": 0,
+            "is_favorite": false,
+            "subscription": {
+              "id": 1,
+              "entity": "task",
+              "entity_id": 1,
+              "created": "2026-10-11T17:32:19Z"
+            },
+            "created": "2026-10-11T17:32:19Z",
+            "updated": "2026-10-11T17:32:40Z",
+            "bucket_id": 0,
+            "position": 0,
+            "reactions": null,
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            }
+          }
+        },
+        "source": "capture/edit-task.har#entries[23]",
+        "bind": {
+          "task217": "$.id",
+          "project218": "$.project_id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div > div:nth-of-type(2) > button",
+          "role": "button",
+          "name": "COMMENT",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postTasksComments",
+        "method": "POST",
+        "path": "/tasks/{taskId}/comments",
+        "pathParams": {
+          "taskId": {
+            "var": "task217"
+          }
+        },
+        "body": {
+          "comment": "<p>Two litres should be enough</p>"
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Comment",
+          "body": {
+            "id": 1,
+            "comment": "<p>Two litres should be enough</p>",
+            "author": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "reactions": null,
+            "created": "2026-10-11T17:32:48.937919976Z",
+            "updated": "2026-10-11T17:32:48.937924006Z"
+          }
+        },
+        "source": "capture/edit-task.har#entries[24]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div > div:nth-of-type(2) > button",
+          "role": "button",
+          "name": "COMMENT",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getAvatarById",
+        "method": "GET",
+        "path": "/avatar/{avatarId}",
+        "pathParams": {
+          "avatarId": {
+            "value": "<redacted:pii>"
+          }
+        },
+        "query": [
+          [
+            "size",
+            "20"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "image/svg+xml"
+        },
+        "source": "capture/edit-task.har#entries[25]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "div > div > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+          "role": "button",
+          "name": "MARK TASK DONE!",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "patchTasksById",
+        "method": "PATCH",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task217"
+          }
+        },
+        "body": [
+          {
+            "op": "add",
+            "path": "/title",
+            "value": "Buy paint"
+          },
+          {
+            "op": "add",
+            "path": "/description",
+            "value": ""
+          },
+          {
+            "op": "add",
+            "path": "/done",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/due_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/start_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/end_date",
+            "value": "0001-01-01T00:00:00Z"
+          },
+          {
+            "op": "add",
+            "path": "/priority",
+            "value": 3
+          },
+          {
+            "op": "add",
+            "path": "/hex_color",
+            "value": ""
+          },
+          {
+            "op": "add",
+            "path": "/percent_done",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/repeat_after",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/repeat_mode",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/is_favorite",
+            "value": false
+          },
+          {
+            "op": "add",
+            "path": "/bucket_id",
+            "value": 0
+          },
+          {
+            "op": "add",
+            "path": "/project_id",
+            "value": {
+              "$var": "project218"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/reminders",
+            "value": []
+          },
+          {
+            "op": "add",
+            "path": "/cover_image_attachment_id",
+            "value": 0
+          }
+        ],
+        "contentType": "application/json-patch+json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "body": {
+            "id": 1,
+            "title": "Buy paint",
+            "description": "",
+            "project_id": 2,
+            "done": true,
+            "done_at": "2026-10-11T17:32:53.245840429Z",
+            "due_date": "0001-01-01T00:00:00Z",
+            "reminders": null,
+            "repeat_after": 0,
+            "repeat_mode": 0,
+            "priority": 3,
+            "start_date": "0001-01-01T00:00:00Z",
+            "end_date": "0001-01-01T00:00:00Z",
+            "assignees": [],
+            "labels": null,
+            "hex_color": "",
+            "percent_done": 0,
+            "identifier": "#1",
+            "index": 1,
+            "related_tasks": {},
+            "attachments": null,
+            "cover_image_attachment_id": 0,
+            "is_favorite": false,
+            "subscription": {
+              "id": 1,
+              "entity": "task",
+              "entity_id": 1,
+              "created": "2026-10-11T17:32:19Z"
+            },
+            "created": "2026-10-11T17:32:19Z",
+            "updated": "2026-10-11T17:32:53Z",
+            "bucket_id": 0,
+            "position": 0,
+            "reactions": null,
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            }
+          }
+        },
+        "source": "capture/edit-task.har#entries[26]",
+        "bind": {
+          "project236": "$.project_id"
+        }
+      }
+    }
+  ]
+}

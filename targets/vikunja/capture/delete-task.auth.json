@@ -1,0 +1,28 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 8,
+      "firstEntry": 0,
+      "jwt": {
+        "alg": "HS256",
+        "typ": "JWT",
+        "claimNames": [
+          "exp",
+          "iat",
+          "id",
+          "is_admin",
+          "jti",
+          "sid",
+          "type",
+          "username"
+        ],
+        "lifetimeSec": 600
+      }
+    }
+  ],
+  "cookiesSent": [],
+  "cookiesSet": [],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": []
+}

@@ -1,0 +1,636 @@
+{
+  "name": "errors",
+  "order": 10,
+  "description": "",
+  "steps": [
+    {
+      "action": null,
+      "request": {
+        "operationId": "getPosts2",
+        "method": "GET",
+        "path": "/posts/{postId}/",
+        "pathParams": {
+          "postId": {
+            "var": "post769"
+          }
+        },
+        "query": [
+          [
+            "formats",
+            "mobiledoc,lexical"
+          ],
+          [
+            "include",
+            "tags,authors,authors.roles,email,tiers,newsletter,count.clicks,post_revisions,post_revisions.author"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 404,
+          "contentType": "application/json",
+          "body": {
+            "errors": [
+              {
+                "message": "Resource not found error, cannot read post.",
+                "context": "Post not found.",
+                "type": "NotFoundError",
+                "details": null,
+                "property": null,
+                "help": null,
+                "code": null,
+                "id": "1e3f3e60-c59b-11f1-a140-7522b990bc7e",
+                "appErrorCode": null
+              }
+            ]
+          }
+        },
+        "source": "capture/errors.har#entries[0]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "labels": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[2]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "query": [
+          [
+            "filter",
+            "type:paid+active:true"
+          ],
+          [
+            "include",
+            "monthly_price,yearly_price"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 1,
+                "total": 1,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[3]"
+      }
+    },
+    {
+      "action": null,
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "filter",
+            "status:active"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 15,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[4]",
+        "bind": {
+          "newsletter827": "$.newsletters[0].id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember66",
+          "role": "button",
+          "name": "Save",
+          "id": "ember66",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "postMembers",
+        "method": "POST",
+        "path": "/members/",
+        "query": [
+          [
+            "include",
+            "newsletters,labels"
+          ]
+        ],
+        "body": {
+          "members": [
+            {
+              "name": "Robin Again",
+              "email": "<redacted:email>",
+              "note": "",
+              "subscriptions": [],
+              "subscribed": true,
+              "email_count": 0,
+              "email_opened_count": 0,
+              "email_open_rate": null,
+              "avatar_image": null,
+              "tiers": [],
+              "newsletters": [
+                {
+                  "id": {
+                    "$var": "newsletter827"
+                  },
+                  "name": "Field notes",
+                  "slug": "default-newsletter",
+                  "description": null,
+                  "sender_name": null,
+                  "sender_email": null,
+                  "sender_reply_to": "newsletter",
+                  "status": "active",
+                  "subscribe_on_signup": true,
+                  "visibility": "members",
+                  "sort_order": 0,
+                  "feedback_enabled": false,
+                  "header_image": null,
+                  "show_header_icon": true,
+                  "show_header_title": true,
+                  "show_header_name": false,
+                  "show_post_title_section": true,
+                  "show_excerpt": false,
+                  "show_comment_cta": true,
+                  "show_subscription_details": false,
+                  "show_latest_posts": false,
+                  "title_font_category": "sans_serif",
+                  "title_alignment": "center",
+                  "show_feature_image": true,
+                  "body_font_category": "sans_serif",
+                  "background_color": "light",
+                  "post_title_color": null,
+                  "footer_content": null,
+                  "show_badge": true
+                }
+              ],
+              "labels": []
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 422,
+          "contentType": "application/json",
+          "body": {
+            "errors": [
+              {
+                "message": "Validation error, cannot save member.",
+                "context": "Member already exists. Attempting to add member with existing email address",
+                "type": "ValidationError",
+                "details": null,
+                "property": "email",
+                "help": null,
+                "code": null,
+                "id": "290da980-c59b-11f1-a140-7522b990bc7e",
+                "appErrorCode": null
+              }
+            ]
+          }
+        },
+        "source": "capture/errors.har#entries[5]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember71 > div > div:nth-of-type(2) > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Leave",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getMembers",
+        "method": "GET",
+        "path": "/members/",
+        "query": [
+          [
+            "include",
+            "newsletters,labels,tiers"
+          ],
+          [
+            "order",
+            "created_at desc"
+          ],
+          [
+            "limit",
+            "50"
+          ],
+          [
+            "page",
+            "1"
+          ],
+          [
+            "filter",
+            {
+              "$template": "created_at:<='{{now:0:sql}}'"
+            }
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "members": [
+              {
+                "id": "6acbca0ab2f88b00015b31ca",
+                "uuid": "82ba0df2-ed70-4ee4-949f-cd7ced0d3123",
+                "email": "<redacted:email>",
+                "name": "Robin Reader",
+                "note": "Met at the trail cleanup day.",
+                "geolocation": null,
+                "subscribed": true,
+                "created_at": "2026-10-11T17:40:26.000Z",
+                "updated_at": "2026-10-11T17:40:26.000Z",
+                "labels": [],
+                "subscriptions": [],
+                "avatar_image": "https://www.gravatar.com/avatar/b60362472f9298318a0ad26570ab7edb?s=250&r=g&d=blank",
+                "comped": false,
+                "email_count": 0,
+                "email_opened_count": 0,
+                "email_open_rate": null,
+                "status": "free",
+                "last_seen_at": null,
+                "unsubscribe_url": "http://localhost:2368/unsubscribe/?uuid=82ba0df2-ed70-4ee4-949f-cd7ced0d3123&key=<redacted:query>",
+                "tiers": [],
+                "email_suppression": {
+                  "suppressed": false,
+                  "info": null
+                },
+                "newsletters": [
+                  {
+                    "id": "6acbc96ab2f88b00015b2f03",
+                    "name": "Field notes",
+                    "description": null,
+                    "status": "active"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 50,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[6]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember71 > div > div:nth-of-type(2) > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Leave",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels/",
+        "query": [
+          [
+            "limit",
+            "100"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "labels": [],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 100,
+                "pages": 1,
+                "total": 0,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[7]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember71 > div > div:nth-of-type(2) > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Leave",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getTiers",
+        "method": "GET",
+        "path": "/tiers/",
+        "query": [
+          [
+            "filter",
+            "type:paid"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "tiers": [
+              {
+                "id": "6acbc96ab2f88b00015b2f02",
+                "name": "Field notes",
+                "description": null,
+                "slug": "default-product",
+                "active": true,
+                "type": "paid",
+                "welcome_page_url": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:37:46.000Z",
+                "visibility": "public",
+                "benefits": [],
+                "currency": "USD",
+                "monthly_price": 500,
+                "yearly_price": 5000,
+                "trial_days": 0
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "pages": 1,
+                "limit": 1,
+                "total": 1,
+                "prev": null,
+                "next": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[8]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember71 > div > div:nth-of-type(2) > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Leave",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getNewsletters",
+        "method": "GET",
+        "path": "/newsletters/",
+        "query": [
+          [
+            "filter",
+            "status:active"
+          ]
+        ],
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "newsletters": [
+              {
+                "id": "6acbc96ab2f88b00015b2f03",
+                "uuid": "1edf2d6b-1951-4ffb-a4da-e80e52096b49",
+                "name": "Field notes",
+                "description": null,
+                "feedback_enabled": false,
+                "slug": "default-newsletter",
+                "sender_name": null,
+                "sender_email": null,
+                "sender_reply_to": "newsletter",
+                "status": "active",
+                "visibility": "members",
+                "subscribe_on_signup": true,
+                "sort_order": 0,
+                "header_image": null,
+                "show_header_icon": true,
+                "show_header_title": true,
+                "show_excerpt": false,
+                "title_font_category": "sans_serif",
+                "title_alignment": "center",
+                "show_feature_image": true,
+                "body_font_category": "sans_serif",
+                "footer_content": null,
+                "show_badge": true,
+                "show_header_name": false,
+                "show_post_title_section": true,
+                "show_comment_cta": true,
+                "show_subscription_details": false,
+                "show_latest_posts": false,
+                "background_color": "light",
+                "post_title_color": null,
+                "created_at": "2026-10-11T17:37:46.000Z",
+                "updated_at": "2026-10-11T17:38:25.000Z",
+                "button_corners": "rounded",
+                "button_style": "fill",
+                "title_font_weight": "bold",
+                "link_style": "underline",
+                "image_corners": "square",
+                "header_background_color": "transparent",
+                "section_title_color": null,
+                "divider_color": null,
+                "button_color": "accent",
+                "link_color": "accent"
+              }
+            ],
+            "meta": {
+              "pagination": {
+                "page": 1,
+                "limit": 15,
+                "pages": 1,
+                "total": 1,
+                "next": null,
+                "prev": null
+              }
+            }
+          }
+        },
+        "source": "capture/errors.har#entries[12]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#ember71 > div > div:nth-of-type(2) > button:nth-of-type(2)",
+          "role": "button",
+          "name": "Leave",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getOffers",
+        "method": "GET",
+        "path": "/offers/",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "offers": []
+          }
+        },
+        "source": "capture/errors.har#entries[13]"
+      }
+    }
+  ]
+}

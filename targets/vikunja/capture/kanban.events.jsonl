@@ -1,0 +1,12 @@
+{"t":1791740142184,"type":"capture-start","url":"http://localhost:3456/"}
+{"t":1791740144119,"type":"action","id":"a1","kind":"click","target":{"tag":"a","selector":"nav:nth-of-type(3) > menu > li:nth-of-type(2) > div > a","role":"link","name":"Home renovation","href":"/projects/2"},"url":"http://localhost:3456/"}
+{"t":1791740144234,"type":"navigation","url":"http://localhost:3456/","sameDocument":true}
+{"t":1791740144247,"type":"navigation","url":"http://localhost:3456/projects/2/0","sameDocument":true}
+{"t":1791740144292,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740148870,"type":"action","id":"a2","kind":"click","target":{"tag":"a","selector":"#main-content > div > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)","role":"link","name":"Kanban","href":"/projects/2/12"},"url":"http://localhost:3456/projects/2/9"}
+{"t":1791740148879,"type":"navigation","url":"http://localhost:3456/projects/2/9","sameDocument":true}
+{"t":1791740148888,"type":"navigation","url":"http://localhost:3456/projects/2/12","sameDocument":true}
+{"t":1791740153871,"type":"action","id":"a3","kind":"click","target":{"tag":"button","selector":"div > div:nth-of-type(2) > div > div > button","role":"button","name":"CREATE A BUCKET","type":"button"},"url":"http://localhost:3456/projects/2/12"}
+{"t":1791740156116,"type":"action","id":"a4","kind":"key","target":{"tag":"input","selector":"div > div:nth-of-type(2) > div > div > input","role":"textbox","name":"Enter the new bucket title…","type":"text"},"url":"http://localhost:3456/projects/2/12","key":"Enter"}
+{"t":1791740156506,"type":"action","id":"a5","kind":"input","target":{"tag":"input","selector":"div > div:nth-of-type(2) > div > div > input","role":"textbox","name":"Enter the new bucket title…","type":"text"},"url":"http://localhost:3456/projects/2/12","valueInfo":{"type":"text","length":0}}
+{"t":1791740178742,"type":"capture-stop","url":"http://localhost:3456/"}

@@ -1,0 +1,8 @@
+{"t":1791740335806,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740337747,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"#ember42 > header > section > button:nth-of-type(2)","role":"button","name":"Publish ⌘ ⇧ P","type":"button"},"url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc"}
+{"t":1791740342230,"type":"action","id":"a2","kind":"click","target":{"tag":"button","selector":"#ember48 > div > div > div:nth-of-type(3) > button","role":"button","name":"Continue, final review →","type":"button"},"url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc"}
+{"t":1791740347630,"type":"action","id":"a3","kind":"key","target":{"tag":"button","selector":"#ember58","role":"button","name":"Publish post, right now","id":"ember58","type":"submit"},"url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc","key":"Enter"}
+{"t":1791740347632,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"#ember58","role":"button","name":"Publish post, right now","id":"ember58","type":"submit"},"url":"http://localhost:2368/ghost/#/editor/post/6acbc9a4b2f88b00015b31bc"}
+{"t":1791740348287,"type":"navigation","url":"http://localhost:2368/ghost/#/posts","sameDocument":true}
+{"t":1791740354446,"type":"action","id":"a5","kind":"key","target":{"tag":"button","selector":"body > div:nth-of-type(5) > div > div > button","role":"button","name":"Close","type":"button"},"url":"http://localhost:2368/ghost/#/posts","key":"Escape"}
+{"t":1791740358388,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

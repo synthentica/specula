@@ -1,0 +1,2054 @@
+{
+ "viewport": {
+  "width": 1280,
+  "height": 800
+ },
+ "views": [
+  {
+   "name": "editor",
+   "route": "/app/#/editor/post/{postId}",
+   "seedFlow": "posts-list",
+   "viewport": {
+    "width": 1280,
+    "height": 800
+   },
+   "page": {
+    "background": "#ffffff",
+    "color": "#394047",
+    "fontFamily": "Inter",
+    "fontSize": 14,
+    "lineHeight": 23.1
+   },
+   "regions": [
+    {
+     "role": "main",
+     "rect": [
+      0,
+      0,
+      1280,
+      800
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     }
+    }
+   ],
+   "components": {
+    "link": {
+     "count": 3,
+     "size": [
+      82,
+      34
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 13.5,
+      "fontWeight": 400,
+      "letterSpacing": 0.2
+     },
+     "rects": [
+      [
+       24,
+       24,
+       88,
+       34
+      ],
+      [
+       132,
+       24,
+       82,
+       34
+      ],
+      [
+       1210,
+       736,
+       40,
+       34
+      ]
+     ]
+    },
+    "icon": {
+     "count": 6,
+     "size": [
+      14,
+      14
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 13.5,
+      "fontWeight": 400,
+      "letterSpacing": 0.2
+     },
+     "rects": [
+      [
+       36,
+       35,
+       12,
+       12
+      ],
+      [
+       202,
+       36,
+       12,
+       12
+      ],
+      [
+       270,
+       146,
+       12,
+       12
+      ],
+      [
+       433,
+       144,
+       14,
+       14
+      ],
+      [
+       1222,
+       745,
+       16,
+       16
+      ],
+      [
+       1225,
+       34,
+       16,
+       16
+      ]
+     ]
+    },
+    "button": {
+     "count": 5,
+     "variants": {
+      "outline": 3,
+      "text": 2
+     },
+     "size": [
+      76,
+      34
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500
+     },
+     "rects": [
+      [
+       1034,
+       23,
+       76,
+       36
+      ],
+      [
+       1117,
+       24,
+       93,
+       34
+      ],
+      [
+       270,
+       141,
+       139,
+       22
+      ],
+      [
+       433,
+       144,
+       14,
+       14
+      ],
+      [
+       1210,
+       24,
+       46,
+       34
+      ]
+     ]
+    },
+    "input": {
+     "count": 2,
+     "variants": {
+      "textarea": 1,
+      "editor": 1
+     },
+     "size": [
+      740,
+      57
+     ],
+     "style": {
+      "color": "#15171a",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 48,
+      "fontWeight": 700,
+      "letterSpacing": -0.8
+     },
+     "rects": [
+      [
+       270,
+       201,
+       740,
+       57
+      ],
+      [
+       270,
+       274,
+       740,
+       32
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "name": "members",
+   "route": "/app/#/members",
+   "seedFlow": "posts-list",
+   "viewport": {
+    "width": 1280,
+    "height": 800
+   },
+   "page": {
+    "background": "#ffffff",
+    "color": "#394047",
+    "fontFamily": "Inter",
+    "fontSize": 14,
+    "lineHeight": 23.1
+   },
+   "regions": [
+    {
+     "role": "sidebar",
+     "rect": [
+      0,
+      0,
+      320,
+      800
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "background": "#fafafb"
+     }
+    },
+    {
+     "role": "main",
+     "rect": [
+      320,
+      0,
+      960,
+      800
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     }
+    }
+   ],
+   "components": {
+    "button": {
+     "count": 8,
+     "variants": {
+      "text": 4,
+      "filled": 2,
+      "outline": 2
+     },
+     "size": [
+      70,
+      36
+     ],
+     "style": {
+      "color": "#394047",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "padding": [
+       8,
+       8
+      ]
+     },
+     "rects": [
+      [
+       320,
+       384,
+       18,
+       32
+      ],
+      [
+       260,
+       34,
+       36,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       28,
+       727,
+       70,
+       42
+      ],
+      [
+       246,
+       737,
+       42,
+       22
+      ],
+      [
+       986,
+       32,
+       88,
+       36
+      ],
+      [
+       1082,
+       32,
+       46,
+       36
+      ],
+      [
+       932,
+       112,
+       192,
+       32
+      ]
+     ]
+    },
+    "icon": {
+     "count": 19,
+     "size": [
+      16,
+      16
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       269,
+       46,
+       18,
+       17
+      ],
+      [
+       269,
+       42,
+       18,
+       18
+      ],
+      [
+       34,
+       112,
+       16,
+       16
+      ],
+      [
+       34,
+       150,
+       16,
+       16
+      ],
+      [
+       270,
+       150,
+       16,
+       16
+      ],
+      [
+       34,
+       187,
+       16,
+       16
+      ],
+      [
+       34,
+       254,
+       16,
+       16
+      ],
+      [
+       270,
+       255,
+       16,
+       16
+      ],
+      [
+       37,
+       258,
+       9,
+       9
+      ],
+      [
+       34,
+       425,
+       16,
+       16
+      ],
+      [
+       34,
+       462,
+       16,
+       16
+      ],
+      [
+       34,
+       499,
+       16,
+       16
+      ],
+      [
+       74,
+       742,
+       12,
+       11
+      ],
+      [
+       204,
+       738,
+       20,
+       20
+      ],
+      [
+       270,
+       742,
+       12,
+       12
+      ],
+      [
+       252,
+       742,
+       12,
+       12
+      ],
+      [
+       999,
+       85,
+       16,
+       16
+      ],
+      [
+       1001,
+       42,
+       16,
+       16
+      ],
+      [
+       1097,
+       42,
+       16,
+       16
+      ]
+     ]
+    },
+    "list-item": {
+     "count": 9,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       169
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       928,
+       80,
+       200,
+       32
+      ],
+      [
+       928,
+       112,
+       200,
+       32
+      ]
+     ]
+    },
+    "link": {
+     "count": 18,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#626d79",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       7,
+       14
+      ]
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       36
+      ],
+      [
+       250,
+       245,
+       56,
+       36
+      ],
+      [
+       20,
+       282,
+       280,
+       36
+      ],
+      [
+       20,
+       319,
+       280,
+       36
+      ],
+      [
+       20,
+       356,
+       280,
+       36
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       194,
+       728,
+       40,
+       40
+      ],
+      [
+       932,
+       80,
+       192,
+       32
+      ],
+      [
+       1136,
+       33,
+       112,
+       34
+      ],
+      [
+       352,
+       183,
+       360,
+       76
+      ],
+      [
+       712,
+       183,
+       101,
+       76
+      ],
+      [
+       813,
+       183,
+       125,
+       76
+      ],
+      [
+       938,
+       183,
+       119,
+       76
+      ],
+      [
+       1057,
+       183,
+       191,
+       76
+      ]
+     ]
+    },
+    "avatar": {
+     "count": 2,
+     "size": [
+      36,
+      36
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "radius": 999,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       248,
+       739,
+       18,
+       18
+      ],
+      [
+       352,
+       203,
+       36,
+       36
+      ]
+     ]
+    },
+    "heading": {
+     "count": 5,
+     "variants": {
+      "h2": 2,
+      "h3": 3
+     },
+     "size": [
+      386,
+      35
+     ],
+     "style": {
+      "color": "#15171a",
+      "fontFamily": "Inter",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "letterSpacing": -0.3
+     },
+     "rects": [
+      [
+       352,
+       32,
+       132,
+       35
+      ],
+      [
+       400,
+       201,
+       272,
+       20
+      ],
+      [
+       352,
+       299,
+       896,
+       38
+      ],
+      [
+       377,
+       602,
+       386,
+       49
+      ],
+      [
+       837,
+       602,
+       386,
+       25
+      ]
+     ]
+    },
+    "input": {
+     "count": 1,
+     "variants": {
+      "text": 1
+     },
+     "size": [
+      258,
+      34
+     ],
+     "style": {
+      "background": "#f1f3f4",
+      "color": "#394047",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 13.5,
+      "fontWeight": 400,
+      "padding": [
+       8,
+       32
+      ]
+     },
+     "rects": [
+      [
+       990,
+       76,
+       258,
+       34
+      ]
+     ]
+    },
+    "table": {
+     "count": 1,
+     "size": [
+      896,
+      116
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       352,
+       143,
+       896,
+       116
+      ]
+     ]
+    },
+    "row": {
+     "count": 2,
+     "size": [
+      896,
+      76
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       352,
+       143,
+       896,
+       40
+      ],
+      [
+       352,
+       183,
+       896,
+       76
+      ]
+     ]
+    },
+    "image": {
+     "count": 1,
+     "size": [
+      38,
+      38
+     ],
+     "style": {
+      "color": "#15171a",
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       351,
+       202,
+       38,
+       38
+      ]
+     ]
+    },
+    "column": {
+     "count": 2,
+     "size": [
+      436,
+      430
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#7c8b9a",
+      "border": {
+       "color": "#ebeef0",
+       "width": 1,
+       "sides": "all"
+      },
+      "radius": 12,
+      "shadow": "#0000001a 0px 1px 4px -1px",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "padding": [
+       24,
+       24
+      ]
+     },
+     "rects": [
+      [
+       352,
+       337,
+       436,
+       430
+      ],
+      [
+       812,
+       337,
+       436,
+       430
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "name": "posts",
+   "route": "/app/#/posts",
+   "seedFlow": "posts-list",
+   "viewport": {
+    "width": 1280,
+    "height": 800
+   },
+   "page": {
+    "background": "#ffffff",
+    "color": "#394047",
+    "fontFamily": "Inter",
+    "fontSize": 14,
+    "lineHeight": 23.1
+   },
+   "regions": [
+    {
+     "role": "sidebar",
+     "rect": [
+      0,
+      0,
+      320,
+      800
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "background": "#fafafb"
+     }
+    },
+    {
+     "role": "main",
+     "rect": [
+      320,
+      0,
+      960,
+      800
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     }
+    }
+   ],
+   "components": {
+    "button": {
+     "count": 10,
+     "variants": {
+      "text": 3,
+      "filled": 2,
+      "outline": 5
+     },
+     "size": [
+      96,
+      34
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "border": {
+       "color": "#e6e9eb",
+       "width": 1,
+       "sides": "all"
+      },
+      "radius": 5,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       0,
+       12
+      ]
+     },
+     "rects": [
+      [
+       320,
+       384,
+       18,
+       32
+      ],
+      [
+       260,
+       34,
+       36,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       36
+      ],
+      [
+       28,
+       727,
+       70,
+       42
+      ],
+      [
+       246,
+       737,
+       42,
+       22
+      ],
+      [
+       700,
+       74,
+       96,
+       34
+      ],
+      [
+       804,
+       74,
+       105,
+       34
+      ],
+      [
+       917,
+       74,
+       109,
+       34
+      ],
+      [
+       1034,
+       74,
+       88,
+       34
+      ],
+      [
+       1130,
+       74,
+       118,
+       34
+      ]
+     ]
+    },
+    "icon": {
+     "count": 23,
+     "size": [
+      16,
+      16
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       269,
+       46,
+       18,
+       17
+      ],
+      [
+       269,
+       42,
+       18,
+       18
+      ],
+      [
+       34,
+       112,
+       16,
+       16
+      ],
+      [
+       34,
+       150,
+       16,
+       16
+      ],
+      [
+       270,
+       150,
+       16,
+       16
+      ],
+      [
+       34,
+       187,
+       16,
+       16
+      ],
+      [
+       34,
+       254,
+       16,
+       16
+      ],
+      [
+       270,
+       255,
+       16,
+       16
+      ],
+      [
+       37,
+       258,
+       9,
+       9
+      ],
+      [
+       34,
+       425,
+       16,
+       16
+      ],
+      [
+       34,
+       462,
+       16,
+       16
+      ],
+      [
+       34,
+       499,
+       16,
+       16
+      ],
+      [
+       74,
+       742,
+       12,
+       11
+      ],
+      [
+       204,
+       738,
+       20,
+       20
+      ],
+      [
+       270,
+       742,
+       12,
+       12
+      ],
+      [
+       252,
+       742,
+       12,
+       12
+      ],
+      [
+       774,
+       88,
+       9,
+       6
+      ],
+      [
+       887,
+       88,
+       9,
+       6
+      ],
+      [
+       1004,
+       88,
+       9,
+       6
+      ],
+      [
+       1100,
+       88,
+       9,
+       6
+      ],
+      [
+       1226,
+       88,
+       9,
+       6
+      ],
+      [
+       1215,
+       168,
+       15,
+       15
+      ],
+      [
+       1215,
+       266,
+       15,
+       15
+      ]
+     ]
+    },
+    "list-item": {
+     "count": 9,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       169
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       352,
+       142,
+       896,
+       98
+      ],
+      [
+       352,
+       241,
+       896,
+       98
+      ]
+     ]
+    },
+    "link": {
+     "count": 17,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#626d79",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       7,
+       14
+      ]
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       250,
+       245,
+       56,
+       36
+      ],
+      [
+       20,
+       282,
+       280,
+       36
+      ],
+      [
+       20,
+       319,
+       280,
+       36
+      ],
+      [
+       20,
+       356,
+       280,
+       36
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       194,
+       728,
+       40,
+       40
+      ],
+      [
+       352,
+       32,
+       74,
+       35
+      ],
+      [
+       1160,
+       32,
+       88,
+       34
+      ],
+      [
+       352,
+       142,
+       544,
+       98
+      ],
+      [
+       1196,
+       142,
+       52,
+       98
+      ],
+      [
+       352,
+       241,
+       544,
+       98
+      ],
+      [
+       1196,
+       241,
+       52,
+       98
+      ]
+     ]
+    },
+    "avatar": {
+     "count": 2,
+     "size": [
+      23,
+      24
+     ],
+     "style": {
+      "background": "#ebeef0",
+      "color": "#626d79",
+      "radius": 999,
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       2,
+       7
+      ]
+     },
+     "rects": [
+      [
+       267,
+       496,
+       23,
+       24
+      ],
+      [
+       248,
+       739,
+       18,
+       18
+      ]
+     ]
+    },
+    "heading": {
+     "count": 3,
+     "variants": {
+      "h2": 1,
+      "h3": 2
+     },
+     "size": [
+      524,
+      21
+     ],
+     "style": {
+      "color": "#15171a",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "fontWeight": 600
+     },
+     "rects": [
+      [
+       352,
+       32,
+       80,
+       35
+      ],
+      [
+       352,
+       158,
+       524,
+       21
+      ],
+      [
+       352,
+       257,
+       524,
+       21
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "name": "tags",
+   "route": "/app/#/tags",
+   "seedFlow": "posts-list",
+   "viewport": {
+    "width": 1280,
+    "height": 800
+   },
+   "page": {
+    "background": "#ffffff",
+    "color": "#394047",
+    "fontFamily": "Inter",
+    "fontSize": 14,
+    "lineHeight": 23.1
+   },
+   "regions": [
+    {
+     "role": "topbar",
+     "rect": [
+      320,
+      0,
+      960,
+      100
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "padding": [
+       32,
+       32
+      ]
+     },
+     "fixed": true
+    },
+    {
+     "role": "sidebar",
+     "rect": [
+      0,
+      0,
+      320,
+      800
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1,
+      "background": "#fafafb"
+     }
+    },
+    {
+     "role": "main",
+     "rect": [
+      320,
+      0,
+      960,
+      800
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     }
+    }
+   ],
+   "components": {
+    "button": {
+     "count": 7,
+     "variants": {
+      "text": 5,
+      "filled": 2
+     },
+     "size": [
+      70,
+      32
+     ],
+     "style": {
+      "color": "#394047",
+      "radius": 999,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400
+     },
+     "rects": [
+      [
+       320,
+       384,
+       18,
+       32
+      ],
+      [
+       260,
+       34,
+       36,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       28,
+       727,
+       70,
+       42
+      ],
+      [
+       246,
+       737,
+       42,
+       22
+      ],
+      [
+       943,
+       34,
+       97,
+       30
+      ],
+      [
+       1044,
+       34,
+       106,
+       30
+      ]
+     ]
+    },
+    "icon": {
+     "count": 18,
+     "size": [
+      16,
+      16
+     ],
+     "style": {
+      "color": "#626d79",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       269,
+       46,
+       18,
+       17
+      ],
+      [
+       269,
+       42,
+       18,
+       18
+      ],
+      [
+       34,
+       112,
+       16,
+       16
+      ],
+      [
+       34,
+       150,
+       16,
+       16
+      ],
+      [
+       270,
+       150,
+       16,
+       16
+      ],
+      [
+       34,
+       187,
+       16,
+       16
+      ],
+      [
+       34,
+       254,
+       16,
+       16
+      ],
+      [
+       270,
+       255,
+       16,
+       16
+      ],
+      [
+       37,
+       258,
+       9,
+       9
+      ],
+      [
+       34,
+       425,
+       16,
+       16
+      ],
+      [
+       34,
+       462,
+       16,
+       16
+      ],
+      [
+       34,
+       499,
+       16,
+       16
+      ],
+      [
+       74,
+       742,
+       12,
+       11
+      ],
+      [
+       204,
+       738,
+       20,
+       20
+      ],
+      [
+       270,
+       742,
+       12,
+       12
+      ],
+      [
+       252,
+       742,
+       12,
+       12
+      ],
+      [
+       1212,
+       157,
+       24,
+       24
+      ],
+      [
+       1212,
+       225,
+       24,
+       24
+      ]
+     ]
+    },
+    "list-item": {
+     "count": 9,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       169
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       452,
+       280,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       352,
+       100,
+       896,
+       40
+      ],
+      [
+       352,
+       202,
+       896,
+       75
+      ]
+     ]
+    },
+    "link": {
+     "count": 20,
+     "size": [
+      280,
+      36
+     ],
+     "style": {
+      "color": "#626d79",
+      "radius": 6,
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       7,
+       14
+      ]
+     },
+     "rects": [
+      [
+       20,
+       103,
+       280,
+       36
+      ],
+      [
+       20,
+       140,
+       280,
+       36
+      ],
+      [
+       20,
+       177,
+       280,
+       36
+      ],
+      [
+       20,
+       245,
+       280,
+       36
+      ],
+      [
+       250,
+       245,
+       56,
+       36
+      ],
+      [
+       20,
+       282,
+       280,
+       36
+      ],
+      [
+       20,
+       319,
+       280,
+       36
+      ],
+      [
+       20,
+       356,
+       280,
+       36
+      ],
+      [
+       20,
+       415,
+       280,
+       36
+      ],
+      [
+       20,
+       489,
+       280,
+       36
+      ],
+      [
+       194,
+       728,
+       40,
+       40
+      ],
+      [
+       1168,
+       32,
+       80,
+       34
+      ],
+      [
+       352,
+       140,
+       593,
+       63
+      ],
+      [
+       945,
+       140,
+       96,
+       63
+      ],
+      [
+       1040,
+       140,
+       121,
+       63
+      ],
+      [
+       1161,
+       140,
+       87,
+       63
+      ],
+      [
+       352,
+       202,
+       593,
+       75
+      ],
+      [
+       945,
+       202,
+       96,
+       75
+      ],
+      [
+       1040,
+       202,
+       121,
+       75
+      ],
+      [
+       1161,
+       202,
+       87,
+       75
+      ]
+     ]
+    },
+    "avatar": {
+     "count": 2,
+     "size": [
+      23,
+      24
+     ],
+     "style": {
+      "background": "#ebeef0",
+      "color": "#626d79",
+      "radius": 999,
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": 500,
+      "letterSpacing": 0.1,
+      "padding": [
+       2,
+       7
+      ]
+     },
+     "rects": [
+      [
+       267,
+       496,
+       23,
+       24
+      ],
+      [
+       248,
+       739,
+       18,
+       18
+      ]
+     ]
+    },
+    "heading": {
+     "count": 3,
+     "variants": {
+      "h2": 1,
+      "h3": 2
+     },
+     "size": [
+      573,
+      20
+     ],
+     "style": {
+      "color": "#15171a",
+      "fontFamily": "Inter",
+      "fontSize": 15,
+      "fontWeight": 600
+     },
+     "rects": [
+      [
+       352,
+       32,
+       70,
+       35
+      ],
+      [
+       352,
+       160,
+       573,
+       20
+      ],
+      [
+       352,
+       219,
+       573,
+       20
+      ]
+     ]
+    },
+    "badge": {
+     "count": 1,
+     "size": [
+      97,
+      30
+     ],
+     "style": {
+      "background": "#ffffff",
+      "color": "#15171a",
+      "radius": 5,
+      "shadow": "#00000014 0px 2px 4px 0px",
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": 500,
+      "padding": [
+       0,
+       14
+      ]
+     },
+     "rects": [
+      [
+       943,
+       34,
+       97,
+       30
+      ]
+     ]
+    },
+    "tabs": {
+     "count": 1,
+     "size": [
+      896,
+      63
+     ],
+     "style": {
+      "color": "#394047",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "letterSpacing": 0.1
+     },
+     "rects": [
+      [
+       352,
+       140,
+       896,
+       63
+      ]
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+  "label": "rebuild",
+  "baseUrl": "http://localhost:4713",
+  "generated": "2026-10-12T17:43:36.671Z",
+  "score": 93,
+  "views": [
+    {
+      "view": "history",
+      "score": 96,
+      "layout": 94,
+      "components": 95,
+      "style": 100,
+      "notes": [
+        "button: text colour #757575, spec #ffffff",
+        "link: corner radius 50px, spec 0px",
+        "button: corner radius 50px, spec 4px"
+      ]
+    },
+    {
+      "view": "home",
+      "score": 95,
+      "layout": 89,
+      "components": 96,
+      "style": 100,
+      "notes": [
+        "avatar: border all #607d8b, spec none",
+        "avatar: 1 on the view, spec 3",
+        "link: text transform none, spec uppercase"
+      ]
+    },
+    {
+      "view": "page",
+      "score": 97,
+      "layout": 97,
+      "components": 94,
+      "style": 100,
+      "notes": [
+        "button: background #e0e0e0, spec none",
+        "list-item: typical size 134×28, spec 24×21"
+      ]
+    },
+    {
+      "view": "tags",
+      "score": 83,
+      "layout": 82,
+      "components": 67,
+      "style": 100,
+      "notes": [
+        "column: none, spec has 1",
+        "divider: border r #ffffff1f, spec t #0000001f",
+        "button: text colour #ffffff, spec #000000de",
+        "link: corner radius 4px, spec 50px",
+        "button: corner radius 4px, spec 28px",
+        "link: text transform none, spec uppercase",
+        "link: typical size 72×34, spec 48×48",
+        "divider: typical size 284×50, spec 284×1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "login": { "path": "/", "user": "username", "value": "owner" },
+  "views": {
+    "board": "/#/board/{boardId}"
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "name": "logout-login",
+  "order": 13,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "render": "<p>Can we move the demo to Thursday?</p>\n",
+                      "authorName": "Administrator",
+                      "createdAt": "2026-10-12T07:57:05.395Z",
+                      "updatedAt": "2026-10-12T07:57:05.395Z",
+                      "__typename": "CommentPost"
+                    }
+                  ],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/logout-login.har#entries[28]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "render": "<p>Can we move the demo to Thursday?</p>\n",
+                      "authorName": "Administrator",
+                      "createdAt": "2026-10-12T07:57:05.395Z",
+                      "updatedAt": "2026-10-12T07:57:05.395Z",
+                      "__typename": "CommentPost"
+                    }
+                  ],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/logout-login.har#entries[60]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query authentication.activeStrategies"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {},
+            "extensions": {},
+            "query": "{\n  authentication {\n    activeStrategies(enabledOnly: true) {\n      key\n      strategy {\n        key\n        logo\n        color\n        icon\n        useForm\n        usernameType\n        __typename\n      }\n      displayName\n      order\n      selfRegistration\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "authentication": {
+                  "activeStrategies": [
+                    {
+                      "key": "local",
+                      "strategy": {
+                        "key": "local",
+                        "logo": "https://example.invalid/logo/app.svg",
+                        "color": "primary",
+                        "icon": "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t width=\"64px\" height=\"64px\" viewBox=\"0 0 64 64\" enable-background=\"new 0 0 64 64\" xml:space=\"preserve\">\n<path d=\"M32,19c13.089,0,27-3.154,27-9S45.089,1,32,1S5,4.154,5,10S18.911,19,32,19z\"/>\n<path d=\"M32,41c13.089,0,27-3.154,27-9V14.436c-1.481,1.493-3.963,2.968-8.022,4.174C45.864,20.128,38.946,21,32,21\n\ts-13.864-0.872-18.978-2.391C8.963,17.403,6.481,15.929,5,14.436V32C5,37.846,18.911,41,32,41z\"/>\n<path d=\"M32,63c13.089,0,27-3.154,27-9V36.436c-1.481,1.493-3.963,2.968-8.022,4.174C45.864,42.128,38.946,43,32,43\n\ts-13.864-0.872-18.978-2.391C8.963,39.403,6.481,37.929,5,36.436V54C5,59.846,18.911,63,32,63z\"/>\n</svg>\n",
+                        "useForm": true,
+                        "usernameType": "email",
+                        "__typename": "AuthenticationStrategy"
+                      },
+                      "displayName": "Local",
+                      "order": 0,
+                      "selfRegistration": false,
+                      "__typename": "AuthenticationActiveStrategy"
+                    }
+                  ],
+                  "__typename": "AuthenticationQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/logout-login.har#entries[85]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "#input-22",
+          "role": "textbox",
+          "name": "Password",
+          "id": "input-22",
+          "type": "password"
+        }
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "mutation authentication.login"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "username": "<redacted:email>",
+              "password": "<redacted:secret>",
+              "strategy": "local"
+            },
+            "extensions": {},
+            "query": "mutation ($username: String!, $password: String!, $strategy: String!) {\n  authentication {\n    login(username: $username, password: $password, strategy: $strategy) {\n      responseResult {\n        succeeded\n        errorCode\n        slug\n        message\n        __typename\n      }\n      jwt\n      mustChangePwd\n      mustProvideTFA\n      mustSetupTFA\n      continuationToken\n      redirect\n      tfaQRImage\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "cookie",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "authentication": {
+                  "login": {
+                    "responseResult": {
+                      "succeeded": true,
+                      "errorCode": 0,
+                      "slug": "ok",
+                      "message": "Login success",
+                      "__typename": "ResponseStatus"
+                    },
+                    "jwt": "<redacted:jwt>",
+                    "mustChangePwd": null,
+                    "mustProvideTFA": null,
+                    "mustSetupTFA": null,
+                    "continuationToken": null,
+                    "redirect": "/",
+                    "tfaQRImage": null,
+                    "__typename": "AuthenticationLoginResponse"
+                  },
+                  "__typename": "AuthenticationMutation"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/logout-login.har#entries[91]"
+      }
+    },
+    {
+      "action": {
+        "kind": "navigate"
+      },
+      "request": {
+        "operationId": "postGraphql",
+        "graphql": [
+          "query comments.list"
+        ],
+        "method": "POST",
+        "path": "/graphql",
+        "body": [
+          {
+            "operationName": null,
+            "variables": {
+              "locale": "en",
+              "path": "home"
+            },
+            "extensions": {},
+            "query": "query ($locale: String!, $path: String!) {\n  comments {\n    list(locale: $locale, path: $path) {\n      id\n      render\n      authorName\n      createdAt\n      updatedAt\n      __typename\n    }\n    __typename\n  }\n}\n"
+          }
+        ],
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": [
+            {
+              "data": {
+                "comments": {
+                  "list": [
+                    {
+                      "id": 1,
+                      "render": "<p>Can we move the demo to Thursday?</p>\n",
+                      "authorName": "Administrator",
+                      "createdAt": "2026-10-12T07:57:05.395Z",
+                      "updatedAt": "2026-10-12T07:57:05.395Z",
+                      "__typename": "CommentPost"
+                    }
+                  ],
+                  "__typename": "CommentQuery"
+                }
+              }
+            }
+          ]
+        },
+        "source": "capture/logout-login.har#entries[120]"
+      }
+    }
+  ]
+}

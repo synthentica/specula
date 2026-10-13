@@ -1,0 +1,41 @@
+{
+  "name": "ghost",
+  "origin": "http://localhost:2368",
+  "apiPrefix": "/ghost/api/admin",
+  "redact": {
+    "values": [
+      "wp-tester",
+      "WP Tester"
+    ]
+  },
+  "brand": [
+    "Ghost",
+    "Casper"
+  ],
+  "volatile": {
+    "keys": [
+      "id",
+      "uuid",
+      "created_at",
+      "updated_at",
+      "published_at",
+      "last_seen",
+      "comment_id",
+      "transient_id",
+      "accent_color"
+    ]
+  },
+  "ui": {
+    "login": {
+      "path": "/ghost/#/signin",
+      "user": "email"
+    },
+    "seedFlow": "posts-list",
+    "views": {
+      "posts": "/ghost/#/posts",
+      "editor": "/ghost/#/editor/post/{postId}",
+      "tags": "/ghost/#/tags",
+      "members": "/ghost/#/members"
+    }
+  }
+}

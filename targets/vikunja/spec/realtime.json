@@ -1,0 +1,103 @@
+{
+  "channels": [
+    {
+      "url": "/api/v2/ws",
+      "messages": [
+        {
+          "direction": "sent",
+          "kind": "auth",
+          "count": 12,
+          "flows": [
+            "register",
+            "logout-login",
+            "errors",
+            "token-refresh"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "auth"
+                ]
+              },
+              "token": {
+                "type": "string",
+                "x-redacted": "jwt"
+              }
+            },
+            "required": [
+              "action",
+              "token"
+            ]
+          }
+        },
+        {
+          "direction": "received",
+          "kind": "auth.success",
+          "count": 12,
+          "flows": [
+            "register",
+            "logout-login",
+            "errors",
+            "token-refresh"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "auth.success"
+                ]
+              },
+              "success": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "action",
+              "success"
+            ]
+          }
+        },
+        {
+          "direction": "sent",
+          "kind": "subscribe",
+          "count": 28,
+          "flows": [
+            "register",
+            "logout-login",
+            "errors",
+            "token-refresh"
+          ],
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "x-observed-values": [
+                  "subscribe"
+                ]
+              },
+              "event": {
+                "type": "string",
+                "x-observed-values": [
+                  "timer.created",
+                  "timer.updated",
+                  "timer.deleted",
+                  "notification.created"
+                ]
+              }
+            },
+            "required": [
+              "action",
+              "event"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

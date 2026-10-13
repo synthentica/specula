@@ -1,0 +1,7 @@
+{"t":1791740438970,"type":"capture-start","url":"http://localhost:2368/ghost/"}
+{"t":1791740439871,"type":"navigation","url":"http://localhost:2368/ghost/#/settings/general","sameDocument":true}
+{"t":1791740446769,"type":"action","id":"a1","kind":"click","target":{"tag":"button","selector":"[data-testid=\"title-and-description\"] > div:nth-of-type(2) > div:nth-of-type(2) > div > button","role":"button","name":"Edit","type":"button"},"url":"http://localhost:2368/ghost/#/settings/general"}
+{"t":1791740450225,"type":"action","id":"a2","kind":"input","target":{"tag":"input","selector":"#\\:r1j\\:","role":"textbox","name":"Site title","id":":r1j:","type":"text"},"url":"http://localhost:2368/ghost/#/settings/general","valueInfo":{"type":"text","length":22}}
+{"t":1791740453302,"type":"action","id":"a3","kind":"input","target":{"tag":"input","selector":"#\\:r1l\\:","role":"textbox","name":"Site description","id":":r1l:","type":"text"},"url":"http://localhost:2368/ghost/#/settings/general","valueInfo":{"type":"text","length":30}}
+{"t":1791740455648,"type":"action","id":"a4","kind":"click","target":{"tag":"button","selector":"[data-testid=\"title-and-description\"] > div:nth-of-type(2) > div:nth-of-type(2) > div > button:nth-of-type(2)","role":"button","name":"Save","type":"button"},"url":"http://localhost:2368/ghost/#/settings/general"}
+{"t":1791740461345,"type":"capture-stop","url":"http://localhost:2368/ghost/"}

@@ -1,0 +1,4611 @@
+{
+  "label": "baseline",
+  "baseUrl": "http://localhost:8000",
+  "generated": "2026-10-12T09:05:39.950Z",
+  "passed": 461,
+  "total": 461,
+  "checks": {
+    "keys": 46179,
+    "values": 483,
+    "lists": 2045,
+    "flags": 1653
+  },
+  "flows": [
+    {
+      "name": "register",
+      "passed": 18,
+      "total": 18
+    },
+    {
+      "name": "create-board",
+      "passed": 55,
+      "total": 55
+    },
+    {
+      "name": "groups",
+      "passed": 63,
+      "total": 63
+    },
+    {
+      "name": "add-cards",
+      "passed": 57,
+      "total": 57
+    },
+    {
+      "name": "edit-card",
+      "passed": 49,
+      "total": 49
+    },
+    {
+      "name": "move-card",
+      "passed": 43,
+      "total": 43
+    },
+    {
+      "name": "delete-card",
+      "passed": 41,
+      "total": 41
+    },
+    {
+      "name": "errors",
+      "passed": 63,
+      "total": 63
+    },
+    {
+      "name": "logout-login",
+      "passed": 72,
+      "total": 72
+    }
+  ],
+  "steps": [
+    {
+      "flow": "register",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[3]",
+      "status": 401
+    },
+    {
+      "flow": "register",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[4]",
+      "status": 401
+    },
+    {
+      "flow": "register",
+      "step": 3,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 4,
+      "operation": "POST /register",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 5,
+      "operation": "POST /login",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 6,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 7,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 11,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 12,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 13,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 14,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 15,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 16,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 19,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "register",
+      "step": 19,
+      "operation": "receive UPDATE_CATEGORY on /ws (after GET /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/register.events.jsonl:13"
+    },
+    {
+      "flow": "create-board",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 14,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 15,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 16,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 17,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 18,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 19,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 20,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 21,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 23,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 24,
+      "operation": "POST /boards-and-blocks",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 24,
+      "operation": "receive UPDATE_BOARD on /ws (after POST /boards-and-blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:8"
+    },
+    {
+      "flow": "create-board",
+      "step": 24,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards-and-blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:9"
+    },
+    {
+      "flow": "create-board",
+      "step": 24,
+      "operation": "receive UPDATE_MEMBER on /ws (after POST /boards-and-blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:10"
+    },
+    {
+      "flow": "create-board",
+      "step": 24,
+      "operation": "receive UPDATE_BOARD_CATEGORY on /ws (after POST /boards-and-blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:11"
+    },
+    {
+      "flow": "create-board",
+      "step": 25,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 26,
+      "operation": "GET /users/me",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 27,
+      "operation": "GET /users/me/config",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 28,
+      "operation": "GET /teams/{teamId}",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 29,
+      "operation": "GET /teams",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 30,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[33]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 31,
+      "operation": "GET /users/me/memberships",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 32,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 33,
+      "operation": "GET /limits",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 34,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 34,
+      "operation": "receive UPDATE_BOARD on /ws (after GET /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:13"
+    },
+    {
+      "flow": "create-board",
+      "step": 35,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 36,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 37,
+      "operation": "GET /users/me",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 38,
+      "operation": "GET /users/me/config",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 39,
+      "operation": "GET /teams/{teamId}",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 40,
+      "operation": "GET /teams",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 41,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 42,
+      "operation": "GET /users/me/memberships",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 43,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[47]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 44,
+      "operation": "GET /limits",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 45,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 46,
+      "operation": "GET /users/{userId}",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 47,
+      "operation": "POST /users",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 48,
+      "operation": "POST /users",
+      "action": "click \"Create an empty board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 49,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "input \"Untitled board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[54]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 49,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.events.jsonl:16"
+    },
+    {
+      "flow": "create-board",
+      "step": 50,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"Untitled board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "create-board",
+      "step": 51,
+      "operation": "POST /users",
+      "action": "input \"Untitled board\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/create-board.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 23,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 24,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 25,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 26,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 27,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 28,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 29,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 30,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 31,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 42,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 42,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:9"
+    },
+    {
+      "flow": "groups",
+      "step": 43,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 44,
+      "operation": "POST /users",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[47]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 45,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 45,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:12"
+    },
+    {
+      "flow": "groups",
+      "step": 46,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[49]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 47,
+      "operation": "POST /users",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 48,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 48,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:15"
+    },
+    {
+      "flow": "groups",
+      "step": 49,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 50,
+      "operation": "POST /users",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 51,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[54]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 51,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:18"
+    },
+    {
+      "flow": "groups",
+      "step": 52,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 53,
+      "operation": "POST /users",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 54,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[57]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 54,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:21"
+    },
+    {
+      "flow": "groups",
+      "step": 55,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[58]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 56,
+      "operation": "POST /users",
+      "action": "click \"+ Add a group\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[59]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 57,
+      "operation": "PATCH /boards/{boardId}",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[60]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 57,
+      "operation": "receive UPDATE_BOARD on /ws (after PATCH /boards/{boardId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.events.jsonl:24"
+    },
+    {
+      "flow": "groups",
+      "step": 58,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[61]",
+      "status": 200
+    },
+    {
+      "flow": "groups",
+      "step": 59,
+      "operation": "POST /users",
+      "action": "input \"New Select\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/groups.har#entries[62]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 23,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 24,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 25,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 26,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 27,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 28,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 29,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 30,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 31,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 42,
+      "operation": "POST /boards/{boardId}/blocks",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 42,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:9"
+    },
+    {
+      "flow": "add-cards",
+      "step": 43,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 43,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:11"
+    },
+    {
+      "flow": "add-cards",
+      "step": 44,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "input \"Untitled\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 44,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:14"
+    },
+    {
+      "flow": "add-cards",
+      "step": 45,
+      "operation": "POST /boards/{boardId}/blocks",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 45,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:19"
+    },
+    {
+      "flow": "add-cards",
+      "step": 46,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 46,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:21"
+    },
+    {
+      "flow": "add-cards",
+      "step": 47,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "input \"Untitled\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 47,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:24"
+    },
+    {
+      "flow": "add-cards",
+      "step": 48,
+      "operation": "POST /boards/{boardId}/blocks",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 48,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:29"
+    },
+    {
+      "flow": "add-cards",
+      "step": 49,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "click \"+ New\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 49,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:31"
+    },
+    {
+      "flow": "add-cards",
+      "step": 50,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "input \"Untitled\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.har#entries[58]",
+      "status": 200
+    },
+    {
+      "flow": "add-cards",
+      "step": 50,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/add-cards.events.jsonl:34"
+    },
+    {
+      "flow": "edit-card",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 23,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 24,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 25,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 26,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 27,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 28,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 29,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 30,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 31,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[33]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 42,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "input \"Value selector\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[47]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 42,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.events.jsonl:12"
+    },
+    {
+      "flow": "edit-card",
+      "step": 43,
+      "operation": "GET /teams/{teamId}/users",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 44,
+      "operation": "POST /boards/{boardId}/blocks",
+      "action": "input \"Two paragraphs for the newsletter.\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[49]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 44,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.events.jsonl:16"
+    },
+    {
+      "flow": "edit-card",
+      "step": 45,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "action": "input \"Two paragraphs for the newsletter.\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 45,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.events.jsonl:17"
+    },
+    {
+      "flow": "edit-card",
+      "step": 46,
+      "operation": "GET /teams/{teamId}/users",
+      "action": "click \"Add a comment...\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 47,
+      "operation": "POST /boards/{boardId}/blocks",
+      "action": "input \"Draft is ready for review.\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "edit-card",
+      "step": 47,
+      "operation": "receive UPDATE_BLOCK on /ws (after POST /boards/{boardId}/blocks)",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/edit-card.events.jsonl:21"
+    },
+    {
+      "flow": "move-card",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 22,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 23,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 24,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 25,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 26,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 27,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 28,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 29,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 30,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 31,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 42,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 43,
+      "operation": "PATCH /boards/{boardId}/blocks/{blockId}",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.har#entries[47]",
+      "status": 200
+    },
+    {
+      "flow": "move-card",
+      "step": 43,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.events.jsonl:8"
+    },
+    {
+      "flow": "move-card",
+      "step": 43,
+      "operation": "receive UPDATE_BLOCK on /ws (after PATCH /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/move-card.events.jsonl:9"
+    },
+    {
+      "flow": "delete-card",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 23,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 24,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 25,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 26,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 27,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 28,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 29,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 30,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 31,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[33]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 42,
+      "operation": "DELETE /boards/{boardId}/blocks/{blockId}",
+      "action": "click \"Delete\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "delete-card",
+      "step": 42,
+      "operation": "receive UPDATE_BLOCK on /ws (after DELETE /boards/{boardId}/blocks/{blockId})",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/delete-card.events.jsonl:11"
+    },
+    {
+      "flow": "errors",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 14,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 15,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 16,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 17,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 18,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 19,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 20,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 21,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 23,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 24,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[26]",
+      "status": 404
+    },
+    {
+      "flow": "errors",
+      "step": 25,
+      "operation": "POST /boards/{boardId}/join",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[28]",
+      "status": 404
+    },
+    {
+      "flow": "errors",
+      "step": 26,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 28,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[34]",
+      "status": 401
+    },
+    {
+      "flow": "errors",
+      "step": 29,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[35]",
+      "status": 401
+    },
+    {
+      "flow": "errors",
+      "step": 30,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 31,
+      "operation": "POST /register",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[37]",
+      "status": 401
+    },
+    {
+      "flow": "errors",
+      "step": 32,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[41]",
+      "status": 401
+    },
+    {
+      "flow": "errors",
+      "step": 33,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[42]",
+      "status": 401
+    },
+    {
+      "flow": "errors",
+      "step": 34,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[43]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 35,
+      "operation": "POST /login",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 36,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 37,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[46]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 38,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[49]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 40,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 41,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 42,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 43,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 44,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[54]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 45,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 46,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 48,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[57]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 49,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[58]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 50,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[59]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 51,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[60]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 52,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[61]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 53,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[62]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 54,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[63]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 55,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[64]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 56,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[65]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 57,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[66]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 58,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[67]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 59,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[69]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 60,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[70]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 61,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[71]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 62,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[72]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 63,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[73]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 64,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[74]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 65,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[75]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 66,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[76]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 67,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[77]",
+      "status": 200
+    },
+    {
+      "flow": "errors",
+      "step": 68,
+      "operation": "POST /users",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/errors.har#entries[79]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 1,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[4]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 2,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[5]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 3,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[6]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 4,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[7]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 5,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[8]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 6,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[9]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 7,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[10]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 8,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[11]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 9,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[12]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 10,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[13]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 11,
+      "operation": "GET /clientConfig",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[14]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 12,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[15]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 13,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[16]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 14,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[17]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 15,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[18]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 16,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[19]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 17,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[20]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 18,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[21]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 19,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[22]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 22,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[23]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 23,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[24]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 24,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[25]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 25,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[26]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 26,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[27]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 27,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[28]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 28,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[29]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 29,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[30]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 30,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[31]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 31,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[32]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 32,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[34]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 33,
+      "operation": "GET /users/me",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[35]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 34,
+      "operation": "GET /users/me/config",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[36]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 35,
+      "operation": "GET /teams/{teamId}",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[37]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 36,
+      "operation": "GET /teams",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[38]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 37,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[39]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 38,
+      "operation": "GET /users/me/memberships",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[40]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 39,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[41]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 40,
+      "operation": "GET /limits",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[42]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 41,
+      "operation": "POST /users",
+      "action": "navigate",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[44]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 42,
+      "operation": "POST /logout",
+      "action": "click \"Log out\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[45]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 44,
+      "operation": "POST /login",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[47]",
+      "status": 401
+    },
+    {
+      "flow": "logout-login",
+      "step": 45,
+      "operation": "POST /login",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[48]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 46,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[49]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 47,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[50]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 48,
+      "operation": "GET /teams/{teamId}/categories",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[51]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 50,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[52]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 51,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[53]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 52,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[54]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 53,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[55]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 54,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[56]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 55,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[57]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 56,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[58]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 57,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[59]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 58,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[60]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 59,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[61]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 60,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[62]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 61,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[63]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 62,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[64]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 63,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[65]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 64,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[66]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 65,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[67]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 66,
+      "operation": "GET /boards/{boardId}/blocks",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[68]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 68,
+      "operation": "GET /users/me",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[69]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 69,
+      "operation": "GET /users/me/config",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[70]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 70,
+      "operation": "GET /teams/{teamId}",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[71]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 71,
+      "operation": "GET /teams",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[72]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 72,
+      "operation": "GET /teams/{teamId}/boards",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[73]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 73,
+      "operation": "GET /users/me/memberships",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[74]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 74,
+      "operation": "GET /teams/{teamId}/templates",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[75]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 75,
+      "operation": "GET /limits",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[76]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 76,
+      "operation": "GET /boards/{boardId}/members",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[78]",
+      "status": 200
+    },
+    {
+      "flow": "logout-login",
+      "step": 77,
+      "operation": "POST /users",
+      "action": "input \"Enter password\"",
+      "pass": true,
+      "diffs": [],
+      "source": "capture/logout-login.har#entries[79]",
+      "status": 200
+    }
+  ]
+}

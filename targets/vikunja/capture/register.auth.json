@@ -1,0 +1,82 @@
+{
+  "authorization": [
+    {
+      "scheme": "Bearer",
+      "count": 7,
+      "firstEntry": 64,
+      "jwt": {
+        "alg": "HS256",
+        "typ": "JWT",
+        "claimNames": [
+          "exp",
+          "iat",
+          "id",
+          "is_admin",
+          "jti",
+          "sid",
+          "type",
+          "username"
+        ],
+        "lifetimeSec": 600
+      }
+    }
+  ],
+  "cookiesSent": [
+    "vikunja_refresh_token"
+  ],
+  "cookiesSet": [
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 63
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 63
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 78
+    },
+    {
+      "name": "vikunja_refresh_token",
+      "attributes": [
+        "Path",
+        "Max-Age",
+        "HttpOnly",
+        "SameSite"
+      ],
+      "entry": 78
+    }
+  ],
+  "csrfHeaders": [],
+  "tokenFieldsInResponses": [
+    {
+      "entry": 63,
+      "path": "$.token",
+      "kind": "jwt"
+    },
+    {
+      "entry": 78,
+      "path": "$.token",
+      "kind": "jwt"
+    }
+  ]
+}

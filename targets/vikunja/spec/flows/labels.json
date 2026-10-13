@@ -1,0 +1,508 @@
+{
+  "name": "labels",
+  "order": 5,
+  "description": "",
+  "steps": [
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#main-content > div > div > button",
+          "role": "button",
+          "name": "Back to project",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getUser",
+        "method": "GET",
+        "path": "/user",
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/User",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/UserInfoBody.json",
+            "id": 1,
+            "name": "",
+            "username": "<redacted:pii>",
+            "created": "2026-10-11T17:31:53Z",
+            "updated": "2026-10-11T17:31:53Z",
+            "settings": {
+              "name": "",
+              "email_reminders_enabled": false,
+              "discoverable_by_name": false,
+              "discoverable_by_email": false,
+              "overdue_tasks_reminders_enabled": true,
+              "overdue_tasks_reminders_time": "9:00",
+              "default_project_id": 1,
+              "week_start": 0,
+              "language": "en",
+              "timezone": "GMT",
+              "frontend_settings": null,
+              "extra_settings_links": null
+            },
+            "deletion_scheduled_at": "0001-01-01T00:00:00Z",
+            "is_local_user": true,
+            "auth_provider": "local",
+            "is_admin": false
+          }
+        },
+        "source": "capture/labels.har#entries[0]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "button",
+          "selector": "#main-content > div > div > button",
+          "role": "button",
+          "name": "Back to project",
+          "type": "button"
+        }
+      },
+      "request": {
+        "operationId": "getProjectsViewsTasks",
+        "method": "GET",
+        "path": "/projects/{projectId}/views/{viewId}/tasks",
+        "pathParams": {
+          "projectId": {
+            "var": "project236"
+          },
+          "viewId": {
+            "var": "view79"
+          }
+        },
+        "query": [
+          [
+            "sort_by",
+            "position"
+          ],
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "filter",
+            ""
+          ],
+          [
+            "filter_include_nulls",
+            "false"
+          ],
+          [
+            "filter_timezone",
+            "GMT"
+          ],
+          [
+            "q",
+            ""
+          ],
+          [
+            "expand",
+            "subtasks"
+          ],
+          [
+            "expand",
+            "comment_count"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTask.json",
+            "items": [
+              {
+                "id": 3,
+                "title": "Call the electrician",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#3",
+                "index": 3,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:25Z",
+                "updated": "2026-10-11T17:32:25Z",
+                "bucket_id": 0,
+                "comment_count": 0,
+                "position": 16384,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              },
+              {
+                "id": 2,
+                "title": "Fix the leaking tap",
+                "description": "",
+                "project_id": 2,
+                "done": false,
+                "done_at": "0001-01-01T00:00:00Z",
+                "due_date": "0001-01-01T00:00:00Z",
+                "reminders": null,
+                "repeat_after": 0,
+                "repeat_mode": 0,
+                "priority": 0,
+                "start_date": "0001-01-01T00:00:00Z",
+                "end_date": "0001-01-01T00:00:00Z",
+                "assignees": null,
+                "labels": null,
+                "hex_color": "",
+                "percent_done": 0,
+                "identifier": "#2",
+                "index": 2,
+                "related_tasks": {},
+                "attachments": null,
+                "cover_image_attachment_id": 0,
+                "is_favorite": false,
+                "created": "2026-10-11T17:32:22Z",
+                "updated": "2026-10-11T17:32:22Z",
+                "bucket_id": 0,
+                "comment_count": 0,
+                "position": 32768,
+                "reactions": null,
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                }
+              }
+            ],
+            "total": 2,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/labels.har#entries[1]"
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Fix the leaking tap",
+          "href": "/tasks/2"
+        }
+      },
+      "request": {
+        "operationId": "getTasksById",
+        "method": "GET",
+        "path": "/tasks/{taskId}",
+        "pathParams": {
+          "taskId": {
+            "var": "task126"
+          }
+        },
+        "query": [
+          [
+            "expand",
+            "reactions"
+          ],
+          [
+            "expand",
+            "is_unread"
+          ],
+          [
+            "expand",
+            "buckets"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Task",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/TaskReadOneBody.json",
+            "id": 2,
+            "title": "Fix the leaking tap",
+            "description": "",
+            "project_id": 2,
+            "done": false,
+            "done_at": "0001-01-01T00:00:00Z",
+            "due_date": "0001-01-01T00:00:00Z",
+            "reminders": null,
+            "repeat_after": 0,
+            "repeat_mode": 0,
+            "priority": 0,
+            "start_date": "0001-01-01T00:00:00Z",
+            "end_date": "0001-01-01T00:00:00Z",
+            "assignees": null,
+            "labels": null,
+            "hex_color": "",
+            "percent_done": 0,
+            "identifier": "#2",
+            "index": 2,
+            "related_tasks": {},
+            "attachments": null,
+            "cover_image_attachment_id": 0,
+            "is_favorite": false,
+            "subscription": {
+              "id": 2,
+              "entity": "task",
+              "entity_id": 2,
+              "created": "2026-10-11T17:32:22Z"
+            },
+            "created": "2026-10-11T17:32:22Z",
+            "updated": "2026-10-11T17:32:22Z",
+            "bucket_id": 0,
+            "buckets": [
+              {
+                "id": 7,
+                "title": "To-Do",
+                "project_view_id": 12,
+                "limit": 0,
+                "count": 0,
+                "position": 100,
+                "created": "2026-10-11T17:32:10Z",
+                "updated": "2026-10-11T17:32:10Z",
+                "created_by": null
+              }
+            ],
+            "position": 0,
+            "reactions": null,
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "2026-10-11T17:31:53Z",
+              "updated": "2026-10-11T17:31:53Z"
+            },
+            "max_permission": 2
+          }
+        },
+        "source": "capture/labels.har#entries[2]",
+        "bind": {
+          "task269": "$.id",
+          "project270": "$.project_id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "click",
+        "target": {
+          "tag": "a",
+          "selector": "div > div > span:nth-of-type(1) > span > a",
+          "role": "link",
+          "name": "Fix the leaking tap",
+          "href": "/tasks/2"
+        }
+      },
+      "request": {
+        "operationId": "getTasksComments",
+        "method": "GET",
+        "path": "/tasks/{taskId}/comments",
+        "pathParams": {
+          "taskId": {
+            "var": "task269"
+          }
+        },
+        "query": [
+          [
+            "order_by",
+            "asc"
+          ],
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedTaskComment.json",
+            "items": [],
+            "total": 0,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 0
+          }
+        },
+        "source": "capture/labels.har#entries[3]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div > div > input",
+          "role": "combobox",
+          "name": "Type to add a label…",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postLabels",
+        "method": "POST",
+        "path": "/labels",
+        "body": {
+          "title": "plumbing",
+          "hex_color": "ffbe0b"
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Label",
+          "body": {
+            "id": 1,
+            "title": "plumbing",
+            "description": "",
+            "hex_color": "ffbe0b",
+            "created_by": {
+              "id": 1,
+              "name": "",
+              "username": "<redacted:pii>",
+              "created": "0001-01-01T00:00:00Z",
+              "updated": "0001-01-01T00:00:00Z"
+            },
+            "created": "2026-10-11T17:33:10.773576748Z",
+            "updated": "2026-10-11T17:33:10.773584781Z"
+          }
+        },
+        "source": "capture/labels.har#entries[4]",
+        "bind": {
+          "label285": "$.id"
+        }
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div > div > input",
+          "role": "combobox",
+          "name": "Type to add a label…",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "getLabels",
+        "method": "GET",
+        "path": "/labels",
+        "query": [
+          [
+            "page",
+            "1"
+          ]
+        ],
+        "auth": "bearer",
+        "expect": {
+          "status": 200,
+          "contentType": "application/json",
+          "schema": "#/components/schemas/Label",
+          "envelope": "items",
+          "body": {
+            "$schema": "http://localhost:3456/api/v2/schemas/PaginatedLabelWithTaskID.json",
+            "items": [
+              {
+                "id": 1,
+                "title": "plumbing",
+                "description": "",
+                "hex_color": "ffbe0b",
+                "created_by": {
+                  "id": 1,
+                  "name": "",
+                  "username": "<redacted:pii>",
+                  "created": "2026-10-11T17:31:53Z",
+                  "updated": "2026-10-11T17:31:53Z"
+                },
+                "created": "2026-10-11T17:33:10Z",
+                "updated": "2026-10-11T17:33:10Z"
+              }
+            ],
+            "total": 1,
+            "page": 1,
+            "per_page": 50,
+            "total_pages": 1
+          }
+        },
+        "source": "capture/labels.har#entries[5]"
+      }
+    },
+    {
+      "action": {
+        "kind": "input",
+        "target": {
+          "tag": "input",
+          "selector": "div:nth-of-type(2) > div:nth-of-type(2) > div > div > input",
+          "role": "combobox",
+          "name": "Type to add a label…",
+          "type": "text"
+        }
+      },
+      "request": {
+        "operationId": "postTasksLabels",
+        "method": "POST",
+        "path": "/tasks/{taskId}/labels",
+        "pathParams": {
+          "taskId": {
+            "var": "task269"
+          }
+        },
+        "body": {
+          "label_id": {
+            "$var": "label285"
+          }
+        },
+        "contentType": "application/json",
+        "auth": "bearer",
+        "expect": {
+          "status": 201,
+          "contentType": "application/json",
+          "body": {
+            "label_id": 1,
+            "created": "2026-10-11T17:33:10.797266505Z"
+          }
+        },
+        "source": "capture/labels.har#entries[6]"
+      }
+    }
+  ]
+}

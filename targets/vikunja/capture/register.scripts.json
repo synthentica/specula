@@ -1,0 +1,30 @@
+[
+  {
+    "url": "http://localhost:3456/assets/Home-A3KpnJ48.js",
+    "sha256": "c62a305686322344e3ee1bc40c1f762e25394043da163f37fb1c2a5c3518be98",
+    "file": "Home-A3KpnJ48.c62a3056.js",
+    "length": 4335,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3456/assets/ProjectCardGrid-Bas84bc4.js",
+    "sha256": "534432852d7dd8017db4ac20ef5a49798f466a6f7c0bc3d93cde21db2667252a",
+    "file": "ProjectCardGrid-Bas84bc4.53443285.js",
+    "length": 2711,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3456/assets/AddTask-sSHY1URK.js",
+    "sha256": "c94e0bc8a4cc30ec5d5191ae6772b1dac6a5b44b2f36556535cf7bdae82192f5",
+    "file": "AddTask-sSHY1URK.c94e0bc8.js",
+    "length": 5376,
+    "firstParty": true
+  },
+  {
+    "url": "http://localhost:3456/assets/Expandable-Bxk8Oyp0.js",
+    "sha256": "778f0ae7d846abbe78765598892b4bfaff60919dc9bf7c63a53efbd23f80dde7",
+    "file": "Expandable-Bxk8Oyp0.778f0ae7.js",
+    "length": 1927,
+    "firstParty": true
+  }
+]

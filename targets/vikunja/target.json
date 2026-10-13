@@ -1,0 +1,41 @@
+{
+  "name": "vikunja",
+  "origin": "http://localhost:3456",
+  "apiPrefix": "/api/v2",
+  "redact": {
+    "values": [
+      "wp-tester"
+    ]
+  },
+  "brand": [
+    "Vikunja"
+  ],
+  "volatile": {
+    "keys": [
+      "id",
+      "created",
+      "updated",
+      "identifier",
+      "index",
+      "uid",
+      "hex_color",
+      "position",
+      "kanban_position",
+      "done_at",
+      "bucket_id"
+    ]
+  },
+  "ui": {
+    "login": {
+      "path": "/login",
+      "user": "username"
+    },
+    "views": {
+      "overview": "/",
+      "upcoming": "/tasks/by/upcoming",
+      "projects": "/projects",
+      "board": "/projects/{projectId}/{viewId}",
+      "task": "/tasks/{taskId}"
+    }
+  }
+}
