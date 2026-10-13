@@ -22,7 +22,10 @@ before(async () => {
   if (!chrome) return;
   const fixture = await startFixtureServer();
   origin = fixture.origin;
-  stopServer = () => fixture.server.close();
+  stopServer = () => {
+    fixture.server.closeAllConnections();
+    fixture.server.close();
+  };
   browser = await launchChrome(chrome, `${origin}/`);
   targetsDir = await mkdtemp(join(tmpdir(), 'specula-targets-'));
   await mkdir(join(targetsDir, 'fixture'), { recursive: true });
@@ -31,9 +34,13 @@ before(async () => {
 
 after(async () => {
   if (!chrome) return;
-  await browser.close();
-  stopServer();
-  await rm(targetsDir, { recursive: true, force: true });
+  // Each step runs even if an earlier one fails, so nothing is left holding the event loop open.
+  try {
+    await browser?.close();
+  } finally {
+    stopServer?.();
+    if (targetsDir) await rm(targetsDir, { recursive: true, force: true });
+  }
 });
 
 test('capture records actions, requests with initiators, websocket frames, and redacts secrets', { skip: !chrome && 'no Chrome found' }, async () => {

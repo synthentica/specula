@@ -49,9 +49,16 @@ export async function launchChrome(binary: string, startUrl: string): Promise<Te
     wsUrl,
     httpUrl,
     close: async () => {
-      child.kill('SIGTERM');
-      await new Promise((r) => child.once('exit', r));
-      await rm(userDataDir, { recursive: true, force: true });
+      if (child.exitCode === null && child.signalCode === null) {
+        const exited = new Promise((r) => child.once('exit', r));
+        child.kill('SIGTERM');
+        // Chrome can ignore SIGTERM while shutting down helpers; do not let that hang the run.
+        const timer = setTimeout(() => child.kill('SIGKILL'), 5_000);
+        await exited;
+        clearTimeout(timer);
+      }
+      // Chrome's helper processes may still be flushing the profile after the main process exits.
+      await rm(userDataDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 200 }).catch(() => {});
     },
   };
 }
