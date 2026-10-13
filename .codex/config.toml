@@ -1,0 +1,11 @@
+# Codex reads this project config once you trust the folder; Claude Code uses .mcp.json.
+# Keep the two chrome-devtools entries in sync (test/agent-config.test.ts checks it).
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = [
+  "-y",
+  "chrome-devtools-mcp@latest",
+  "--no-usage-statistics",
+  "--no-performance-crux",
+  "--browser-url=http://127.0.0.1:9222",
+]

@@ -30,7 +30,7 @@ and always end with one JSON summary line on stdout.
 
 1. `node --version` is ≥ 22.18 and `npm install` has been run.
 2. Chrome is reachable: chrome-devtools-mcp `list_pages` works (config in
-   `.mcp.json`). See [reference/capture.md](reference/capture.md) for the two
+   `.mcp.json` for Claude Code, `.codex/config.toml` for Codex). See [reference/capture.md](reference/capture.md) for the two
    supported connection modes.
 3. The target app is running and `targets/<name>/target.json` exists.
 

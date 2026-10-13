@@ -27,12 +27,33 @@ down what you learned as a spec, build your own version from that spec, and
 > logo or image, and scored separately: the four rebuilds went from **32–54 to
 > 91–98 out of 100** on the visual check with every behaviour still passing.
 
-specula is a Claude Code skill plus small Node 22 helpers on top of
+specula is an agent skill for Claude Code and Codex, plus small Node 22 helpers on top of
 [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp).
 The point is learning and building your own, not copying a product: rebuilds
 take behaviour, layout and style, never names, logos, images or text. The
 name is Latin for a watchtower, the place you observe from, and it starts with
 *spec*, the thing you write down.
+
+## Install
+
+Needs Node 22.18+ and Chrome.
+
+```bash
+git clone https://github.com/synthentica/specula.git
+cd specula
+npm install
+```
+
+Then start your agent in that folder. Nothing else to configure:
+
+| Agent | Start with | What it loads |
+|---|---|---|
+| Claude Code | `claude` | The skill from `.claude/skills/` and chrome-devtools-mcp from `.mcp.json` (approve the server when asked) |
+| Codex | `codex` | The same skill through `.agents/skills/` and chrome-devtools-mcp from `.codex/config.toml` (trust the folder when asked) |
+
+And ask, for example: *"Use specula to capture the sign-in and task flows of
+the app on localhost:3456, then spec and rebuild it."* Chrome setup and the
+rules are in [Run it on your own target](#run-it-on-your-own-target).
 
 ## Try it in one command
 
@@ -484,7 +505,7 @@ full):
    ideally a local copy (or a hosted service with your own account, where its
    terms allow it), and open it in a dedicated Chrome debug profile
    ([reference/capture.md](.claude/skills/specula/reference/capture.md)).
-2. In Claude Code, ask the `specula` skill to capture a few flows, then
+2. In Claude Code or Codex, ask the `specula` skill to capture a few flows, then
    analyze, spec, rebuild and parity-test them. Add `targets/<name>/target.json`
    with the brand words to neutralize. Set `SPECULA_CAPTURE_PASSWORD` (and
    `SPECULA_CAPTURE_EMAIL` when a flow creates other users) while recording.
@@ -494,7 +515,7 @@ full):
 3. Score the look with `npm run visual -- --target <name> --base-url <url>`
    once the rebuild has a `rebuild/views.json` mapping each view to its route
    ([reference/parity.md](.claude/skills/specula/reference/parity.md#visual-check-how-the-views-look)).
-4. Run `npm test` for the helpers' own tests (32).
+4. Run `npm test` for the helpers' own tests (34).
 
 Rules the pipeline keeps: only apps you may observe (your own instance, or
 a hosted service whose terms allow it), passive observation only (what the browser already
@@ -507,7 +528,8 @@ tokens only.
 
 | Path | What it holds |
 |---|---|
-| `.claude/skills/specula/` | The skill and one reference page per stage |
+| `.claude/skills/specula/` | The skill and one reference page per stage (Codex reads the same folder through `.agents/skills/specula`) |
+| `.mcp.json`, `.codex/config.toml` | chrome-devtools-mcp for Claude Code and for Codex |
 | `src/` | Stage scripts (`capture`, `correlate`, `fingerprint`, `report`, `infer-api`, `infer-ui`, `parity`, `visual`, `demo`) |
 | `src/lib/` | CDP client, HAR writer, redactor, schema inference, GraphQL reader, brand neutralizer, UI probe, UI spec and scoring, headless Chrome tab |
 | `targets/<name>/` | Per target: Docker setup, captures, analysis, spec, rebuild, parity reports. The scripts and source maps a capture fetched (`capture/sources/`) are the observed apps' own code and stay on the machine that recorded them, so links into them from `REPORT.md` resolve only there |

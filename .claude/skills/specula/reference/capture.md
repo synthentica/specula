@@ -18,13 +18,15 @@ macOS:
   --remote-debugging-port=9222 --user-data-dir="$HOME/.specula/chrome-profile"
 ```
 
-`.mcp.json` already points chrome-devtools-mcp at `http://127.0.0.1:9222`.
+`.mcp.json` (Claude Code) and `.codex/config.toml` (Codex) already point
+chrome-devtools-mcp at `http://127.0.0.1:9222`.
 Capture: `--cdp http://127.0.0.1:9222`.
 
 ### Mode B: your own Chrome profile (Chrome ≥ 144)
 
 1. Open `chrome://inspect/#remote-debugging` and allow incoming connections.
-2. Replace `--browser-url=...` with `--autoConnect` in `.mcp.json`.
+2. Replace `--browser-url=...` with `--autoConnect` in `.mcp.json` (Claude Code)
+   or `.codex/config.toml` (Codex).
 3. Capture with `--auto-connect` (reads `DevToolsActivePort` from Chrome's
    default user data directory; override with `--user-data-dir`).
 

@@ -2,7 +2,7 @@
 
 ## Isolation
 
-The builder (a fresh Claude Code session or a subagent) reads only:
+The builder (a fresh Claude Code or Codex session, or a subagent) reads only:
 
 - `targets/<name>/spec/` (SPEC.md first, then openapi.yaml, realtime.json, flows/;
   UI.md and ui/ for the look),
