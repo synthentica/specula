@@ -13,6 +13,10 @@ Understand how a web feature works by watching it in your own browser, write
 down what you learned as a spec, build your own version from that spec, and
 **prove** it behaves the same by replaying what the browser recorded.
 
+<p align="center">
+  <img src="docs/graphics/parity-run.gif" alt="A parity run: 785 squares, one per recorded request or socket message, fill in as the four rebuilds replay them; every one passes, including 27 error responses and 41 realtime pushes" width="100%">
+</p>
+
 > Four real apps, four independent rebuilds written from the spec alone:
 > **785/785 recorded behaviours reproduced** (Vikunja 121/121, Ghost 151/151,
 > Wiki.js 52/52, Focalboard 461/461), across REST, GraphQL and live WebSocket
@@ -79,6 +83,13 @@ instances, filled in by replaying the recorded flows.
 
 ## How it works
 
+<p align="center">
+  <img src="docs/graphics/pipeline.png" alt="Five stages: observe the app in your own Chrome, trace each click to its source line, write the spec, then behind a wall that only lets the spec through, a fresh agent builds its own app and the recordings are replayed against it" width="100%">
+</p>
+
+<details>
+<summary>The same pipeline as a diagram, with every helper script</summary>
+
 ```mermaid
 flowchart LR
   subgraph observe["1 · Observe (your browser, your account)"]
@@ -102,6 +113,8 @@ flowchart LR
     visual --> vreport["look score"]
   end
 ```
+
+</details>
 
 | Stage | What happens | Output |
 |---|---|---|
@@ -210,6 +223,10 @@ view at 1280×800 and compares a new snapshot with the UI spec: layout 40 %
 (count, size and style per kind) and style 30 % (page colours, accent, font,
 base size, radius). The score is reported next to parity, never mixed into it,
 with the largest differences listed in words (`parity/visual.md`).
+
+<p align="center">
+  <img src="docs/graphics/look-scores.png" alt="Look score before and after, out of 100: Listwell 54 to 96, Pressloft 46 to 91, Pagegrove 32 to 93, Tackboard 50 to 98" width="100%">
+</p>
 
 | Rebuild | Look before | Look after | Behaviour after |
 |---|---|---|---|
@@ -494,7 +511,7 @@ tokens only.
 | `src/` | Stage scripts (`capture`, `correlate`, `fingerprint`, `report`, `infer-api`, `infer-ui`, `parity`, `visual`, `demo`) |
 | `src/lib/` | CDP client, HAR writer, redactor, schema inference, GraphQL reader, brand neutralizer, UI probe, UI spec and scoring, headless Chrome tab |
 | `targets/<name>/` | Per target: Docker setup, captures, analysis, spec, rebuild, parity reports. The scripts and source maps a capture fetched (`capture/sources/`) are the observed apps' own code and stay on the machine that recorded them, so links into them from `REPORT.md` resolve only there |
-| `docs/` | Screenshots and the logo |
+| `docs/` | Screenshots, README graphics and the logo |
 | `test/` | Node test runner suites, including an end-to-end capture against a local fixture app |
 
 ## Credits
