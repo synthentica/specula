@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/wordmark-dark.svg">
-    <img src="docs/brand/wordmark-light.svg" alt="specula" width="320">
-  </picture>
+  <img src="docs/brand/banner.png" alt="specula: watch a web app in your own browser, rebuild it from the spec, and prove it behaves the same" width="100%">
 </p>
 
 <p align="center">
